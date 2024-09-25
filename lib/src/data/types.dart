@@ -62,42 +62,45 @@ sealed class Game with _$Game {
 @freezed
 sealed class ScheduledGame with _$ScheduledGame {
   const factory ScheduledGame(
-          {@JsonKey(name: "ID") required String id,
-          @JsonKey(name: "SeasonID") required String seasonId,
-          @JsonKey(name: "GameDateISO8601") required String gameDateISO8601,
-          @JsonKey(name: "Timezone") required String timezone,
-          @JsonKey(name: "HomeID") required String homeId,
-          @JsonKey(name: "HomeCode") required String homeCode,
-          @JsonKey(name: "HomeCity") required String homeCity,
-          @JsonKey(name: "HomeNickname") required String homeNickname,
-          @JsonKey(name: "HomeLongName") required String homeLongName,
-          @JsonKey(name: "HomeDivision") required String homeDivision,
-          @JsonKey(name: "HomeGoals") required String homeGoals,
-          @JsonKey(name: "HomeLogo") required String homeLogo,
-          @JsonKey(name: "HomeWins") required String homeWins,
-          @JsonKey(name: "HomeRegulationLosses")
-          required String homeRegulationLosses,
-          @JsonKey(name: "HomeOTLosses") required String homeOtLosses,
-          @JsonKey(name: "VisitorID") required String visitorId,
-          @JsonKey(name: "VisitorCode") required String visitorCode,
-          @JsonKey(name: "VisitorCity") required String visitorCity,
-          @JsonKey(name: "VisitorNickname") required String visitorNickname,
-          @JsonKey(name: "VisitorLongName") required String visitorLongName,
-          @JsonKey(name: "VisitorDivision") required String visitorDivision,
-          @JsonKey(name: "VisitorGoals") required String visitorGoals,
-          @JsonKey(name: "VisitorLogo") required String visitorLogo,
-          @JsonKey(name: "VisitorWins") required String visitorWins,
-          @JsonKey(name: "VisitorRegulationLosses")
-          required String visitorRegulationLosses,
-          @JsonKey(name: "VisitorOTLosses") required String visitorOtLosses,
-          @JsonKey(name: "GameStatusString") required String gameStatusString,
-          @JsonKey(name: "GameStatusStringLong")
-          required String gameStatusStringLong,
-          @JsonKey(name: "GameStatus") required String gameStatus,
-          @JsonKey(name: "GameClock") required String gameClock,
-          @JsonKey(name: "Period") required String period,
-          @JsonKey(name: "Intermission") required String intermission}) =
-      _ScheduledGame;
+      {@JsonKey(name: "ID") required String id,
+      @JsonKey(name: "SeasonID") required String seasonId,
+      @JsonKey(name: "GameDateISO8601") required String gameDateISO8601,
+      @JsonKey(name: "Timezone") required String timezone,
+      @JsonKey(name: "HomeID") required String homeId,
+      @JsonKey(name: "HomeCode") required String homeCode,
+      @JsonKey(name: "HomeCity") required String homeCity,
+      @JsonKey(name: "HomeNickname") required String homeNickname,
+      @JsonKey(name: "HomeLongName") required String homeLongName,
+      @JsonKey(name: "HomeDivision") required String homeDivision,
+      @JsonKey(name: "HomeGoals") required String homeGoals,
+      @JsonKey(name: "HomeLogo") required String homeLogo,
+      @JsonKey(name: "HomeWins") required String homeWins,
+      @JsonKey(name: "HomeRegulationLosses")
+      required String homeRegulationLosses,
+      @JsonKey(name: "HomeOTLosses") required String homeOtLosses,
+      @JsonKey(name: "HomeShootoutLosses") required String homeShootoutLosses,
+      @JsonKey(name: "VisitorID") required String visitorId,
+      @JsonKey(name: "VisitorCode") required String visitorCode,
+      @JsonKey(name: "VisitorCity") required String visitorCity,
+      @JsonKey(name: "VisitorNickname") required String visitorNickname,
+      @JsonKey(name: "VisitorLongName") required String visitorLongName,
+      @JsonKey(name: "VisitingDivision") required String visitorDivision,
+      @JsonKey(name: "VisitorGoals") required String visitorGoals,
+      @JsonKey(name: "VisitorLogo") required String visitorLogo,
+      @JsonKey(name: "VisitorWins") required String visitorWins,
+      @JsonKey(name: "VisitorRegulationLosses")
+      required String visitorRegulationLosses,
+      @JsonKey(name: "VisitorOTLosses") required String visitorOtLosses,
+      @JsonKey(name: "VisitorShootoutLosses")
+      required String visitorShootoutLosses,
+      @JsonKey(name: "GameStatusString") required String gameStatusString,
+      @JsonKey(name: "GameStatusStringLong")
+      required String gameStatusStringLong,
+      @JsonKey(name: "GameStatus") required String gameStatus,
+      @JsonKey(name: "GameClock") required String gameClock,
+      @JsonKey(name: "Period") required String period,
+      @JsonKey(name: "Intermission")
+      required String intermission}) = _ScheduledGame;
 
   factory ScheduledGame.fromJson(Map<String, dynamic> json) =>
       _$ScheduledGameFromJson(json);

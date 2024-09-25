@@ -21,8 +21,8 @@ Team normalizeVisitingTeam(ScheduledGame apiGame) {
   final otLosses = int.parse(apiGame.visitorOtLosses);
   final record = [wins, losses, otLosses].join("-");
 
-  return Team(int.parse(apiGame.visitorId), apiGame.homeNickname,
-      apiGame.homeLogo, wins, losses, otLosses, record);
+  return Team(int.parse(apiGame.visitorId), apiGame.visitorNickname,
+      apiGame.visitorLogo, wins, losses, otLosses, record);
 }
 
 Game normalizeGame(ScheduledGame apiGame) {

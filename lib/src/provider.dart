@@ -55,7 +55,7 @@ final scheduleProvider = FutureProvider.autoDispose
   // developer.log('got response: ${response.body}');
   try {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    final t = DateTime(2024, 1, 16);
+    final t = DateTime(2024, 1, 17);
 
     final apiGames = ModulekitResponse.fromJson(json).siteKit.scorebar;
     return normalizeGames(apiGames)

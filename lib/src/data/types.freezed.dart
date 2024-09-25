@@ -1230,6 +1230,8 @@ mixin _$ScheduledGame {
   String get homeRegulationLosses => throw _privateConstructorUsedError;
   @JsonKey(name: "HomeOTLosses")
   String get homeOtLosses => throw _privateConstructorUsedError;
+  @JsonKey(name: "HomeShootoutLosses")
+  String get homeShootoutLosses => throw _privateConstructorUsedError;
   @JsonKey(name: "VisitorID")
   String get visitorId => throw _privateConstructorUsedError;
   @JsonKey(name: "VisitorCode")
@@ -1240,7 +1242,7 @@ mixin _$ScheduledGame {
   String get visitorNickname => throw _privateConstructorUsedError;
   @JsonKey(name: "VisitorLongName")
   String get visitorLongName => throw _privateConstructorUsedError;
-  @JsonKey(name: "VisitorDivision")
+  @JsonKey(name: "VisitingDivision")
   String get visitorDivision => throw _privateConstructorUsedError;
   @JsonKey(name: "VisitorGoals")
   String get visitorGoals => throw _privateConstructorUsedError;
@@ -1252,6 +1254,8 @@ mixin _$ScheduledGame {
   String get visitorRegulationLosses => throw _privateConstructorUsedError;
   @JsonKey(name: "VisitorOTLosses")
   String get visitorOtLosses => throw _privateConstructorUsedError;
+  @JsonKey(name: "VisitorShootoutLosses")
+  String get visitorShootoutLosses => throw _privateConstructorUsedError;
   @JsonKey(name: "GameStatusString")
   String get gameStatusString => throw _privateConstructorUsedError;
   @JsonKey(name: "GameStatusStringLong")
@@ -1293,17 +1297,19 @@ abstract class $ScheduledGameCopyWith<$Res> {
       @JsonKey(name: "HomeWins") String homeWins,
       @JsonKey(name: "HomeRegulationLosses") String homeRegulationLosses,
       @JsonKey(name: "HomeOTLosses") String homeOtLosses,
+      @JsonKey(name: "HomeShootoutLosses") String homeShootoutLosses,
       @JsonKey(name: "VisitorID") String visitorId,
       @JsonKey(name: "VisitorCode") String visitorCode,
       @JsonKey(name: "VisitorCity") String visitorCity,
       @JsonKey(name: "VisitorNickname") String visitorNickname,
       @JsonKey(name: "VisitorLongName") String visitorLongName,
-      @JsonKey(name: "VisitorDivision") String visitorDivision,
+      @JsonKey(name: "VisitingDivision") String visitorDivision,
       @JsonKey(name: "VisitorGoals") String visitorGoals,
       @JsonKey(name: "VisitorLogo") String visitorLogo,
       @JsonKey(name: "VisitorWins") String visitorWins,
       @JsonKey(name: "VisitorRegulationLosses") String visitorRegulationLosses,
       @JsonKey(name: "VisitorOTLosses") String visitorOtLosses,
+      @JsonKey(name: "VisitorShootoutLosses") String visitorShootoutLosses,
       @JsonKey(name: "GameStatusString") String gameStatusString,
       @JsonKey(name: "GameStatusStringLong") String gameStatusStringLong,
       @JsonKey(name: "GameStatus") String gameStatus,
@@ -1340,6 +1346,7 @@ class _$ScheduledGameCopyWithImpl<$Res, $Val extends ScheduledGame>
     Object? homeWins = null,
     Object? homeRegulationLosses = null,
     Object? homeOtLosses = null,
+    Object? homeShootoutLosses = null,
     Object? visitorId = null,
     Object? visitorCode = null,
     Object? visitorCity = null,
@@ -1351,6 +1358,7 @@ class _$ScheduledGameCopyWithImpl<$Res, $Val extends ScheduledGame>
     Object? visitorWins = null,
     Object? visitorRegulationLosses = null,
     Object? visitorOtLosses = null,
+    Object? visitorShootoutLosses = null,
     Object? gameStatusString = null,
     Object? gameStatusStringLong = null,
     Object? gameStatus = null,
@@ -1419,6 +1427,10 @@ class _$ScheduledGameCopyWithImpl<$Res, $Val extends ScheduledGame>
           ? _value.homeOtLosses
           : homeOtLosses // ignore: cast_nullable_to_non_nullable
               as String,
+      homeShootoutLosses: null == homeShootoutLosses
+          ? _value.homeShootoutLosses
+          : homeShootoutLosses // ignore: cast_nullable_to_non_nullable
+              as String,
       visitorId: null == visitorId
           ? _value.visitorId
           : visitorId // ignore: cast_nullable_to_non_nullable
@@ -1462,6 +1474,10 @@ class _$ScheduledGameCopyWithImpl<$Res, $Val extends ScheduledGame>
       visitorOtLosses: null == visitorOtLosses
           ? _value.visitorOtLosses
           : visitorOtLosses // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitorShootoutLosses: null == visitorShootoutLosses
+          ? _value.visitorShootoutLosses
+          : visitorShootoutLosses // ignore: cast_nullable_to_non_nullable
               as String,
       gameStatusString: null == gameStatusString
           ? _value.gameStatusString
@@ -1515,17 +1531,19 @@ abstract class _$$ScheduledGameImplCopyWith<$Res>
       @JsonKey(name: "HomeWins") String homeWins,
       @JsonKey(name: "HomeRegulationLosses") String homeRegulationLosses,
       @JsonKey(name: "HomeOTLosses") String homeOtLosses,
+      @JsonKey(name: "HomeShootoutLosses") String homeShootoutLosses,
       @JsonKey(name: "VisitorID") String visitorId,
       @JsonKey(name: "VisitorCode") String visitorCode,
       @JsonKey(name: "VisitorCity") String visitorCity,
       @JsonKey(name: "VisitorNickname") String visitorNickname,
       @JsonKey(name: "VisitorLongName") String visitorLongName,
-      @JsonKey(name: "VisitorDivision") String visitorDivision,
+      @JsonKey(name: "VisitingDivision") String visitorDivision,
       @JsonKey(name: "VisitorGoals") String visitorGoals,
       @JsonKey(name: "VisitorLogo") String visitorLogo,
       @JsonKey(name: "VisitorWins") String visitorWins,
       @JsonKey(name: "VisitorRegulationLosses") String visitorRegulationLosses,
       @JsonKey(name: "VisitorOTLosses") String visitorOtLosses,
+      @JsonKey(name: "VisitorShootoutLosses") String visitorShootoutLosses,
       @JsonKey(name: "GameStatusString") String gameStatusString,
       @JsonKey(name: "GameStatusStringLong") String gameStatusStringLong,
       @JsonKey(name: "GameStatus") String gameStatus,
@@ -1560,6 +1578,7 @@ class __$$ScheduledGameImplCopyWithImpl<$Res>
     Object? homeWins = null,
     Object? homeRegulationLosses = null,
     Object? homeOtLosses = null,
+    Object? homeShootoutLosses = null,
     Object? visitorId = null,
     Object? visitorCode = null,
     Object? visitorCity = null,
@@ -1571,6 +1590,7 @@ class __$$ScheduledGameImplCopyWithImpl<$Res>
     Object? visitorWins = null,
     Object? visitorRegulationLosses = null,
     Object? visitorOtLosses = null,
+    Object? visitorShootoutLosses = null,
     Object? gameStatusString = null,
     Object? gameStatusStringLong = null,
     Object? gameStatus = null,
@@ -1639,6 +1659,10 @@ class __$$ScheduledGameImplCopyWithImpl<$Res>
           ? _value.homeOtLosses
           : homeOtLosses // ignore: cast_nullable_to_non_nullable
               as String,
+      homeShootoutLosses: null == homeShootoutLosses
+          ? _value.homeShootoutLosses
+          : homeShootoutLosses // ignore: cast_nullable_to_non_nullable
+              as String,
       visitorId: null == visitorId
           ? _value.visitorId
           : visitorId // ignore: cast_nullable_to_non_nullable
@@ -1682,6 +1706,10 @@ class __$$ScheduledGameImplCopyWithImpl<$Res>
       visitorOtLosses: null == visitorOtLosses
           ? _value.visitorOtLosses
           : visitorOtLosses // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitorShootoutLosses: null == visitorShootoutLosses
+          ? _value.visitorShootoutLosses
+          : visitorShootoutLosses // ignore: cast_nullable_to_non_nullable
               as String,
       gameStatusString: null == gameStatusString
           ? _value.gameStatusString
@@ -1732,18 +1760,21 @@ class _$ScheduledGameImpl
       @JsonKey(name: "HomeWins") required this.homeWins,
       @JsonKey(name: "HomeRegulationLosses") required this.homeRegulationLosses,
       @JsonKey(name: "HomeOTLosses") required this.homeOtLosses,
+      @JsonKey(name: "HomeShootoutLosses") required this.homeShootoutLosses,
       @JsonKey(name: "VisitorID") required this.visitorId,
       @JsonKey(name: "VisitorCode") required this.visitorCode,
       @JsonKey(name: "VisitorCity") required this.visitorCity,
       @JsonKey(name: "VisitorNickname") required this.visitorNickname,
       @JsonKey(name: "VisitorLongName") required this.visitorLongName,
-      @JsonKey(name: "VisitorDivision") required this.visitorDivision,
+      @JsonKey(name: "VisitingDivision") required this.visitorDivision,
       @JsonKey(name: "VisitorGoals") required this.visitorGoals,
       @JsonKey(name: "VisitorLogo") required this.visitorLogo,
       @JsonKey(name: "VisitorWins") required this.visitorWins,
       @JsonKey(name: "VisitorRegulationLosses")
       required this.visitorRegulationLosses,
       @JsonKey(name: "VisitorOTLosses") required this.visitorOtLosses,
+      @JsonKey(name: "VisitorShootoutLosses")
+      required this.visitorShootoutLosses,
       @JsonKey(name: "GameStatusString") required this.gameStatusString,
       @JsonKey(name: "GameStatusStringLong") required this.gameStatusStringLong,
       @JsonKey(name: "GameStatus") required this.gameStatus,
@@ -1800,6 +1831,9 @@ class _$ScheduledGameImpl
   @JsonKey(name: "HomeOTLosses")
   final String homeOtLosses;
   @override
+  @JsonKey(name: "HomeShootoutLosses")
+  final String homeShootoutLosses;
+  @override
   @JsonKey(name: "VisitorID")
   final String visitorId;
   @override
@@ -1815,7 +1849,7 @@ class _$ScheduledGameImpl
   @JsonKey(name: "VisitorLongName")
   final String visitorLongName;
   @override
-  @JsonKey(name: "VisitorDivision")
+  @JsonKey(name: "VisitingDivision")
   final String visitorDivision;
   @override
   @JsonKey(name: "VisitorGoals")
@@ -1832,6 +1866,9 @@ class _$ScheduledGameImpl
   @override
   @JsonKey(name: "VisitorOTLosses")
   final String visitorOtLosses;
+  @override
+  @JsonKey(name: "VisitorShootoutLosses")
+  final String visitorShootoutLosses;
   @override
   @JsonKey(name: "GameStatusString")
   final String gameStatusString;
@@ -1853,7 +1890,7 @@ class _$ScheduledGameImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ScheduledGame(id: $id, seasonId: $seasonId, gameDateISO8601: $gameDateISO8601, timezone: $timezone, homeId: $homeId, homeCode: $homeCode, homeCity: $homeCity, homeNickname: $homeNickname, homeLongName: $homeLongName, homeDivision: $homeDivision, homeGoals: $homeGoals, homeLogo: $homeLogo, homeWins: $homeWins, homeRegulationLosses: $homeRegulationLosses, homeOtLosses: $homeOtLosses, visitorId: $visitorId, visitorCode: $visitorCode, visitorCity: $visitorCity, visitorNickname: $visitorNickname, visitorLongName: $visitorLongName, visitorDivision: $visitorDivision, visitorGoals: $visitorGoals, visitorLogo: $visitorLogo, visitorWins: $visitorWins, visitorRegulationLosses: $visitorRegulationLosses, visitorOtLosses: $visitorOtLosses, gameStatusString: $gameStatusString, gameStatusStringLong: $gameStatusStringLong, gameStatus: $gameStatus, gameClock: $gameClock, period: $period, intermission: $intermission)';
+    return 'ScheduledGame(id: $id, seasonId: $seasonId, gameDateISO8601: $gameDateISO8601, timezone: $timezone, homeId: $homeId, homeCode: $homeCode, homeCity: $homeCity, homeNickname: $homeNickname, homeLongName: $homeLongName, homeDivision: $homeDivision, homeGoals: $homeGoals, homeLogo: $homeLogo, homeWins: $homeWins, homeRegulationLosses: $homeRegulationLosses, homeOtLosses: $homeOtLosses, homeShootoutLosses: $homeShootoutLosses, visitorId: $visitorId, visitorCode: $visitorCode, visitorCity: $visitorCity, visitorNickname: $visitorNickname, visitorLongName: $visitorLongName, visitorDivision: $visitorDivision, visitorGoals: $visitorGoals, visitorLogo: $visitorLogo, visitorWins: $visitorWins, visitorRegulationLosses: $visitorRegulationLosses, visitorOtLosses: $visitorOtLosses, visitorShootoutLosses: $visitorShootoutLosses, gameStatusString: $gameStatusString, gameStatusStringLong: $gameStatusStringLong, gameStatus: $gameStatus, gameClock: $gameClock, period: $period, intermission: $intermission)';
   }
 
   @override
@@ -1876,6 +1913,7 @@ class _$ScheduledGameImpl
       ..add(DiagnosticsProperty('homeWins', homeWins))
       ..add(DiagnosticsProperty('homeRegulationLosses', homeRegulationLosses))
       ..add(DiagnosticsProperty('homeOtLosses', homeOtLosses))
+      ..add(DiagnosticsProperty('homeShootoutLosses', homeShootoutLosses))
       ..add(DiagnosticsProperty('visitorId', visitorId))
       ..add(DiagnosticsProperty('visitorCode', visitorCode))
       ..add(DiagnosticsProperty('visitorCity', visitorCity))
@@ -1888,6 +1926,7 @@ class _$ScheduledGameImpl
       ..add(DiagnosticsProperty(
           'visitorRegulationLosses', visitorRegulationLosses))
       ..add(DiagnosticsProperty('visitorOtLosses', visitorOtLosses))
+      ..add(DiagnosticsProperty('visitorShootoutLosses', visitorShootoutLosses))
       ..add(DiagnosticsProperty('gameStatusString', gameStatusString))
       ..add(DiagnosticsProperty('gameStatusStringLong', gameStatusStringLong))
       ..add(DiagnosticsProperty('gameStatus', gameStatus))
@@ -1929,6 +1968,8 @@ class _$ScheduledGameImpl
                 other.homeRegulationLosses == homeRegulationLosses) &&
             (identical(other.homeOtLosses, homeOtLosses) ||
                 other.homeOtLosses == homeOtLosses) &&
+            (identical(other.homeShootoutLosses, homeShootoutLosses) ||
+                other.homeShootoutLosses == homeShootoutLosses) &&
             (identical(other.visitorId, visitorId) ||
                 other.visitorId == visitorId) &&
             (identical(other.visitorCode, visitorCode) ||
@@ -1952,6 +1993,8 @@ class _$ScheduledGameImpl
                 other.visitorRegulationLosses == visitorRegulationLosses) &&
             (identical(other.visitorOtLosses, visitorOtLosses) ||
                 other.visitorOtLosses == visitorOtLosses) &&
+            (identical(other.visitorShootoutLosses, visitorShootoutLosses) ||
+                other.visitorShootoutLosses == visitorShootoutLosses) &&
             (identical(other.gameStatusString, gameStatusString) ||
                 other.gameStatusString == gameStatusString) &&
             (identical(other.gameStatusStringLong, gameStatusStringLong) ||
@@ -1984,6 +2027,7 @@ class _$ScheduledGameImpl
         homeWins,
         homeRegulationLosses,
         homeOtLosses,
+        homeShootoutLosses,
         visitorId,
         visitorCode,
         visitorCity,
@@ -1995,6 +2039,7 @@ class _$ScheduledGameImpl
         visitorWins,
         visitorRegulationLosses,
         visitorOtLosses,
+        visitorShootoutLosses,
         gameStatusString,
         gameStatusStringLong,
         gameStatus,
@@ -2035,18 +2080,22 @@ abstract class _ScheduledGame implements ScheduledGame {
       @JsonKey(name: "HomeRegulationLosses")
       required final String homeRegulationLosses,
       @JsonKey(name: "HomeOTLosses") required final String homeOtLosses,
+      @JsonKey(name: "HomeShootoutLosses")
+      required final String homeShootoutLosses,
       @JsonKey(name: "VisitorID") required final String visitorId,
       @JsonKey(name: "VisitorCode") required final String visitorCode,
       @JsonKey(name: "VisitorCity") required final String visitorCity,
       @JsonKey(name: "VisitorNickname") required final String visitorNickname,
       @JsonKey(name: "VisitorLongName") required final String visitorLongName,
-      @JsonKey(name: "VisitorDivision") required final String visitorDivision,
+      @JsonKey(name: "VisitingDivision") required final String visitorDivision,
       @JsonKey(name: "VisitorGoals") required final String visitorGoals,
       @JsonKey(name: "VisitorLogo") required final String visitorLogo,
       @JsonKey(name: "VisitorWins") required final String visitorWins,
       @JsonKey(name: "VisitorRegulationLosses")
       required final String visitorRegulationLosses,
       @JsonKey(name: "VisitorOTLosses") required final String visitorOtLosses,
+      @JsonKey(name: "VisitorShootoutLosses")
+      required final String visitorShootoutLosses,
       @JsonKey(name: "GameStatusString") required final String gameStatusString,
       @JsonKey(name: "GameStatusStringLong")
       required final String gameStatusStringLong,
@@ -2105,6 +2154,9 @@ abstract class _ScheduledGame implements ScheduledGame {
   @JsonKey(name: "HomeOTLosses")
   String get homeOtLosses;
   @override
+  @JsonKey(name: "HomeShootoutLosses")
+  String get homeShootoutLosses;
+  @override
   @JsonKey(name: "VisitorID")
   String get visitorId;
   @override
@@ -2120,7 +2172,7 @@ abstract class _ScheduledGame implements ScheduledGame {
   @JsonKey(name: "VisitorLongName")
   String get visitorLongName;
   @override
-  @JsonKey(name: "VisitorDivision")
+  @JsonKey(name: "VisitingDivision")
   String get visitorDivision;
   @override
   @JsonKey(name: "VisitorGoals")
@@ -2137,6 +2189,9 @@ abstract class _ScheduledGame implements ScheduledGame {
   @override
   @JsonKey(name: "VisitorOTLosses")
   String get visitorOtLosses;
+  @override
+  @JsonKey(name: "VisitorShootoutLosses")
+  String get visitorShootoutLosses;
   @override
   @JsonKey(name: "GameStatusString")
   String get gameStatusString;
