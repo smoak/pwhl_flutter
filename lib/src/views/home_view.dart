@@ -12,7 +12,7 @@ class HomeView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<Game>> games =
-        ref.watch(scheduleProvider((date: getToday())));
+        ref.watch(debugProvider((date: getToday())));
 
     return Layout(
         title: "Schedule",

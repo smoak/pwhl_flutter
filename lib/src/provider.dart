@@ -35,6 +35,57 @@ DaysByDate calculateDaysByDate(DateTime? date) {
 
 typedef ScheduleParameters = ({DateTime? date});
 
+final debugProvider = FutureProvider.autoDispose
+    .family<List<Game>, ScheduleParameters>((ref, args) async {
+  final finalGame = Game.finalGame(
+      1,
+      GameType.regularSeason,
+      Team(1, "Fleet", "", 1, 1, 1, "1-1-1"),
+      Team(2, "Frost", "https://assets.leaguestat.com/pwhl/logos/50x50/2.png",
+          2, 1, 0, "2-1-0"),
+      GameState.finished,
+      "",
+      4,
+      3,
+      EndState.regulation,
+      3);
+  final futureGame = Game.futureGame(
+      2,
+      GameType.regularSeason,
+      Team(
+          3,
+          "Victoire",
+          "https://assets.leaguestat.com/pwhl/logos/50x50/3.png",
+          3,
+          0,
+          0,
+          "3-0-0"),
+      Team(4, "Sirens", "https://assets.leaguestat.com/pwhl/logos/50x50/4.png",
+          0, 3, 0, "0-3-0"),
+      GameState.scheduled,
+      "");
+  final liveGame = Game.liveGame(
+      3,
+      GameType.regularSeason,
+      Team(5, "Charge", "https://assets.leaguestat.com/pwhl/logos/50x50/5.png",
+          0, 0, 3, "0-0-3"),
+      Team(
+          6,
+          "Sceptres",
+          "https://assets.leaguestat.com/pwhl/logos/50x50/6.png",
+          1,
+          2,
+          0,
+          "1-2-0"),
+      GameState.live,
+      "",
+      2,
+      1,
+      GameClock(2, "10:09", false));
+
+  return [finalGame, futureGame, liveGame];
+});
+
 final scheduleProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, arguments) async {
   final daysByDate = calculateDaysByDate(arguments.date);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pwhl_flutter/src/components/score_text.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 
@@ -55,16 +56,12 @@ class FinalGameCard extends StatelessWidget {
                   logoUrl: game.homeTeam.logoUrl,
                 ),
                 const Spacer(),
-                Text(game.homeScore.toString(),
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold)),
+                ScoreText(score: game.homeScore.toString()),
                 const Spacer(),
                 FinalGameStatus(
                     gameType: game.type, endedInPeriod: game.endedInPeriod),
                 const Spacer(),
-                Text(game.homeScore.toString(),
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold)),
+                ScoreText(score: game.visitingScore.toString()),
                 const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,

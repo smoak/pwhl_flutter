@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pwhl_flutter/src/components/game_clock_info.dart';
+import 'package:pwhl_flutter/src/components/score_text.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 
@@ -21,7 +23,11 @@ class LiveGameCard extends StatelessWidget {
                   logoUrl: game.homeTeam.logoUrl,
                 ),
                 const Spacer(),
-                const Text("1:00 AM"),
+                ScoreText(score: game.homeScore.toString()),
+                const Spacer(),
+                GameClockInfo(gameClock: game.gameClock),
+                const Spacer(),
+                ScoreText(score: game.visitingScore.toString()),
                 const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,
