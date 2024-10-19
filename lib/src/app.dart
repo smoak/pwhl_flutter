@@ -42,7 +42,20 @@ class MyApp extends StatelessWidget {
       // Define a light and dark color theme. Then, read the user's
       // preferred ThemeMode (light, dark, or system default) from the
       // SettingsController to display the correct theme.
-      theme: ThemeData(),
+      theme: ThemeData(
+          useMaterial3: false,
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromRGBO(51, 5, 120, 1)),
+          cardTheme: const CardTheme(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0))),
+          ),
+          textTheme:
+              const TextTheme(titleLarge: TextStyle(color: Colors.white))),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       home: const HomeView(),

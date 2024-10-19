@@ -19,6 +19,7 @@ dependencies:
   http: ^1.2.0
   intl: any
   json_annotation: ^4.8.1
+  live_indicator: ^0.0.4
   provider: ^6.1.2
 
 dev_dependencies:

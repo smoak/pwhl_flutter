@@ -40,7 +40,8 @@ final debugProvider = FutureProvider.autoDispose
   final finalGame = Game.finalGame(
       1,
       GameType.regularSeason,
-      Team(1, "Fleet", "", 1, 1, 1, "1-1-1"),
+      Team(1, "Fleet", "https://assets.leaguestat.com/pwhl/logos/50x50/1_4.png",
+          1, 1, 1, "1-1-1"),
       Team(2, "Frost", "https://assets.leaguestat.com/pwhl/logos/50x50/2.png",
           2, 1, 0, "2-1-0"),
       GameState.finished,
