@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 
@@ -20,7 +21,8 @@ class FutureGameCard extends StatelessWidget {
                   logoUrl: game.homeTeam.logoUrl,
                 ),
                 const Spacer(),
-                const Text("1:00 AM"),
+                Text(DateFormat.jm().format(DateTime.parse(game.gameDate))),
+                Text(game.gameDate),
                 const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,

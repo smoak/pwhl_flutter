@@ -33,10 +33,11 @@ DaysByDate calculateDaysByDate(DateTime? date) {
   return DaysByDate(daysAhead: diff.toString(), daysBack: "0");
 }
 
-typedef ScheduleParameters = ({DateTime? date});
+typedef ScheduleParameters = ({DateTime date});
 
 final debugProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, args) async {
+  developer.log('using date ${args.date}', name: 'pwhl.app');
   final finalGame = Game.finalGame(
       1,
       GameType.regularSeason,
@@ -89,33 +90,29 @@ final debugProvider = FutureProvider.autoDispose
 
 final scheduleProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, arguments) async {
-  final daysByDate = calculateDaysByDate(arguments.date);
+  final date = arguments.date;
+  final daysByDate = calculateDaysByDate(date);
   final queryParams = {
     "feed": "modulekit",
     "key": clientKey,
     "client_code": clientCode,
     "view": "scorebar",
     "fmt": "json",
-    "numberofdaysahead": "1",
-    "numberofdaysback": "247",
-    // "numberofdaysahead": daysByDate.daysAhead,
-    // "numberofdaysback": daysByDate.daysBack
+    "numberofdaysahead": daysByDate.daysAhead,
+    "numberofdaysback": daysByDate.daysBack
   };
   final uri = Uri.https(baseUrl, "/feed/index.php", queryParams);
   developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
   final response = await http.get(uri);
-  // developer.log('got response: ${response.body}');
+
   try {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    final t = DateTime(2024, 1, 17);
 
     final apiGames = ModulekitResponse.fromJson(json).siteKit.scorebar;
-    return normalizeGames(apiGames)
-        // .where((game) => DateUtils.isSameDay(arguments.date, DateTime.parse(game.gameDate).toLocal())
-        .where((game) {
+    return normalizeGames(apiGames).where((game) {
       developer.log(
-          'testing ${game.gameDate} (parsed as ${DateTime.parse(game.gameDate).toLocal()}) against $t');
-      return DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), t);
+          'testing ${game.gameDate} (parsed as ${DateTime.parse(game.gameDate).toLocal()}) against $date');
+      return DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), date);
     }).toList();
   } catch (e) {
     developer.log('received error trying to decode json ${e.toString()}');
