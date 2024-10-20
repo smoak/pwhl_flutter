@@ -21,8 +21,8 @@ class FutureGameCard extends StatelessWidget {
                   logoUrl: game.homeTeam.logoUrl,
                 ),
                 const Spacer(),
-                Text(DateFormat.jm().format(DateTime.parse(game.gameDate))),
-                Text(game.gameDate),
+                Text(DateFormat.jm()
+                    .format(DateTime.parse(game.gameDate).toLocal())),
                 const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,

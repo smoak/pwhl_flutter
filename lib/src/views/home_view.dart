@@ -29,8 +29,9 @@ class DateSelectorWidget extends ConsumerWidget {
           onTap: () async {
             final selectedDate = await showDatePicker(
                 context: context,
-                firstDate: DateTime(date.year),
-                lastDate: DateTime(date.add(const Duration(days: 365)).year));
+                initialDate: date,
+                firstDate: date.subtract(const Duration(days: 365)),
+                lastDate: date.add(const Duration(days: 365)));
             if (selectedDate != null) {
               ref.read(dateProvider.notifier).state = selectedDate;
             }
