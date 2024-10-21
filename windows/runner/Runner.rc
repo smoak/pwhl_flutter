@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.nightfall_designs" "\0"
             VALUE "FileDescription", "pwhl_flutter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "pwhl_flutter" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.nightfall_designs. All rights reserved." "\0"
             VALUE "OriginalFilename", "pwhl_flutter.exe" "\0"
             VALUE "ProductName", "pwhl_flutter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

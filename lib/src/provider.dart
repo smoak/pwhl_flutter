@@ -37,7 +37,6 @@ typedef ScheduleParameters = ({DateTime date});
 
 final debugProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, args) async {
-  developer.log('using date ${args.date}', name: 'pwhl.app');
   final finalGame = Game.finalGame(
       1,
       GameType.regularSeason,
@@ -91,6 +90,7 @@ final debugProvider = FutureProvider.autoDispose
 final scheduleProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, arguments) async {
   final date = arguments.date;
+  developer.log('using date $date', name: 'pwhl.app');
   final daysByDate = calculateDaysByDate(date);
   final queryParams = {
     "feed": "modulekit",
@@ -109,11 +109,10 @@ final scheduleProvider = FutureProvider.autoDispose
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
     final apiGames = ModulekitResponse.fromJson(json).siteKit.scorebar;
-    return normalizeGames(apiGames).where((game) {
-      developer.log(
-          'testing ${game.gameDate} (parsed as ${DateTime.parse(game.gameDate).toLocal()}) against $date');
-      return DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), date);
-    }).toList();
+    return normalizeGames(apiGames)
+        .where((game) =>
+            DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), date))
+        .toList();
   } catch (e) {
     developer.log('received error trying to decode json ${e.toString()}');
     return [];
