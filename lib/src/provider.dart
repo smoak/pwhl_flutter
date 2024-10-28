@@ -10,6 +10,7 @@ import 'dart:developer' as developer;
 const baseUrl = "lscluster.hockeytech.com";
 const clientKey = "694cfeed58c932ee";
 const clientCode = "pwhl";
+const queryParamKeys = {"key": clientKey, "client_code": clientCode};
 
 class DaysByDate {
   final String daysAhead;
@@ -94,13 +95,11 @@ final scheduleProvider = FutureProvider.autoDispose
   final daysByDate = calculateDaysByDate(date);
   final queryParams = {
     "feed": "modulekit",
-    "key": clientKey,
-    "client_code": clientCode,
     "view": "scorebar",
     "fmt": "json",
     "numberofdaysahead": daysByDate.daysAhead,
     "numberofdaysback": daysByDate.daysBack
-  };
+  }..addAll(queryParamKeys);
   final uri = Uri.https(baseUrl, "/feed/index.php", queryParams);
   developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
   final response = await http.get(uri);
@@ -117,4 +116,43 @@ final scheduleProvider = FutureProvider.autoDispose
     developer.log('received error trying to decode json ${e.toString()}');
     return [];
   }
+});
+
+Future<BootstrapResponse> getBootstrap() async {
+  final queryParams = {"feed": "statviewfeed", "view": "bootstrap"}
+    ..addAll(queryParamKeys);
+  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
+  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
+  final response = await http.get(uri);
+  final json = jsonDecode(response.body.substring(1, response.body.length - 1))
+      as Map<String, dynamic>;
+  return BootstrapResponse.fromJson(json);
+}
+
+Future<StandingsResponseObject> getStandings(String seasonId) async {
+  final queryParams = {
+    "feed": "statviewfeed",
+    "view": "teams",
+    "groupTeamsBy": "division",
+    "context": "overall",
+    "site_id": "2",
+    "season": seasonId,
+    "special": "false"
+  }..addAll(queryParamKeys);
+  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
+  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
+  final response = await http.get(uri);
+  final jsonBody = response.body.substring(1, response.body.length - 1);
+  final data = json.decode(jsonBody)[0] as Map<String, dynamic>;
+
+  return StandingsResponseObject.fromJson(data);
+}
+
+final standingsProvider =
+    FutureProvider.autoDispose<List<StandingsResponseSectionData>>((ref) async {
+  final bootstrapResponse = await getBootstrap();
+  final standingsResponse =
+      await getStandings(bootstrapResponse.currentSeasonId);
+
+  return standingsResponse.sections[0].data;
 });

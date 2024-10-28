@@ -105,3 +105,125 @@ Map<String, dynamic> _$$ModulekitResponseImplToJson(
     <String, dynamic>{
       'SiteKit': instance.siteKit,
     };
+
+_$BootstrapResponseImpl _$$BootstrapResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BootstrapResponseImpl(
+      currentSeasonId: json['current_season_id'] as String,
+    );
+
+Map<String, dynamic> _$$BootstrapResponseImplToJson(
+        _$BootstrapResponseImpl instance) =>
+    <String, dynamic>{
+      'current_season_id': instance.currentSeasonId,
+    };
+
+_$SectionDataRowImpl _$$SectionDataRowImplFromJson(Map<String, dynamic> json) =>
+    _$SectionDataRowImpl(
+      teamCode: json['team_code'] as String,
+      losses: json['losses'] as String,
+      regulationWins: json['regulation_wins'] as String,
+      points: json['points'] as String,
+      goalsFor: json['goals_for'] as String,
+      goalsAgainst: json['goals_against'] as String,
+      nonRegWins: json['non_reg_wins'] as String,
+      nonRegLosses: json['non_reg_losses'] as String,
+      gamesRemaining: json['games_remaining'] as String,
+      percentage: json['percentage'] as String,
+      overallRank: json['overall_rank'] as String,
+      gamesPlayed: json['games_played'] as String,
+      rank: (json['rank'] as num).toInt(),
+      name: json['name'] as String,
+    );
+
+Map<String, dynamic> _$$SectionDataRowImplToJson(
+        _$SectionDataRowImpl instance) =>
+    <String, dynamic>{
+      'team_code': instance.teamCode,
+      'losses': instance.losses,
+      'regulation_wins': instance.regulationWins,
+      'points': instance.points,
+      'goals_for': instance.goalsFor,
+      'goals_against': instance.goalsAgainst,
+      'non_reg_wins': instance.nonRegWins,
+      'non_reg_losses': instance.nonRegLosses,
+      'games_remaining': instance.gamesRemaining,
+      'percentage': instance.percentage,
+      'overall_rank': instance.overallRank,
+      'games_played': instance.gamesPlayed,
+      'rank': instance.rank,
+      'name': instance.name,
+    };
+
+_$SectionDataTeamImpl _$$SectionDataTeamImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SectionDataTeamImpl(
+      teamLink: json['teamLink'] as String,
+    );
+
+Map<String, dynamic> _$$SectionDataTeamImplToJson(
+        _$SectionDataTeamImpl instance) =>
+    <String, dynamic>{
+      'teamLink': instance.teamLink,
+    };
+
+_$SectionDataPropImpl _$$SectionDataPropImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SectionDataPropImpl(
+      teamCode:
+          SectionDataTeam.fromJson(json['team_code'] as Map<String, dynamic>),
+      name: SectionDataTeam.fromJson(json['name'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$SectionDataPropImplToJson(
+        _$SectionDataPropImpl instance) =>
+    <String, dynamic>{
+      'team_code': instance.teamCode,
+      'name': instance.name,
+    };
+
+_$StandingsResponseSectionDataImpl _$$StandingsResponseSectionDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StandingsResponseSectionDataImpl(
+      prop: SectionDataProp.fromJson(json['prop'] as Map<String, dynamic>),
+      row: SectionDataRow.fromJson(json['row'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$StandingsResponseSectionDataImplToJson(
+        _$StandingsResponseSectionDataImpl instance) =>
+    <String, dynamic>{
+      'prop': instance.prop,
+      'row': instance.row,
+    };
+
+_$StandingsResponseSectionImpl _$$StandingsResponseSectionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StandingsResponseSectionImpl(
+      title: json['title'] as String,
+      data: (json['data'] as List<dynamic>)
+          .map((e) =>
+              StandingsResponseSectionData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$StandingsResponseSectionImplToJson(
+        _$StandingsResponseSectionImpl instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'data': instance.data,
+    };
+
+_$StandingsResponseObjectImpl _$$StandingsResponseObjectImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StandingsResponseObjectImpl(
+      sections: (json['sections'] as List<dynamic>)
+          .map((e) =>
+              StandingsResponseSection.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$StandingsResponseObjectImplToJson(
+        _$StandingsResponseObjectImpl instance) =>
+    <String, dynamic>{
+      'sections': instance.sections,
+    };

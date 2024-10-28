@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
       // preferred ThemeMode (light, dark, or system default) from the
       // SettingsController to display the correct theme.
       theme: ThemeData(
-          useMaterial3: false,
+          useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color.fromRGBO(51, 5, 120, 1)),
+              seedColor: const Color.fromRGBO(51, 5, 141, 1)),
           cardTheme: const CardTheme(
             elevation: 4,
             shape: RoundedRectangleBorder(
@@ -55,6 +55,13 @@ class MyApp extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(8.0))),
           ),
+          appBarTheme:
+              AppBarTheme(backgroundColor: Theme.of(context).primaryColor),
+          dataTableTheme: DataTableThemeData(
+              headingTextStyle: const TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.white),
+              headingRowColor: WidgetStateColor.resolveWith(
+                  (states) => Theme.of(context).primaryColor)),
           textTheme:
               const TextTheme(titleLarge: TextStyle(color: Colors.white))),
       darkTheme: ThemeData.dark(),

@@ -32,7 +32,12 @@ class DateSelectorWidget extends ConsumerWidget {
               ref.read(dateProvider.notifier).state = selectedDate;
             }
           },
-          child: Text(DateFormat.yMMMd().format(date))),
+          child: Row(children: [
+            Text(DateFormat.yMMMd().format(date)),
+            Container(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: const Icon(Icons.calendar_month_outlined))
+          ])),
       const Spacer(),
       IconButton(
           icon: const Icon(Icons.arrow_forward),

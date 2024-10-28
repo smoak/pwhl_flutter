@@ -136,7 +136,9 @@ mixin _$Game {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GameCopyWith<Game> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -164,6 +166,8 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -230,6 +234,8 @@ class __$$LiveGameImplCopyWithImpl<$Res>
       _$LiveGameImpl _value, $Res Function(_$LiveGameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -365,7 +371,9 @@ class _$LiveGameImpl with DiagnosticableTreeMixin implements LiveGame {
   int get hashCode => Object.hash(runtimeType, id, type, homeTeam, visitingTeam,
       gameState, gameDate, homeScore, visitingScore, gameClock);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LiveGameImplCopyWith<_$LiveGameImpl> get copyWith =>
@@ -539,8 +547,11 @@ abstract class LiveGame implements Game {
   int get homeScore;
   int get visitingScore;
   GameClock get gameClock;
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LiveGameImplCopyWith<_$LiveGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -569,6 +580,8 @@ class __$$FutureGameImplCopyWithImpl<$Res>
       _$FutureGameImpl _value, $Res Function(_$FutureGameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -666,7 +679,9 @@ class _$FutureGameImpl with DiagnosticableTreeMixin implements FutureGame {
   int get hashCode => Object.hash(
       runtimeType, id, type, homeTeam, visitingTeam, gameState, gameDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FutureGameImplCopyWith<_$FutureGameImpl> get copyWith =>
@@ -832,8 +847,11 @@ abstract class FutureGame implements Game {
   GameState get gameState;
   @override
   String get gameDate;
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FutureGameImplCopyWith<_$FutureGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -866,6 +884,8 @@ class __$$FinalGameImplCopyWithImpl<$Res>
       _$FinalGameImpl _value, $Res Function(_$FinalGameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1012,7 +1032,9 @@ class _$FinalGameImpl with DiagnosticableTreeMixin implements FinalGame {
   int get hashCode => Object.hash(runtimeType, id, type, homeTeam, visitingTeam,
       gameState, gameDate, homeScore, visitingScore, endState, endedInPeriod);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FinalGameImplCopyWith<_$FinalGameImpl> get copyWith =>
@@ -1188,8 +1210,11 @@ abstract class FinalGame implements Game {
   int get visitingScore;
   EndState get endState;
   int get endedInPeriod;
+
+  /// Create a copy of Game
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FinalGameImplCopyWith<_$FinalGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1269,8 +1294,12 @@ mixin _$ScheduledGame {
   @JsonKey(name: "Intermission")
   String get intermission => throw _privateConstructorUsedError;
 
+  /// Serializes this ScheduledGame to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScheduledGame
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ScheduledGameCopyWith<ScheduledGame> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1328,6 +1357,8 @@ class _$ScheduledGameCopyWithImpl<$Res, $Val extends ScheduledGame>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ScheduledGame
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1560,6 +1591,8 @@ class __$$ScheduledGameImplCopyWithImpl<$Res>
       _$ScheduledGameImpl _value, $Res Function(_$ScheduledGameImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScheduledGame
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2008,7 +2041,7 @@ class _$ScheduledGameImpl
                 other.intermission == intermission));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -2048,7 +2081,9 @@ class _$ScheduledGameImpl
         intermission
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScheduledGame
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScheduledGameImplCopyWith<_$ScheduledGameImpl> get copyWith =>
@@ -2210,8 +2245,11 @@ abstract class _ScheduledGame implements ScheduledGame {
   @override
   @JsonKey(name: "Intermission")
   String get intermission;
+
+  /// Create a copy of ScheduledGame
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScheduledGameImplCopyWith<_$ScheduledGameImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2225,8 +2263,12 @@ mixin _$SiteKit {
   @JsonKey(name: "Scorebar")
   List<ScheduledGame> get scorebar => throw _privateConstructorUsedError;
 
+  /// Serializes this SiteKit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SiteKit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SiteKitCopyWith<SiteKit> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2248,6 +2290,8 @@ class _$SiteKitCopyWithImpl<$Res, $Val extends SiteKit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SiteKit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2280,6 +2324,8 @@ class __$$SiteKitImplCopyWithImpl<$Res>
       _$SiteKitImpl _value, $Res Function(_$SiteKitImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SiteKit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2334,12 +2380,14 @@ class _$SiteKitImpl with DiagnosticableTreeMixin implements _SiteKit {
             const DeepCollectionEquality().equals(other._scorebar, _scorebar));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_scorebar));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SiteKit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SiteKitImplCopyWith<_$SiteKitImpl> get copyWith =>
@@ -2363,8 +2411,11 @@ abstract class _SiteKit implements SiteKit {
   @override
   @JsonKey(name: "Scorebar")
   List<ScheduledGame> get scorebar;
+
+  /// Create a copy of SiteKit
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SiteKitImplCopyWith<_$SiteKitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2378,8 +2429,12 @@ mixin _$ModulekitResponse {
   @JsonKey(name: "SiteKit")
   SiteKit get siteKit => throw _privateConstructorUsedError;
 
+  /// Serializes this ModulekitResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ModulekitResponseCopyWith<ModulekitResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2405,6 +2460,8 @@ class _$ModulekitResponseCopyWithImpl<$Res, $Val extends ModulekitResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2418,6 +2475,8 @@ class _$ModulekitResponseCopyWithImpl<$Res, $Val extends ModulekitResponse>
     ) as $Val);
   }
 
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SiteKitCopyWith<$Res> get siteKit {
@@ -2449,6 +2508,8 @@ class __$$ModulekitResponseImplCopyWithImpl<$Res>
       $Res Function(_$ModulekitResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2499,11 +2560,13 @@ class _$ModulekitResponseImpl
             (identical(other.siteKit, siteKit) || other.siteKit == siteKit));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, siteKit);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ModulekitResponseImplCopyWith<_$ModulekitResponseImpl> get copyWith =>
@@ -2529,8 +2592,1692 @@ abstract class _ModulekitResponse implements ModulekitResponse {
   @override
   @JsonKey(name: "SiteKit")
   SiteKit get siteKit;
+
+  /// Create a copy of ModulekitResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModulekitResponseImplCopyWith<_$ModulekitResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+BootstrapResponse _$BootstrapResponseFromJson(Map<String, dynamic> json) {
+  return _BootstrapResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BootstrapResponse {
+  @JsonKey(name: "current_season_id")
+  String get currentSeasonId => throw _privateConstructorUsedError;
+
+  /// Serializes this BootstrapResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BootstrapResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BootstrapResponseCopyWith<BootstrapResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BootstrapResponseCopyWith<$Res> {
+  factory $BootstrapResponseCopyWith(
+          BootstrapResponse value, $Res Function(BootstrapResponse) then) =
+      _$BootstrapResponseCopyWithImpl<$Res, BootstrapResponse>;
+  @useResult
+  $Res call({@JsonKey(name: "current_season_id") String currentSeasonId});
+}
+
+/// @nodoc
+class _$BootstrapResponseCopyWithImpl<$Res, $Val extends BootstrapResponse>
+    implements $BootstrapResponseCopyWith<$Res> {
+  _$BootstrapResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BootstrapResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentSeasonId = null,
+  }) {
+    return _then(_value.copyWith(
+      currentSeasonId: null == currentSeasonId
+          ? _value.currentSeasonId
+          : currentSeasonId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BootstrapResponseImplCopyWith<$Res>
+    implements $BootstrapResponseCopyWith<$Res> {
+  factory _$$BootstrapResponseImplCopyWith(_$BootstrapResponseImpl value,
+          $Res Function(_$BootstrapResponseImpl) then) =
+      __$$BootstrapResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "current_season_id") String currentSeasonId});
+}
+
+/// @nodoc
+class __$$BootstrapResponseImplCopyWithImpl<$Res>
+    extends _$BootstrapResponseCopyWithImpl<$Res, _$BootstrapResponseImpl>
+    implements _$$BootstrapResponseImplCopyWith<$Res> {
+  __$$BootstrapResponseImplCopyWithImpl(_$BootstrapResponseImpl _value,
+      $Res Function(_$BootstrapResponseImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BootstrapResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentSeasonId = null,
+  }) {
+    return _then(_$BootstrapResponseImpl(
+      currentSeasonId: null == currentSeasonId
+          ? _value.currentSeasonId
+          : currentSeasonId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BootstrapResponseImpl
+    with DiagnosticableTreeMixin
+    implements _BootstrapResponse {
+  const _$BootstrapResponseImpl(
+      {@JsonKey(name: "current_season_id") required this.currentSeasonId});
+
+  factory _$BootstrapResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BootstrapResponseImplFromJson(json);
+
+  @override
+  @JsonKey(name: "current_season_id")
+  final String currentSeasonId;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'BootstrapResponse(currentSeasonId: $currentSeasonId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'BootstrapResponse'))
+      ..add(DiagnosticsProperty('currentSeasonId', currentSeasonId));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BootstrapResponseImpl &&
+            (identical(other.currentSeasonId, currentSeasonId) ||
+                other.currentSeasonId == currentSeasonId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, currentSeasonId);
+
+  /// Create a copy of BootstrapResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BootstrapResponseImplCopyWith<_$BootstrapResponseImpl> get copyWith =>
+      __$$BootstrapResponseImplCopyWithImpl<_$BootstrapResponseImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BootstrapResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BootstrapResponse implements BootstrapResponse {
+  const factory _BootstrapResponse(
+      {@JsonKey(name: "current_season_id")
+      required final String currentSeasonId}) = _$BootstrapResponseImpl;
+
+  factory _BootstrapResponse.fromJson(Map<String, dynamic> json) =
+      _$BootstrapResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: "current_season_id")
+  String get currentSeasonId;
+
+  /// Create a copy of BootstrapResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BootstrapResponseImplCopyWith<_$BootstrapResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SectionDataRow _$SectionDataRowFromJson(Map<String, dynamic> json) {
+  return _SectionDataRow.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SectionDataRow {
+  @JsonKey(name: "team_code")
+  String get teamCode => throw _privateConstructorUsedError;
+  @JsonKey(name: "losses")
+  String get losses => throw _privateConstructorUsedError;
+  @JsonKey(name: "regulation_wins")
+  String get regulationWins => throw _privateConstructorUsedError;
+  @JsonKey(name: "points")
+  String get points => throw _privateConstructorUsedError;
+  @JsonKey(name: "goals_for")
+  String get goalsFor => throw _privateConstructorUsedError;
+  @JsonKey(name: "goals_against")
+  String get goalsAgainst => throw _privateConstructorUsedError;
+  @JsonKey(name: "non_reg_wins")
+  String get nonRegWins => throw _privateConstructorUsedError;
+  @JsonKey(name: "non_reg_losses")
+  String get nonRegLosses => throw _privateConstructorUsedError;
+  @JsonKey(name: "games_remaining")
+  String get gamesRemaining => throw _privateConstructorUsedError;
+  @JsonKey(name: "percentage")
+  String get percentage => throw _privateConstructorUsedError;
+  @JsonKey(name: "overall_rank")
+  String get overallRank => throw _privateConstructorUsedError;
+  @JsonKey(name: "games_played")
+  String get gamesPlayed => throw _privateConstructorUsedError;
+  @JsonKey(name: "rank")
+  int get rank => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+
+  /// Serializes this SectionDataRow to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SectionDataRow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SectionDataRowCopyWith<SectionDataRow> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SectionDataRowCopyWith<$Res> {
+  factory $SectionDataRowCopyWith(
+          SectionDataRow value, $Res Function(SectionDataRow) then) =
+      _$SectionDataRowCopyWithImpl<$Res, SectionDataRow>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "team_code") String teamCode,
+      @JsonKey(name: "losses") String losses,
+      @JsonKey(name: "regulation_wins") String regulationWins,
+      @JsonKey(name: "points") String points,
+      @JsonKey(name: "goals_for") String goalsFor,
+      @JsonKey(name: "goals_against") String goalsAgainst,
+      @JsonKey(name: "non_reg_wins") String nonRegWins,
+      @JsonKey(name: "non_reg_losses") String nonRegLosses,
+      @JsonKey(name: "games_remaining") String gamesRemaining,
+      @JsonKey(name: "percentage") String percentage,
+      @JsonKey(name: "overall_rank") String overallRank,
+      @JsonKey(name: "games_played") String gamesPlayed,
+      @JsonKey(name: "rank") int rank,
+      @JsonKey(name: "name") String name});
+}
+
+/// @nodoc
+class _$SectionDataRowCopyWithImpl<$Res, $Val extends SectionDataRow>
+    implements $SectionDataRowCopyWith<$Res> {
+  _$SectionDataRowCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SectionDataRow
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamCode = null,
+    Object? losses = null,
+    Object? regulationWins = null,
+    Object? points = null,
+    Object? goalsFor = null,
+    Object? goalsAgainst = null,
+    Object? nonRegWins = null,
+    Object? nonRegLosses = null,
+    Object? gamesRemaining = null,
+    Object? percentage = null,
+    Object? overallRank = null,
+    Object? gamesPlayed = null,
+    Object? rank = null,
+    Object? name = null,
+  }) {
+    return _then(_value.copyWith(
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      losses: null == losses
+          ? _value.losses
+          : losses // ignore: cast_nullable_to_non_nullable
+              as String,
+      regulationWins: null == regulationWins
+          ? _value.regulationWins
+          : regulationWins // ignore: cast_nullable_to_non_nullable
+              as String,
+      points: null == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as String,
+      goalsFor: null == goalsFor
+          ? _value.goalsFor
+          : goalsFor // ignore: cast_nullable_to_non_nullable
+              as String,
+      goalsAgainst: null == goalsAgainst
+          ? _value.goalsAgainst
+          : goalsAgainst // ignore: cast_nullable_to_non_nullable
+              as String,
+      nonRegWins: null == nonRegWins
+          ? _value.nonRegWins
+          : nonRegWins // ignore: cast_nullable_to_non_nullable
+              as String,
+      nonRegLosses: null == nonRegLosses
+          ? _value.nonRegLosses
+          : nonRegLosses // ignore: cast_nullable_to_non_nullable
+              as String,
+      gamesRemaining: null == gamesRemaining
+          ? _value.gamesRemaining
+          : gamesRemaining // ignore: cast_nullable_to_non_nullable
+              as String,
+      percentage: null == percentage
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as String,
+      overallRank: null == overallRank
+          ? _value.overallRank
+          : overallRank // ignore: cast_nullable_to_non_nullable
+              as String,
+      gamesPlayed: null == gamesPlayed
+          ? _value.gamesPlayed
+          : gamesPlayed // ignore: cast_nullable_to_non_nullable
+              as String,
+      rank: null == rank
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SectionDataRowImplCopyWith<$Res>
+    implements $SectionDataRowCopyWith<$Res> {
+  factory _$$SectionDataRowImplCopyWith(_$SectionDataRowImpl value,
+          $Res Function(_$SectionDataRowImpl) then) =
+      __$$SectionDataRowImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "team_code") String teamCode,
+      @JsonKey(name: "losses") String losses,
+      @JsonKey(name: "regulation_wins") String regulationWins,
+      @JsonKey(name: "points") String points,
+      @JsonKey(name: "goals_for") String goalsFor,
+      @JsonKey(name: "goals_against") String goalsAgainst,
+      @JsonKey(name: "non_reg_wins") String nonRegWins,
+      @JsonKey(name: "non_reg_losses") String nonRegLosses,
+      @JsonKey(name: "games_remaining") String gamesRemaining,
+      @JsonKey(name: "percentage") String percentage,
+      @JsonKey(name: "overall_rank") String overallRank,
+      @JsonKey(name: "games_played") String gamesPlayed,
+      @JsonKey(name: "rank") int rank,
+      @JsonKey(name: "name") String name});
+}
+
+/// @nodoc
+class __$$SectionDataRowImplCopyWithImpl<$Res>
+    extends _$SectionDataRowCopyWithImpl<$Res, _$SectionDataRowImpl>
+    implements _$$SectionDataRowImplCopyWith<$Res> {
+  __$$SectionDataRowImplCopyWithImpl(
+      _$SectionDataRowImpl _value, $Res Function(_$SectionDataRowImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SectionDataRow
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamCode = null,
+    Object? losses = null,
+    Object? regulationWins = null,
+    Object? points = null,
+    Object? goalsFor = null,
+    Object? goalsAgainst = null,
+    Object? nonRegWins = null,
+    Object? nonRegLosses = null,
+    Object? gamesRemaining = null,
+    Object? percentage = null,
+    Object? overallRank = null,
+    Object? gamesPlayed = null,
+    Object? rank = null,
+    Object? name = null,
+  }) {
+    return _then(_$SectionDataRowImpl(
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      losses: null == losses
+          ? _value.losses
+          : losses // ignore: cast_nullable_to_non_nullable
+              as String,
+      regulationWins: null == regulationWins
+          ? _value.regulationWins
+          : regulationWins // ignore: cast_nullable_to_non_nullable
+              as String,
+      points: null == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as String,
+      goalsFor: null == goalsFor
+          ? _value.goalsFor
+          : goalsFor // ignore: cast_nullable_to_non_nullable
+              as String,
+      goalsAgainst: null == goalsAgainst
+          ? _value.goalsAgainst
+          : goalsAgainst // ignore: cast_nullable_to_non_nullable
+              as String,
+      nonRegWins: null == nonRegWins
+          ? _value.nonRegWins
+          : nonRegWins // ignore: cast_nullable_to_non_nullable
+              as String,
+      nonRegLosses: null == nonRegLosses
+          ? _value.nonRegLosses
+          : nonRegLosses // ignore: cast_nullable_to_non_nullable
+              as String,
+      gamesRemaining: null == gamesRemaining
+          ? _value.gamesRemaining
+          : gamesRemaining // ignore: cast_nullable_to_non_nullable
+              as String,
+      percentage: null == percentage
+          ? _value.percentage
+          : percentage // ignore: cast_nullable_to_non_nullable
+              as String,
+      overallRank: null == overallRank
+          ? _value.overallRank
+          : overallRank // ignore: cast_nullable_to_non_nullable
+              as String,
+      gamesPlayed: null == gamesPlayed
+          ? _value.gamesPlayed
+          : gamesPlayed // ignore: cast_nullable_to_non_nullable
+              as String,
+      rank: null == rank
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SectionDataRowImpl
+    with DiagnosticableTreeMixin
+    implements _SectionDataRow {
+  const _$SectionDataRowImpl(
+      {@JsonKey(name: "team_code") required this.teamCode,
+      @JsonKey(name: "losses") required this.losses,
+      @JsonKey(name: "regulation_wins") required this.regulationWins,
+      @JsonKey(name: "points") required this.points,
+      @JsonKey(name: "goals_for") required this.goalsFor,
+      @JsonKey(name: "goals_against") required this.goalsAgainst,
+      @JsonKey(name: "non_reg_wins") required this.nonRegWins,
+      @JsonKey(name: "non_reg_losses") required this.nonRegLosses,
+      @JsonKey(name: "games_remaining") required this.gamesRemaining,
+      @JsonKey(name: "percentage") required this.percentage,
+      @JsonKey(name: "overall_rank") required this.overallRank,
+      @JsonKey(name: "games_played") required this.gamesPlayed,
+      @JsonKey(name: "rank") required this.rank,
+      @JsonKey(name: "name") required this.name});
+
+  factory _$SectionDataRowImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SectionDataRowImplFromJson(json);
+
+  @override
+  @JsonKey(name: "team_code")
+  final String teamCode;
+  @override
+  @JsonKey(name: "losses")
+  final String losses;
+  @override
+  @JsonKey(name: "regulation_wins")
+  final String regulationWins;
+  @override
+  @JsonKey(name: "points")
+  final String points;
+  @override
+  @JsonKey(name: "goals_for")
+  final String goalsFor;
+  @override
+  @JsonKey(name: "goals_against")
+  final String goalsAgainst;
+  @override
+  @JsonKey(name: "non_reg_wins")
+  final String nonRegWins;
+  @override
+  @JsonKey(name: "non_reg_losses")
+  final String nonRegLosses;
+  @override
+  @JsonKey(name: "games_remaining")
+  final String gamesRemaining;
+  @override
+  @JsonKey(name: "percentage")
+  final String percentage;
+  @override
+  @JsonKey(name: "overall_rank")
+  final String overallRank;
+  @override
+  @JsonKey(name: "games_played")
+  final String gamesPlayed;
+  @override
+  @JsonKey(name: "rank")
+  final int rank;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SectionDataRow(teamCode: $teamCode, losses: $losses, regulationWins: $regulationWins, points: $points, goalsFor: $goalsFor, goalsAgainst: $goalsAgainst, nonRegWins: $nonRegWins, nonRegLosses: $nonRegLosses, gamesRemaining: $gamesRemaining, percentage: $percentage, overallRank: $overallRank, gamesPlayed: $gamesPlayed, rank: $rank, name: $name)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SectionDataRow'))
+      ..add(DiagnosticsProperty('teamCode', teamCode))
+      ..add(DiagnosticsProperty('losses', losses))
+      ..add(DiagnosticsProperty('regulationWins', regulationWins))
+      ..add(DiagnosticsProperty('points', points))
+      ..add(DiagnosticsProperty('goalsFor', goalsFor))
+      ..add(DiagnosticsProperty('goalsAgainst', goalsAgainst))
+      ..add(DiagnosticsProperty('nonRegWins', nonRegWins))
+      ..add(DiagnosticsProperty('nonRegLosses', nonRegLosses))
+      ..add(DiagnosticsProperty('gamesRemaining', gamesRemaining))
+      ..add(DiagnosticsProperty('percentage', percentage))
+      ..add(DiagnosticsProperty('overallRank', overallRank))
+      ..add(DiagnosticsProperty('gamesPlayed', gamesPlayed))
+      ..add(DiagnosticsProperty('rank', rank))
+      ..add(DiagnosticsProperty('name', name));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SectionDataRowImpl &&
+            (identical(other.teamCode, teamCode) ||
+                other.teamCode == teamCode) &&
+            (identical(other.losses, losses) || other.losses == losses) &&
+            (identical(other.regulationWins, regulationWins) ||
+                other.regulationWins == regulationWins) &&
+            (identical(other.points, points) || other.points == points) &&
+            (identical(other.goalsFor, goalsFor) ||
+                other.goalsFor == goalsFor) &&
+            (identical(other.goalsAgainst, goalsAgainst) ||
+                other.goalsAgainst == goalsAgainst) &&
+            (identical(other.nonRegWins, nonRegWins) ||
+                other.nonRegWins == nonRegWins) &&
+            (identical(other.nonRegLosses, nonRegLosses) ||
+                other.nonRegLosses == nonRegLosses) &&
+            (identical(other.gamesRemaining, gamesRemaining) ||
+                other.gamesRemaining == gamesRemaining) &&
+            (identical(other.percentage, percentage) ||
+                other.percentage == percentage) &&
+            (identical(other.overallRank, overallRank) ||
+                other.overallRank == overallRank) &&
+            (identical(other.gamesPlayed, gamesPlayed) ||
+                other.gamesPlayed == gamesPlayed) &&
+            (identical(other.rank, rank) || other.rank == rank) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      teamCode,
+      losses,
+      regulationWins,
+      points,
+      goalsFor,
+      goalsAgainst,
+      nonRegWins,
+      nonRegLosses,
+      gamesRemaining,
+      percentage,
+      overallRank,
+      gamesPlayed,
+      rank,
+      name);
+
+  /// Create a copy of SectionDataRow
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SectionDataRowImplCopyWith<_$SectionDataRowImpl> get copyWith =>
+      __$$SectionDataRowImplCopyWithImpl<_$SectionDataRowImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SectionDataRowImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SectionDataRow implements SectionDataRow {
+  const factory _SectionDataRow(
+      {@JsonKey(name: "team_code") required final String teamCode,
+      @JsonKey(name: "losses") required final String losses,
+      @JsonKey(name: "regulation_wins") required final String regulationWins,
+      @JsonKey(name: "points") required final String points,
+      @JsonKey(name: "goals_for") required final String goalsFor,
+      @JsonKey(name: "goals_against") required final String goalsAgainst,
+      @JsonKey(name: "non_reg_wins") required final String nonRegWins,
+      @JsonKey(name: "non_reg_losses") required final String nonRegLosses,
+      @JsonKey(name: "games_remaining") required final String gamesRemaining,
+      @JsonKey(name: "percentage") required final String percentage,
+      @JsonKey(name: "overall_rank") required final String overallRank,
+      @JsonKey(name: "games_played") required final String gamesPlayed,
+      @JsonKey(name: "rank") required final int rank,
+      @JsonKey(name: "name")
+      required final String name}) = _$SectionDataRowImpl;
+
+  factory _SectionDataRow.fromJson(Map<String, dynamic> json) =
+      _$SectionDataRowImpl.fromJson;
+
+  @override
+  @JsonKey(name: "team_code")
+  String get teamCode;
+  @override
+  @JsonKey(name: "losses")
+  String get losses;
+  @override
+  @JsonKey(name: "regulation_wins")
+  String get regulationWins;
+  @override
+  @JsonKey(name: "points")
+  String get points;
+  @override
+  @JsonKey(name: "goals_for")
+  String get goalsFor;
+  @override
+  @JsonKey(name: "goals_against")
+  String get goalsAgainst;
+  @override
+  @JsonKey(name: "non_reg_wins")
+  String get nonRegWins;
+  @override
+  @JsonKey(name: "non_reg_losses")
+  String get nonRegLosses;
+  @override
+  @JsonKey(name: "games_remaining")
+  String get gamesRemaining;
+  @override
+  @JsonKey(name: "percentage")
+  String get percentage;
+  @override
+  @JsonKey(name: "overall_rank")
+  String get overallRank;
+  @override
+  @JsonKey(name: "games_played")
+  String get gamesPlayed;
+  @override
+  @JsonKey(name: "rank")
+  int get rank;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+
+  /// Create a copy of SectionDataRow
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SectionDataRowImplCopyWith<_$SectionDataRowImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SectionDataTeam _$SectionDataTeamFromJson(Map<String, dynamic> json) {
+  return _SectionDataTeam.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SectionDataTeam {
+  @JsonKey(name: "teamLink")
+  String get teamLink => throw _privateConstructorUsedError;
+
+  /// Serializes this SectionDataTeam to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SectionDataTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SectionDataTeamCopyWith<SectionDataTeam> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SectionDataTeamCopyWith<$Res> {
+  factory $SectionDataTeamCopyWith(
+          SectionDataTeam value, $Res Function(SectionDataTeam) then) =
+      _$SectionDataTeamCopyWithImpl<$Res, SectionDataTeam>;
+  @useResult
+  $Res call({@JsonKey(name: "teamLink") String teamLink});
+}
+
+/// @nodoc
+class _$SectionDataTeamCopyWithImpl<$Res, $Val extends SectionDataTeam>
+    implements $SectionDataTeamCopyWith<$Res> {
+  _$SectionDataTeamCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SectionDataTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamLink = null,
+  }) {
+    return _then(_value.copyWith(
+      teamLink: null == teamLink
+          ? _value.teamLink
+          : teamLink // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SectionDataTeamImplCopyWith<$Res>
+    implements $SectionDataTeamCopyWith<$Res> {
+  factory _$$SectionDataTeamImplCopyWith(_$SectionDataTeamImpl value,
+          $Res Function(_$SectionDataTeamImpl) then) =
+      __$$SectionDataTeamImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "teamLink") String teamLink});
+}
+
+/// @nodoc
+class __$$SectionDataTeamImplCopyWithImpl<$Res>
+    extends _$SectionDataTeamCopyWithImpl<$Res, _$SectionDataTeamImpl>
+    implements _$$SectionDataTeamImplCopyWith<$Res> {
+  __$$SectionDataTeamImplCopyWithImpl(
+      _$SectionDataTeamImpl _value, $Res Function(_$SectionDataTeamImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SectionDataTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamLink = null,
+  }) {
+    return _then(_$SectionDataTeamImpl(
+      teamLink: null == teamLink
+          ? _value.teamLink
+          : teamLink // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SectionDataTeamImpl
+    with DiagnosticableTreeMixin
+    implements _SectionDataTeam {
+  const _$SectionDataTeamImpl(
+      {@JsonKey(name: "teamLink") required this.teamLink});
+
+  factory _$SectionDataTeamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SectionDataTeamImplFromJson(json);
+
+  @override
+  @JsonKey(name: "teamLink")
+  final String teamLink;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SectionDataTeam(teamLink: $teamLink)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SectionDataTeam'))
+      ..add(DiagnosticsProperty('teamLink', teamLink));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SectionDataTeamImpl &&
+            (identical(other.teamLink, teamLink) ||
+                other.teamLink == teamLink));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, teamLink);
+
+  /// Create a copy of SectionDataTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SectionDataTeamImplCopyWith<_$SectionDataTeamImpl> get copyWith =>
+      __$$SectionDataTeamImplCopyWithImpl<_$SectionDataTeamImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SectionDataTeamImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SectionDataTeam implements SectionDataTeam {
+  const factory _SectionDataTeam(
+          {@JsonKey(name: "teamLink") required final String teamLink}) =
+      _$SectionDataTeamImpl;
+
+  factory _SectionDataTeam.fromJson(Map<String, dynamic> json) =
+      _$SectionDataTeamImpl.fromJson;
+
+  @override
+  @JsonKey(name: "teamLink")
+  String get teamLink;
+
+  /// Create a copy of SectionDataTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SectionDataTeamImplCopyWith<_$SectionDataTeamImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SectionDataProp _$SectionDataPropFromJson(Map<String, dynamic> json) {
+  return _SectionDataProp.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SectionDataProp {
+  @JsonKey(name: "team_code")
+  SectionDataTeam get teamCode => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  SectionDataTeam get name => throw _privateConstructorUsedError;
+
+  /// Serializes this SectionDataProp to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SectionDataPropCopyWith<SectionDataProp> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SectionDataPropCopyWith<$Res> {
+  factory $SectionDataPropCopyWith(
+          SectionDataProp value, $Res Function(SectionDataProp) then) =
+      _$SectionDataPropCopyWithImpl<$Res, SectionDataProp>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "team_code") SectionDataTeam teamCode,
+      @JsonKey(name: "name") SectionDataTeam name});
+
+  $SectionDataTeamCopyWith<$Res> get teamCode;
+  $SectionDataTeamCopyWith<$Res> get name;
+}
+
+/// @nodoc
+class _$SectionDataPropCopyWithImpl<$Res, $Val extends SectionDataProp>
+    implements $SectionDataPropCopyWith<$Res> {
+  _$SectionDataPropCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamCode = null,
+    Object? name = null,
+  }) {
+    return _then(_value.copyWith(
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as SectionDataTeam,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as SectionDataTeam,
+    ) as $Val);
+  }
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SectionDataTeamCopyWith<$Res> get teamCode {
+    return $SectionDataTeamCopyWith<$Res>(_value.teamCode, (value) {
+      return _then(_value.copyWith(teamCode: value) as $Val);
+    });
+  }
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SectionDataTeamCopyWith<$Res> get name {
+    return $SectionDataTeamCopyWith<$Res>(_value.name, (value) {
+      return _then(_value.copyWith(name: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$SectionDataPropImplCopyWith<$Res>
+    implements $SectionDataPropCopyWith<$Res> {
+  factory _$$SectionDataPropImplCopyWith(_$SectionDataPropImpl value,
+          $Res Function(_$SectionDataPropImpl) then) =
+      __$$SectionDataPropImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "team_code") SectionDataTeam teamCode,
+      @JsonKey(name: "name") SectionDataTeam name});
+
+  @override
+  $SectionDataTeamCopyWith<$Res> get teamCode;
+  @override
+  $SectionDataTeamCopyWith<$Res> get name;
+}
+
+/// @nodoc
+class __$$SectionDataPropImplCopyWithImpl<$Res>
+    extends _$SectionDataPropCopyWithImpl<$Res, _$SectionDataPropImpl>
+    implements _$$SectionDataPropImplCopyWith<$Res> {
+  __$$SectionDataPropImplCopyWithImpl(
+      _$SectionDataPropImpl _value, $Res Function(_$SectionDataPropImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamCode = null,
+    Object? name = null,
+  }) {
+    return _then(_$SectionDataPropImpl(
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as SectionDataTeam,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as SectionDataTeam,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SectionDataPropImpl
+    with DiagnosticableTreeMixin
+    implements _SectionDataProp {
+  const _$SectionDataPropImpl(
+      {@JsonKey(name: "team_code") required this.teamCode,
+      @JsonKey(name: "name") required this.name});
+
+  factory _$SectionDataPropImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SectionDataPropImplFromJson(json);
+
+  @override
+  @JsonKey(name: "team_code")
+  final SectionDataTeam teamCode;
+  @override
+  @JsonKey(name: "name")
+  final SectionDataTeam name;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SectionDataProp(teamCode: $teamCode, name: $name)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SectionDataProp'))
+      ..add(DiagnosticsProperty('teamCode', teamCode))
+      ..add(DiagnosticsProperty('name', name));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SectionDataPropImpl &&
+            (identical(other.teamCode, teamCode) ||
+                other.teamCode == teamCode) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, teamCode, name);
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SectionDataPropImplCopyWith<_$SectionDataPropImpl> get copyWith =>
+      __$$SectionDataPropImplCopyWithImpl<_$SectionDataPropImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SectionDataPropImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SectionDataProp implements SectionDataProp {
+  const factory _SectionDataProp(
+          {@JsonKey(name: "team_code") required final SectionDataTeam teamCode,
+          @JsonKey(name: "name") required final SectionDataTeam name}) =
+      _$SectionDataPropImpl;
+
+  factory _SectionDataProp.fromJson(Map<String, dynamic> json) =
+      _$SectionDataPropImpl.fromJson;
+
+  @override
+  @JsonKey(name: "team_code")
+  SectionDataTeam get teamCode;
+  @override
+  @JsonKey(name: "name")
+  SectionDataTeam get name;
+
+  /// Create a copy of SectionDataProp
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SectionDataPropImplCopyWith<_$SectionDataPropImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StandingsResponseSectionData _$StandingsResponseSectionDataFromJson(
+    Map<String, dynamic> json) {
+  return _StandingsResponseSectionData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StandingsResponseSectionData {
+  @JsonKey(name: "prop")
+  SectionDataProp get prop => throw _privateConstructorUsedError;
+  @JsonKey(name: "row")
+  SectionDataRow get row => throw _privateConstructorUsedError;
+
+  /// Serializes this StandingsResponseSectionData to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $StandingsResponseSectionDataCopyWith<StandingsResponseSectionData>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StandingsResponseSectionDataCopyWith<$Res> {
+  factory $StandingsResponseSectionDataCopyWith(
+          StandingsResponseSectionData value,
+          $Res Function(StandingsResponseSectionData) then) =
+      _$StandingsResponseSectionDataCopyWithImpl<$Res,
+          StandingsResponseSectionData>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "prop") SectionDataProp prop,
+      @JsonKey(name: "row") SectionDataRow row});
+
+  $SectionDataPropCopyWith<$Res> get prop;
+  $SectionDataRowCopyWith<$Res> get row;
+}
+
+/// @nodoc
+class _$StandingsResponseSectionDataCopyWithImpl<$Res,
+        $Val extends StandingsResponseSectionData>
+    implements $StandingsResponseSectionDataCopyWith<$Res> {
+  _$StandingsResponseSectionDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? prop = null,
+    Object? row = null,
+  }) {
+    return _then(_value.copyWith(
+      prop: null == prop
+          ? _value.prop
+          : prop // ignore: cast_nullable_to_non_nullable
+              as SectionDataProp,
+      row: null == row
+          ? _value.row
+          : row // ignore: cast_nullable_to_non_nullable
+              as SectionDataRow,
+    ) as $Val);
+  }
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SectionDataPropCopyWith<$Res> get prop {
+    return $SectionDataPropCopyWith<$Res>(_value.prop, (value) {
+      return _then(_value.copyWith(prop: value) as $Val);
+    });
+  }
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SectionDataRowCopyWith<$Res> get row {
+    return $SectionDataRowCopyWith<$Res>(_value.row, (value) {
+      return _then(_value.copyWith(row: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$StandingsResponseSectionDataImplCopyWith<$Res>
+    implements $StandingsResponseSectionDataCopyWith<$Res> {
+  factory _$$StandingsResponseSectionDataImplCopyWith(
+          _$StandingsResponseSectionDataImpl value,
+          $Res Function(_$StandingsResponseSectionDataImpl) then) =
+      __$$StandingsResponseSectionDataImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "prop") SectionDataProp prop,
+      @JsonKey(name: "row") SectionDataRow row});
+
+  @override
+  $SectionDataPropCopyWith<$Res> get prop;
+  @override
+  $SectionDataRowCopyWith<$Res> get row;
+}
+
+/// @nodoc
+class __$$StandingsResponseSectionDataImplCopyWithImpl<$Res>
+    extends _$StandingsResponseSectionDataCopyWithImpl<$Res,
+        _$StandingsResponseSectionDataImpl>
+    implements _$$StandingsResponseSectionDataImplCopyWith<$Res> {
+  __$$StandingsResponseSectionDataImplCopyWithImpl(
+      _$StandingsResponseSectionDataImpl _value,
+      $Res Function(_$StandingsResponseSectionDataImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? prop = null,
+    Object? row = null,
+  }) {
+    return _then(_$StandingsResponseSectionDataImpl(
+      prop: null == prop
+          ? _value.prop
+          : prop // ignore: cast_nullable_to_non_nullable
+              as SectionDataProp,
+      row: null == row
+          ? _value.row
+          : row // ignore: cast_nullable_to_non_nullable
+              as SectionDataRow,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StandingsResponseSectionDataImpl
+    with DiagnosticableTreeMixin
+    implements _StandingsResponseSectionData {
+  const _$StandingsResponseSectionDataImpl(
+      {@JsonKey(name: "prop") required this.prop,
+      @JsonKey(name: "row") required this.row});
+
+  factory _$StandingsResponseSectionDataImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$StandingsResponseSectionDataImplFromJson(json);
+
+  @override
+  @JsonKey(name: "prop")
+  final SectionDataProp prop;
+  @override
+  @JsonKey(name: "row")
+  final SectionDataRow row;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StandingsResponseSectionData(prop: $prop, row: $row)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'StandingsResponseSectionData'))
+      ..add(DiagnosticsProperty('prop', prop))
+      ..add(DiagnosticsProperty('row', row));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StandingsResponseSectionDataImpl &&
+            (identical(other.prop, prop) || other.prop == prop) &&
+            (identical(other.row, row) || other.row == row));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, prop, row);
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StandingsResponseSectionDataImplCopyWith<
+          _$StandingsResponseSectionDataImpl>
+      get copyWith => __$$StandingsResponseSectionDataImplCopyWithImpl<
+          _$StandingsResponseSectionDataImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StandingsResponseSectionDataImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StandingsResponseSectionData
+    implements StandingsResponseSectionData {
+  const factory _StandingsResponseSectionData(
+          {@JsonKey(name: "prop") required final SectionDataProp prop,
+          @JsonKey(name: "row") required final SectionDataRow row}) =
+      _$StandingsResponseSectionDataImpl;
+
+  factory _StandingsResponseSectionData.fromJson(Map<String, dynamic> json) =
+      _$StandingsResponseSectionDataImpl.fromJson;
+
+  @override
+  @JsonKey(name: "prop")
+  SectionDataProp get prop;
+  @override
+  @JsonKey(name: "row")
+  SectionDataRow get row;
+
+  /// Create a copy of StandingsResponseSectionData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StandingsResponseSectionDataImplCopyWith<
+          _$StandingsResponseSectionDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+StandingsResponseSection _$StandingsResponseSectionFromJson(
+    Map<String, dynamic> json) {
+  return _StandingsResponseSection.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StandingsResponseSection {
+  @JsonKey(name: "title")
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: "data")
+  List<StandingsResponseSectionData> get data =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this StandingsResponseSection to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of StandingsResponseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $StandingsResponseSectionCopyWith<StandingsResponseSection> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StandingsResponseSectionCopyWith<$Res> {
+  factory $StandingsResponseSectionCopyWith(StandingsResponseSection value,
+          $Res Function(StandingsResponseSection) then) =
+      _$StandingsResponseSectionCopyWithImpl<$Res, StandingsResponseSection>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "title") String title,
+      @JsonKey(name: "data") List<StandingsResponseSectionData> data});
+}
+
+/// @nodoc
+class _$StandingsResponseSectionCopyWithImpl<$Res,
+        $Val extends StandingsResponseSection>
+    implements $StandingsResponseSectionCopyWith<$Res> {
+  _$StandingsResponseSectionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of StandingsResponseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? data = null,
+  }) {
+    return _then(_value.copyWith(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<StandingsResponseSectionData>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StandingsResponseSectionImplCopyWith<$Res>
+    implements $StandingsResponseSectionCopyWith<$Res> {
+  factory _$$StandingsResponseSectionImplCopyWith(
+          _$StandingsResponseSectionImpl value,
+          $Res Function(_$StandingsResponseSectionImpl) then) =
+      __$$StandingsResponseSectionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "title") String title,
+      @JsonKey(name: "data") List<StandingsResponseSectionData> data});
+}
+
+/// @nodoc
+class __$$StandingsResponseSectionImplCopyWithImpl<$Res>
+    extends _$StandingsResponseSectionCopyWithImpl<$Res,
+        _$StandingsResponseSectionImpl>
+    implements _$$StandingsResponseSectionImplCopyWith<$Res> {
+  __$$StandingsResponseSectionImplCopyWithImpl(
+      _$StandingsResponseSectionImpl _value,
+      $Res Function(_$StandingsResponseSectionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StandingsResponseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? data = null,
+  }) {
+    return _then(_$StandingsResponseSectionImpl(
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<StandingsResponseSectionData>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StandingsResponseSectionImpl
+    with DiagnosticableTreeMixin
+    implements _StandingsResponseSection {
+  const _$StandingsResponseSectionImpl(
+      {@JsonKey(name: "title") required this.title,
+      @JsonKey(name: "data")
+      required final List<StandingsResponseSectionData> data})
+      : _data = data;
+
+  factory _$StandingsResponseSectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StandingsResponseSectionImplFromJson(json);
+
+  @override
+  @JsonKey(name: "title")
+  final String title;
+  final List<StandingsResponseSectionData> _data;
+  @override
+  @JsonKey(name: "data")
+  List<StandingsResponseSectionData> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StandingsResponseSection(title: $title, data: $data)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'StandingsResponseSection'))
+      ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('data', data));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StandingsResponseSectionImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, title, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of StandingsResponseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StandingsResponseSectionImplCopyWith<_$StandingsResponseSectionImpl>
+      get copyWith => __$$StandingsResponseSectionImplCopyWithImpl<
+          _$StandingsResponseSectionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StandingsResponseSectionImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StandingsResponseSection implements StandingsResponseSection {
+  const factory _StandingsResponseSection(
+          {@JsonKey(name: "title") required final String title,
+          @JsonKey(name: "data")
+          required final List<StandingsResponseSectionData> data}) =
+      _$StandingsResponseSectionImpl;
+
+  factory _StandingsResponseSection.fromJson(Map<String, dynamic> json) =
+      _$StandingsResponseSectionImpl.fromJson;
+
+  @override
+  @JsonKey(name: "title")
+  String get title;
+  @override
+  @JsonKey(name: "data")
+  List<StandingsResponseSectionData> get data;
+
+  /// Create a copy of StandingsResponseSection
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StandingsResponseSectionImplCopyWith<_$StandingsResponseSectionImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+StandingsResponseObject _$StandingsResponseObjectFromJson(
+    Map<String, dynamic> json) {
+  return _StandingsResponseObject.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StandingsResponseObject {
+  @JsonKey(name: "sections")
+  List<StandingsResponseSection> get sections =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this StandingsResponseObject to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of StandingsResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $StandingsResponseObjectCopyWith<StandingsResponseObject> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StandingsResponseObjectCopyWith<$Res> {
+  factory $StandingsResponseObjectCopyWith(StandingsResponseObject value,
+          $Res Function(StandingsResponseObject) then) =
+      _$StandingsResponseObjectCopyWithImpl<$Res, StandingsResponseObject>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "sections") List<StandingsResponseSection> sections});
+}
+
+/// @nodoc
+class _$StandingsResponseObjectCopyWithImpl<$Res,
+        $Val extends StandingsResponseObject>
+    implements $StandingsResponseObjectCopyWith<$Res> {
+  _$StandingsResponseObjectCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of StandingsResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sections = null,
+  }) {
+    return _then(_value.copyWith(
+      sections: null == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<StandingsResponseSection>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StandingsResponseObjectImplCopyWith<$Res>
+    implements $StandingsResponseObjectCopyWith<$Res> {
+  factory _$$StandingsResponseObjectImplCopyWith(
+          _$StandingsResponseObjectImpl value,
+          $Res Function(_$StandingsResponseObjectImpl) then) =
+      __$$StandingsResponseObjectImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "sections") List<StandingsResponseSection> sections});
+}
+
+/// @nodoc
+class __$$StandingsResponseObjectImplCopyWithImpl<$Res>
+    extends _$StandingsResponseObjectCopyWithImpl<$Res,
+        _$StandingsResponseObjectImpl>
+    implements _$$StandingsResponseObjectImplCopyWith<$Res> {
+  __$$StandingsResponseObjectImplCopyWithImpl(
+      _$StandingsResponseObjectImpl _value,
+      $Res Function(_$StandingsResponseObjectImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StandingsResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sections = null,
+  }) {
+    return _then(_$StandingsResponseObjectImpl(
+      sections: null == sections
+          ? _value._sections
+          : sections // ignore: cast_nullable_to_non_nullable
+              as List<StandingsResponseSection>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StandingsResponseObjectImpl
+    with DiagnosticableTreeMixin
+    implements _StandingsResponseObject {
+  const _$StandingsResponseObjectImpl(
+      {@JsonKey(name: "sections")
+      required final List<StandingsResponseSection> sections})
+      : _sections = sections;
+
+  factory _$StandingsResponseObjectImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StandingsResponseObjectImplFromJson(json);
+
+  final List<StandingsResponseSection> _sections;
+  @override
+  @JsonKey(name: "sections")
+  List<StandingsResponseSection> get sections {
+    if (_sections is EqualUnmodifiableListView) return _sections;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sections);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'StandingsResponseObject(sections: $sections)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'StandingsResponseObject'))
+      ..add(DiagnosticsProperty('sections', sections));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StandingsResponseObjectImpl &&
+            const DeepCollectionEquality().equals(other._sections, _sections));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_sections));
+
+  /// Create a copy of StandingsResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StandingsResponseObjectImplCopyWith<_$StandingsResponseObjectImpl>
+      get copyWith => __$$StandingsResponseObjectImplCopyWithImpl<
+          _$StandingsResponseObjectImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StandingsResponseObjectImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StandingsResponseObject implements StandingsResponseObject {
+  const factory _StandingsResponseObject(
+          {@JsonKey(name: "sections")
+          required final List<StandingsResponseSection> sections}) =
+      _$StandingsResponseObjectImpl;
+
+  factory _StandingsResponseObject.fromJson(Map<String, dynamic> json) =
+      _$StandingsResponseObjectImpl.fromJson;
+
+  @override
+  @JsonKey(name: "sections")
+  List<StandingsResponseSection> get sections;
+
+  /// Create a copy of StandingsResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StandingsResponseObjectImplCopyWith<_$StandingsResponseObjectImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

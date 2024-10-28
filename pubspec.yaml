@@ -18,7 +18,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   http: ^1.2.0
   intl: any
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   live_indicator: ^0.0.4
   provider: ^6.1.2
 

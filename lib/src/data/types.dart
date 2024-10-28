@@ -125,3 +125,89 @@ class ModulekitResponse with _$ModulekitResponse {
   factory ModulekitResponse.fromJson(Map<String, dynamic> json) =>
       _$ModulekitResponseFromJson(json);
 }
+
+@freezed
+class BootstrapResponse with _$BootstrapResponse {
+  const factory BootstrapResponse(
+      {@JsonKey(name: "current_season_id")
+      required String currentSeasonId}) = _BootstrapResponse;
+
+  factory BootstrapResponse.fromJson(Map<String, dynamic> json) =>
+      _$BootstrapResponseFromJson(json);
+}
+
+@freezed
+class SectionDataRow with _$SectionDataRow {
+  const factory SectionDataRow({
+    @JsonKey(name: "team_code") required String teamCode,
+    @JsonKey(name: "losses") required String losses,
+    @JsonKey(name: "regulation_wins") required String regulationWins,
+    @JsonKey(name: "points") required String points,
+    @JsonKey(name: "goals_for") required String goalsFor,
+    @JsonKey(name: "goals_against") required String goalsAgainst,
+    @JsonKey(name: "non_reg_wins") required String nonRegWins,
+    @JsonKey(name: "non_reg_losses") required String nonRegLosses,
+    @JsonKey(name: "games_remaining") required String gamesRemaining,
+    @JsonKey(name: "percentage") required String percentage,
+    @JsonKey(name: "overall_rank") required String overallRank,
+    @JsonKey(name: "games_played") required String gamesPlayed,
+    @JsonKey(name: "rank") required int rank,
+    @JsonKey(name: "name") required String name,
+  }) = _SectionDataRow;
+
+  factory SectionDataRow.fromJson(Map<String, dynamic> json) =>
+      _$SectionDataRowFromJson(json);
+}
+
+@freezed
+sealed class SectionDataTeam with _$SectionDataTeam {
+  const factory SectionDataTeam(
+      {@JsonKey(name: "teamLink") required String teamLink}) = _SectionDataTeam;
+
+  factory SectionDataTeam.fromJson(Map<String, dynamic> json) =>
+      _$SectionDataTeamFromJson(json);
+}
+
+@freezed
+sealed class SectionDataProp with _$SectionDataProp {
+  const factory SectionDataProp(
+      {@JsonKey(name: "team_code") required SectionDataTeam teamCode,
+      @JsonKey(name: "name") required SectionDataTeam name}) = _SectionDataProp;
+
+  factory SectionDataProp.fromJson(Map<String, dynamic> json) =>
+      _$SectionDataPropFromJson(json);
+}
+
+@freezed
+sealed class StandingsResponseSectionData with _$StandingsResponseSectionData {
+  const factory StandingsResponseSectionData(
+          {@JsonKey(name: "prop") required SectionDataProp prop,
+          @JsonKey(name: "row") required SectionDataRow row}) =
+      _StandingsResponseSectionData;
+
+  factory StandingsResponseSectionData.fromJson(Map<String, dynamic> json) =>
+      _$StandingsResponseSectionDataFromJson(json);
+}
+
+@freezed
+class StandingsResponseSection with _$StandingsResponseSection {
+  const factory StandingsResponseSection(
+          {@JsonKey(name: "title") required String title,
+          @JsonKey(name: "data")
+          required List<StandingsResponseSectionData> data}) =
+      _StandingsResponseSection;
+
+  factory StandingsResponseSection.fromJson(Map<String, dynamic> json) =>
+      _$StandingsResponseSectionFromJson(json);
+}
+
+@freezed
+class StandingsResponseObject with _$StandingsResponseObject {
+  const factory StandingsResponseObject(
+          {@JsonKey(name: "sections")
+          required List<StandingsResponseSection> sections}) =
+      _StandingsResponseObject;
+
+  factory StandingsResponseObject.fromJson(Map<String, dynamic> json) =>
+      _$StandingsResponseObjectFromJson(json);
+}
