@@ -11,7 +11,7 @@ class TeamLogoWidget extends StatelessWidget {
       return Container(width: 64, height: 64, color: Colors.purpleAccent);
     }
 
-    return Image.network(logoUrl);
+    return Image.network(logoUrl, width: 64, height: 64);
   }
 }
 

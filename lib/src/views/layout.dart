@@ -19,22 +19,21 @@ class Layout extends StatelessWidget {
                     icon: const Icon(Icons.arrow_back))
                 : null,
             title: Text(title, style: Theme.of(context).textTheme.titleLarge!)),
-        drawer: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
-            child: Drawer(
-                child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.zero,
-              children: [
-                ListTile(
-                  title: const Text('Standings'),
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const StandingsView()));
-                  },
-                ),
-              ],
-            ))),
+        drawer: Drawer(
+            child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(child: Image.asset("assets/icon/icon.png")),
+            ListTile(
+              title: const Text('Standings'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const StandingsView()));
+              },
+            ),
+          ],
+        )),
         body: child);
   }
 }

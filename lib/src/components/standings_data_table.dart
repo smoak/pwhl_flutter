@@ -12,6 +12,7 @@ class StandingsDataTable extends StatelessWidget {
     return DataTable(
         columns: const <DataColumn>[
           DataColumn(
+            numeric: true,
             label: Expanded(
               child: Text(
                 'Rank',
@@ -26,6 +27,7 @@ class StandingsDataTable extends StatelessWidget {
             ),
           ),
           DataColumn(
+            numeric: true,
             label: Expanded(
               child: Text(
                 'GP',
@@ -33,48 +35,54 @@ class StandingsDataTable extends StatelessWidget {
             ),
           ),
           DataColumn(
+              numeric: true,
               label: Expanded(
-            child: Text(
-              "PTS",
-            ),
-          )),
+                child: Text(
+                  "PTS",
+                ),
+              )),
           DataColumn(
+              numeric: true,
               label: Expanded(
-            child: Text(
-              "W",
-            ),
-          )),
+                child: Text(
+                  "W",
+                ),
+              )),
           DataColumn(
+              numeric: true,
               label: Expanded(
-            child: Text(
-              "OTW",
-            ),
-          )),
+                child: Text(
+                  "OTW",
+                ),
+              )),
           DataColumn(
+              numeric: true,
               label: Expanded(
-            child: Text(
-              "OTL",
-            ),
-          )),
+                child: Text(
+                  "OTL",
+                ),
+              )),
           DataColumn(
+              numeric: true,
               label: Expanded(
-            child: Text(
-              "L",
-            ),
-          ))
+                child: Text(
+                  "L",
+                ),
+              ))
         ],
         rows: standings
             .map<DataRow>((s) => DataRow(cells: [
                   DataCell(Text(s.row.rank.toString())),
-                  DataCell(Row(
-                    children: [
-                      TeamLogoWidget(
-                          logoUrl:
-                              "https://assets.leaguestat.com/pwhl/logos/50x50/${s.prop.teamCode.teamLink}.png"),
-                      const SizedBox(width: 8),
-                      Text(s.row.name)
-                    ],
-                  )),
+                  DataCell(Row(children: [
+                    TeamLogoWidget(
+                        logoUrl:
+                            "https://assets.leaguestat.com/pwhl/logos/50x50/${s.prop.teamCode.teamLink}.png"),
+                    Expanded(
+                        child: Text(
+                      s.row.name,
+                      overflow: TextOverflow.ellipsis,
+                    ))
+                  ])),
                   DataCell(Text(s.row.gamesPlayed)),
                   DataCell(Text(s.row.points)),
                   DataCell(Text(s.row.regulationWins)),

@@ -14,11 +14,9 @@ class StandingsWidget extends ConsumerWidget {
         ref.watch(standingsProvider);
 
     return switch (standings) {
-      AsyncData(:final value) => StandingsDataTable(
-          standings: value,
-        ),
+      AsyncData(:final value) => StandingsDataTable(standings: value),
       AsyncError() => const Text('Oops, something unexpected happened'),
-      _ => const CircularProgressIndicator(),
+      _ => const Center(child: CircularProgressIndicator()),
     };
   }
 }
@@ -32,8 +30,6 @@ class StandingsView extends StatelessWidget {
         title: "Standings",
         child: Container(
             margin: const EdgeInsets.only(top: 32),
-            child: const Row(children: [
-              Expanded(child: FittedBox(child: StandingsWidget()))
-            ])));
+            child: const StandingsWidget()));
   }
 }
