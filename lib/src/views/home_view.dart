@@ -16,7 +16,7 @@ class HomeView extends ConsumerWidget {
         ref.watch(scheduleProvider((date: date)));
 
     return Layout(
-        title: "Games",
+        title: "Schedule",
         child: Center(
             child: Column(children: [
           Container(

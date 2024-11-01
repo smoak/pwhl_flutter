@@ -26,7 +26,16 @@ class Layout extends StatelessWidget {
           children: [
             DrawerHeader(child: Image.asset("assets/icon/icon.png")),
             ListTile(
+                title: const Text('Schedule'),
+                leading: const Icon(Icons.calendar_today),
+                selected: !canPop,
+                selectedTileColor: Theme.of(context).highlightColor,
+                onTap: () {
+                  Navigator.pop(context);
+                }),
+            ListTile(
               title: const Text('Standings'),
+              leading: const Icon(Icons.sports_hockey),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const StandingsView()));
