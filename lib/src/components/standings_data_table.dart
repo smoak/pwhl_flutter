@@ -130,11 +130,14 @@ class TheDataTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DataTable(
+        columnSpacing: 32,
         columns: const <DataColumn>[
           DataColumn(
-            label: Text(
+            label: Flexible(
+                child: Center(
+                    child: Text(
               'Rank',
-            ),
+            ))),
           ),
           DataColumn(
             label: Text(
@@ -153,69 +156,81 @@ class TheDataTable extends StatelessWidget {
             ),
           )),
           DataColumn(
-              numeric: true,
               label: Expanded(
-                child: Text(
-                  "L",
-                ),
-              )),
+            child: Text(
+              "L",
+            ),
+          )),
           DataColumn(
-              numeric: true,
               label: Expanded(
-                child: Text(
-                  "OT",
-                ),
-              )),
+            child: Text(
+              "OT",
+            ),
+          )),
+          DataColumn(
+              label: Expanded(
+            child: Text(
+              "PTS",
+            ),
+          )),
         ],
         rows: standings
             .map<DataRow>((s) => DataRow(cells: [
-                  DataCell(SizedBox(
-                      width: 16,
+                  DataCell(Flexible(
                       child: Center(child: Text(s.row.rank.toString())))),
-                  // DataCell(Center(child: Text(s.row.teamCode))),
                   DataCell(Row(children: [
-                    TeamLogoWidget(
-                        logoUrl:
-                            "https://assets.leaguestat.com/pwhl/logos/50x50/${s.prop.teamCode.teamLink}.png"),
+                    SizedBox(
+                        width: 32,
+                        child: TeamLogoWidget(
+                            logoUrl:
+                                "https://assets.leaguestat.com/pwhl/logos/50x50/${s.prop.teamCode.teamLink}.png")),
+                    const SizedBox(width: 8),
                     Expanded(
                         child: Text(
-                      s.row.teamCode,
+                      s.row.name,
                       overflow: TextOverflow.ellipsis,
                     ))
                   ])),
-                  DataCell(Center(child: Text(s.row.gamesPlayed))),
-                  DataCell(Center(child: Text(s.row.regulationWins))),
-                  DataCell(Center(child: Text(s.row.losses))),
-                  DataCell(Center(child: Text(s.row.points))),
+                  DataCell(Flexible(child: Text(s.row.gamesPlayed))),
+                  DataCell(Flexible(child: Text(s.row.regulationWins))),
+                  DataCell(Flexible(child: Text(s.row.losses))),
+                  DataCell(Flexible(child: Text(s.row.nonRegWins))),
+                  DataCell(Flexible(child: Text(s.row.points))),
                 ]))
             .toList());
   }
 }
 
-class StandingsDataTable extends StatelessWidget {
-  const StandingsDataTable({super.key, required this.standings});
+class ScrollableStandingsDatTable extends StatelessWidget {
+  ScrollableStandingsDatTable({super.key, required this.standings});
+
+  final scrollController = ScrollController();
+  final List<StandingsResponseSectionData> standings;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+        controller: scrollController,
+        child: SingleChildScrollView(
+            controller: scrollController,
+            scrollDirection: Axis.horizontal,
+            child: TheDataTable(standings: standings)));
+  }
+}
+
+class ExpandedStandingsDataTable extends StatelessWidget {
+  const ExpandedStandingsDataTable({super.key, required this.standings});
 
   final List<StandingsResponseSectionData> standings;
 
   @override
   Widget build(BuildContext context) {
-    // standings[0].row.rank;
     return Flex(direction: Axis.horizontal, children: [
       Expanded(
           child: Main(
               child: Row(children: [
         Expanded(child: TheDataTable(standings: standings))
-      ])
-              // child: Column(
-              //   children: [
-              //     const StandingsTableHeader(),
-              //     ...standings.map((s) => StandingsTableRow(
-              //           data: s.row,
-              //           teamLink: s.prop.teamCode.teamLink,
-              //         )),
-              //   ],
-              // ),
-              ))
+      ])))
     ]);
   }
 }

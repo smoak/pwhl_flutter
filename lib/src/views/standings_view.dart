@@ -4,9 +4,12 @@ import 'package:pwhl_flutter/src/components/standings_data_table.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 import 'package:pwhl_flutter/src/provider.dart';
 import 'package:pwhl_flutter/src/views/layout.dart';
+import 'dart:developer' as developer;
 
 class StandingsWidget extends ConsumerWidget {
-  const StandingsWidget({super.key});
+  StandingsWidget({super.key});
+
+  final scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,7 +17,15 @@ class StandingsWidget extends ConsumerWidget {
         ref.watch(standingsProvider);
 
     return switch (standings) {
-      AsyncData(:final value) => StandingsDataTable(standings: value),
+      AsyncData(:final value) => LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+          developer.log(constraints.maxWidth.toString());
+          if (constraints.maxWidth > 500) {
+            return ExpandedStandingsDataTable(standings: value);
+          }
+
+          return ScrollableStandingsDatTable(standings: value);
+        }),
       AsyncError() => const Text('Oops, something unexpected happened'),
       _ => const Center(child: CircularProgressIndicator()),
     };
@@ -29,7 +40,6 @@ class StandingsView extends StatelessWidget {
     return Layout(
         title: "Standings",
         child: Container(
-            margin: const EdgeInsets.only(top: 32),
-            child: const StandingsWidget()));
+            margin: const EdgeInsets.only(top: 32), child: StandingsWidget()));
   }
 }
