@@ -12,18 +12,19 @@ class FutureGameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(32.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TeamWidget(
                   name: game.homeTeam.name,
                   record: game.homeTeam.record,
                   logoUrl: game.homeTeam.logoUrl,
                 ),
-                const Spacer(),
+                // const Spacer(),
                 Text(DateFormat.jm()
                     .format(DateTime.parse(game.gameDate).toLocal())),
-                const Spacer(),
+                // const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,
                   record: game.visitingTeam.record,

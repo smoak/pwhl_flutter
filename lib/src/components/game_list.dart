@@ -21,21 +21,25 @@ class GameList extends StatelessWidget {
       );
     }
 
-    return ListView.builder(
-        restorationId: 'gameListView',
-        itemCount: items.length,
-        padding: const EdgeInsets.all(8),
-        itemBuilder: (BuildContext context, int index) {
-          final game = items[index];
-
-          switch (game) {
-            case FinalGame():
-              return FinalGameCard(game: game);
-            case LiveGame():
-              return LiveGameCard(game: game);
-            case FutureGame():
-              return FutureGameCard(game: game);
-          }
-        });
+    return LayoutBuilder(builder: (context, constraints) {
+      return SingleChildScrollView(
+        child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            child: IntrinsicHeight(
+              child: Column(
+                children: items.map((game) {
+                  switch (game) {
+                    case FinalGame():
+                      return FinalGameCard(game: game);
+                    case LiveGame():
+                      return LiveGameCard(game: game);
+                    case FutureGame():
+                      return FutureGameCard(game: game);
+                  }
+                }).toList(),
+              ),
+            )),
+      );
+    });
   }
 }
