@@ -48,20 +48,17 @@ class FinalGameCard extends StatelessWidget {
         child: Padding(
             padding: const EdgeInsets.all(32.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TeamWidget(
                   name: game.homeTeam.name,
                   record: game.homeTeam.record,
                   logoUrl: game.homeTeam.logoUrl,
                 ),
-                const Spacer(),
                 ScoreText(score: game.homeScore.toString()),
-                const Spacer(),
                 FinalGameStatus(
                     gameType: game.type, endedInPeriod: game.endedInPeriod),
-                const Spacer(),
                 ScoreText(score: game.visitingScore.toString()),
-                const Spacer(),
                 TeamWidget(
                   name: game.visitingTeam.name,
                   record: game.visitingTeam.record,
