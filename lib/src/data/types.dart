@@ -127,6 +127,25 @@ class ModulekitResponse with _$ModulekitResponse {
 }
 
 @freezed
+class GameSummaryDetails with _$GameSummaryDetails {
+  const factory GameSummaryDetails({@JsonKey(name: "id") required int id}) =
+      _GameSummaryDetails;
+
+  factory GameSummaryDetails.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryDetailsFromJson(json);
+}
+
+@freezed
+class GameSummaryResponse with _$GameSummaryResponse {
+  const factory GameSummaryResponse(
+          {@JsonKey(name: "details") required GameSummaryDetails details}) =
+      _GameSummaryResponse;
+
+  factory GameSummaryResponse.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryResponseFromJson(json);
+}
+
+@freezed
 class BootstrapResponse with _$BootstrapResponse {
   const factory BootstrapResponse(
       {@JsonKey(name: "current_season_id")

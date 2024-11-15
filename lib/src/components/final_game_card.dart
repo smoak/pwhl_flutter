@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pwhl_flutter/src/components/game_card.dart';
 import 'package:pwhl_flutter/src/components/score_text.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
@@ -44,27 +45,20 @@ class FinalGameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TeamWidget(
-                  name: game.homeTeam.name,
-                  record: game.homeTeam.record,
-                  logoUrl: game.homeTeam.logoUrl,
-                ),
-                ScoreText(score: game.homeScore.toString()),
-                FinalGameStatus(
-                    gameType: game.type, endedInPeriod: game.endedInPeriod),
-                ScoreText(score: game.visitingScore.toString()),
-                TeamWidget(
-                  name: game.visitingTeam.name,
-                  record: game.visitingTeam.record,
-                  logoUrl: game.visitingTeam.logoUrl,
-                ),
-              ],
-            )));
+    return GameCard(game: game, cardContents: [
+      TeamWidget(
+        name: game.homeTeam.name,
+        record: game.homeTeam.record,
+        logoUrl: game.homeTeam.logoUrl,
+      ),
+      ScoreText(score: game.homeScore.toString()),
+      FinalGameStatus(gameType: game.type, endedInPeriod: game.endedInPeriod),
+      ScoreText(score: game.visitingScore.toString()),
+      TeamWidget(
+        name: game.visitingTeam.name,
+        record: game.visitingTeam.record,
+        logoUrl: game.visitingTeam.logoUrl,
+      ),
+    ]);
   }
 }

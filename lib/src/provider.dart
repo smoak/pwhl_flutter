@@ -118,6 +118,22 @@ final scheduleProvider = FutureProvider.autoDispose
   }
 });
 
+Future<GameSummaryResponse> getGameSummary(String gameId) async {
+  final queryParams = {
+    "feed": "statviewfeed",
+    "view": "gameSummary",
+    "game_id": gameId,
+    "fmt": "json"
+  }..addAll(queryParamKeys);
+  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
+  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
+  final response = await http.get(uri);
+  final json = jsonDecode(response.body.substring(1, response.body.length - 1))
+      as Map<String, dynamic>;
+
+  return GameSummaryResponse.fromJson(json);
+}
+
 Future<BootstrapResponse> getBootstrap() async {
   final queryParams = {"feed": "statviewfeed", "view": "bootstrap"}
     ..addAll(queryParamKeys);

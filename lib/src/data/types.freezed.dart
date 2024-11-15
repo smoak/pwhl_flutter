@@ -2601,6 +2601,351 @@ abstract class _ModulekitResponse implements ModulekitResponse {
       throw _privateConstructorUsedError;
 }
 
+GameSummaryDetails _$GameSummaryDetailsFromJson(Map<String, dynamic> json) {
+  return _GameSummaryDetails.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryDetails {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryDetails to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryDetailsCopyWith<GameSummaryDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryDetailsCopyWith<$Res> {
+  factory $GameSummaryDetailsCopyWith(
+          GameSummaryDetails value, $Res Function(GameSummaryDetails) then) =
+      _$GameSummaryDetailsCopyWithImpl<$Res, GameSummaryDetails>;
+  @useResult
+  $Res call({@JsonKey(name: "id") int id});
+}
+
+/// @nodoc
+class _$GameSummaryDetailsCopyWithImpl<$Res, $Val extends GameSummaryDetails>
+    implements $GameSummaryDetailsCopyWith<$Res> {
+  _$GameSummaryDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryDetailsImplCopyWith<$Res>
+    implements $GameSummaryDetailsCopyWith<$Res> {
+  factory _$$GameSummaryDetailsImplCopyWith(_$GameSummaryDetailsImpl value,
+          $Res Function(_$GameSummaryDetailsImpl) then) =
+      __$$GameSummaryDetailsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "id") int id});
+}
+
+/// @nodoc
+class __$$GameSummaryDetailsImplCopyWithImpl<$Res>
+    extends _$GameSummaryDetailsCopyWithImpl<$Res, _$GameSummaryDetailsImpl>
+    implements _$$GameSummaryDetailsImplCopyWith<$Res> {
+  __$$GameSummaryDetailsImplCopyWithImpl(_$GameSummaryDetailsImpl _value,
+      $Res Function(_$GameSummaryDetailsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GameSummaryDetailsImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryDetailsImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryDetails {
+  const _$GameSummaryDetailsImpl({@JsonKey(name: "id") required this.id});
+
+  factory _$GameSummaryDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryDetailsImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryDetails(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryDetails'))
+      ..add(DiagnosticsProperty('id', id));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryDetailsImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of GameSummaryDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryDetailsImplCopyWith<_$GameSummaryDetailsImpl> get copyWith =>
+      __$$GameSummaryDetailsImplCopyWithImpl<_$GameSummaryDetailsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryDetailsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryDetails implements GameSummaryDetails {
+  const factory _GameSummaryDetails(
+      {@JsonKey(name: "id") required final int id}) = _$GameSummaryDetailsImpl;
+
+  factory _GameSummaryDetails.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryDetailsImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+
+  /// Create a copy of GameSummaryDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryDetailsImplCopyWith<_$GameSummaryDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GameSummaryResponse _$GameSummaryResponseFromJson(Map<String, dynamic> json) {
+  return _GameSummaryResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryResponse {
+  @JsonKey(name: "details")
+  GameSummaryDetails get details => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryResponseCopyWith<GameSummaryResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryResponseCopyWith<$Res> {
+  factory $GameSummaryResponseCopyWith(
+          GameSummaryResponse value, $Res Function(GameSummaryResponse) then) =
+      _$GameSummaryResponseCopyWithImpl<$Res, GameSummaryResponse>;
+  @useResult
+  $Res call({@JsonKey(name: "details") GameSummaryDetails details});
+
+  $GameSummaryDetailsCopyWith<$Res> get details;
+}
+
+/// @nodoc
+class _$GameSummaryResponseCopyWithImpl<$Res, $Val extends GameSummaryResponse>
+    implements $GameSummaryResponseCopyWith<$Res> {
+  _$GameSummaryResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? details = null,
+  }) {
+    return _then(_value.copyWith(
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as GameSummaryDetails,
+    ) as $Val);
+  }
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryDetailsCopyWith<$Res> get details {
+    return $GameSummaryDetailsCopyWith<$Res>(_value.details, (value) {
+      return _then(_value.copyWith(details: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryResponseImplCopyWith<$Res>
+    implements $GameSummaryResponseCopyWith<$Res> {
+  factory _$$GameSummaryResponseImplCopyWith(_$GameSummaryResponseImpl value,
+          $Res Function(_$GameSummaryResponseImpl) then) =
+      __$$GameSummaryResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "details") GameSummaryDetails details});
+
+  @override
+  $GameSummaryDetailsCopyWith<$Res> get details;
+}
+
+/// @nodoc
+class __$$GameSummaryResponseImplCopyWithImpl<$Res>
+    extends _$GameSummaryResponseCopyWithImpl<$Res, _$GameSummaryResponseImpl>
+    implements _$$GameSummaryResponseImplCopyWith<$Res> {
+  __$$GameSummaryResponseImplCopyWithImpl(_$GameSummaryResponseImpl _value,
+      $Res Function(_$GameSummaryResponseImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? details = null,
+  }) {
+    return _then(_$GameSummaryResponseImpl(
+      details: null == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as GameSummaryDetails,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryResponseImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryResponse {
+  const _$GameSummaryResponseImpl(
+      {@JsonKey(name: "details") required this.details});
+
+  factory _$GameSummaryResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryResponseImplFromJson(json);
+
+  @override
+  @JsonKey(name: "details")
+  final GameSummaryDetails details;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryResponse(details: $details)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryResponse'))
+      ..add(DiagnosticsProperty('details', details));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryResponseImpl &&
+            (identical(other.details, details) || other.details == details));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, details);
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryResponseImplCopyWith<_$GameSummaryResponseImpl> get copyWith =>
+      __$$GameSummaryResponseImplCopyWithImpl<_$GameSummaryResponseImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryResponse implements GameSummaryResponse {
+  const factory _GameSummaryResponse(
+      {@JsonKey(name: "details")
+      required final GameSummaryDetails details}) = _$GameSummaryResponseImpl;
+
+  factory _GameSummaryResponse.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: "details")
+  GameSummaryDetails get details;
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryResponseImplCopyWith<_$GameSummaryResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 BootstrapResponse _$BootstrapResponseFromJson(Map<String, dynamic> json) {
   return _BootstrapResponse.fromJson(json);
 }

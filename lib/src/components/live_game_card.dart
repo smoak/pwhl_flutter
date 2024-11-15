@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_indicator/live_indicator.dart';
+import 'package:pwhl_flutter/src/components/game_card.dart';
 import 'package:pwhl_flutter/src/components/game_clock_info.dart';
 import 'package:pwhl_flutter/src/components/score_text.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
@@ -28,31 +29,28 @@ class LiveGameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TeamWidget(
-                  name: game.homeTeam.name,
-                  record: game.homeTeam.record,
-                  logoUrl: game.homeTeam.logoUrl,
-                ),
-                ScoreText(score: game.homeScore.toString()),
-                Column(
-                  children: [
-                    GameClockInfo(gameClock: game.gameClock),
-                    const LiveGameIndicator(),
-                  ],
-                ),
-                ScoreText(score: game.visitingScore.toString()),
-                TeamWidget(
-                  name: game.visitingTeam.name,
-                  record: game.visitingTeam.record,
-                  logoUrl: game.visitingTeam.logoUrl,
-                ),
-              ],
-            )));
+    return GameCard(
+      game: game,
+      cardContents: [
+        TeamWidget(
+          name: game.homeTeam.name,
+          record: game.homeTeam.record,
+          logoUrl: game.homeTeam.logoUrl,
+        ),
+        ScoreText(score: game.homeScore.toString()),
+        Column(
+          children: [
+            GameClockInfo(gameClock: game.gameClock),
+            const LiveGameIndicator(),
+          ],
+        ),
+        ScoreText(score: game.visitingScore.toString()),
+        TeamWidget(
+          name: game.visitingTeam.name,
+          record: game.visitingTeam.record,
+          logoUrl: game.visitingTeam.logoUrl,
+        ),
+      ],
+    );
   }
 }

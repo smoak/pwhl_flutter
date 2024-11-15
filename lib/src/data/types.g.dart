@@ -106,6 +106,31 @@ Map<String, dynamic> _$$ModulekitResponseImplToJson(
       'SiteKit': instance.siteKit,
     };
 
+_$GameSummaryDetailsImpl _$$GameSummaryDetailsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryDetailsImpl(
+      id: (json['id'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$GameSummaryDetailsImplToJson(
+        _$GameSummaryDetailsImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+    };
+
+_$GameSummaryResponseImpl _$$GameSummaryResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryResponseImpl(
+      details:
+          GameSummaryDetails.fromJson(json['details'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$GameSummaryResponseImplToJson(
+        _$GameSummaryResponseImpl instance) =>
+    <String, dynamic>{
+      'details': instance.details,
+    };
+
 _$BootstrapResponseImpl _$$BootstrapResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$BootstrapResponseImpl(
