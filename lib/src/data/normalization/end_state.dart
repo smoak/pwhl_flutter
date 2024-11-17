@@ -12,14 +12,17 @@ EndState fromEndedPeriod(int period) {
 }
 
 EndState normalizeEndState(String gameStatusStringLong, int endedInPeriod) {
-  switch (gameStatusStringLong) {
-    case "Unofficial Final":
-      return fromEndedPeriod(endedInPeriod);
-    case "OT":
-      return EndState.overtime;
-    case "SO":
-      return EndState.shootout;
-    default:
-      return EndState.regulation;
+  if (gameStatusStringLong.contains("OT")) {
+    return EndState.overtime;
   }
+
+  if (gameStatusStringLong == "Final SO") {
+    return EndState.shootout;
+  }
+
+  if (gameStatusStringLong == "Unofficial Final") {
+    return fromEndedPeriod(endedInPeriod);
+  }
+
+  return EndState.regulation;
 }

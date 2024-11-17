@@ -110,12 +110,372 @@ _$GameSummaryDetailsImpl _$$GameSummaryDetailsImplFromJson(
         Map<String, dynamic> json) =>
     _$GameSummaryDetailsImpl(
       id: (json['id'] as num).toInt(),
+      date: json['date'] as String,
+      gameNumber: json['gameNumber'] as String,
+      startTime: json['startTime'] as String,
+      started: json['started'] as String,
+      isFinal: json['final'] as String,
+      status: json['status'] as String,
+      seasonId: json['seasonId'] as String,
+      gameDateISO8601: json['GameDateISO8601'] as String,
     );
 
 Map<String, dynamic> _$$GameSummaryDetailsImplToJson(
         _$GameSummaryDetailsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'date': instance.date,
+      'gameNumber': instance.gameNumber,
+      'startTime': instance.startTime,
+      'started': instance.started,
+      'final': instance.isFinal,
+      'status': instance.status,
+      'seasonId': instance.seasonId,
+      'GameDateISO8601': instance.gameDateISO8601,
+    };
+
+_$GameSummaryTeamInfoImpl _$$GameSummaryTeamInfoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryTeamInfoImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      city: json['city'] as String,
+      nickname: json['nickname'] as String,
+      abbreviation: json['abbreviation'] as String,
+      logo: json['logo'] as String,
+    );
+
+Map<String, dynamic> _$$GameSummaryTeamInfoImplToJson(
+        _$GameSummaryTeamInfoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'city': instance.city,
+      'nickname': instance.nickname,
+      'abbreviation': instance.abbreviation,
+      'logo': instance.logo,
+    };
+
+_$GameSummaryTeamSeasonStatsTeamRecordImpl
+    _$$GameSummaryTeamSeasonStatsTeamRecordImplFromJson(
+            Map<String, dynamic> json) =>
+        _$GameSummaryTeamSeasonStatsTeamRecordImpl(
+          wins: (json['wins'] as num).toInt(),
+          losses: (json['losses'] as num).toInt(),
+          ties: (json['ties'] as num).toInt(),
+          otWins: (json['OTWins'] as num).toInt(),
+          otLosses: (json['OTLosses'] as num).toInt(),
+          soLosses: (json['SOLosses'] as num).toInt(),
+          formattedRecord: json['formattedRecord'] as String,
+        );
+
+Map<String, dynamic> _$$GameSummaryTeamSeasonStatsTeamRecordImplToJson(
+        _$GameSummaryTeamSeasonStatsTeamRecordImpl instance) =>
+    <String, dynamic>{
+      'wins': instance.wins,
+      'losses': instance.losses,
+      'ties': instance.ties,
+      'OTWins': instance.otWins,
+      'OTLosses': instance.otLosses,
+      'SOLosses': instance.soLosses,
+      'formattedRecord': instance.formattedRecord,
+    };
+
+_$GameSummaryTeamStatsImpl _$$GameSummaryTeamStatsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryTeamStatsImpl(
+      shots: (json['shots'] as num).toInt(),
+      goals: (json['goals'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$GameSummaryTeamStatsImplToJson(
+        _$GameSummaryTeamStatsImpl instance) =>
+    <String, dynamic>{
+      'shots': instance.shots,
+      'goals': instance.goals,
+    };
+
+_$GameSummaryTeamSeasonStatsImpl _$$GameSummaryTeamSeasonStatsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryTeamSeasonStatsImpl(
+      teamRecord: GameSummaryTeamSeasonStatsTeamRecord.fromJson(
+          json['teamRecord'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$GameSummaryTeamSeasonStatsImplToJson(
+        _$GameSummaryTeamSeasonStatsImpl instance) =>
+    <String, dynamic>{
+      'teamRecord': instance.teamRecord,
+    };
+
+_$GameSummaryTeamImpl _$$GameSummaryTeamImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryTeamImpl(
+      info: GameSummaryTeamInfo.fromJson(json['info'] as Map<String, dynamic>),
+      stats:
+          GameSummaryTeamStats.fromJson(json['stats'] as Map<String, dynamic>),
+      seasonStats: GameSummaryTeamSeasonStats.fromJson(
+          json['seasonStats'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$GameSummaryTeamImplToJson(
+        _$GameSummaryTeamImpl instance) =>
+    <String, dynamic>{
+      'info': instance.info,
+      'stats': instance.stats,
+      'seasonStats': instance.seasonStats,
+    };
+
+_$GameSummaryPeriodStatsImpl _$$GameSummaryPeriodStatsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodStatsImpl(
+      homeGoals: json['homeGoals'] as String,
+      homeShots: json['homeShots'] as String,
+      visitingGoals: json['visitingGoals'] as String,
+      visitingShots: json['visitingShots'] as String,
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodStatsImplToJson(
+        _$GameSummaryPeriodStatsImpl instance) =>
+    <String, dynamic>{
+      'homeGoals': instance.homeGoals,
+      'homeShots': instance.homeShots,
+      'visitingGoals': instance.visitingGoals,
+      'visitingShots': instance.visitingShots,
+    };
+
+_$GameSummaryPeriodInfoImpl _$$GameSummaryPeriodInfoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodInfoImpl(
+      id: json['id'] as String,
+      shortName: json['shortName'] as String,
+      longName: json['longName'] as String,
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodInfoImplToJson(
+        _$GameSummaryPeriodInfoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'shortName': instance.shortName,
+      'longName': instance.longName,
+    };
+
+_$GameSummaryPeriodGoalPlayerInfoImpl
+    _$$GameSummaryPeriodGoalPlayerInfoImplFromJson(Map<String, dynamic> json) =>
+        _$GameSummaryPeriodGoalPlayerInfoImpl(
+          id: (json['id'] as num).toInt(),
+          firstName: json['firstName'] as String,
+          lastName: json['lastName'] as String,
+          playerImageURL: json['playerImageURL'] as String,
+        );
+
+Map<String, dynamic> _$$GameSummaryPeriodGoalPlayerInfoImplToJson(
+        _$GameSummaryPeriodGoalPlayerInfoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'playerImageURL': instance.playerImageURL,
+    };
+
+_$GameSummaryPeriodGoalPropertiesImpl
+    _$$GameSummaryPeriodGoalPropertiesImplFromJson(Map<String, dynamic> json) =>
+        _$GameSummaryPeriodGoalPropertiesImpl(
+          isPowerPlay: json['isPowerPlay'] as String,
+          isShortHanded: json['isShortHanded'] as String,
+          isEmptyNet: json['isEmptyNet'] as String,
+          isPenaltyShot: json['isPenaltyShot'] as String,
+          isInsuranceGoal: json['isInsuranceGoal'] as String,
+          isGameWinningGoal: json['isGameWinningGoal'] as String,
+        );
+
+Map<String, dynamic> _$$GameSummaryPeriodGoalPropertiesImplToJson(
+        _$GameSummaryPeriodGoalPropertiesImpl instance) =>
+    <String, dynamic>{
+      'isPowerPlay': instance.isPowerPlay,
+      'isShortHanded': instance.isShortHanded,
+      'isEmptyNet': instance.isEmptyNet,
+      'isPenaltyShot': instance.isPenaltyShot,
+      'isInsuranceGoal': instance.isInsuranceGoal,
+      'isGameWinningGoal': instance.isGameWinningGoal,
+    };
+
+_$GameSummaryPeriodGoalTeamImpl _$$GameSummaryPeriodGoalTeamImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodGoalTeamImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      nickname: json['nickname'] as String,
+      abbreviation: json['abbreviation'] as String,
+      logo: json['logo'] as String,
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodGoalTeamImplToJson(
+        _$GameSummaryPeriodGoalTeamImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'nickname': instance.nickname,
+      'abbreviation': instance.abbreviation,
+      'logo': instance.logo,
+    };
+
+_$GameSummaryPeriodGoalPeriodImpl _$$GameSummaryPeriodGoalPeriodImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodGoalPeriodImpl(
+      id: json['id'] as String,
+      shortName: json['shortName'] as String,
+      longName: json['longName'] as String,
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodGoalPeriodImplToJson(
+        _$GameSummaryPeriodGoalPeriodImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'shortName': instance.shortName,
+      'longName': instance.longName,
+    };
+
+_$GameSummaryPeriodGoalImpl _$$GameSummaryPeriodGoalImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodGoalImpl(
+      gameGoalId: json['game_goal_id'] as String,
+      team: GameSummaryPeriodGoalTeam.fromJson(
+          json['team'] as Map<String, dynamic>),
+      period: GameSummaryPeriodGoalPeriod.fromJson(
+          json['period'] as Map<String, dynamic>),
+      time: json['time'] as String,
+      scorerGoalNumber: json['scorerGoalNumber'] as String,
+      scoredBy: GameSummaryPeriodGoalPlayerInfo.fromJson(
+          json['scoredBy'] as Map<String, dynamic>),
+      assists: (json['assists'] as List<dynamic>)
+          .map((e) => GameSummaryPeriodGoalPlayerInfo.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      assistNumbers: (json['assistNumbers'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      properties: GameSummaryPeriodGoalProperties.fromJson(
+          json['properties'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodGoalImplToJson(
+        _$GameSummaryPeriodGoalImpl instance) =>
+    <String, dynamic>{
+      'game_goal_id': instance.gameGoalId,
+      'team': instance.team,
+      'period': instance.period,
+      'time': instance.time,
+      'scorerGoalNumber': instance.scorerGoalNumber,
+      'scoredBy': instance.scoredBy,
+      'assists': instance.assists,
+      'assistNumbers': instance.assistNumbers,
+      'properties': instance.properties,
+    };
+
+_$GameSummaryPeriodImpl _$$GameSummaryPeriodImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodImpl(
+      info:
+          GameSummaryPeriodInfo.fromJson(json['info'] as Map<String, dynamic>),
+      stats: GameSummaryPeriodStats.fromJson(
+          json['stats'] as Map<String, dynamic>),
+      goals: (json['goals'] as List<dynamic>)
+          .map((e) => GameSummaryPeriodGoal.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodImplToJson(
+        _$GameSummaryPeriodImpl instance) =>
+    <String, dynamic>{
+      'info': instance.info,
+      'stats': instance.stats,
+      'goals': instance.goals,
+    };
+
+_$ShootoutPlayerImpl _$$ShootoutPlayerImplFromJson(Map<String, dynamic> json) =>
+    _$ShootoutPlayerImpl(
+      id: (json['id'] as num).toInt(),
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      jerseyNumber: (json['jerseyNumber'] as num).toInt(),
+      position: json['position'] as String,
+      birthDate: json['birthDate'] as String,
+      playerImageURL: json['playerImageURL'] as String,
+    );
+
+Map<String, dynamic> _$$ShootoutPlayerImplToJson(
+        _$ShootoutPlayerImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'jerseyNumber': instance.jerseyNumber,
+      'position': instance.position,
+      'birthDate': instance.birthDate,
+      'playerImageURL': instance.playerImageURL,
+    };
+
+_$ShootoutTeamImpl _$$ShootoutTeamImplFromJson(Map<String, dynamic> json) =>
+    _$ShootoutTeamImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      city: json['city'] as String,
+      nickname: json['nickname'] as String,
+      abbreviation: json['abbreviation'] as String,
+      logo: json['logo'] as String,
+      divisionName: json['divisionName'] as String,
+    );
+
+Map<String, dynamic> _$$ShootoutTeamImplToJson(_$ShootoutTeamImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'city': instance.city,
+      'nickname': instance.nickname,
+      'abbreviation': instance.abbreviation,
+      'logo': instance.logo,
+      'divisionName': instance.divisionName,
+    };
+
+_$ShootoutShotImpl _$$ShootoutShotImplFromJson(Map<String, dynamic> json) =>
+    _$ShootoutShotImpl(
+      shooter: ShootoutPlayer.fromJson(json['shooter'] as Map<String, dynamic>),
+      goalie: ShootoutPlayer.fromJson(json['goalie'] as Map<String, dynamic>),
+      isGoal: json['isGoal'] as bool,
+      isGameWinningGoal: json['isGameWinningGoal'] as bool,
+      shooterTeam:
+          ShootoutTeam.fromJson(json['shooterTeam'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ShootoutShotImplToJson(_$ShootoutShotImpl instance) =>
+    <String, dynamic>{
+      'shooter': instance.shooter,
+      'goalie': instance.goalie,
+      'isGoal': instance.isGoal,
+      'isGameWinningGoal': instance.isGameWinningGoal,
+      'shooterTeam': instance.shooterTeam,
+    };
+
+_$ShootoutDetailsImpl _$$ShootoutDetailsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ShootoutDetailsImpl(
+      homeTeamShots: (json['homeTeamShots'] as List<dynamic>)
+          .map((e) => ShootoutShot.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      visitingTeamShots: (json['visitingTeamShots'] as List<dynamic>)
+          .map((e) => ShootoutShot.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      winningTeam:
+          ShootoutTeam.fromJson(json['winningTeam'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ShootoutDetailsImplToJson(
+        _$ShootoutDetailsImpl instance) =>
+    <String, dynamic>{
+      'homeTeamShots': instance.homeTeamShots,
+      'visitingTeamShots': instance.visitingTeamShots,
+      'winningTeam': instance.winningTeam,
     };
 
 _$GameSummaryResponseImpl _$$GameSummaryResponseImplFromJson(
@@ -123,12 +483,29 @@ _$GameSummaryResponseImpl _$$GameSummaryResponseImplFromJson(
     _$GameSummaryResponseImpl(
       details:
           GameSummaryDetails.fromJson(json['details'] as Map<String, dynamic>),
+      hasShootout: json['hasShootout'] as bool,
+      shootoutDetails: json['shootoutDetails'] == null
+          ? null
+          : ShootoutDetails.fromJson(
+              json['shootoutDetails'] as Map<String, dynamic>),
+      homeTeam:
+          GameSummaryTeam.fromJson(json['homeTeam'] as Map<String, dynamic>),
+      visitingTeam: GameSummaryTeam.fromJson(
+          json['visitingTeam'] as Map<String, dynamic>),
+      periods: (json['periods'] as List<dynamic>)
+          .map((e) => GameSummaryPeriod.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$GameSummaryResponseImplToJson(
         _$GameSummaryResponseImpl instance) =>
     <String, dynamic>{
       'details': instance.details,
+      'hasShootout': instance.hasShootout,
+      'shootoutDetails': instance.shootoutDetails,
+      'homeTeam': instance.homeTeam,
+      'visitingTeam': instance.visitingTeam,
+      'periods': instance.periods,
     };
 
 _$BootstrapResponseImpl _$$BootstrapResponseImplFromJson(

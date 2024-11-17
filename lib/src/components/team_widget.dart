@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pwhl_flutter/src/components/team_logo.dart';
 
 class TeamLogoWidget extends StatelessWidget {
   const TeamLogoWidget({super.key, required this.logoUrl});
@@ -33,9 +34,9 @@ class TeamWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TeamLogoWidget(logoUrl: logoUrl),
+        TeamLogo(logoUrl: logoUrl, size: TeamLogoSize.medium),
         Text(name,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         const SizedBox(height: 4),
         Text(
           record,

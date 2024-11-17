@@ -4,12 +4,13 @@ description: "A mobile application to show PWHL scores, schedules, stats, and mo
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
   sdk: '>=3.2.1 <4.0.0'
 
 dependencies:
+  collection: ^1.18.0
   flutter:
     sdk: flutter
   flutter_localizations:

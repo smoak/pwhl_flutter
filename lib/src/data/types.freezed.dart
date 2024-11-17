@@ -2609,6 +2609,22 @@ GameSummaryDetails _$GameSummaryDetailsFromJson(Map<String, dynamic> json) {
 mixin _$GameSummaryDetails {
   @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "date")
+  String get date => throw _privateConstructorUsedError;
+  @JsonKey(name: "gameNumber")
+  String get gameNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "startTime")
+  String get startTime => throw _privateConstructorUsedError;
+  @JsonKey(name: "started")
+  String get started => throw _privateConstructorUsedError;
+  @JsonKey(name: "final")
+  String get isFinal => throw _privateConstructorUsedError;
+  @JsonKey(name: "status")
+  String get status => throw _privateConstructorUsedError;
+  @JsonKey(name: "seasonId")
+  String get seasonId => throw _privateConstructorUsedError;
+  @JsonKey(name: "GameDateISO8601")
+  String get gameDateISO8601 => throw _privateConstructorUsedError;
 
   /// Serializes this GameSummaryDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2626,7 +2642,16 @@ abstract class $GameSummaryDetailsCopyWith<$Res> {
           GameSummaryDetails value, $Res Function(GameSummaryDetails) then) =
       _$GameSummaryDetailsCopyWithImpl<$Res, GameSummaryDetails>;
   @useResult
-  $Res call({@JsonKey(name: "id") int id});
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "date") String date,
+      @JsonKey(name: "gameNumber") String gameNumber,
+      @JsonKey(name: "startTime") String startTime,
+      @JsonKey(name: "started") String started,
+      @JsonKey(name: "final") String isFinal,
+      @JsonKey(name: "status") String status,
+      @JsonKey(name: "seasonId") String seasonId,
+      @JsonKey(name: "GameDateISO8601") String gameDateISO8601});
 }
 
 /// @nodoc
@@ -2645,12 +2670,52 @@ class _$GameSummaryDetailsCopyWithImpl<$Res, $Val extends GameSummaryDetails>
   @override
   $Res call({
     Object? id = null,
+    Object? date = null,
+    Object? gameNumber = null,
+    Object? startTime = null,
+    Object? started = null,
+    Object? isFinal = null,
+    Object? status = null,
+    Object? seasonId = null,
+    Object? gameDateISO8601 = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+      gameNumber: null == gameNumber
+          ? _value.gameNumber
+          : gameNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _value.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      started: null == started
+          ? _value.started
+          : started // ignore: cast_nullable_to_non_nullable
+              as String,
+      isFinal: null == isFinal
+          ? _value.isFinal
+          : isFinal // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      seasonId: null == seasonId
+          ? _value.seasonId
+          : seasonId // ignore: cast_nullable_to_non_nullable
+              as String,
+      gameDateISO8601: null == gameDateISO8601
+          ? _value.gameDateISO8601
+          : gameDateISO8601 // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -2663,7 +2728,16 @@ abstract class _$$GameSummaryDetailsImplCopyWith<$Res>
       __$$GameSummaryDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "id") int id});
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "date") String date,
+      @JsonKey(name: "gameNumber") String gameNumber,
+      @JsonKey(name: "startTime") String startTime,
+      @JsonKey(name: "started") String started,
+      @JsonKey(name: "final") String isFinal,
+      @JsonKey(name: "status") String status,
+      @JsonKey(name: "seasonId") String seasonId,
+      @JsonKey(name: "GameDateISO8601") String gameDateISO8601});
 }
 
 /// @nodoc
@@ -2680,12 +2754,52 @@ class __$$GameSummaryDetailsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? date = null,
+    Object? gameNumber = null,
+    Object? startTime = null,
+    Object? started = null,
+    Object? isFinal = null,
+    Object? status = null,
+    Object? seasonId = null,
+    Object? gameDateISO8601 = null,
   }) {
     return _then(_$GameSummaryDetailsImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+      gameNumber: null == gameNumber
+          ? _value.gameNumber
+          : gameNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _value.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      started: null == started
+          ? _value.started
+          : started // ignore: cast_nullable_to_non_nullable
+              as String,
+      isFinal: null == isFinal
+          ? _value.isFinal
+          : isFinal // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      seasonId: null == seasonId
+          ? _value.seasonId
+          : seasonId // ignore: cast_nullable_to_non_nullable
+              as String,
+      gameDateISO8601: null == gameDateISO8601
+          ? _value.gameDateISO8601
+          : gameDateISO8601 // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -2695,7 +2809,16 @@ class __$$GameSummaryDetailsImplCopyWithImpl<$Res>
 class _$GameSummaryDetailsImpl
     with DiagnosticableTreeMixin
     implements _GameSummaryDetails {
-  const _$GameSummaryDetailsImpl({@JsonKey(name: "id") required this.id});
+  const _$GameSummaryDetailsImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "date") required this.date,
+      @JsonKey(name: "gameNumber") required this.gameNumber,
+      @JsonKey(name: "startTime") required this.startTime,
+      @JsonKey(name: "started") required this.started,
+      @JsonKey(name: "final") required this.isFinal,
+      @JsonKey(name: "status") required this.status,
+      @JsonKey(name: "seasonId") required this.seasonId,
+      @JsonKey(name: "GameDateISO8601") required this.gameDateISO8601});
 
   factory _$GameSummaryDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameSummaryDetailsImplFromJson(json);
@@ -2703,10 +2826,34 @@ class _$GameSummaryDetailsImpl
   @override
   @JsonKey(name: "id")
   final int id;
+  @override
+  @JsonKey(name: "date")
+  final String date;
+  @override
+  @JsonKey(name: "gameNumber")
+  final String gameNumber;
+  @override
+  @JsonKey(name: "startTime")
+  final String startTime;
+  @override
+  @JsonKey(name: "started")
+  final String started;
+  @override
+  @JsonKey(name: "final")
+  final String isFinal;
+  @override
+  @JsonKey(name: "status")
+  final String status;
+  @override
+  @JsonKey(name: "seasonId")
+  final String seasonId;
+  @override
+  @JsonKey(name: "GameDateISO8601")
+  final String gameDateISO8601;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameSummaryDetails(id: $id)';
+    return 'GameSummaryDetails(id: $id, date: $date, gameNumber: $gameNumber, startTime: $startTime, started: $started, isFinal: $isFinal, status: $status, seasonId: $seasonId, gameDateISO8601: $gameDateISO8601)';
   }
 
   @override
@@ -2714,7 +2861,15 @@ class _$GameSummaryDetailsImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'GameSummaryDetails'))
-      ..add(DiagnosticsProperty('id', id));
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('date', date))
+      ..add(DiagnosticsProperty('gameNumber', gameNumber))
+      ..add(DiagnosticsProperty('startTime', startTime))
+      ..add(DiagnosticsProperty('started', started))
+      ..add(DiagnosticsProperty('isFinal', isFinal))
+      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('seasonId', seasonId))
+      ..add(DiagnosticsProperty('gameDateISO8601', gameDateISO8601));
   }
 
   @override
@@ -2722,12 +2877,25 @@ class _$GameSummaryDetailsImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameSummaryDetailsImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.gameNumber, gameNumber) ||
+                other.gameNumber == gameNumber) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
+            (identical(other.started, started) || other.started == started) &&
+            (identical(other.isFinal, isFinal) || other.isFinal == isFinal) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.seasonId, seasonId) ||
+                other.seasonId == seasonId) &&
+            (identical(other.gameDateISO8601, gameDateISO8601) ||
+                other.gameDateISO8601 == gameDateISO8601));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, id, date, gameNumber, startTime,
+      started, isFinal, status, seasonId, gameDateISO8601);
 
   /// Create a copy of GameSummaryDetails
   /// with the given fields replaced by the non-null parameter values.
@@ -2748,7 +2916,16 @@ class _$GameSummaryDetailsImpl
 
 abstract class _GameSummaryDetails implements GameSummaryDetails {
   const factory _GameSummaryDetails(
-      {@JsonKey(name: "id") required final int id}) = _$GameSummaryDetailsImpl;
+      {@JsonKey(name: "id") required final int id,
+      @JsonKey(name: "date") required final String date,
+      @JsonKey(name: "gameNumber") required final String gameNumber,
+      @JsonKey(name: "startTime") required final String startTime,
+      @JsonKey(name: "started") required final String started,
+      @JsonKey(name: "final") required final String isFinal,
+      @JsonKey(name: "status") required final String status,
+      @JsonKey(name: "seasonId") required final String seasonId,
+      @JsonKey(name: "GameDateISO8601")
+      required final String gameDateISO8601}) = _$GameSummaryDetailsImpl;
 
   factory _GameSummaryDetails.fromJson(Map<String, dynamic> json) =
       _$GameSummaryDetailsImpl.fromJson;
@@ -2756,12 +2933,4745 @@ abstract class _GameSummaryDetails implements GameSummaryDetails {
   @override
   @JsonKey(name: "id")
   int get id;
+  @override
+  @JsonKey(name: "date")
+  String get date;
+  @override
+  @JsonKey(name: "gameNumber")
+  String get gameNumber;
+  @override
+  @JsonKey(name: "startTime")
+  String get startTime;
+  @override
+  @JsonKey(name: "started")
+  String get started;
+  @override
+  @JsonKey(name: "final")
+  String get isFinal;
+  @override
+  @JsonKey(name: "status")
+  String get status;
+  @override
+  @JsonKey(name: "seasonId")
+  String get seasonId;
+  @override
+  @JsonKey(name: "GameDateISO8601")
+  String get gameDateISO8601;
 
   /// Create a copy of GameSummaryDetails
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GameSummaryDetailsImplCopyWith<_$GameSummaryDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GameSummaryTeamInfo _$GameSummaryTeamInfoFromJson(Map<String, dynamic> json) {
+  return _GameSummaryTeamInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryTeamInfo {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "city")
+  String get city => throw _privateConstructorUsedError;
+  @JsonKey(name: "nickname")
+  String get nickname => throw _privateConstructorUsedError;
+  @JsonKey(name: "abbreviation")
+  String get abbreviation => throw _privateConstructorUsedError;
+  @JsonKey(name: "logo")
+  String get logo => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryTeamInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryTeamInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryTeamInfoCopyWith<GameSummaryTeamInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryTeamInfoCopyWith<$Res> {
+  factory $GameSummaryTeamInfoCopyWith(
+          GameSummaryTeamInfo value, $Res Function(GameSummaryTeamInfo) then) =
+      _$GameSummaryTeamInfoCopyWithImpl<$Res, GameSummaryTeamInfo>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "city") String city,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo});
+}
+
+/// @nodoc
+class _$GameSummaryTeamInfoCopyWithImpl<$Res, $Val extends GameSummaryTeamInfo>
+    implements $GameSummaryTeamInfoCopyWith<$Res> {
+  _$GameSummaryTeamInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryTeamInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? city = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryTeamInfoImplCopyWith<$Res>
+    implements $GameSummaryTeamInfoCopyWith<$Res> {
+  factory _$$GameSummaryTeamInfoImplCopyWith(_$GameSummaryTeamInfoImpl value,
+          $Res Function(_$GameSummaryTeamInfoImpl) then) =
+      __$$GameSummaryTeamInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "city") String city,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo});
+}
+
+/// @nodoc
+class __$$GameSummaryTeamInfoImplCopyWithImpl<$Res>
+    extends _$GameSummaryTeamInfoCopyWithImpl<$Res, _$GameSummaryTeamInfoImpl>
+    implements _$$GameSummaryTeamInfoImplCopyWith<$Res> {
+  __$$GameSummaryTeamInfoImplCopyWithImpl(_$GameSummaryTeamInfoImpl _value,
+      $Res Function(_$GameSummaryTeamInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryTeamInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? city = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+  }) {
+    return _then(_$GameSummaryTeamInfoImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryTeamInfoImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryTeamInfo {
+  const _$GameSummaryTeamInfoImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "city") required this.city,
+      @JsonKey(name: "nickname") required this.nickname,
+      @JsonKey(name: "abbreviation") required this.abbreviation,
+      @JsonKey(name: "logo") required this.logo});
+
+  factory _$GameSummaryTeamInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryTeamInfoImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "city")
+  final String city;
+  @override
+  @JsonKey(name: "nickname")
+  final String nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  final String abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  final String logo;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryTeamInfo(id: $id, name: $name, city: $city, nickname: $nickname, abbreviation: $abbreviation, logo: $logo)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryTeamInfo'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('city', city))
+      ..add(DiagnosticsProperty('nickname', nickname))
+      ..add(DiagnosticsProperty('abbreviation', abbreviation))
+      ..add(DiagnosticsProperty('logo', logo));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryTeamInfoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.abbreviation, abbreviation) ||
+                other.abbreviation == abbreviation) &&
+            (identical(other.logo, logo) || other.logo == logo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, city, nickname, abbreviation, logo);
+
+  /// Create a copy of GameSummaryTeamInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryTeamInfoImplCopyWith<_$GameSummaryTeamInfoImpl> get copyWith =>
+      __$$GameSummaryTeamInfoImplCopyWithImpl<_$GameSummaryTeamInfoImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryTeamInfoImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryTeamInfo implements GameSummaryTeamInfo {
+  const factory _GameSummaryTeamInfo(
+          {@JsonKey(name: "id") required final int id,
+          @JsonKey(name: "name") required final String name,
+          @JsonKey(name: "city") required final String city,
+          @JsonKey(name: "nickname") required final String nickname,
+          @JsonKey(name: "abbreviation") required final String abbreviation,
+          @JsonKey(name: "logo") required final String logo}) =
+      _$GameSummaryTeamInfoImpl;
+
+  factory _GameSummaryTeamInfo.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryTeamInfoImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "city")
+  String get city;
+  @override
+  @JsonKey(name: "nickname")
+  String get nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  String get abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  String get logo;
+
+  /// Create a copy of GameSummaryTeamInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryTeamInfoImplCopyWith<_$GameSummaryTeamInfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GameSummaryTeamSeasonStatsTeamRecord
+    _$GameSummaryTeamSeasonStatsTeamRecordFromJson(Map<String, dynamic> json) {
+  return _GameSummaryTeamSeasonStatsTeamRecord.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryTeamSeasonStatsTeamRecord {
+  @JsonKey(name: "wins")
+  int get wins => throw _privateConstructorUsedError;
+  @JsonKey(name: "losses")
+  int get losses => throw _privateConstructorUsedError;
+  @JsonKey(name: "ties")
+  int get ties => throw _privateConstructorUsedError;
+  @JsonKey(name: "OTWins")
+  int get otWins => throw _privateConstructorUsedError;
+  @JsonKey(name: "OTLosses")
+  int get otLosses => throw _privateConstructorUsedError;
+  @JsonKey(name: "SOLosses")
+  int get soLosses => throw _privateConstructorUsedError;
+  @JsonKey(name: "formattedRecord")
+  String get formattedRecord => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryTeamSeasonStatsTeamRecord to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryTeamSeasonStatsTeamRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryTeamSeasonStatsTeamRecordCopyWith<
+          GameSummaryTeamSeasonStatsTeamRecord>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> {
+  factory $GameSummaryTeamSeasonStatsTeamRecordCopyWith(
+          GameSummaryTeamSeasonStatsTeamRecord value,
+          $Res Function(GameSummaryTeamSeasonStatsTeamRecord) then) =
+      _$GameSummaryTeamSeasonStatsTeamRecordCopyWithImpl<$Res,
+          GameSummaryTeamSeasonStatsTeamRecord>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "wins") int wins,
+      @JsonKey(name: "losses") int losses,
+      @JsonKey(name: "ties") int ties,
+      @JsonKey(name: "OTWins") int otWins,
+      @JsonKey(name: "OTLosses") int otLosses,
+      @JsonKey(name: "SOLosses") int soLosses,
+      @JsonKey(name: "formattedRecord") String formattedRecord});
+}
+
+/// @nodoc
+class _$GameSummaryTeamSeasonStatsTeamRecordCopyWithImpl<$Res,
+        $Val extends GameSummaryTeamSeasonStatsTeamRecord>
+    implements $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> {
+  _$GameSummaryTeamSeasonStatsTeamRecordCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryTeamSeasonStatsTeamRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? wins = null,
+    Object? losses = null,
+    Object? ties = null,
+    Object? otWins = null,
+    Object? otLosses = null,
+    Object? soLosses = null,
+    Object? formattedRecord = null,
+  }) {
+    return _then(_value.copyWith(
+      wins: null == wins
+          ? _value.wins
+          : wins // ignore: cast_nullable_to_non_nullable
+              as int,
+      losses: null == losses
+          ? _value.losses
+          : losses // ignore: cast_nullable_to_non_nullable
+              as int,
+      ties: null == ties
+          ? _value.ties
+          : ties // ignore: cast_nullable_to_non_nullable
+              as int,
+      otWins: null == otWins
+          ? _value.otWins
+          : otWins // ignore: cast_nullable_to_non_nullable
+              as int,
+      otLosses: null == otLosses
+          ? _value.otLosses
+          : otLosses // ignore: cast_nullable_to_non_nullable
+              as int,
+      soLosses: null == soLosses
+          ? _value.soLosses
+          : soLosses // ignore: cast_nullable_to_non_nullable
+              as int,
+      formattedRecord: null == formattedRecord
+          ? _value.formattedRecord
+          : formattedRecord // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWith<$Res>
+    implements $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> {
+  factory _$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWith(
+          _$GameSummaryTeamSeasonStatsTeamRecordImpl value,
+          $Res Function(_$GameSummaryTeamSeasonStatsTeamRecordImpl) then) =
+      __$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "wins") int wins,
+      @JsonKey(name: "losses") int losses,
+      @JsonKey(name: "ties") int ties,
+      @JsonKey(name: "OTWins") int otWins,
+      @JsonKey(name: "OTLosses") int otLosses,
+      @JsonKey(name: "SOLosses") int soLosses,
+      @JsonKey(name: "formattedRecord") String formattedRecord});
+}
+
+/// @nodoc
+class __$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWithImpl<$Res>
+    extends _$GameSummaryTeamSeasonStatsTeamRecordCopyWithImpl<$Res,
+        _$GameSummaryTeamSeasonStatsTeamRecordImpl>
+    implements _$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWith<$Res> {
+  __$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWithImpl(
+      _$GameSummaryTeamSeasonStatsTeamRecordImpl _value,
+      $Res Function(_$GameSummaryTeamSeasonStatsTeamRecordImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryTeamSeasonStatsTeamRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? wins = null,
+    Object? losses = null,
+    Object? ties = null,
+    Object? otWins = null,
+    Object? otLosses = null,
+    Object? soLosses = null,
+    Object? formattedRecord = null,
+  }) {
+    return _then(_$GameSummaryTeamSeasonStatsTeamRecordImpl(
+      wins: null == wins
+          ? _value.wins
+          : wins // ignore: cast_nullable_to_non_nullable
+              as int,
+      losses: null == losses
+          ? _value.losses
+          : losses // ignore: cast_nullable_to_non_nullable
+              as int,
+      ties: null == ties
+          ? _value.ties
+          : ties // ignore: cast_nullable_to_non_nullable
+              as int,
+      otWins: null == otWins
+          ? _value.otWins
+          : otWins // ignore: cast_nullable_to_non_nullable
+              as int,
+      otLosses: null == otLosses
+          ? _value.otLosses
+          : otLosses // ignore: cast_nullable_to_non_nullable
+              as int,
+      soLosses: null == soLosses
+          ? _value.soLosses
+          : soLosses // ignore: cast_nullable_to_non_nullable
+              as int,
+      formattedRecord: null == formattedRecord
+          ? _value.formattedRecord
+          : formattedRecord // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryTeamSeasonStatsTeamRecordImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryTeamSeasonStatsTeamRecord {
+  const _$GameSummaryTeamSeasonStatsTeamRecordImpl(
+      {@JsonKey(name: "wins") required this.wins,
+      @JsonKey(name: "losses") required this.losses,
+      @JsonKey(name: "ties") required this.ties,
+      @JsonKey(name: "OTWins") required this.otWins,
+      @JsonKey(name: "OTLosses") required this.otLosses,
+      @JsonKey(name: "SOLosses") required this.soLosses,
+      @JsonKey(name: "formattedRecord") required this.formattedRecord});
+
+  factory _$GameSummaryTeamSeasonStatsTeamRecordImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GameSummaryTeamSeasonStatsTeamRecordImplFromJson(json);
+
+  @override
+  @JsonKey(name: "wins")
+  final int wins;
+  @override
+  @JsonKey(name: "losses")
+  final int losses;
+  @override
+  @JsonKey(name: "ties")
+  final int ties;
+  @override
+  @JsonKey(name: "OTWins")
+  final int otWins;
+  @override
+  @JsonKey(name: "OTLosses")
+  final int otLosses;
+  @override
+  @JsonKey(name: "SOLosses")
+  final int soLosses;
+  @override
+  @JsonKey(name: "formattedRecord")
+  final String formattedRecord;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryTeamSeasonStatsTeamRecord(wins: $wins, losses: $losses, ties: $ties, otWins: $otWins, otLosses: $otLosses, soLosses: $soLosses, formattedRecord: $formattedRecord)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryTeamSeasonStatsTeamRecord'))
+      ..add(DiagnosticsProperty('wins', wins))
+      ..add(DiagnosticsProperty('losses', losses))
+      ..add(DiagnosticsProperty('ties', ties))
+      ..add(DiagnosticsProperty('otWins', otWins))
+      ..add(DiagnosticsProperty('otLosses', otLosses))
+      ..add(DiagnosticsProperty('soLosses', soLosses))
+      ..add(DiagnosticsProperty('formattedRecord', formattedRecord));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryTeamSeasonStatsTeamRecordImpl &&
+            (identical(other.wins, wins) || other.wins == wins) &&
+            (identical(other.losses, losses) || other.losses == losses) &&
+            (identical(other.ties, ties) || other.ties == ties) &&
+            (identical(other.otWins, otWins) || other.otWins == otWins) &&
+            (identical(other.otLosses, otLosses) ||
+                other.otLosses == otLosses) &&
+            (identical(other.soLosses, soLosses) ||
+                other.soLosses == soLosses) &&
+            (identical(other.formattedRecord, formattedRecord) ||
+                other.formattedRecord == formattedRecord));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, wins, losses, ties, otWins,
+      otLosses, soLosses, formattedRecord);
+
+  /// Create a copy of GameSummaryTeamSeasonStatsTeamRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWith<
+          _$GameSummaryTeamSeasonStatsTeamRecordImpl>
+      get copyWith => __$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWithImpl<
+          _$GameSummaryTeamSeasonStatsTeamRecordImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryTeamSeasonStatsTeamRecordImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryTeamSeasonStatsTeamRecord
+    implements GameSummaryTeamSeasonStatsTeamRecord {
+  const factory _GameSummaryTeamSeasonStatsTeamRecord(
+          {@JsonKey(name: "wins") required final int wins,
+          @JsonKey(name: "losses") required final int losses,
+          @JsonKey(name: "ties") required final int ties,
+          @JsonKey(name: "OTWins") required final int otWins,
+          @JsonKey(name: "OTLosses") required final int otLosses,
+          @JsonKey(name: "SOLosses") required final int soLosses,
+          @JsonKey(name: "formattedRecord")
+          required final String formattedRecord}) =
+      _$GameSummaryTeamSeasonStatsTeamRecordImpl;
+
+  factory _GameSummaryTeamSeasonStatsTeamRecord.fromJson(
+          Map<String, dynamic> json) =
+      _$GameSummaryTeamSeasonStatsTeamRecordImpl.fromJson;
+
+  @override
+  @JsonKey(name: "wins")
+  int get wins;
+  @override
+  @JsonKey(name: "losses")
+  int get losses;
+  @override
+  @JsonKey(name: "ties")
+  int get ties;
+  @override
+  @JsonKey(name: "OTWins")
+  int get otWins;
+  @override
+  @JsonKey(name: "OTLosses")
+  int get otLosses;
+  @override
+  @JsonKey(name: "SOLosses")
+  int get soLosses;
+  @override
+  @JsonKey(name: "formattedRecord")
+  String get formattedRecord;
+
+  /// Create a copy of GameSummaryTeamSeasonStatsTeamRecord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryTeamSeasonStatsTeamRecordImplCopyWith<
+          _$GameSummaryTeamSeasonStatsTeamRecordImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryTeamStats _$GameSummaryTeamStatsFromJson(Map<String, dynamic> json) {
+  return _GameSummaryTeamStats.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryTeamStats {
+  @JsonKey(name: "shots")
+  int get shots => throw _privateConstructorUsedError;
+  @JsonKey(name: "goals")
+  int get goals => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryTeamStats to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryTeamStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryTeamStatsCopyWith<GameSummaryTeamStats> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryTeamStatsCopyWith<$Res> {
+  factory $GameSummaryTeamStatsCopyWith(GameSummaryTeamStats value,
+          $Res Function(GameSummaryTeamStats) then) =
+      _$GameSummaryTeamStatsCopyWithImpl<$Res, GameSummaryTeamStats>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "shots") int shots, @JsonKey(name: "goals") int goals});
+}
+
+/// @nodoc
+class _$GameSummaryTeamStatsCopyWithImpl<$Res,
+        $Val extends GameSummaryTeamStats>
+    implements $GameSummaryTeamStatsCopyWith<$Res> {
+  _$GameSummaryTeamStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryTeamStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shots = null,
+    Object? goals = null,
+  }) {
+    return _then(_value.copyWith(
+      shots: null == shots
+          ? _value.shots
+          : shots // ignore: cast_nullable_to_non_nullable
+              as int,
+      goals: null == goals
+          ? _value.goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryTeamStatsImplCopyWith<$Res>
+    implements $GameSummaryTeamStatsCopyWith<$Res> {
+  factory _$$GameSummaryTeamStatsImplCopyWith(_$GameSummaryTeamStatsImpl value,
+          $Res Function(_$GameSummaryTeamStatsImpl) then) =
+      __$$GameSummaryTeamStatsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "shots") int shots, @JsonKey(name: "goals") int goals});
+}
+
+/// @nodoc
+class __$$GameSummaryTeamStatsImplCopyWithImpl<$Res>
+    extends _$GameSummaryTeamStatsCopyWithImpl<$Res, _$GameSummaryTeamStatsImpl>
+    implements _$$GameSummaryTeamStatsImplCopyWith<$Res> {
+  __$$GameSummaryTeamStatsImplCopyWithImpl(_$GameSummaryTeamStatsImpl _value,
+      $Res Function(_$GameSummaryTeamStatsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryTeamStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shots = null,
+    Object? goals = null,
+  }) {
+    return _then(_$GameSummaryTeamStatsImpl(
+      shots: null == shots
+          ? _value.shots
+          : shots // ignore: cast_nullable_to_non_nullable
+              as int,
+      goals: null == goals
+          ? _value.goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryTeamStatsImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryTeamStats {
+  const _$GameSummaryTeamStatsImpl(
+      {@JsonKey(name: "shots") required this.shots,
+      @JsonKey(name: "goals") required this.goals});
+
+  factory _$GameSummaryTeamStatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryTeamStatsImplFromJson(json);
+
+  @override
+  @JsonKey(name: "shots")
+  final int shots;
+  @override
+  @JsonKey(name: "goals")
+  final int goals;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryTeamStats(shots: $shots, goals: $goals)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryTeamStats'))
+      ..add(DiagnosticsProperty('shots', shots))
+      ..add(DiagnosticsProperty('goals', goals));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryTeamStatsImpl &&
+            (identical(other.shots, shots) || other.shots == shots) &&
+            (identical(other.goals, goals) || other.goals == goals));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, shots, goals);
+
+  /// Create a copy of GameSummaryTeamStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryTeamStatsImplCopyWith<_$GameSummaryTeamStatsImpl>
+      get copyWith =>
+          __$$GameSummaryTeamStatsImplCopyWithImpl<_$GameSummaryTeamStatsImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryTeamStatsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryTeamStats implements GameSummaryTeamStats {
+  const factory _GameSummaryTeamStats(
+          {@JsonKey(name: "shots") required final int shots,
+          @JsonKey(name: "goals") required final int goals}) =
+      _$GameSummaryTeamStatsImpl;
+
+  factory _GameSummaryTeamStats.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryTeamStatsImpl.fromJson;
+
+  @override
+  @JsonKey(name: "shots")
+  int get shots;
+  @override
+  @JsonKey(name: "goals")
+  int get goals;
+
+  /// Create a copy of GameSummaryTeamStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryTeamStatsImplCopyWith<_$GameSummaryTeamStatsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryTeamSeasonStats _$GameSummaryTeamSeasonStatsFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryTeamSeasonStats.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryTeamSeasonStats {
+  @JsonKey(name: "teamRecord")
+  GameSummaryTeamSeasonStatsTeamRecord get teamRecord =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryTeamSeasonStats to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryTeamSeasonStatsCopyWith<GameSummaryTeamSeasonStats>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryTeamSeasonStatsCopyWith<$Res> {
+  factory $GameSummaryTeamSeasonStatsCopyWith(GameSummaryTeamSeasonStats value,
+          $Res Function(GameSummaryTeamSeasonStats) then) =
+      _$GameSummaryTeamSeasonStatsCopyWithImpl<$Res,
+          GameSummaryTeamSeasonStats>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "teamRecord")
+      GameSummaryTeamSeasonStatsTeamRecord teamRecord});
+
+  $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> get teamRecord;
+}
+
+/// @nodoc
+class _$GameSummaryTeamSeasonStatsCopyWithImpl<$Res,
+        $Val extends GameSummaryTeamSeasonStats>
+    implements $GameSummaryTeamSeasonStatsCopyWith<$Res> {
+  _$GameSummaryTeamSeasonStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamRecord = null,
+  }) {
+    return _then(_value.copyWith(
+      teamRecord: null == teamRecord
+          ? _value.teamRecord
+          : teamRecord // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamSeasonStatsTeamRecord,
+    ) as $Val);
+  }
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> get teamRecord {
+    return $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res>(
+        _value.teamRecord, (value) {
+      return _then(_value.copyWith(teamRecord: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryTeamSeasonStatsImplCopyWith<$Res>
+    implements $GameSummaryTeamSeasonStatsCopyWith<$Res> {
+  factory _$$GameSummaryTeamSeasonStatsImplCopyWith(
+          _$GameSummaryTeamSeasonStatsImpl value,
+          $Res Function(_$GameSummaryTeamSeasonStatsImpl) then) =
+      __$$GameSummaryTeamSeasonStatsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "teamRecord")
+      GameSummaryTeamSeasonStatsTeamRecord teamRecord});
+
+  @override
+  $GameSummaryTeamSeasonStatsTeamRecordCopyWith<$Res> get teamRecord;
+}
+
+/// @nodoc
+class __$$GameSummaryTeamSeasonStatsImplCopyWithImpl<$Res>
+    extends _$GameSummaryTeamSeasonStatsCopyWithImpl<$Res,
+        _$GameSummaryTeamSeasonStatsImpl>
+    implements _$$GameSummaryTeamSeasonStatsImplCopyWith<$Res> {
+  __$$GameSummaryTeamSeasonStatsImplCopyWithImpl(
+      _$GameSummaryTeamSeasonStatsImpl _value,
+      $Res Function(_$GameSummaryTeamSeasonStatsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? teamRecord = null,
+  }) {
+    return _then(_$GameSummaryTeamSeasonStatsImpl(
+      teamRecord: null == teamRecord
+          ? _value.teamRecord
+          : teamRecord // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamSeasonStatsTeamRecord,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryTeamSeasonStatsImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryTeamSeasonStats {
+  const _$GameSummaryTeamSeasonStatsImpl(
+      {@JsonKey(name: "teamRecord") required this.teamRecord});
+
+  factory _$GameSummaryTeamSeasonStatsImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GameSummaryTeamSeasonStatsImplFromJson(json);
+
+  @override
+  @JsonKey(name: "teamRecord")
+  final GameSummaryTeamSeasonStatsTeamRecord teamRecord;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryTeamSeasonStats(teamRecord: $teamRecord)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryTeamSeasonStats'))
+      ..add(DiagnosticsProperty('teamRecord', teamRecord));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryTeamSeasonStatsImpl &&
+            (identical(other.teamRecord, teamRecord) ||
+                other.teamRecord == teamRecord));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, teamRecord);
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryTeamSeasonStatsImplCopyWith<_$GameSummaryTeamSeasonStatsImpl>
+      get copyWith => __$$GameSummaryTeamSeasonStatsImplCopyWithImpl<
+          _$GameSummaryTeamSeasonStatsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryTeamSeasonStatsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryTeamSeasonStats
+    implements GameSummaryTeamSeasonStats {
+  const factory _GameSummaryTeamSeasonStats(
+          {@JsonKey(name: "teamRecord")
+          required final GameSummaryTeamSeasonStatsTeamRecord teamRecord}) =
+      _$GameSummaryTeamSeasonStatsImpl;
+
+  factory _GameSummaryTeamSeasonStats.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryTeamSeasonStatsImpl.fromJson;
+
+  @override
+  @JsonKey(name: "teamRecord")
+  GameSummaryTeamSeasonStatsTeamRecord get teamRecord;
+
+  /// Create a copy of GameSummaryTeamSeasonStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryTeamSeasonStatsImplCopyWith<_$GameSummaryTeamSeasonStatsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryTeam _$GameSummaryTeamFromJson(Map<String, dynamic> json) {
+  return _GameSummaryTeam.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryTeam {
+  @JsonKey(name: "info")
+  GameSummaryTeamInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(name: "stats")
+  GameSummaryTeamStats get stats => throw _privateConstructorUsedError;
+  @JsonKey(name: "seasonStats")
+  GameSummaryTeamSeasonStats get seasonStats =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryTeam to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryTeamCopyWith<GameSummaryTeam> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryTeamCopyWith<$Res> {
+  factory $GameSummaryTeamCopyWith(
+          GameSummaryTeam value, $Res Function(GameSummaryTeam) then) =
+      _$GameSummaryTeamCopyWithImpl<$Res, GameSummaryTeam>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "info") GameSummaryTeamInfo info,
+      @JsonKey(name: "stats") GameSummaryTeamStats stats,
+      @JsonKey(name: "seasonStats") GameSummaryTeamSeasonStats seasonStats});
+
+  $GameSummaryTeamInfoCopyWith<$Res> get info;
+  $GameSummaryTeamStatsCopyWith<$Res> get stats;
+  $GameSummaryTeamSeasonStatsCopyWith<$Res> get seasonStats;
+}
+
+/// @nodoc
+class _$GameSummaryTeamCopyWithImpl<$Res, $Val extends GameSummaryTeam>
+    implements $GameSummaryTeamCopyWith<$Res> {
+  _$GameSummaryTeamCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? info = null,
+    Object? stats = null,
+    Object? seasonStats = null,
+  }) {
+    return _then(_value.copyWith(
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamInfo,
+      stats: null == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamStats,
+      seasonStats: null == seasonStats
+          ? _value.seasonStats
+          : seasonStats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamSeasonStats,
+    ) as $Val);
+  }
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamInfoCopyWith<$Res> get info {
+    return $GameSummaryTeamInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamStatsCopyWith<$Res> get stats {
+    return $GameSummaryTeamStatsCopyWith<$Res>(_value.stats, (value) {
+      return _then(_value.copyWith(stats: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamSeasonStatsCopyWith<$Res> get seasonStats {
+    return $GameSummaryTeamSeasonStatsCopyWith<$Res>(_value.seasonStats,
+        (value) {
+      return _then(_value.copyWith(seasonStats: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryTeamImplCopyWith<$Res>
+    implements $GameSummaryTeamCopyWith<$Res> {
+  factory _$$GameSummaryTeamImplCopyWith(_$GameSummaryTeamImpl value,
+          $Res Function(_$GameSummaryTeamImpl) then) =
+      __$$GameSummaryTeamImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "info") GameSummaryTeamInfo info,
+      @JsonKey(name: "stats") GameSummaryTeamStats stats,
+      @JsonKey(name: "seasonStats") GameSummaryTeamSeasonStats seasonStats});
+
+  @override
+  $GameSummaryTeamInfoCopyWith<$Res> get info;
+  @override
+  $GameSummaryTeamStatsCopyWith<$Res> get stats;
+  @override
+  $GameSummaryTeamSeasonStatsCopyWith<$Res> get seasonStats;
+}
+
+/// @nodoc
+class __$$GameSummaryTeamImplCopyWithImpl<$Res>
+    extends _$GameSummaryTeamCopyWithImpl<$Res, _$GameSummaryTeamImpl>
+    implements _$$GameSummaryTeamImplCopyWith<$Res> {
+  __$$GameSummaryTeamImplCopyWithImpl(
+      _$GameSummaryTeamImpl _value, $Res Function(_$GameSummaryTeamImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? info = null,
+    Object? stats = null,
+    Object? seasonStats = null,
+  }) {
+    return _then(_$GameSummaryTeamImpl(
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamInfo,
+      stats: null == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamStats,
+      seasonStats: null == seasonStats
+          ? _value.seasonStats
+          : seasonStats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeamSeasonStats,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryTeamImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryTeam {
+  const _$GameSummaryTeamImpl(
+      {@JsonKey(name: "info") required this.info,
+      @JsonKey(name: "stats") required this.stats,
+      @JsonKey(name: "seasonStats") required this.seasonStats});
+
+  factory _$GameSummaryTeamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryTeamImplFromJson(json);
+
+  @override
+  @JsonKey(name: "info")
+  final GameSummaryTeamInfo info;
+  @override
+  @JsonKey(name: "stats")
+  final GameSummaryTeamStats stats;
+  @override
+  @JsonKey(name: "seasonStats")
+  final GameSummaryTeamSeasonStats seasonStats;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryTeam(info: $info, stats: $stats, seasonStats: $seasonStats)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryTeam'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('stats', stats))
+      ..add(DiagnosticsProperty('seasonStats', seasonStats));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryTeamImpl &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.stats, stats) || other.stats == stats) &&
+            (identical(other.seasonStats, seasonStats) ||
+                other.seasonStats == seasonStats));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, info, stats, seasonStats);
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryTeamImplCopyWith<_$GameSummaryTeamImpl> get copyWith =>
+      __$$GameSummaryTeamImplCopyWithImpl<_$GameSummaryTeamImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryTeamImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryTeam implements GameSummaryTeam {
+  const factory _GameSummaryTeam(
+          {@JsonKey(name: "info") required final GameSummaryTeamInfo info,
+          @JsonKey(name: "stats") required final GameSummaryTeamStats stats,
+          @JsonKey(name: "seasonStats")
+          required final GameSummaryTeamSeasonStats seasonStats}) =
+      _$GameSummaryTeamImpl;
+
+  factory _GameSummaryTeam.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryTeamImpl.fromJson;
+
+  @override
+  @JsonKey(name: "info")
+  GameSummaryTeamInfo get info;
+  @override
+  @JsonKey(name: "stats")
+  GameSummaryTeamStats get stats;
+  @override
+  @JsonKey(name: "seasonStats")
+  GameSummaryTeamSeasonStats get seasonStats;
+
+  /// Create a copy of GameSummaryTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryTeamImplCopyWith<_$GameSummaryTeamImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodStats _$GameSummaryPeriodStatsFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodStats.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodStats {
+  @JsonKey(name: "homeGoals")
+  String get homeGoals => throw _privateConstructorUsedError;
+  @JsonKey(name: "homeShots")
+  String get homeShots => throw _privateConstructorUsedError;
+  @JsonKey(name: "visitingGoals")
+  String get visitingGoals => throw _privateConstructorUsedError;
+  @JsonKey(name: "visitingShots")
+  String get visitingShots => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodStats to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodStatsCopyWith<GameSummaryPeriodStats> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodStatsCopyWith<$Res> {
+  factory $GameSummaryPeriodStatsCopyWith(GameSummaryPeriodStats value,
+          $Res Function(GameSummaryPeriodStats) then) =
+      _$GameSummaryPeriodStatsCopyWithImpl<$Res, GameSummaryPeriodStats>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "homeGoals") String homeGoals,
+      @JsonKey(name: "homeShots") String homeShots,
+      @JsonKey(name: "visitingGoals") String visitingGoals,
+      @JsonKey(name: "visitingShots") String visitingShots});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodStatsCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodStats>
+    implements $GameSummaryPeriodStatsCopyWith<$Res> {
+  _$GameSummaryPeriodStatsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeGoals = null,
+    Object? homeShots = null,
+    Object? visitingGoals = null,
+    Object? visitingShots = null,
+  }) {
+    return _then(_value.copyWith(
+      homeGoals: null == homeGoals
+          ? _value.homeGoals
+          : homeGoals // ignore: cast_nullable_to_non_nullable
+              as String,
+      homeShots: null == homeShots
+          ? _value.homeShots
+          : homeShots // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitingGoals: null == visitingGoals
+          ? _value.visitingGoals
+          : visitingGoals // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitingShots: null == visitingShots
+          ? _value.visitingShots
+          : visitingShots // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodStatsImplCopyWith<$Res>
+    implements $GameSummaryPeriodStatsCopyWith<$Res> {
+  factory _$$GameSummaryPeriodStatsImplCopyWith(
+          _$GameSummaryPeriodStatsImpl value,
+          $Res Function(_$GameSummaryPeriodStatsImpl) then) =
+      __$$GameSummaryPeriodStatsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "homeGoals") String homeGoals,
+      @JsonKey(name: "homeShots") String homeShots,
+      @JsonKey(name: "visitingGoals") String visitingGoals,
+      @JsonKey(name: "visitingShots") String visitingShots});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodStatsImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodStatsCopyWithImpl<$Res,
+        _$GameSummaryPeriodStatsImpl>
+    implements _$$GameSummaryPeriodStatsImplCopyWith<$Res> {
+  __$$GameSummaryPeriodStatsImplCopyWithImpl(
+      _$GameSummaryPeriodStatsImpl _value,
+      $Res Function(_$GameSummaryPeriodStatsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodStats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeGoals = null,
+    Object? homeShots = null,
+    Object? visitingGoals = null,
+    Object? visitingShots = null,
+  }) {
+    return _then(_$GameSummaryPeriodStatsImpl(
+      homeGoals: null == homeGoals
+          ? _value.homeGoals
+          : homeGoals // ignore: cast_nullable_to_non_nullable
+              as String,
+      homeShots: null == homeShots
+          ? _value.homeShots
+          : homeShots // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitingGoals: null == visitingGoals
+          ? _value.visitingGoals
+          : visitingGoals // ignore: cast_nullable_to_non_nullable
+              as String,
+      visitingShots: null == visitingShots
+          ? _value.visitingShots
+          : visitingShots // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodStatsImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodStats {
+  const _$GameSummaryPeriodStatsImpl(
+      {@JsonKey(name: "homeGoals") required this.homeGoals,
+      @JsonKey(name: "homeShots") required this.homeShots,
+      @JsonKey(name: "visitingGoals") required this.visitingGoals,
+      @JsonKey(name: "visitingShots") required this.visitingShots});
+
+  factory _$GameSummaryPeriodStatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodStatsImplFromJson(json);
+
+  @override
+  @JsonKey(name: "homeGoals")
+  final String homeGoals;
+  @override
+  @JsonKey(name: "homeShots")
+  final String homeShots;
+  @override
+  @JsonKey(name: "visitingGoals")
+  final String visitingGoals;
+  @override
+  @JsonKey(name: "visitingShots")
+  final String visitingShots;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodStats(homeGoals: $homeGoals, homeShots: $homeShots, visitingGoals: $visitingGoals, visitingShots: $visitingShots)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodStats'))
+      ..add(DiagnosticsProperty('homeGoals', homeGoals))
+      ..add(DiagnosticsProperty('homeShots', homeShots))
+      ..add(DiagnosticsProperty('visitingGoals', visitingGoals))
+      ..add(DiagnosticsProperty('visitingShots', visitingShots));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodStatsImpl &&
+            (identical(other.homeGoals, homeGoals) ||
+                other.homeGoals == homeGoals) &&
+            (identical(other.homeShots, homeShots) ||
+                other.homeShots == homeShots) &&
+            (identical(other.visitingGoals, visitingGoals) ||
+                other.visitingGoals == visitingGoals) &&
+            (identical(other.visitingShots, visitingShots) ||
+                other.visitingShots == visitingShots));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, homeGoals, homeShots, visitingGoals, visitingShots);
+
+  /// Create a copy of GameSummaryPeriodStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodStatsImplCopyWith<_$GameSummaryPeriodStatsImpl>
+      get copyWith => __$$GameSummaryPeriodStatsImplCopyWithImpl<
+          _$GameSummaryPeriodStatsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodStatsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodStats implements GameSummaryPeriodStats {
+  const factory _GameSummaryPeriodStats(
+      {@JsonKey(name: "homeGoals") required final String homeGoals,
+      @JsonKey(name: "homeShots") required final String homeShots,
+      @JsonKey(name: "visitingGoals") required final String visitingGoals,
+      @JsonKey(name: "visitingShots")
+      required final String visitingShots}) = _$GameSummaryPeriodStatsImpl;
+
+  factory _GameSummaryPeriodStats.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodStatsImpl.fromJson;
+
+  @override
+  @JsonKey(name: "homeGoals")
+  String get homeGoals;
+  @override
+  @JsonKey(name: "homeShots")
+  String get homeShots;
+  @override
+  @JsonKey(name: "visitingGoals")
+  String get visitingGoals;
+  @override
+  @JsonKey(name: "visitingShots")
+  String get visitingShots;
+
+  /// Create a copy of GameSummaryPeriodStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodStatsImplCopyWith<_$GameSummaryPeriodStatsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodInfo _$GameSummaryPeriodInfoFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodInfo {
+  @JsonKey(name: "id")
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "shortName")
+  String get shortName => throw _privateConstructorUsedError;
+  @JsonKey(name: "longName")
+  String get longName => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodInfoCopyWith<GameSummaryPeriodInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodInfoCopyWith<$Res> {
+  factory $GameSummaryPeriodInfoCopyWith(GameSummaryPeriodInfo value,
+          $Res Function(GameSummaryPeriodInfo) then) =
+      _$GameSummaryPeriodInfoCopyWithImpl<$Res, GameSummaryPeriodInfo>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String id,
+      @JsonKey(name: "shortName") String shortName,
+      @JsonKey(name: "longName") String longName});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodInfoCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodInfo>
+    implements $GameSummaryPeriodInfoCopyWith<$Res> {
+  _$GameSummaryPeriodInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? shortName = null,
+    Object? longName = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      shortName: null == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String,
+      longName: null == longName
+          ? _value.longName
+          : longName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodInfoImplCopyWith<$Res>
+    implements $GameSummaryPeriodInfoCopyWith<$Res> {
+  factory _$$GameSummaryPeriodInfoImplCopyWith(
+          _$GameSummaryPeriodInfoImpl value,
+          $Res Function(_$GameSummaryPeriodInfoImpl) then) =
+      __$$GameSummaryPeriodInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String id,
+      @JsonKey(name: "shortName") String shortName,
+      @JsonKey(name: "longName") String longName});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodInfoImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodInfoCopyWithImpl<$Res,
+        _$GameSummaryPeriodInfoImpl>
+    implements _$$GameSummaryPeriodInfoImplCopyWith<$Res> {
+  __$$GameSummaryPeriodInfoImplCopyWithImpl(_$GameSummaryPeriodInfoImpl _value,
+      $Res Function(_$GameSummaryPeriodInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? shortName = null,
+    Object? longName = null,
+  }) {
+    return _then(_$GameSummaryPeriodInfoImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      shortName: null == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String,
+      longName: null == longName
+          ? _value.longName
+          : longName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodInfoImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodInfo {
+  const _$GameSummaryPeriodInfoImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "shortName") required this.shortName,
+      @JsonKey(name: "longName") required this.longName});
+
+  factory _$GameSummaryPeriodInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodInfoImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final String id;
+  @override
+  @JsonKey(name: "shortName")
+  final String shortName;
+  @override
+  @JsonKey(name: "longName")
+  final String longName;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodInfo(id: $id, shortName: $shortName, longName: $longName)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodInfo'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('shortName', shortName))
+      ..add(DiagnosticsProperty('longName', longName));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodInfoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.shortName, shortName) ||
+                other.shortName == shortName) &&
+            (identical(other.longName, longName) ||
+                other.longName == longName));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, shortName, longName);
+
+  /// Create a copy of GameSummaryPeriodInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodInfoImplCopyWith<_$GameSummaryPeriodInfoImpl>
+      get copyWith => __$$GameSummaryPeriodInfoImplCopyWithImpl<
+          _$GameSummaryPeriodInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodInfoImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodInfo implements GameSummaryPeriodInfo {
+  const factory _GameSummaryPeriodInfo(
+          {@JsonKey(name: "id") required final String id,
+          @JsonKey(name: "shortName") required final String shortName,
+          @JsonKey(name: "longName") required final String longName}) =
+      _$GameSummaryPeriodInfoImpl;
+
+  factory _GameSummaryPeriodInfo.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodInfoImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  String get id;
+  @override
+  @JsonKey(name: "shortName")
+  String get shortName;
+  @override
+  @JsonKey(name: "longName")
+  String get longName;
+
+  /// Create a copy of GameSummaryPeriodInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodInfoImplCopyWith<_$GameSummaryPeriodInfoImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodGoalPlayerInfo _$GameSummaryPeriodGoalPlayerInfoFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodGoalPlayerInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodGoalPlayerInfo {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "firstName")
+  String get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: "lastName")
+  String get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: "playerImageURL")
+  String get playerImageURL => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodGoalPlayerInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodGoalPlayerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodGoalPlayerInfoCopyWith<GameSummaryPeriodGoalPlayerInfo>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> {
+  factory $GameSummaryPeriodGoalPlayerInfoCopyWith(
+          GameSummaryPeriodGoalPlayerInfo value,
+          $Res Function(GameSummaryPeriodGoalPlayerInfo) then) =
+      _$GameSummaryPeriodGoalPlayerInfoCopyWithImpl<$Res,
+          GameSummaryPeriodGoalPlayerInfo>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "firstName") String firstName,
+      @JsonKey(name: "lastName") String lastName,
+      @JsonKey(name: "playerImageURL") String playerImageURL});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodGoalPlayerInfoCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodGoalPlayerInfo>
+    implements $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> {
+  _$GameSummaryPeriodGoalPlayerInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodGoalPlayerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? playerImageURL = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      playerImageURL: null == playerImageURL
+          ? _value.playerImageURL
+          : playerImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodGoalPlayerInfoImplCopyWith<$Res>
+    implements $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> {
+  factory _$$GameSummaryPeriodGoalPlayerInfoImplCopyWith(
+          _$GameSummaryPeriodGoalPlayerInfoImpl value,
+          $Res Function(_$GameSummaryPeriodGoalPlayerInfoImpl) then) =
+      __$$GameSummaryPeriodGoalPlayerInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "firstName") String firstName,
+      @JsonKey(name: "lastName") String lastName,
+      @JsonKey(name: "playerImageURL") String playerImageURL});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodGoalPlayerInfoImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodGoalPlayerInfoCopyWithImpl<$Res,
+        _$GameSummaryPeriodGoalPlayerInfoImpl>
+    implements _$$GameSummaryPeriodGoalPlayerInfoImplCopyWith<$Res> {
+  __$$GameSummaryPeriodGoalPlayerInfoImplCopyWithImpl(
+      _$GameSummaryPeriodGoalPlayerInfoImpl _value,
+      $Res Function(_$GameSummaryPeriodGoalPlayerInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodGoalPlayerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? playerImageURL = null,
+  }) {
+    return _then(_$GameSummaryPeriodGoalPlayerInfoImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      playerImageURL: null == playerImageURL
+          ? _value.playerImageURL
+          : playerImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodGoalPlayerInfoImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodGoalPlayerInfo {
+  const _$GameSummaryPeriodGoalPlayerInfoImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "firstName") required this.firstName,
+      @JsonKey(name: "lastName") required this.lastName,
+      @JsonKey(name: "playerImageURL") required this.playerImageURL});
+
+  factory _$GameSummaryPeriodGoalPlayerInfoImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodGoalPlayerInfoImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "firstName")
+  final String firstName;
+  @override
+  @JsonKey(name: "lastName")
+  final String lastName;
+  @override
+  @JsonKey(name: "playerImageURL")
+  final String playerImageURL;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodGoalPlayerInfo(id: $id, firstName: $firstName, lastName: $lastName, playerImageURL: $playerImageURL)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodGoalPlayerInfo'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('firstName', firstName))
+      ..add(DiagnosticsProperty('lastName', lastName))
+      ..add(DiagnosticsProperty('playerImageURL', playerImageURL));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodGoalPlayerInfoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.playerImageURL, playerImageURL) ||
+                other.playerImageURL == playerImageURL));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, firstName, lastName, playerImageURL);
+
+  /// Create a copy of GameSummaryPeriodGoalPlayerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodGoalPlayerInfoImplCopyWith<
+          _$GameSummaryPeriodGoalPlayerInfoImpl>
+      get copyWith => __$$GameSummaryPeriodGoalPlayerInfoImplCopyWithImpl<
+          _$GameSummaryPeriodGoalPlayerInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodGoalPlayerInfoImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodGoalPlayerInfo
+    implements GameSummaryPeriodGoalPlayerInfo {
+  const factory _GameSummaryPeriodGoalPlayerInfo(
+          {@JsonKey(name: "id") required final int id,
+          @JsonKey(name: "firstName") required final String firstName,
+          @JsonKey(name: "lastName") required final String lastName,
+          @JsonKey(name: "playerImageURL")
+          required final String playerImageURL}) =
+      _$GameSummaryPeriodGoalPlayerInfoImpl;
+
+  factory _GameSummaryPeriodGoalPlayerInfo.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodGoalPlayerInfoImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "firstName")
+  String get firstName;
+  @override
+  @JsonKey(name: "lastName")
+  String get lastName;
+  @override
+  @JsonKey(name: "playerImageURL")
+  String get playerImageURL;
+
+  /// Create a copy of GameSummaryPeriodGoalPlayerInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodGoalPlayerInfoImplCopyWith<
+          _$GameSummaryPeriodGoalPlayerInfoImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodGoalProperties _$GameSummaryPeriodGoalPropertiesFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodGoalProperties.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodGoalProperties {
+  @JsonKey(name: "isPowerPlay")
+  String get isPowerPlay => throw _privateConstructorUsedError;
+  @JsonKey(name: "isShortHanded")
+  String get isShortHanded => throw _privateConstructorUsedError;
+  @JsonKey(name: "isEmptyNet")
+  String get isEmptyNet => throw _privateConstructorUsedError;
+  @JsonKey(name: "isPenaltyShot")
+  String get isPenaltyShot => throw _privateConstructorUsedError;
+  @JsonKey(name: "isInsuranceGoal")
+  String get isInsuranceGoal => throw _privateConstructorUsedError;
+  @JsonKey(name: "isGameWinningGoal")
+  String get isGameWinningGoal => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodGoalProperties to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodGoalProperties
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodGoalPropertiesCopyWith<GameSummaryPeriodGoalProperties>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodGoalPropertiesCopyWith<$Res> {
+  factory $GameSummaryPeriodGoalPropertiesCopyWith(
+          GameSummaryPeriodGoalProperties value,
+          $Res Function(GameSummaryPeriodGoalProperties) then) =
+      _$GameSummaryPeriodGoalPropertiesCopyWithImpl<$Res,
+          GameSummaryPeriodGoalProperties>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "isPowerPlay") String isPowerPlay,
+      @JsonKey(name: "isShortHanded") String isShortHanded,
+      @JsonKey(name: "isEmptyNet") String isEmptyNet,
+      @JsonKey(name: "isPenaltyShot") String isPenaltyShot,
+      @JsonKey(name: "isInsuranceGoal") String isInsuranceGoal,
+      @JsonKey(name: "isGameWinningGoal") String isGameWinningGoal});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodGoalPropertiesCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodGoalProperties>
+    implements $GameSummaryPeriodGoalPropertiesCopyWith<$Res> {
+  _$GameSummaryPeriodGoalPropertiesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodGoalProperties
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isPowerPlay = null,
+    Object? isShortHanded = null,
+    Object? isEmptyNet = null,
+    Object? isPenaltyShot = null,
+    Object? isInsuranceGoal = null,
+    Object? isGameWinningGoal = null,
+  }) {
+    return _then(_value.copyWith(
+      isPowerPlay: null == isPowerPlay
+          ? _value.isPowerPlay
+          : isPowerPlay // ignore: cast_nullable_to_non_nullable
+              as String,
+      isShortHanded: null == isShortHanded
+          ? _value.isShortHanded
+          : isShortHanded // ignore: cast_nullable_to_non_nullable
+              as String,
+      isEmptyNet: null == isEmptyNet
+          ? _value.isEmptyNet
+          : isEmptyNet // ignore: cast_nullable_to_non_nullable
+              as String,
+      isPenaltyShot: null == isPenaltyShot
+          ? _value.isPenaltyShot
+          : isPenaltyShot // ignore: cast_nullable_to_non_nullable
+              as String,
+      isInsuranceGoal: null == isInsuranceGoal
+          ? _value.isInsuranceGoal
+          : isInsuranceGoal // ignore: cast_nullable_to_non_nullable
+              as String,
+      isGameWinningGoal: null == isGameWinningGoal
+          ? _value.isGameWinningGoal
+          : isGameWinningGoal // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodGoalPropertiesImplCopyWith<$Res>
+    implements $GameSummaryPeriodGoalPropertiesCopyWith<$Res> {
+  factory _$$GameSummaryPeriodGoalPropertiesImplCopyWith(
+          _$GameSummaryPeriodGoalPropertiesImpl value,
+          $Res Function(_$GameSummaryPeriodGoalPropertiesImpl) then) =
+      __$$GameSummaryPeriodGoalPropertiesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "isPowerPlay") String isPowerPlay,
+      @JsonKey(name: "isShortHanded") String isShortHanded,
+      @JsonKey(name: "isEmptyNet") String isEmptyNet,
+      @JsonKey(name: "isPenaltyShot") String isPenaltyShot,
+      @JsonKey(name: "isInsuranceGoal") String isInsuranceGoal,
+      @JsonKey(name: "isGameWinningGoal") String isGameWinningGoal});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodGoalPropertiesImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodGoalPropertiesCopyWithImpl<$Res,
+        _$GameSummaryPeriodGoalPropertiesImpl>
+    implements _$$GameSummaryPeriodGoalPropertiesImplCopyWith<$Res> {
+  __$$GameSummaryPeriodGoalPropertiesImplCopyWithImpl(
+      _$GameSummaryPeriodGoalPropertiesImpl _value,
+      $Res Function(_$GameSummaryPeriodGoalPropertiesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodGoalProperties
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isPowerPlay = null,
+    Object? isShortHanded = null,
+    Object? isEmptyNet = null,
+    Object? isPenaltyShot = null,
+    Object? isInsuranceGoal = null,
+    Object? isGameWinningGoal = null,
+  }) {
+    return _then(_$GameSummaryPeriodGoalPropertiesImpl(
+      isPowerPlay: null == isPowerPlay
+          ? _value.isPowerPlay
+          : isPowerPlay // ignore: cast_nullable_to_non_nullable
+              as String,
+      isShortHanded: null == isShortHanded
+          ? _value.isShortHanded
+          : isShortHanded // ignore: cast_nullable_to_non_nullable
+              as String,
+      isEmptyNet: null == isEmptyNet
+          ? _value.isEmptyNet
+          : isEmptyNet // ignore: cast_nullable_to_non_nullable
+              as String,
+      isPenaltyShot: null == isPenaltyShot
+          ? _value.isPenaltyShot
+          : isPenaltyShot // ignore: cast_nullable_to_non_nullable
+              as String,
+      isInsuranceGoal: null == isInsuranceGoal
+          ? _value.isInsuranceGoal
+          : isInsuranceGoal // ignore: cast_nullable_to_non_nullable
+              as String,
+      isGameWinningGoal: null == isGameWinningGoal
+          ? _value.isGameWinningGoal
+          : isGameWinningGoal // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodGoalPropertiesImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodGoalProperties {
+  const _$GameSummaryPeriodGoalPropertiesImpl(
+      {@JsonKey(name: "isPowerPlay") required this.isPowerPlay,
+      @JsonKey(name: "isShortHanded") required this.isShortHanded,
+      @JsonKey(name: "isEmptyNet") required this.isEmptyNet,
+      @JsonKey(name: "isPenaltyShot") required this.isPenaltyShot,
+      @JsonKey(name: "isInsuranceGoal") required this.isInsuranceGoal,
+      @JsonKey(name: "isGameWinningGoal") required this.isGameWinningGoal});
+
+  factory _$GameSummaryPeriodGoalPropertiesImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodGoalPropertiesImplFromJson(json);
+
+  @override
+  @JsonKey(name: "isPowerPlay")
+  final String isPowerPlay;
+  @override
+  @JsonKey(name: "isShortHanded")
+  final String isShortHanded;
+  @override
+  @JsonKey(name: "isEmptyNet")
+  final String isEmptyNet;
+  @override
+  @JsonKey(name: "isPenaltyShot")
+  final String isPenaltyShot;
+  @override
+  @JsonKey(name: "isInsuranceGoal")
+  final String isInsuranceGoal;
+  @override
+  @JsonKey(name: "isGameWinningGoal")
+  final String isGameWinningGoal;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodGoalProperties(isPowerPlay: $isPowerPlay, isShortHanded: $isShortHanded, isEmptyNet: $isEmptyNet, isPenaltyShot: $isPenaltyShot, isInsuranceGoal: $isInsuranceGoal, isGameWinningGoal: $isGameWinningGoal)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodGoalProperties'))
+      ..add(DiagnosticsProperty('isPowerPlay', isPowerPlay))
+      ..add(DiagnosticsProperty('isShortHanded', isShortHanded))
+      ..add(DiagnosticsProperty('isEmptyNet', isEmptyNet))
+      ..add(DiagnosticsProperty('isPenaltyShot', isPenaltyShot))
+      ..add(DiagnosticsProperty('isInsuranceGoal', isInsuranceGoal))
+      ..add(DiagnosticsProperty('isGameWinningGoal', isGameWinningGoal));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodGoalPropertiesImpl &&
+            (identical(other.isPowerPlay, isPowerPlay) ||
+                other.isPowerPlay == isPowerPlay) &&
+            (identical(other.isShortHanded, isShortHanded) ||
+                other.isShortHanded == isShortHanded) &&
+            (identical(other.isEmptyNet, isEmptyNet) ||
+                other.isEmptyNet == isEmptyNet) &&
+            (identical(other.isPenaltyShot, isPenaltyShot) ||
+                other.isPenaltyShot == isPenaltyShot) &&
+            (identical(other.isInsuranceGoal, isInsuranceGoal) ||
+                other.isInsuranceGoal == isInsuranceGoal) &&
+            (identical(other.isGameWinningGoal, isGameWinningGoal) ||
+                other.isGameWinningGoal == isGameWinningGoal));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, isPowerPlay, isShortHanded,
+      isEmptyNet, isPenaltyShot, isInsuranceGoal, isGameWinningGoal);
+
+  /// Create a copy of GameSummaryPeriodGoalProperties
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodGoalPropertiesImplCopyWith<
+          _$GameSummaryPeriodGoalPropertiesImpl>
+      get copyWith => __$$GameSummaryPeriodGoalPropertiesImplCopyWithImpl<
+          _$GameSummaryPeriodGoalPropertiesImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodGoalPropertiesImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodGoalProperties
+    implements GameSummaryPeriodGoalProperties {
+  const factory _GameSummaryPeriodGoalProperties(
+      {@JsonKey(name: "isPowerPlay") required final String isPowerPlay,
+      @JsonKey(name: "isShortHanded") required final String isShortHanded,
+      @JsonKey(name: "isEmptyNet") required final String isEmptyNet,
+      @JsonKey(name: "isPenaltyShot") required final String isPenaltyShot,
+      @JsonKey(name: "isInsuranceGoal") required final String isInsuranceGoal,
+      @JsonKey(name: "isGameWinningGoal")
+      required final String
+          isGameWinningGoal}) = _$GameSummaryPeriodGoalPropertiesImpl;
+
+  factory _GameSummaryPeriodGoalProperties.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodGoalPropertiesImpl.fromJson;
+
+  @override
+  @JsonKey(name: "isPowerPlay")
+  String get isPowerPlay;
+  @override
+  @JsonKey(name: "isShortHanded")
+  String get isShortHanded;
+  @override
+  @JsonKey(name: "isEmptyNet")
+  String get isEmptyNet;
+  @override
+  @JsonKey(name: "isPenaltyShot")
+  String get isPenaltyShot;
+  @override
+  @JsonKey(name: "isInsuranceGoal")
+  String get isInsuranceGoal;
+  @override
+  @JsonKey(name: "isGameWinningGoal")
+  String get isGameWinningGoal;
+
+  /// Create a copy of GameSummaryPeriodGoalProperties
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodGoalPropertiesImplCopyWith<
+          _$GameSummaryPeriodGoalPropertiesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodGoalTeam _$GameSummaryPeriodGoalTeamFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodGoalTeam.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodGoalTeam {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "nickname")
+  String get nickname => throw _privateConstructorUsedError;
+  @JsonKey(name: "abbreviation")
+  String get abbreviation => throw _privateConstructorUsedError;
+  @JsonKey(name: "logo")
+  String get logo => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodGoalTeam to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodGoalTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodGoalTeamCopyWith<GameSummaryPeriodGoalTeam> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodGoalTeamCopyWith<$Res> {
+  factory $GameSummaryPeriodGoalTeamCopyWith(GameSummaryPeriodGoalTeam value,
+          $Res Function(GameSummaryPeriodGoalTeam) then) =
+      _$GameSummaryPeriodGoalTeamCopyWithImpl<$Res, GameSummaryPeriodGoalTeam>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodGoalTeamCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodGoalTeam>
+    implements $GameSummaryPeriodGoalTeamCopyWith<$Res> {
+  _$GameSummaryPeriodGoalTeamCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodGoalTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodGoalTeamImplCopyWith<$Res>
+    implements $GameSummaryPeriodGoalTeamCopyWith<$Res> {
+  factory _$$GameSummaryPeriodGoalTeamImplCopyWith(
+          _$GameSummaryPeriodGoalTeamImpl value,
+          $Res Function(_$GameSummaryPeriodGoalTeamImpl) then) =
+      __$$GameSummaryPeriodGoalTeamImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodGoalTeamImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodGoalTeamCopyWithImpl<$Res,
+        _$GameSummaryPeriodGoalTeamImpl>
+    implements _$$GameSummaryPeriodGoalTeamImplCopyWith<$Res> {
+  __$$GameSummaryPeriodGoalTeamImplCopyWithImpl(
+      _$GameSummaryPeriodGoalTeamImpl _value,
+      $Res Function(_$GameSummaryPeriodGoalTeamImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodGoalTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+  }) {
+    return _then(_$GameSummaryPeriodGoalTeamImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodGoalTeamImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodGoalTeam {
+  const _$GameSummaryPeriodGoalTeamImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "nickname") required this.nickname,
+      @JsonKey(name: "abbreviation") required this.abbreviation,
+      @JsonKey(name: "logo") required this.logo});
+
+  factory _$GameSummaryPeriodGoalTeamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodGoalTeamImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "nickname")
+  final String nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  final String abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  final String logo;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodGoalTeam(id: $id, name: $name, nickname: $nickname, abbreviation: $abbreviation, logo: $logo)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodGoalTeam'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('nickname', nickname))
+      ..add(DiagnosticsProperty('abbreviation', abbreviation))
+      ..add(DiagnosticsProperty('logo', logo));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodGoalTeamImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.abbreviation, abbreviation) ||
+                other.abbreviation == abbreviation) &&
+            (identical(other.logo, logo) || other.logo == logo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, nickname, abbreviation, logo);
+
+  /// Create a copy of GameSummaryPeriodGoalTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodGoalTeamImplCopyWith<_$GameSummaryPeriodGoalTeamImpl>
+      get copyWith => __$$GameSummaryPeriodGoalTeamImplCopyWithImpl<
+          _$GameSummaryPeriodGoalTeamImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodGoalTeamImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodGoalTeam implements GameSummaryPeriodGoalTeam {
+  const factory _GameSummaryPeriodGoalTeam(
+          {@JsonKey(name: "id") required final int id,
+          @JsonKey(name: "name") required final String name,
+          @JsonKey(name: "nickname") required final String nickname,
+          @JsonKey(name: "abbreviation") required final String abbreviation,
+          @JsonKey(name: "logo") required final String logo}) =
+      _$GameSummaryPeriodGoalTeamImpl;
+
+  factory _GameSummaryPeriodGoalTeam.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodGoalTeamImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "nickname")
+  String get nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  String get abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  String get logo;
+
+  /// Create a copy of GameSummaryPeriodGoalTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodGoalTeamImplCopyWith<_$GameSummaryPeriodGoalTeamImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodGoalPeriod _$GameSummaryPeriodGoalPeriodFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodGoalPeriod.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodGoalPeriod {
+  @JsonKey(name: "id")
+  String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "shortName")
+  String get shortName => throw _privateConstructorUsedError;
+  @JsonKey(name: "longName")
+  String get longName => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodGoalPeriod to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodGoalPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodGoalPeriodCopyWith<GameSummaryPeriodGoalPeriod>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodGoalPeriodCopyWith<$Res> {
+  factory $GameSummaryPeriodGoalPeriodCopyWith(
+          GameSummaryPeriodGoalPeriod value,
+          $Res Function(GameSummaryPeriodGoalPeriod) then) =
+      _$GameSummaryPeriodGoalPeriodCopyWithImpl<$Res,
+          GameSummaryPeriodGoalPeriod>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String id,
+      @JsonKey(name: "shortName") String shortName,
+      @JsonKey(name: "longName") String longName});
+}
+
+/// @nodoc
+class _$GameSummaryPeriodGoalPeriodCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodGoalPeriod>
+    implements $GameSummaryPeriodGoalPeriodCopyWith<$Res> {
+  _$GameSummaryPeriodGoalPeriodCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodGoalPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? shortName = null,
+    Object? longName = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      shortName: null == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String,
+      longName: null == longName
+          ? _value.longName
+          : longName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodGoalPeriodImplCopyWith<$Res>
+    implements $GameSummaryPeriodGoalPeriodCopyWith<$Res> {
+  factory _$$GameSummaryPeriodGoalPeriodImplCopyWith(
+          _$GameSummaryPeriodGoalPeriodImpl value,
+          $Res Function(_$GameSummaryPeriodGoalPeriodImpl) then) =
+      __$$GameSummaryPeriodGoalPeriodImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String id,
+      @JsonKey(name: "shortName") String shortName,
+      @JsonKey(name: "longName") String longName});
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodGoalPeriodImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodGoalPeriodCopyWithImpl<$Res,
+        _$GameSummaryPeriodGoalPeriodImpl>
+    implements _$$GameSummaryPeriodGoalPeriodImplCopyWith<$Res> {
+  __$$GameSummaryPeriodGoalPeriodImplCopyWithImpl(
+      _$GameSummaryPeriodGoalPeriodImpl _value,
+      $Res Function(_$GameSummaryPeriodGoalPeriodImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodGoalPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? shortName = null,
+    Object? longName = null,
+  }) {
+    return _then(_$GameSummaryPeriodGoalPeriodImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      shortName: null == shortName
+          ? _value.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String,
+      longName: null == longName
+          ? _value.longName
+          : longName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodGoalPeriodImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodGoalPeriod {
+  const _$GameSummaryPeriodGoalPeriodImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "shortName") required this.shortName,
+      @JsonKey(name: "longName") required this.longName});
+
+  factory _$GameSummaryPeriodGoalPeriodImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodGoalPeriodImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final String id;
+  @override
+  @JsonKey(name: "shortName")
+  final String shortName;
+  @override
+  @JsonKey(name: "longName")
+  final String longName;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodGoalPeriod(id: $id, shortName: $shortName, longName: $longName)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodGoalPeriod'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('shortName', shortName))
+      ..add(DiagnosticsProperty('longName', longName));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodGoalPeriodImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.shortName, shortName) ||
+                other.shortName == shortName) &&
+            (identical(other.longName, longName) ||
+                other.longName == longName));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, shortName, longName);
+
+  /// Create a copy of GameSummaryPeriodGoalPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodGoalPeriodImplCopyWith<_$GameSummaryPeriodGoalPeriodImpl>
+      get copyWith => __$$GameSummaryPeriodGoalPeriodImplCopyWithImpl<
+          _$GameSummaryPeriodGoalPeriodImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodGoalPeriodImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodGoalPeriod
+    implements GameSummaryPeriodGoalPeriod {
+  const factory _GameSummaryPeriodGoalPeriod(
+          {@JsonKey(name: "id") required final String id,
+          @JsonKey(name: "shortName") required final String shortName,
+          @JsonKey(name: "longName") required final String longName}) =
+      _$GameSummaryPeriodGoalPeriodImpl;
+
+  factory _GameSummaryPeriodGoalPeriod.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodGoalPeriodImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  String get id;
+  @override
+  @JsonKey(name: "shortName")
+  String get shortName;
+  @override
+  @JsonKey(name: "longName")
+  String get longName;
+
+  /// Create a copy of GameSummaryPeriodGoalPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodGoalPeriodImplCopyWith<_$GameSummaryPeriodGoalPeriodImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriodGoal _$GameSummaryPeriodGoalFromJson(
+    Map<String, dynamic> json) {
+  return _GameSummaryPeriodGoal.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriodGoal {
+  @JsonKey(name: "game_goal_id")
+  String get gameGoalId => throw _privateConstructorUsedError;
+  @JsonKey(name: "team")
+  GameSummaryPeriodGoalTeam get team => throw _privateConstructorUsedError;
+  @JsonKey(name: "period")
+  GameSummaryPeriodGoalPeriod get period => throw _privateConstructorUsedError;
+  @JsonKey(name: "time")
+  String get time => throw _privateConstructorUsedError;
+  @JsonKey(name: "scorerGoalNumber")
+  String get scorerGoalNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "scoredBy")
+  GameSummaryPeriodGoalPlayerInfo get scoredBy =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "assists")
+  List<GameSummaryPeriodGoalPlayerInfo> get assists =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "assistNumbers")
+  List<String> get assistNumbers => throw _privateConstructorUsedError;
+  @JsonKey(name: "properties")
+  GameSummaryPeriodGoalProperties get properties =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriodGoal to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodGoalCopyWith<GameSummaryPeriodGoal> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodGoalCopyWith<$Res> {
+  factory $GameSummaryPeriodGoalCopyWith(GameSummaryPeriodGoal value,
+          $Res Function(GameSummaryPeriodGoal) then) =
+      _$GameSummaryPeriodGoalCopyWithImpl<$Res, GameSummaryPeriodGoal>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "game_goal_id") String gameGoalId,
+      @JsonKey(name: "team") GameSummaryPeriodGoalTeam team,
+      @JsonKey(name: "period") GameSummaryPeriodGoalPeriod period,
+      @JsonKey(name: "time") String time,
+      @JsonKey(name: "scorerGoalNumber") String scorerGoalNumber,
+      @JsonKey(name: "scoredBy") GameSummaryPeriodGoalPlayerInfo scoredBy,
+      @JsonKey(name: "assists") List<GameSummaryPeriodGoalPlayerInfo> assists,
+      @JsonKey(name: "assistNumbers") List<String> assistNumbers,
+      @JsonKey(name: "properties") GameSummaryPeriodGoalProperties properties});
+
+  $GameSummaryPeriodGoalTeamCopyWith<$Res> get team;
+  $GameSummaryPeriodGoalPeriodCopyWith<$Res> get period;
+  $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> get scoredBy;
+  $GameSummaryPeriodGoalPropertiesCopyWith<$Res> get properties;
+}
+
+/// @nodoc
+class _$GameSummaryPeriodGoalCopyWithImpl<$Res,
+        $Val extends GameSummaryPeriodGoal>
+    implements $GameSummaryPeriodGoalCopyWith<$Res> {
+  _$GameSummaryPeriodGoalCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gameGoalId = null,
+    Object? team = null,
+    Object? period = null,
+    Object? time = null,
+    Object? scorerGoalNumber = null,
+    Object? scoredBy = null,
+    Object? assists = null,
+    Object? assistNumbers = null,
+    Object? properties = null,
+  }) {
+    return _then(_value.copyWith(
+      gameGoalId: null == gameGoalId
+          ? _value.gameGoalId
+          : gameGoalId // ignore: cast_nullable_to_non_nullable
+              as String,
+      team: null == team
+          ? _value.team
+          : team // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalTeam,
+      period: null == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalPeriod,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as String,
+      scorerGoalNumber: null == scorerGoalNumber
+          ? _value.scorerGoalNumber
+          : scorerGoalNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      scoredBy: null == scoredBy
+          ? _value.scoredBy
+          : scoredBy // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalPlayerInfo,
+      assists: null == assists
+          ? _value.assists
+          : assists // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriodGoalPlayerInfo>,
+      assistNumbers: null == assistNumbers
+          ? _value.assistNumbers
+          : assistNumbers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      properties: null == properties
+          ? _value.properties
+          : properties // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalProperties,
+    ) as $Val);
+  }
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodGoalTeamCopyWith<$Res> get team {
+    return $GameSummaryPeriodGoalTeamCopyWith<$Res>(_value.team, (value) {
+      return _then(_value.copyWith(team: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodGoalPeriodCopyWith<$Res> get period {
+    return $GameSummaryPeriodGoalPeriodCopyWith<$Res>(_value.period, (value) {
+      return _then(_value.copyWith(period: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> get scoredBy {
+    return $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res>(_value.scoredBy,
+        (value) {
+      return _then(_value.copyWith(scoredBy: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodGoalPropertiesCopyWith<$Res> get properties {
+    return $GameSummaryPeriodGoalPropertiesCopyWith<$Res>(_value.properties,
+        (value) {
+      return _then(_value.copyWith(properties: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodGoalImplCopyWith<$Res>
+    implements $GameSummaryPeriodGoalCopyWith<$Res> {
+  factory _$$GameSummaryPeriodGoalImplCopyWith(
+          _$GameSummaryPeriodGoalImpl value,
+          $Res Function(_$GameSummaryPeriodGoalImpl) then) =
+      __$$GameSummaryPeriodGoalImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "game_goal_id") String gameGoalId,
+      @JsonKey(name: "team") GameSummaryPeriodGoalTeam team,
+      @JsonKey(name: "period") GameSummaryPeriodGoalPeriod period,
+      @JsonKey(name: "time") String time,
+      @JsonKey(name: "scorerGoalNumber") String scorerGoalNumber,
+      @JsonKey(name: "scoredBy") GameSummaryPeriodGoalPlayerInfo scoredBy,
+      @JsonKey(name: "assists") List<GameSummaryPeriodGoalPlayerInfo> assists,
+      @JsonKey(name: "assistNumbers") List<String> assistNumbers,
+      @JsonKey(name: "properties") GameSummaryPeriodGoalProperties properties});
+
+  @override
+  $GameSummaryPeriodGoalTeamCopyWith<$Res> get team;
+  @override
+  $GameSummaryPeriodGoalPeriodCopyWith<$Res> get period;
+  @override
+  $GameSummaryPeriodGoalPlayerInfoCopyWith<$Res> get scoredBy;
+  @override
+  $GameSummaryPeriodGoalPropertiesCopyWith<$Res> get properties;
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodGoalImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodGoalCopyWithImpl<$Res,
+        _$GameSummaryPeriodGoalImpl>
+    implements _$$GameSummaryPeriodGoalImplCopyWith<$Res> {
+  __$$GameSummaryPeriodGoalImplCopyWithImpl(_$GameSummaryPeriodGoalImpl _value,
+      $Res Function(_$GameSummaryPeriodGoalImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gameGoalId = null,
+    Object? team = null,
+    Object? period = null,
+    Object? time = null,
+    Object? scorerGoalNumber = null,
+    Object? scoredBy = null,
+    Object? assists = null,
+    Object? assistNumbers = null,
+    Object? properties = null,
+  }) {
+    return _then(_$GameSummaryPeriodGoalImpl(
+      gameGoalId: null == gameGoalId
+          ? _value.gameGoalId
+          : gameGoalId // ignore: cast_nullable_to_non_nullable
+              as String,
+      team: null == team
+          ? _value.team
+          : team // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalTeam,
+      period: null == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalPeriod,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as String,
+      scorerGoalNumber: null == scorerGoalNumber
+          ? _value.scorerGoalNumber
+          : scorerGoalNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      scoredBy: null == scoredBy
+          ? _value.scoredBy
+          : scoredBy // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalPlayerInfo,
+      assists: null == assists
+          ? _value._assists
+          : assists // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriodGoalPlayerInfo>,
+      assistNumbers: null == assistNumbers
+          ? _value._assistNumbers
+          : assistNumbers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      properties: null == properties
+          ? _value.properties
+          : properties // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodGoalProperties,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodGoalImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriodGoal {
+  const _$GameSummaryPeriodGoalImpl(
+      {@JsonKey(name: "game_goal_id") required this.gameGoalId,
+      @JsonKey(name: "team") required this.team,
+      @JsonKey(name: "period") required this.period,
+      @JsonKey(name: "time") required this.time,
+      @JsonKey(name: "scorerGoalNumber") required this.scorerGoalNumber,
+      @JsonKey(name: "scoredBy") required this.scoredBy,
+      @JsonKey(name: "assists")
+      required final List<GameSummaryPeriodGoalPlayerInfo> assists,
+      @JsonKey(name: "assistNumbers") required final List<String> assistNumbers,
+      @JsonKey(name: "properties") required this.properties})
+      : _assists = assists,
+        _assistNumbers = assistNumbers;
+
+  factory _$GameSummaryPeriodGoalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodGoalImplFromJson(json);
+
+  @override
+  @JsonKey(name: "game_goal_id")
+  final String gameGoalId;
+  @override
+  @JsonKey(name: "team")
+  final GameSummaryPeriodGoalTeam team;
+  @override
+  @JsonKey(name: "period")
+  final GameSummaryPeriodGoalPeriod period;
+  @override
+  @JsonKey(name: "time")
+  final String time;
+  @override
+  @JsonKey(name: "scorerGoalNumber")
+  final String scorerGoalNumber;
+  @override
+  @JsonKey(name: "scoredBy")
+  final GameSummaryPeriodGoalPlayerInfo scoredBy;
+  final List<GameSummaryPeriodGoalPlayerInfo> _assists;
+  @override
+  @JsonKey(name: "assists")
+  List<GameSummaryPeriodGoalPlayerInfo> get assists {
+    if (_assists is EqualUnmodifiableListView) return _assists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assists);
+  }
+
+  final List<String> _assistNumbers;
+  @override
+  @JsonKey(name: "assistNumbers")
+  List<String> get assistNumbers {
+    if (_assistNumbers is EqualUnmodifiableListView) return _assistNumbers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assistNumbers);
+  }
+
+  @override
+  @JsonKey(name: "properties")
+  final GameSummaryPeriodGoalProperties properties;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriodGoal(gameGoalId: $gameGoalId, team: $team, period: $period, time: $time, scorerGoalNumber: $scorerGoalNumber, scoredBy: $scoredBy, assists: $assists, assistNumbers: $assistNumbers, properties: $properties)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriodGoal'))
+      ..add(DiagnosticsProperty('gameGoalId', gameGoalId))
+      ..add(DiagnosticsProperty('team', team))
+      ..add(DiagnosticsProperty('period', period))
+      ..add(DiagnosticsProperty('time', time))
+      ..add(DiagnosticsProperty('scorerGoalNumber', scorerGoalNumber))
+      ..add(DiagnosticsProperty('scoredBy', scoredBy))
+      ..add(DiagnosticsProperty('assists', assists))
+      ..add(DiagnosticsProperty('assistNumbers', assistNumbers))
+      ..add(DiagnosticsProperty('properties', properties));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodGoalImpl &&
+            (identical(other.gameGoalId, gameGoalId) ||
+                other.gameGoalId == gameGoalId) &&
+            (identical(other.team, team) || other.team == team) &&
+            (identical(other.period, period) || other.period == period) &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.scorerGoalNumber, scorerGoalNumber) ||
+                other.scorerGoalNumber == scorerGoalNumber) &&
+            (identical(other.scoredBy, scoredBy) ||
+                other.scoredBy == scoredBy) &&
+            const DeepCollectionEquality().equals(other._assists, _assists) &&
+            const DeepCollectionEquality()
+                .equals(other._assistNumbers, _assistNumbers) &&
+            (identical(other.properties, properties) ||
+                other.properties == properties));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      gameGoalId,
+      team,
+      period,
+      time,
+      scorerGoalNumber,
+      scoredBy,
+      const DeepCollectionEquality().hash(_assists),
+      const DeepCollectionEquality().hash(_assistNumbers),
+      properties);
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodGoalImplCopyWith<_$GameSummaryPeriodGoalImpl>
+      get copyWith => __$$GameSummaryPeriodGoalImplCopyWithImpl<
+          _$GameSummaryPeriodGoalImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodGoalImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriodGoal implements GameSummaryPeriodGoal {
+  const factory _GameSummaryPeriodGoal(
+      {@JsonKey(name: "game_goal_id") required final String gameGoalId,
+      @JsonKey(name: "team") required final GameSummaryPeriodGoalTeam team,
+      @JsonKey(name: "period")
+      required final GameSummaryPeriodGoalPeriod period,
+      @JsonKey(name: "time") required final String time,
+      @JsonKey(name: "scorerGoalNumber") required final String scorerGoalNumber,
+      @JsonKey(name: "scoredBy")
+      required final GameSummaryPeriodGoalPlayerInfo scoredBy,
+      @JsonKey(name: "assists")
+      required final List<GameSummaryPeriodGoalPlayerInfo> assists,
+      @JsonKey(name: "assistNumbers") required final List<String> assistNumbers,
+      @JsonKey(name: "properties")
+      required final GameSummaryPeriodGoalProperties
+          properties}) = _$GameSummaryPeriodGoalImpl;
+
+  factory _GameSummaryPeriodGoal.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodGoalImpl.fromJson;
+
+  @override
+  @JsonKey(name: "game_goal_id")
+  String get gameGoalId;
+  @override
+  @JsonKey(name: "team")
+  GameSummaryPeriodGoalTeam get team;
+  @override
+  @JsonKey(name: "period")
+  GameSummaryPeriodGoalPeriod get period;
+  @override
+  @JsonKey(name: "time")
+  String get time;
+  @override
+  @JsonKey(name: "scorerGoalNumber")
+  String get scorerGoalNumber;
+  @override
+  @JsonKey(name: "scoredBy")
+  GameSummaryPeriodGoalPlayerInfo get scoredBy;
+  @override
+  @JsonKey(name: "assists")
+  List<GameSummaryPeriodGoalPlayerInfo> get assists;
+  @override
+  @JsonKey(name: "assistNumbers")
+  List<String> get assistNumbers;
+  @override
+  @JsonKey(name: "properties")
+  GameSummaryPeriodGoalProperties get properties;
+
+  /// Create a copy of GameSummaryPeriodGoal
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodGoalImplCopyWith<_$GameSummaryPeriodGoalImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+GameSummaryPeriod _$GameSummaryPeriodFromJson(Map<String, dynamic> json) {
+  return _GameSummaryPeriod.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GameSummaryPeriod {
+  @JsonKey(name: "info")
+  GameSummaryPeriodInfo get info => throw _privateConstructorUsedError;
+  @JsonKey(name: "stats")
+  GameSummaryPeriodStats get stats => throw _privateConstructorUsedError;
+  @JsonKey(name: "goals")
+  List<GameSummaryPeriodGoal> get goals => throw _privateConstructorUsedError;
+
+  /// Serializes this GameSummaryPeriod to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GameSummaryPeriodCopyWith<GameSummaryPeriod> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GameSummaryPeriodCopyWith<$Res> {
+  factory $GameSummaryPeriodCopyWith(
+          GameSummaryPeriod value, $Res Function(GameSummaryPeriod) then) =
+      _$GameSummaryPeriodCopyWithImpl<$Res, GameSummaryPeriod>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "info") GameSummaryPeriodInfo info,
+      @JsonKey(name: "stats") GameSummaryPeriodStats stats,
+      @JsonKey(name: "goals") List<GameSummaryPeriodGoal> goals});
+
+  $GameSummaryPeriodInfoCopyWith<$Res> get info;
+  $GameSummaryPeriodStatsCopyWith<$Res> get stats;
+}
+
+/// @nodoc
+class _$GameSummaryPeriodCopyWithImpl<$Res, $Val extends GameSummaryPeriod>
+    implements $GameSummaryPeriodCopyWith<$Res> {
+  _$GameSummaryPeriodCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? info = null,
+    Object? stats = null,
+    Object? goals = null,
+  }) {
+    return _then(_value.copyWith(
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodInfo,
+      stats: null == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodStats,
+      goals: null == goals
+          ? _value.goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriodGoal>,
+    ) as $Val);
+  }
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodInfoCopyWith<$Res> get info {
+    return $GameSummaryPeriodInfoCopyWith<$Res>(_value.info, (value) {
+      return _then(_value.copyWith(info: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryPeriodStatsCopyWith<$Res> get stats {
+    return $GameSummaryPeriodStatsCopyWith<$Res>(_value.stats, (value) {
+      return _then(_value.copyWith(stats: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GameSummaryPeriodImplCopyWith<$Res>
+    implements $GameSummaryPeriodCopyWith<$Res> {
+  factory _$$GameSummaryPeriodImplCopyWith(_$GameSummaryPeriodImpl value,
+          $Res Function(_$GameSummaryPeriodImpl) then) =
+      __$$GameSummaryPeriodImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "info") GameSummaryPeriodInfo info,
+      @JsonKey(name: "stats") GameSummaryPeriodStats stats,
+      @JsonKey(name: "goals") List<GameSummaryPeriodGoal> goals});
+
+  @override
+  $GameSummaryPeriodInfoCopyWith<$Res> get info;
+  @override
+  $GameSummaryPeriodStatsCopyWith<$Res> get stats;
+}
+
+/// @nodoc
+class __$$GameSummaryPeriodImplCopyWithImpl<$Res>
+    extends _$GameSummaryPeriodCopyWithImpl<$Res, _$GameSummaryPeriodImpl>
+    implements _$$GameSummaryPeriodImplCopyWith<$Res> {
+  __$$GameSummaryPeriodImplCopyWithImpl(_$GameSummaryPeriodImpl _value,
+      $Res Function(_$GameSummaryPeriodImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? info = null,
+    Object? stats = null,
+    Object? goals = null,
+  }) {
+    return _then(_$GameSummaryPeriodImpl(
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodInfo,
+      stats: null == stats
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as GameSummaryPeriodStats,
+      goals: null == goals
+          ? _value._goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriodGoal>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GameSummaryPeriodImpl
+    with DiagnosticableTreeMixin
+    implements _GameSummaryPeriod {
+  const _$GameSummaryPeriodImpl(
+      {@JsonKey(name: "info") required this.info,
+      @JsonKey(name: "stats") required this.stats,
+      @JsonKey(name: "goals") required final List<GameSummaryPeriodGoal> goals})
+      : _goals = goals;
+
+  factory _$GameSummaryPeriodImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameSummaryPeriodImplFromJson(json);
+
+  @override
+  @JsonKey(name: "info")
+  final GameSummaryPeriodInfo info;
+  @override
+  @JsonKey(name: "stats")
+  final GameSummaryPeriodStats stats;
+  final List<GameSummaryPeriodGoal> _goals;
+  @override
+  @JsonKey(name: "goals")
+  List<GameSummaryPeriodGoal> get goals {
+    if (_goals is EqualUnmodifiableListView) return _goals;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_goals);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'GameSummaryPeriod(info: $info, stats: $stats, goals: $goals)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'GameSummaryPeriod'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('stats', stats))
+      ..add(DiagnosticsProperty('goals', goals));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GameSummaryPeriodImpl &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.stats, stats) || other.stats == stats) &&
+            const DeepCollectionEquality().equals(other._goals, _goals));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, info, stats, const DeepCollectionEquality().hash(_goals));
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GameSummaryPeriodImplCopyWith<_$GameSummaryPeriodImpl> get copyWith =>
+      __$$GameSummaryPeriodImplCopyWithImpl<_$GameSummaryPeriodImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameSummaryPeriodImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GameSummaryPeriod implements GameSummaryPeriod {
+  const factory _GameSummaryPeriod(
+          {@JsonKey(name: "info") required final GameSummaryPeriodInfo info,
+          @JsonKey(name: "stats") required final GameSummaryPeriodStats stats,
+          @JsonKey(name: "goals")
+          required final List<GameSummaryPeriodGoal> goals}) =
+      _$GameSummaryPeriodImpl;
+
+  factory _GameSummaryPeriod.fromJson(Map<String, dynamic> json) =
+      _$GameSummaryPeriodImpl.fromJson;
+
+  @override
+  @JsonKey(name: "info")
+  GameSummaryPeriodInfo get info;
+  @override
+  @JsonKey(name: "stats")
+  GameSummaryPeriodStats get stats;
+  @override
+  @JsonKey(name: "goals")
+  List<GameSummaryPeriodGoal> get goals;
+
+  /// Create a copy of GameSummaryPeriod
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GameSummaryPeriodImplCopyWith<_$GameSummaryPeriodImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ShootoutPlayer _$ShootoutPlayerFromJson(Map<String, dynamic> json) {
+  return _ShootoutPlayer.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShootoutPlayer {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "firstName")
+  String get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: "lastName")
+  String get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: "jerseyNumber")
+  int get jerseyNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "position")
+  String get position => throw _privateConstructorUsedError;
+  @JsonKey(name: "birthDate")
+  String get birthDate => throw _privateConstructorUsedError;
+  @JsonKey(name: "playerImageURL")
+  String get playerImageURL => throw _privateConstructorUsedError;
+
+  /// Serializes this ShootoutPlayer to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ShootoutPlayer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ShootoutPlayerCopyWith<ShootoutPlayer> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShootoutPlayerCopyWith<$Res> {
+  factory $ShootoutPlayerCopyWith(
+          ShootoutPlayer value, $Res Function(ShootoutPlayer) then) =
+      _$ShootoutPlayerCopyWithImpl<$Res, ShootoutPlayer>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "firstName") String firstName,
+      @JsonKey(name: "lastName") String lastName,
+      @JsonKey(name: "jerseyNumber") int jerseyNumber,
+      @JsonKey(name: "position") String position,
+      @JsonKey(name: "birthDate") String birthDate,
+      @JsonKey(name: "playerImageURL") String playerImageURL});
+}
+
+/// @nodoc
+class _$ShootoutPlayerCopyWithImpl<$Res, $Val extends ShootoutPlayer>
+    implements $ShootoutPlayerCopyWith<$Res> {
+  _$ShootoutPlayerCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ShootoutPlayer
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? jerseyNumber = null,
+    Object? position = null,
+    Object? birthDate = null,
+    Object? playerImageURL = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      jerseyNumber: null == jerseyNumber
+          ? _value.jerseyNumber
+          : jerseyNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthDate: null == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      playerImageURL: null == playerImageURL
+          ? _value.playerImageURL
+          : playerImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ShootoutPlayerImplCopyWith<$Res>
+    implements $ShootoutPlayerCopyWith<$Res> {
+  factory _$$ShootoutPlayerImplCopyWith(_$ShootoutPlayerImpl value,
+          $Res Function(_$ShootoutPlayerImpl) then) =
+      __$$ShootoutPlayerImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "firstName") String firstName,
+      @JsonKey(name: "lastName") String lastName,
+      @JsonKey(name: "jerseyNumber") int jerseyNumber,
+      @JsonKey(name: "position") String position,
+      @JsonKey(name: "birthDate") String birthDate,
+      @JsonKey(name: "playerImageURL") String playerImageURL});
+}
+
+/// @nodoc
+class __$$ShootoutPlayerImplCopyWithImpl<$Res>
+    extends _$ShootoutPlayerCopyWithImpl<$Res, _$ShootoutPlayerImpl>
+    implements _$$ShootoutPlayerImplCopyWith<$Res> {
+  __$$ShootoutPlayerImplCopyWithImpl(
+      _$ShootoutPlayerImpl _value, $Res Function(_$ShootoutPlayerImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShootoutPlayer
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? jerseyNumber = null,
+    Object? position = null,
+    Object? birthDate = null,
+    Object? playerImageURL = null,
+  }) {
+    return _then(_$ShootoutPlayerImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      jerseyNumber: null == jerseyNumber
+          ? _value.jerseyNumber
+          : jerseyNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthDate: null == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      playerImageURL: null == playerImageURL
+          ? _value.playerImageURL
+          : playerImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ShootoutPlayerImpl
+    with DiagnosticableTreeMixin
+    implements _ShootoutPlayer {
+  const _$ShootoutPlayerImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "firstName") required this.firstName,
+      @JsonKey(name: "lastName") required this.lastName,
+      @JsonKey(name: "jerseyNumber") required this.jerseyNumber,
+      @JsonKey(name: "position") required this.position,
+      @JsonKey(name: "birthDate") required this.birthDate,
+      @JsonKey(name: "playerImageURL") required this.playerImageURL});
+
+  factory _$ShootoutPlayerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShootoutPlayerImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "firstName")
+  final String firstName;
+  @override
+  @JsonKey(name: "lastName")
+  final String lastName;
+  @override
+  @JsonKey(name: "jerseyNumber")
+  final int jerseyNumber;
+  @override
+  @JsonKey(name: "position")
+  final String position;
+  @override
+  @JsonKey(name: "birthDate")
+  final String birthDate;
+  @override
+  @JsonKey(name: "playerImageURL")
+  final String playerImageURL;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ShootoutPlayer(id: $id, firstName: $firstName, lastName: $lastName, jerseyNumber: $jerseyNumber, position: $position, birthDate: $birthDate, playerImageURL: $playerImageURL)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ShootoutPlayer'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('firstName', firstName))
+      ..add(DiagnosticsProperty('lastName', lastName))
+      ..add(DiagnosticsProperty('jerseyNumber', jerseyNumber))
+      ..add(DiagnosticsProperty('position', position))
+      ..add(DiagnosticsProperty('birthDate', birthDate))
+      ..add(DiagnosticsProperty('playerImageURL', playerImageURL));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShootoutPlayerImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.jerseyNumber, jerseyNumber) ||
+                other.jerseyNumber == jerseyNumber) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate) &&
+            (identical(other.playerImageURL, playerImageURL) ||
+                other.playerImageURL == playerImageURL));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName,
+      jerseyNumber, position, birthDate, playerImageURL);
+
+  /// Create a copy of ShootoutPlayer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShootoutPlayerImplCopyWith<_$ShootoutPlayerImpl> get copyWith =>
+      __$$ShootoutPlayerImplCopyWithImpl<_$ShootoutPlayerImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ShootoutPlayerImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShootoutPlayer implements ShootoutPlayer {
+  const factory _ShootoutPlayer(
+      {@JsonKey(name: "id") required final int id,
+      @JsonKey(name: "firstName") required final String firstName,
+      @JsonKey(name: "lastName") required final String lastName,
+      @JsonKey(name: "jerseyNumber") required final int jerseyNumber,
+      @JsonKey(name: "position") required final String position,
+      @JsonKey(name: "birthDate") required final String birthDate,
+      @JsonKey(name: "playerImageURL")
+      required final String playerImageURL}) = _$ShootoutPlayerImpl;
+
+  factory _ShootoutPlayer.fromJson(Map<String, dynamic> json) =
+      _$ShootoutPlayerImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "firstName")
+  String get firstName;
+  @override
+  @JsonKey(name: "lastName")
+  String get lastName;
+  @override
+  @JsonKey(name: "jerseyNumber")
+  int get jerseyNumber;
+  @override
+  @JsonKey(name: "position")
+  String get position;
+  @override
+  @JsonKey(name: "birthDate")
+  String get birthDate;
+  @override
+  @JsonKey(name: "playerImageURL")
+  String get playerImageURL;
+
+  /// Create a copy of ShootoutPlayer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShootoutPlayerImplCopyWith<_$ShootoutPlayerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ShootoutTeam _$ShootoutTeamFromJson(Map<String, dynamic> json) {
+  return _ShootoutTeam.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShootoutTeam {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "city")
+  String get city => throw _privateConstructorUsedError;
+  @JsonKey(name: "nickname")
+  String get nickname => throw _privateConstructorUsedError;
+  @JsonKey(name: "abbreviation")
+  String get abbreviation => throw _privateConstructorUsedError;
+  @JsonKey(name: "logo")
+  String get logo => throw _privateConstructorUsedError;
+  @JsonKey(name: "divisionName")
+  String get divisionName => throw _privateConstructorUsedError;
+
+  /// Serializes this ShootoutTeam to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ShootoutTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ShootoutTeamCopyWith<ShootoutTeam> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShootoutTeamCopyWith<$Res> {
+  factory $ShootoutTeamCopyWith(
+          ShootoutTeam value, $Res Function(ShootoutTeam) then) =
+      _$ShootoutTeamCopyWithImpl<$Res, ShootoutTeam>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "city") String city,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo,
+      @JsonKey(name: "divisionName") String divisionName});
+}
+
+/// @nodoc
+class _$ShootoutTeamCopyWithImpl<$Res, $Val extends ShootoutTeam>
+    implements $ShootoutTeamCopyWith<$Res> {
+  _$ShootoutTeamCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ShootoutTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? city = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+    Object? divisionName = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      divisionName: null == divisionName
+          ? _value.divisionName
+          : divisionName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ShootoutTeamImplCopyWith<$Res>
+    implements $ShootoutTeamCopyWith<$Res> {
+  factory _$$ShootoutTeamImplCopyWith(
+          _$ShootoutTeamImpl value, $Res Function(_$ShootoutTeamImpl) then) =
+      __$$ShootoutTeamImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "city") String city,
+      @JsonKey(name: "nickname") String nickname,
+      @JsonKey(name: "abbreviation") String abbreviation,
+      @JsonKey(name: "logo") String logo,
+      @JsonKey(name: "divisionName") String divisionName});
+}
+
+/// @nodoc
+class __$$ShootoutTeamImplCopyWithImpl<$Res>
+    extends _$ShootoutTeamCopyWithImpl<$Res, _$ShootoutTeamImpl>
+    implements _$$ShootoutTeamImplCopyWith<$Res> {
+  __$$ShootoutTeamImplCopyWithImpl(
+      _$ShootoutTeamImpl _value, $Res Function(_$ShootoutTeamImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShootoutTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? city = null,
+    Object? nickname = null,
+    Object? abbreviation = null,
+    Object? logo = null,
+    Object? divisionName = null,
+  }) {
+    return _then(_$ShootoutTeamImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
+      abbreviation: null == abbreviation
+          ? _value.abbreviation
+          : abbreviation // ignore: cast_nullable_to_non_nullable
+              as String,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as String,
+      divisionName: null == divisionName
+          ? _value.divisionName
+          : divisionName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ShootoutTeamImpl with DiagnosticableTreeMixin implements _ShootoutTeam {
+  const _$ShootoutTeamImpl(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "city") required this.city,
+      @JsonKey(name: "nickname") required this.nickname,
+      @JsonKey(name: "abbreviation") required this.abbreviation,
+      @JsonKey(name: "logo") required this.logo,
+      @JsonKey(name: "divisionName") required this.divisionName});
+
+  factory _$ShootoutTeamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShootoutTeamImplFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "city")
+  final String city;
+  @override
+  @JsonKey(name: "nickname")
+  final String nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  final String abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  final String logo;
+  @override
+  @JsonKey(name: "divisionName")
+  final String divisionName;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ShootoutTeam(id: $id, name: $name, city: $city, nickname: $nickname, abbreviation: $abbreviation, logo: $logo, divisionName: $divisionName)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ShootoutTeam'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('city', city))
+      ..add(DiagnosticsProperty('nickname', nickname))
+      ..add(DiagnosticsProperty('abbreviation', abbreviation))
+      ..add(DiagnosticsProperty('logo', logo))
+      ..add(DiagnosticsProperty('divisionName', divisionName));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShootoutTeamImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.abbreviation, abbreviation) ||
+                other.abbreviation == abbreviation) &&
+            (identical(other.logo, logo) || other.logo == logo) &&
+            (identical(other.divisionName, divisionName) ||
+                other.divisionName == divisionName));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, name, city, nickname, abbreviation, logo, divisionName);
+
+  /// Create a copy of ShootoutTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShootoutTeamImplCopyWith<_$ShootoutTeamImpl> get copyWith =>
+      __$$ShootoutTeamImplCopyWithImpl<_$ShootoutTeamImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ShootoutTeamImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShootoutTeam implements ShootoutTeam {
+  const factory _ShootoutTeam(
+          {@JsonKey(name: "id") required final int id,
+          @JsonKey(name: "name") required final String name,
+          @JsonKey(name: "city") required final String city,
+          @JsonKey(name: "nickname") required final String nickname,
+          @JsonKey(name: "abbreviation") required final String abbreviation,
+          @JsonKey(name: "logo") required final String logo,
+          @JsonKey(name: "divisionName") required final String divisionName}) =
+      _$ShootoutTeamImpl;
+
+  factory _ShootoutTeam.fromJson(Map<String, dynamic> json) =
+      _$ShootoutTeamImpl.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "city")
+  String get city;
+  @override
+  @JsonKey(name: "nickname")
+  String get nickname;
+  @override
+  @JsonKey(name: "abbreviation")
+  String get abbreviation;
+  @override
+  @JsonKey(name: "logo")
+  String get logo;
+  @override
+  @JsonKey(name: "divisionName")
+  String get divisionName;
+
+  /// Create a copy of ShootoutTeam
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShootoutTeamImplCopyWith<_$ShootoutTeamImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ShootoutShot _$ShootoutShotFromJson(Map<String, dynamic> json) {
+  return _ShootoutShot.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShootoutShot {
+  @JsonKey(name: "shooter")
+  ShootoutPlayer get shooter => throw _privateConstructorUsedError;
+  @JsonKey(name: "goalie")
+  ShootoutPlayer get goalie => throw _privateConstructorUsedError;
+  @JsonKey(name: "isGoal")
+  bool get isGoal => throw _privateConstructorUsedError;
+  @JsonKey(name: "isGameWinningGoal")
+  bool get isGameWinningGoal => throw _privateConstructorUsedError;
+  @JsonKey(name: "shooterTeam")
+  ShootoutTeam get shooterTeam => throw _privateConstructorUsedError;
+
+  /// Serializes this ShootoutShot to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ShootoutShotCopyWith<ShootoutShot> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShootoutShotCopyWith<$Res> {
+  factory $ShootoutShotCopyWith(
+          ShootoutShot value, $Res Function(ShootoutShot) then) =
+      _$ShootoutShotCopyWithImpl<$Res, ShootoutShot>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "shooter") ShootoutPlayer shooter,
+      @JsonKey(name: "goalie") ShootoutPlayer goalie,
+      @JsonKey(name: "isGoal") bool isGoal,
+      @JsonKey(name: "isGameWinningGoal") bool isGameWinningGoal,
+      @JsonKey(name: "shooterTeam") ShootoutTeam shooterTeam});
+
+  $ShootoutPlayerCopyWith<$Res> get shooter;
+  $ShootoutPlayerCopyWith<$Res> get goalie;
+  $ShootoutTeamCopyWith<$Res> get shooterTeam;
+}
+
+/// @nodoc
+class _$ShootoutShotCopyWithImpl<$Res, $Val extends ShootoutShot>
+    implements $ShootoutShotCopyWith<$Res> {
+  _$ShootoutShotCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shooter = null,
+    Object? goalie = null,
+    Object? isGoal = null,
+    Object? isGameWinningGoal = null,
+    Object? shooterTeam = null,
+  }) {
+    return _then(_value.copyWith(
+      shooter: null == shooter
+          ? _value.shooter
+          : shooter // ignore: cast_nullable_to_non_nullable
+              as ShootoutPlayer,
+      goalie: null == goalie
+          ? _value.goalie
+          : goalie // ignore: cast_nullable_to_non_nullable
+              as ShootoutPlayer,
+      isGoal: null == isGoal
+          ? _value.isGoal
+          : isGoal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGameWinningGoal: null == isGameWinningGoal
+          ? _value.isGameWinningGoal
+          : isGameWinningGoal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shooterTeam: null == shooterTeam
+          ? _value.shooterTeam
+          : shooterTeam // ignore: cast_nullable_to_non_nullable
+              as ShootoutTeam,
+    ) as $Val);
+  }
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShootoutPlayerCopyWith<$Res> get shooter {
+    return $ShootoutPlayerCopyWith<$Res>(_value.shooter, (value) {
+      return _then(_value.copyWith(shooter: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShootoutPlayerCopyWith<$Res> get goalie {
+    return $ShootoutPlayerCopyWith<$Res>(_value.goalie, (value) {
+      return _then(_value.copyWith(goalie: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShootoutTeamCopyWith<$Res> get shooterTeam {
+    return $ShootoutTeamCopyWith<$Res>(_value.shooterTeam, (value) {
+      return _then(_value.copyWith(shooterTeam: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ShootoutShotImplCopyWith<$Res>
+    implements $ShootoutShotCopyWith<$Res> {
+  factory _$$ShootoutShotImplCopyWith(
+          _$ShootoutShotImpl value, $Res Function(_$ShootoutShotImpl) then) =
+      __$$ShootoutShotImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "shooter") ShootoutPlayer shooter,
+      @JsonKey(name: "goalie") ShootoutPlayer goalie,
+      @JsonKey(name: "isGoal") bool isGoal,
+      @JsonKey(name: "isGameWinningGoal") bool isGameWinningGoal,
+      @JsonKey(name: "shooterTeam") ShootoutTeam shooterTeam});
+
+  @override
+  $ShootoutPlayerCopyWith<$Res> get shooter;
+  @override
+  $ShootoutPlayerCopyWith<$Res> get goalie;
+  @override
+  $ShootoutTeamCopyWith<$Res> get shooterTeam;
+}
+
+/// @nodoc
+class __$$ShootoutShotImplCopyWithImpl<$Res>
+    extends _$ShootoutShotCopyWithImpl<$Res, _$ShootoutShotImpl>
+    implements _$$ShootoutShotImplCopyWith<$Res> {
+  __$$ShootoutShotImplCopyWithImpl(
+      _$ShootoutShotImpl _value, $Res Function(_$ShootoutShotImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shooter = null,
+    Object? goalie = null,
+    Object? isGoal = null,
+    Object? isGameWinningGoal = null,
+    Object? shooterTeam = null,
+  }) {
+    return _then(_$ShootoutShotImpl(
+      shooter: null == shooter
+          ? _value.shooter
+          : shooter // ignore: cast_nullable_to_non_nullable
+              as ShootoutPlayer,
+      goalie: null == goalie
+          ? _value.goalie
+          : goalie // ignore: cast_nullable_to_non_nullable
+              as ShootoutPlayer,
+      isGoal: null == isGoal
+          ? _value.isGoal
+          : isGoal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGameWinningGoal: null == isGameWinningGoal
+          ? _value.isGameWinningGoal
+          : isGameWinningGoal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shooterTeam: null == shooterTeam
+          ? _value.shooterTeam
+          : shooterTeam // ignore: cast_nullable_to_non_nullable
+              as ShootoutTeam,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ShootoutShotImpl with DiagnosticableTreeMixin implements _ShootoutShot {
+  const _$ShootoutShotImpl(
+      {@JsonKey(name: "shooter") required this.shooter,
+      @JsonKey(name: "goalie") required this.goalie,
+      @JsonKey(name: "isGoal") required this.isGoal,
+      @JsonKey(name: "isGameWinningGoal") required this.isGameWinningGoal,
+      @JsonKey(name: "shooterTeam") required this.shooterTeam});
+
+  factory _$ShootoutShotImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShootoutShotImplFromJson(json);
+
+  @override
+  @JsonKey(name: "shooter")
+  final ShootoutPlayer shooter;
+  @override
+  @JsonKey(name: "goalie")
+  final ShootoutPlayer goalie;
+  @override
+  @JsonKey(name: "isGoal")
+  final bool isGoal;
+  @override
+  @JsonKey(name: "isGameWinningGoal")
+  final bool isGameWinningGoal;
+  @override
+  @JsonKey(name: "shooterTeam")
+  final ShootoutTeam shooterTeam;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ShootoutShot(shooter: $shooter, goalie: $goalie, isGoal: $isGoal, isGameWinningGoal: $isGameWinningGoal, shooterTeam: $shooterTeam)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ShootoutShot'))
+      ..add(DiagnosticsProperty('shooter', shooter))
+      ..add(DiagnosticsProperty('goalie', goalie))
+      ..add(DiagnosticsProperty('isGoal', isGoal))
+      ..add(DiagnosticsProperty('isGameWinningGoal', isGameWinningGoal))
+      ..add(DiagnosticsProperty('shooterTeam', shooterTeam));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShootoutShotImpl &&
+            (identical(other.shooter, shooter) || other.shooter == shooter) &&
+            (identical(other.goalie, goalie) || other.goalie == goalie) &&
+            (identical(other.isGoal, isGoal) || other.isGoal == isGoal) &&
+            (identical(other.isGameWinningGoal, isGameWinningGoal) ||
+                other.isGameWinningGoal == isGameWinningGoal) &&
+            (identical(other.shooterTeam, shooterTeam) ||
+                other.shooterTeam == shooterTeam));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, shooter, goalie, isGoal, isGameWinningGoal, shooterTeam);
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShootoutShotImplCopyWith<_$ShootoutShotImpl> get copyWith =>
+      __$$ShootoutShotImplCopyWithImpl<_$ShootoutShotImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ShootoutShotImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShootoutShot implements ShootoutShot {
+  const factory _ShootoutShot(
+      {@JsonKey(name: "shooter") required final ShootoutPlayer shooter,
+      @JsonKey(name: "goalie") required final ShootoutPlayer goalie,
+      @JsonKey(name: "isGoal") required final bool isGoal,
+      @JsonKey(name: "isGameWinningGoal") required final bool isGameWinningGoal,
+      @JsonKey(name: "shooterTeam")
+      required final ShootoutTeam shooterTeam}) = _$ShootoutShotImpl;
+
+  factory _ShootoutShot.fromJson(Map<String, dynamic> json) =
+      _$ShootoutShotImpl.fromJson;
+
+  @override
+  @JsonKey(name: "shooter")
+  ShootoutPlayer get shooter;
+  @override
+  @JsonKey(name: "goalie")
+  ShootoutPlayer get goalie;
+  @override
+  @JsonKey(name: "isGoal")
+  bool get isGoal;
+  @override
+  @JsonKey(name: "isGameWinningGoal")
+  bool get isGameWinningGoal;
+  @override
+  @JsonKey(name: "shooterTeam")
+  ShootoutTeam get shooterTeam;
+
+  /// Create a copy of ShootoutShot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShootoutShotImplCopyWith<_$ShootoutShotImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ShootoutDetails _$ShootoutDetailsFromJson(Map<String, dynamic> json) {
+  return _ShootoutDetails.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ShootoutDetails {
+  @JsonKey(name: "homeTeamShots")
+  List<ShootoutShot> get homeTeamShots => throw _privateConstructorUsedError;
+  @JsonKey(name: "visitingTeamShots")
+  List<ShootoutShot> get visitingTeamShots =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "winningTeam")
+  ShootoutTeam get winningTeam => throw _privateConstructorUsedError;
+
+  /// Serializes this ShootoutDetails to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ShootoutDetailsCopyWith<ShootoutDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShootoutDetailsCopyWith<$Res> {
+  factory $ShootoutDetailsCopyWith(
+          ShootoutDetails value, $Res Function(ShootoutDetails) then) =
+      _$ShootoutDetailsCopyWithImpl<$Res, ShootoutDetails>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "homeTeamShots") List<ShootoutShot> homeTeamShots,
+      @JsonKey(name: "visitingTeamShots") List<ShootoutShot> visitingTeamShots,
+      @JsonKey(name: "winningTeam") ShootoutTeam winningTeam});
+
+  $ShootoutTeamCopyWith<$Res> get winningTeam;
+}
+
+/// @nodoc
+class _$ShootoutDetailsCopyWithImpl<$Res, $Val extends ShootoutDetails>
+    implements $ShootoutDetailsCopyWith<$Res> {
+  _$ShootoutDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeTeamShots = null,
+    Object? visitingTeamShots = null,
+    Object? winningTeam = null,
+  }) {
+    return _then(_value.copyWith(
+      homeTeamShots: null == homeTeamShots
+          ? _value.homeTeamShots
+          : homeTeamShots // ignore: cast_nullable_to_non_nullable
+              as List<ShootoutShot>,
+      visitingTeamShots: null == visitingTeamShots
+          ? _value.visitingTeamShots
+          : visitingTeamShots // ignore: cast_nullable_to_non_nullable
+              as List<ShootoutShot>,
+      winningTeam: null == winningTeam
+          ? _value.winningTeam
+          : winningTeam // ignore: cast_nullable_to_non_nullable
+              as ShootoutTeam,
+    ) as $Val);
+  }
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShootoutTeamCopyWith<$Res> get winningTeam {
+    return $ShootoutTeamCopyWith<$Res>(_value.winningTeam, (value) {
+      return _then(_value.copyWith(winningTeam: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ShootoutDetailsImplCopyWith<$Res>
+    implements $ShootoutDetailsCopyWith<$Res> {
+  factory _$$ShootoutDetailsImplCopyWith(_$ShootoutDetailsImpl value,
+          $Res Function(_$ShootoutDetailsImpl) then) =
+      __$$ShootoutDetailsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "homeTeamShots") List<ShootoutShot> homeTeamShots,
+      @JsonKey(name: "visitingTeamShots") List<ShootoutShot> visitingTeamShots,
+      @JsonKey(name: "winningTeam") ShootoutTeam winningTeam});
+
+  @override
+  $ShootoutTeamCopyWith<$Res> get winningTeam;
+}
+
+/// @nodoc
+class __$$ShootoutDetailsImplCopyWithImpl<$Res>
+    extends _$ShootoutDetailsCopyWithImpl<$Res, _$ShootoutDetailsImpl>
+    implements _$$ShootoutDetailsImplCopyWith<$Res> {
+  __$$ShootoutDetailsImplCopyWithImpl(
+      _$ShootoutDetailsImpl _value, $Res Function(_$ShootoutDetailsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? homeTeamShots = null,
+    Object? visitingTeamShots = null,
+    Object? winningTeam = null,
+  }) {
+    return _then(_$ShootoutDetailsImpl(
+      homeTeamShots: null == homeTeamShots
+          ? _value._homeTeamShots
+          : homeTeamShots // ignore: cast_nullable_to_non_nullable
+              as List<ShootoutShot>,
+      visitingTeamShots: null == visitingTeamShots
+          ? _value._visitingTeamShots
+          : visitingTeamShots // ignore: cast_nullable_to_non_nullable
+              as List<ShootoutShot>,
+      winningTeam: null == winningTeam
+          ? _value.winningTeam
+          : winningTeam // ignore: cast_nullable_to_non_nullable
+              as ShootoutTeam,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ShootoutDetailsImpl
+    with DiagnosticableTreeMixin
+    implements _ShootoutDetails {
+  const _$ShootoutDetailsImpl(
+      {@JsonKey(name: "homeTeamShots")
+      required final List<ShootoutShot> homeTeamShots,
+      @JsonKey(name: "visitingTeamShots")
+      required final List<ShootoutShot> visitingTeamShots,
+      @JsonKey(name: "winningTeam") required this.winningTeam})
+      : _homeTeamShots = homeTeamShots,
+        _visitingTeamShots = visitingTeamShots;
+
+  factory _$ShootoutDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShootoutDetailsImplFromJson(json);
+
+  final List<ShootoutShot> _homeTeamShots;
+  @override
+  @JsonKey(name: "homeTeamShots")
+  List<ShootoutShot> get homeTeamShots {
+    if (_homeTeamShots is EqualUnmodifiableListView) return _homeTeamShots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_homeTeamShots);
+  }
+
+  final List<ShootoutShot> _visitingTeamShots;
+  @override
+  @JsonKey(name: "visitingTeamShots")
+  List<ShootoutShot> get visitingTeamShots {
+    if (_visitingTeamShots is EqualUnmodifiableListView)
+      return _visitingTeamShots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_visitingTeamShots);
+  }
+
+  @override
+  @JsonKey(name: "winningTeam")
+  final ShootoutTeam winningTeam;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ShootoutDetails(homeTeamShots: $homeTeamShots, visitingTeamShots: $visitingTeamShots, winningTeam: $winningTeam)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ShootoutDetails'))
+      ..add(DiagnosticsProperty('homeTeamShots', homeTeamShots))
+      ..add(DiagnosticsProperty('visitingTeamShots', visitingTeamShots))
+      ..add(DiagnosticsProperty('winningTeam', winningTeam));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShootoutDetailsImpl &&
+            const DeepCollectionEquality()
+                .equals(other._homeTeamShots, _homeTeamShots) &&
+            const DeepCollectionEquality()
+                .equals(other._visitingTeamShots, _visitingTeamShots) &&
+            (identical(other.winningTeam, winningTeam) ||
+                other.winningTeam == winningTeam));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_homeTeamShots),
+      const DeepCollectionEquality().hash(_visitingTeamShots),
+      winningTeam);
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShootoutDetailsImplCopyWith<_$ShootoutDetailsImpl> get copyWith =>
+      __$$ShootoutDetailsImplCopyWithImpl<_$ShootoutDetailsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ShootoutDetailsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ShootoutDetails implements ShootoutDetails {
+  const factory _ShootoutDetails(
+      {@JsonKey(name: "homeTeamShots")
+      required final List<ShootoutShot> homeTeamShots,
+      @JsonKey(name: "visitingTeamShots")
+      required final List<ShootoutShot> visitingTeamShots,
+      @JsonKey(name: "winningTeam")
+      required final ShootoutTeam winningTeam}) = _$ShootoutDetailsImpl;
+
+  factory _ShootoutDetails.fromJson(Map<String, dynamic> json) =
+      _$ShootoutDetailsImpl.fromJson;
+
+  @override
+  @JsonKey(name: "homeTeamShots")
+  List<ShootoutShot> get homeTeamShots;
+  @override
+  @JsonKey(name: "visitingTeamShots")
+  List<ShootoutShot> get visitingTeamShots;
+  @override
+  @JsonKey(name: "winningTeam")
+  ShootoutTeam get winningTeam;
+
+  /// Create a copy of ShootoutDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShootoutDetailsImplCopyWith<_$ShootoutDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2773,6 +7683,16 @@ GameSummaryResponse _$GameSummaryResponseFromJson(Map<String, dynamic> json) {
 mixin _$GameSummaryResponse {
   @JsonKey(name: "details")
   GameSummaryDetails get details => throw _privateConstructorUsedError;
+  @JsonKey(name: "hasShootout")
+  bool get hasShootout => throw _privateConstructorUsedError;
+  @JsonKey(name: "shootoutDetails")
+  ShootoutDetails? get shootoutDetails => throw _privateConstructorUsedError;
+  @JsonKey(name: "homeTeam")
+  GameSummaryTeam get homeTeam => throw _privateConstructorUsedError;
+  @JsonKey(name: "visitingTeam")
+  GameSummaryTeam get visitingTeam => throw _privateConstructorUsedError;
+  @JsonKey(name: "periods")
+  List<GameSummaryPeriod> get periods => throw _privateConstructorUsedError;
 
   /// Serializes this GameSummaryResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2790,9 +7710,18 @@ abstract class $GameSummaryResponseCopyWith<$Res> {
           GameSummaryResponse value, $Res Function(GameSummaryResponse) then) =
       _$GameSummaryResponseCopyWithImpl<$Res, GameSummaryResponse>;
   @useResult
-  $Res call({@JsonKey(name: "details") GameSummaryDetails details});
+  $Res call(
+      {@JsonKey(name: "details") GameSummaryDetails details,
+      @JsonKey(name: "hasShootout") bool hasShootout,
+      @JsonKey(name: "shootoutDetails") ShootoutDetails? shootoutDetails,
+      @JsonKey(name: "homeTeam") GameSummaryTeam homeTeam,
+      @JsonKey(name: "visitingTeam") GameSummaryTeam visitingTeam,
+      @JsonKey(name: "periods") List<GameSummaryPeriod> periods});
 
   $GameSummaryDetailsCopyWith<$Res> get details;
+  $ShootoutDetailsCopyWith<$Res>? get shootoutDetails;
+  $GameSummaryTeamCopyWith<$Res> get homeTeam;
+  $GameSummaryTeamCopyWith<$Res> get visitingTeam;
 }
 
 /// @nodoc
@@ -2811,12 +7740,37 @@ class _$GameSummaryResponseCopyWithImpl<$Res, $Val extends GameSummaryResponse>
   @override
   $Res call({
     Object? details = null,
+    Object? hasShootout = null,
+    Object? shootoutDetails = freezed,
+    Object? homeTeam = null,
+    Object? visitingTeam = null,
+    Object? periods = null,
   }) {
     return _then(_value.copyWith(
       details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
               as GameSummaryDetails,
+      hasShootout: null == hasShootout
+          ? _value.hasShootout
+          : hasShootout // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shootoutDetails: freezed == shootoutDetails
+          ? _value.shootoutDetails
+          : shootoutDetails // ignore: cast_nullable_to_non_nullable
+              as ShootoutDetails?,
+      homeTeam: null == homeTeam
+          ? _value.homeTeam
+          : homeTeam // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeam,
+      visitingTeam: null == visitingTeam
+          ? _value.visitingTeam
+          : visitingTeam // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeam,
+      periods: null == periods
+          ? _value.periods
+          : periods // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriod>,
     ) as $Val);
   }
 
@@ -2829,6 +7783,40 @@ class _$GameSummaryResponseCopyWithImpl<$Res, $Val extends GameSummaryResponse>
       return _then(_value.copyWith(details: value) as $Val);
     });
   }
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShootoutDetailsCopyWith<$Res>? get shootoutDetails {
+    if (_value.shootoutDetails == null) {
+      return null;
+    }
+
+    return $ShootoutDetailsCopyWith<$Res>(_value.shootoutDetails!, (value) {
+      return _then(_value.copyWith(shootoutDetails: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamCopyWith<$Res> get homeTeam {
+    return $GameSummaryTeamCopyWith<$Res>(_value.homeTeam, (value) {
+      return _then(_value.copyWith(homeTeam: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GameSummaryResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GameSummaryTeamCopyWith<$Res> get visitingTeam {
+    return $GameSummaryTeamCopyWith<$Res>(_value.visitingTeam, (value) {
+      return _then(_value.copyWith(visitingTeam: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -2839,10 +7827,22 @@ abstract class _$$GameSummaryResponseImplCopyWith<$Res>
       __$$GameSummaryResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "details") GameSummaryDetails details});
+  $Res call(
+      {@JsonKey(name: "details") GameSummaryDetails details,
+      @JsonKey(name: "hasShootout") bool hasShootout,
+      @JsonKey(name: "shootoutDetails") ShootoutDetails? shootoutDetails,
+      @JsonKey(name: "homeTeam") GameSummaryTeam homeTeam,
+      @JsonKey(name: "visitingTeam") GameSummaryTeam visitingTeam,
+      @JsonKey(name: "periods") List<GameSummaryPeriod> periods});
 
   @override
   $GameSummaryDetailsCopyWith<$Res> get details;
+  @override
+  $ShootoutDetailsCopyWith<$Res>? get shootoutDetails;
+  @override
+  $GameSummaryTeamCopyWith<$Res> get homeTeam;
+  @override
+  $GameSummaryTeamCopyWith<$Res> get visitingTeam;
 }
 
 /// @nodoc
@@ -2859,12 +7859,37 @@ class __$$GameSummaryResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? details = null,
+    Object? hasShootout = null,
+    Object? shootoutDetails = freezed,
+    Object? homeTeam = null,
+    Object? visitingTeam = null,
+    Object? periods = null,
   }) {
     return _then(_$GameSummaryResponseImpl(
       details: null == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
               as GameSummaryDetails,
+      hasShootout: null == hasShootout
+          ? _value.hasShootout
+          : hasShootout // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shootoutDetails: freezed == shootoutDetails
+          ? _value.shootoutDetails
+          : shootoutDetails // ignore: cast_nullable_to_non_nullable
+              as ShootoutDetails?,
+      homeTeam: null == homeTeam
+          ? _value.homeTeam
+          : homeTeam // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeam,
+      visitingTeam: null == visitingTeam
+          ? _value.visitingTeam
+          : visitingTeam // ignore: cast_nullable_to_non_nullable
+              as GameSummaryTeam,
+      periods: null == periods
+          ? _value._periods
+          : periods // ignore: cast_nullable_to_non_nullable
+              as List<GameSummaryPeriod>,
     ));
   }
 }
@@ -2875,7 +7900,13 @@ class _$GameSummaryResponseImpl
     with DiagnosticableTreeMixin
     implements _GameSummaryResponse {
   const _$GameSummaryResponseImpl(
-      {@JsonKey(name: "details") required this.details});
+      {@JsonKey(name: "details") required this.details,
+      @JsonKey(name: "hasShootout") required this.hasShootout,
+      @JsonKey(name: "shootoutDetails") this.shootoutDetails,
+      @JsonKey(name: "homeTeam") required this.homeTeam,
+      @JsonKey(name: "visitingTeam") required this.visitingTeam,
+      @JsonKey(name: "periods") required final List<GameSummaryPeriod> periods})
+      : _periods = periods;
 
   factory _$GameSummaryResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameSummaryResponseImplFromJson(json);
@@ -2883,10 +7914,30 @@ class _$GameSummaryResponseImpl
   @override
   @JsonKey(name: "details")
   final GameSummaryDetails details;
+  @override
+  @JsonKey(name: "hasShootout")
+  final bool hasShootout;
+  @override
+  @JsonKey(name: "shootoutDetails")
+  final ShootoutDetails? shootoutDetails;
+  @override
+  @JsonKey(name: "homeTeam")
+  final GameSummaryTeam homeTeam;
+  @override
+  @JsonKey(name: "visitingTeam")
+  final GameSummaryTeam visitingTeam;
+  final List<GameSummaryPeriod> _periods;
+  @override
+  @JsonKey(name: "periods")
+  List<GameSummaryPeriod> get periods {
+    if (_periods is EqualUnmodifiableListView) return _periods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_periods);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameSummaryResponse(details: $details)';
+    return 'GameSummaryResponse(details: $details, hasShootout: $hasShootout, shootoutDetails: $shootoutDetails, homeTeam: $homeTeam, visitingTeam: $visitingTeam, periods: $periods)';
   }
 
   @override
@@ -2894,7 +7945,12 @@ class _$GameSummaryResponseImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'GameSummaryResponse'))
-      ..add(DiagnosticsProperty('details', details));
+      ..add(DiagnosticsProperty('details', details))
+      ..add(DiagnosticsProperty('hasShootout', hasShootout))
+      ..add(DiagnosticsProperty('shootoutDetails', shootoutDetails))
+      ..add(DiagnosticsProperty('homeTeam', homeTeam))
+      ..add(DiagnosticsProperty('visitingTeam', visitingTeam))
+      ..add(DiagnosticsProperty('periods', periods));
   }
 
   @override
@@ -2902,12 +7958,28 @@ class _$GameSummaryResponseImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameSummaryResponseImpl &&
-            (identical(other.details, details) || other.details == details));
+            (identical(other.details, details) || other.details == details) &&
+            (identical(other.hasShootout, hasShootout) ||
+                other.hasShootout == hasShootout) &&
+            (identical(other.shootoutDetails, shootoutDetails) ||
+                other.shootoutDetails == shootoutDetails) &&
+            (identical(other.homeTeam, homeTeam) ||
+                other.homeTeam == homeTeam) &&
+            (identical(other.visitingTeam, visitingTeam) ||
+                other.visitingTeam == visitingTeam) &&
+            const DeepCollectionEquality().equals(other._periods, _periods));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, details);
+  int get hashCode => Object.hash(
+      runtimeType,
+      details,
+      hasShootout,
+      shootoutDetails,
+      homeTeam,
+      visitingTeam,
+      const DeepCollectionEquality().hash(_periods));
 
   /// Create a copy of GameSummaryResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -2928,8 +8000,15 @@ class _$GameSummaryResponseImpl
 
 abstract class _GameSummaryResponse implements GameSummaryResponse {
   const factory _GameSummaryResponse(
-      {@JsonKey(name: "details")
-      required final GameSummaryDetails details}) = _$GameSummaryResponseImpl;
+      {@JsonKey(name: "details") required final GameSummaryDetails details,
+      @JsonKey(name: "hasShootout") required final bool hasShootout,
+      @JsonKey(name: "shootoutDetails") final ShootoutDetails? shootoutDetails,
+      @JsonKey(name: "homeTeam") required final GameSummaryTeam homeTeam,
+      @JsonKey(name: "visitingTeam")
+      required final GameSummaryTeam visitingTeam,
+      @JsonKey(name: "periods")
+      required final List<GameSummaryPeriod>
+          periods}) = _$GameSummaryResponseImpl;
 
   factory _GameSummaryResponse.fromJson(Map<String, dynamic> json) =
       _$GameSummaryResponseImpl.fromJson;
@@ -2937,6 +8016,21 @@ abstract class _GameSummaryResponse implements GameSummaryResponse {
   @override
   @JsonKey(name: "details")
   GameSummaryDetails get details;
+  @override
+  @JsonKey(name: "hasShootout")
+  bool get hasShootout;
+  @override
+  @JsonKey(name: "shootoutDetails")
+  ShootoutDetails? get shootoutDetails;
+  @override
+  @JsonKey(name: "homeTeam")
+  GameSummaryTeam get homeTeam;
+  @override
+  @JsonKey(name: "visitingTeam")
+  GameSummaryTeam get visitingTeam;
+  @override
+  @JsonKey(name: "periods")
+  List<GameSummaryPeriod> get periods;
 
   /// Create a copy of GameSummaryResponse
   /// with the given fields replaced by the non-null parameter values.

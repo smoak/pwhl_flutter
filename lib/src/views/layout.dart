@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pwhl_flutter/src/components/main_container.dart';
 import 'package:pwhl_flutter/src/views/standings_view.dart';
-
-class Main extends StatelessWidget {
-  const Main({super.key, required this.child});
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.only(left: 32, right: 32), child: child);
-  }
-}
 
 class Layout extends StatelessWidget {
   const Layout({super.key, required this.child, required this.title});

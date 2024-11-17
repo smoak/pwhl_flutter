@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pwhl_flutter/src/components/final_game_card.dart';
 import 'package:pwhl_flutter/src/components/future_game_card.dart';
+import 'package:pwhl_flutter/src/components/game_card_link.dart';
 import 'package:pwhl_flutter/src/components/live_game_card.dart';
 import '../data/types.dart';
 
@@ -30,11 +31,14 @@ class GameList extends StatelessWidget {
                 children: items.map((game) {
                   switch (game) {
                     case FinalGame():
-                      return FinalGameCard(game: game);
+                      return GameCardLink(
+                          card: FinalGameCard(game: game), gameId: game.id);
                     case LiveGame():
-                      return LiveGameCard(game: game);
+                      return GameCardLink(
+                          card: LiveGameCard(game: game), gameId: game.id);
                     case FutureGame():
-                      return FutureGameCard(game: game);
+                      return GameCardLink(
+                          card: FutureGameCard(game: game), gameId: game.id);
                   }
                 }).toList(),
               ),

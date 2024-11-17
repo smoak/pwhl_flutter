@@ -56,8 +56,10 @@ class MyApp extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(8.0))),
           ),
           drawerTheme: const DrawerThemeData(shape: BeveledRectangleBorder()),
-          appBarTheme:
-              AppBarTheme(backgroundColor: Theme.of(context).primaryColor),
+          appBarTheme: AppBarTheme(
+            backgroundColor: Theme.of(context).primaryColor,
+            iconTheme: const IconThemeData(color: Colors.white),
+          ),
           dataTableTheme: DataTableThemeData(
               headingTextStyle: const TextStyle(
                   fontWeight: FontWeight.bold, color: Colors.white),
