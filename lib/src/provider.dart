@@ -41,12 +41,24 @@ final debugProvider = FutureProvider.autoDispose
   final finalGame = Game.finalGame(
       1,
       GameType.regularSeason,
-      Team(1, "Fleet", "https://assets.leaguestat.com/pwhl/logos/50x50/1_4.png",
-          1, 1, 1, "1-1-1"),
-      Team(2, "Frost", "https://assets.leaguestat.com/pwhl/logos/50x50/2.png",
-          2, 1, 0, "2-1-0"),
+      Team(
+          id: 1,
+          name: "Fleet",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/1_4.png",
+          wins: 1,
+          otLosses: 1,
+          losses: 1,
+          record: "1-1-1"),
+      Team(
+          id: 2,
+          name: "Frost",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/2.png",
+          wins: 2,
+          otLosses: 1,
+          losses: 0,
+          record: "2-1-0"),
       GameState.finished,
-      "",
+      "2024-11-16 00:00:00.000",
       4,
       3,
       EndState.regulation,
@@ -55,32 +67,44 @@ final debugProvider = FutureProvider.autoDispose
       2,
       GameType.regularSeason,
       Team(
-          3,
-          "Victoire",
-          "https://assets.leaguestat.com/pwhl/logos/50x50/3.png",
-          3,
-          0,
-          0,
-          "3-0-0"),
-      Team(4, "Sirens", "https://assets.leaguestat.com/pwhl/logos/50x50/4.png",
-          0, 3, 0, "0-3-0"),
+          id: 3,
+          name: "Victoire",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/3.png",
+          wins: 3,
+          otLosses: 0,
+          losses: 0,
+          record: "3-0-0"),
+      Team(
+          id: 4,
+          name: "Sirens",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/4.png",
+          wins: 0,
+          otLosses: 3,
+          losses: 0,
+          record: "0-3-0"),
       GameState.scheduled,
-      "");
+      "2024-11-20 00:00:00.000");
   final liveGame = Game.liveGame(
       3,
       GameType.regularSeason,
-      Team(5, "Charge", "https://assets.leaguestat.com/pwhl/logos/50x50/5.png",
-          0, 0, 3, "0-0-3"),
       Team(
-          6,
-          "Sceptres",
-          "https://assets.leaguestat.com/pwhl/logos/50x50/6.png",
-          1,
-          2,
-          0,
-          "1-2-0"),
+          id: 5,
+          name: "Charge",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/5.png",
+          wins: 0,
+          otLosses: 0,
+          losses: 3,
+          record: "0-0-3"),
+      Team(
+          id: 6,
+          name: "Sceptres",
+          logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/6.png",
+          wins: 1,
+          otLosses: 2,
+          losses: 0,
+          record: "1-2-0"),
       GameState.live,
-      "",
+      "2024-11-16 00:00:00.000",
       2,
       1,
       GameClock(2, "10:09", false));
@@ -171,4 +195,21 @@ final standingsProvider =
       await getStandings(bootstrapResponse.currentSeasonId);
 
   return standingsResponse.sections[0].data;
+});
+
+typedef GameDetailsParameters = ({int gameId});
+
+final gameDetailsProvider = FutureProvider.autoDispose
+    .family<GameDetails, GameDetailsParameters>((ref, arguments) async {
+  final gameId = arguments.gameId;
+
+  final apiGameSummary = await getGameSummary(gameId.toString());
+  final bootstrapResponse = await getBootstrap();
+
+  return normalizeGameDetails(apiGameSummary, bootstrapResponse);
+
+  // final game = normalizeG
+
+  // return GameDetails(game: game, gameStats: gameStats);
+  // return ({gameSummary: gameSummary, bootstrap: bootstrap});
 });

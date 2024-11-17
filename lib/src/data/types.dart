@@ -16,8 +16,14 @@ class Team {
   int losses;
   String record;
 
-  Team(this.id, this.name, this.logoUrl, this.wins, this.otLosses, this.losses,
-      this.record);
+  Team(
+      {required this.id,
+      required this.name,
+      required this.logoUrl,
+      required this.wins,
+      required this.otLosses,
+      required this.losses,
+      required this.record});
 }
 
 enum GameState { live, scheduled, finished }
@@ -28,6 +34,46 @@ class GameClock {
   String clockTime;
 
   GameClock(this.period, this.clockTime, this.isInIntermission);
+}
+
+class TeamStats {
+  const TeamStats({required this.score, required this.sog});
+  final int score;
+  final int sog;
+}
+
+class GamePeriod {
+  const GamePeriod(
+      {required this.ordinalNum,
+      required this.num,
+      required this.visitorGoals,
+      required this.visitorShotsOnGoal,
+      required this.homeGoals,
+      required this.homeShotsOnGoal});
+
+  final String ordinalNum;
+  final int num;
+  final int visitorGoals;
+  final int visitorShotsOnGoal;
+  final int homeGoals;
+  final int homeShotsOnGoal;
+}
+
+typedef GameStats = (
+  TeamStats homeTeam,
+  TeamStats visitingTeam,
+  List<GamePeriod> periods,
+  // ScoringPlays scoringPlays
+);
+
+class GameDetails {
+  const GameDetails({required this.game, required this.gameStats});
+
+  final Game game;
+  final GameStats gameStats;
+
+  // Game get game => game;
+  // GameStats get gameStats => gameStats;
 }
 
 enum EndState { regulation, overtime, shootout }
@@ -128,7 +174,16 @@ class ModulekitResponse with _$ModulekitResponse {
 
 @freezed
 class GameSummaryDetails with _$GameSummaryDetails {
-  const factory GameSummaryDetails({@JsonKey(name: "id") required int id}) =
+  const factory GameSummaryDetails(
+          {@JsonKey(name: "id") required int id,
+          @JsonKey(name: "date") required String date,
+          @JsonKey(name: "gameNumber") required String gameNumber,
+          @JsonKey(name: "startTime") required String startTime,
+          @JsonKey(name: "started") required String started,
+          @JsonKey(name: "final") required String isFinal,
+          @JsonKey(name: "status") required String status,
+          @JsonKey(name: "seasonId") required String seasonId,
+          @JsonKey(name: "GameDateISO8601") required String gameDateISO8601}) =
       _GameSummaryDetails;
 
   factory GameSummaryDetails.fromJson(Map<String, dynamic> json) =>
@@ -136,9 +191,130 @@ class GameSummaryDetails with _$GameSummaryDetails {
 }
 
 @freezed
+class GameSummaryTeamInfo with _$GameSummaryTeamInfo {
+  const factory GameSummaryTeamInfo(
+      {@JsonKey(name: "id") required int id,
+      @JsonKey(name: "name") required String name,
+      @JsonKey(name: "city") required String city,
+      @JsonKey(name: "nickname") required String nickname,
+      @JsonKey(name: "abbreviation") required String abbreviation,
+      @JsonKey(name: "logo") required String logo}) = _GameSummaryTeamInfo;
+
+  factory GameSummaryTeamInfo.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryTeamInfoFromJson(json);
+}
+
+@freezed
+class GameSummaryTeamSeasonStatsTeamRecord
+    with _$GameSummaryTeamSeasonStatsTeamRecord {
+  const factory GameSummaryTeamSeasonStatsTeamRecord({
+    @JsonKey(name: "wins") required int wins,
+    @JsonKey(name: "losses") required int losses,
+    @JsonKey(name: "ties") required int ties,
+    @JsonKey(name: "OTWins") required int otWins,
+    @JsonKey(name: "OTLosses") required int otLosses,
+    @JsonKey(name: "SOLosses") required int soLosses,
+    @JsonKey(name: "formattedRecord") required String formattedRecord,
+  }) = _GameSummaryTeamSeasonStatsTeamRecord;
+
+  factory GameSummaryTeamSeasonStatsTeamRecord.fromJson(
+          Map<String, dynamic> json) =>
+      _$GameSummaryTeamSeasonStatsTeamRecordFromJson(json);
+}
+
+@freezed
+class GameSummaryTeamStats with _$GameSummaryTeamStats {
+  const factory GameSummaryTeamStats({
+    @JsonKey(name: "shots") required int shots,
+    @JsonKey(name: "goals") required int goals,
+  }) = _GameSummaryTeamStats;
+
+  factory GameSummaryTeamStats.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryTeamStatsFromJson(json);
+}
+
+@freezed
+class GameSummaryTeamSeasonStats with _$GameSummaryTeamSeasonStats {
+  const factory GameSummaryTeamSeasonStats(
+          {@JsonKey(name: "teamRecord")
+          required GameSummaryTeamSeasonStatsTeamRecord teamRecord}) =
+      _GameSummaryTeamSeasonStats;
+
+  factory GameSummaryTeamSeasonStats.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryTeamSeasonStatsFromJson(json);
+}
+
+@freezed
+class GameSummaryTeam with _$GameSummaryTeam {
+  const factory GameSummaryTeam({
+    @JsonKey(name: "info") required GameSummaryTeamInfo info,
+    @JsonKey(name: "stats") required GameSummaryTeamStats stats,
+    @JsonKey(name: "seasonStats")
+    required GameSummaryTeamSeasonStats seasonStats,
+  }) = _GameSummaryTeam;
+
+  factory GameSummaryTeam.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryTeamFromJson(json);
+}
+
+@freezed
+class GameSummaryPeriodStats with _$GameSummaryPeriodStats {
+  const factory GameSummaryPeriodStats({
+    @JsonKey(name: "homeGoals") required String homeGoals,
+    @JsonKey(name: "homeShots") required String homeShots,
+    @JsonKey(name: "visitingGoals") required String visitingGoals,
+    @JsonKey(name: "visitingShots") required String visitingShots,
+  }) = _GameSummaryPeriodStats;
+
+  factory GameSummaryPeriodStats.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryPeriodStatsFromJson(json);
+}
+
+@freezed
+class GameSummaryPeriodInfo with _$GameSummaryPeriodInfo {
+  const factory GameSummaryPeriodInfo(
+          {@JsonKey(name: "id") required String id,
+          @JsonKey(name: "shortName") required String shortName,
+          @JsonKey(name: "longName") required String longName}) =
+      _GameSummaryPeriodInfo;
+
+  factory GameSummaryPeriodInfo.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryPeriodInfoFromJson(json);
+}
+
+@freezed
+class GameSummaryPeriodGoal with _$GameSummaryPeriodGoal {
+  const factory GameSummaryPeriodGoal({
+    @JsonKey(name: "game_goal_id") required String gameGoalId,
+    // @JsonKey(name: "team") required GameSummaryPeriodGoalTeam team,
+    // @JsonKey(name: "period") required GameSummaryPeriodGoalPeriod period,
+    @JsonKey(name: "time") required String time,
+  }) = _GameSummaryPeriodGoal;
+
+  factory GameSummaryPeriodGoal.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryPeriodGoalFromJson(json);
+}
+
+@freezed
+class GameSummaryPeriod with _$GameSummaryPeriod {
+  const factory GameSummaryPeriod(
+          {@JsonKey(name: "info") required GameSummaryPeriodInfo info,
+          @JsonKey(name: "stats") required GameSummaryPeriodStats stats,
+          @JsonKey(name: "goals") required List<GameSummaryPeriodGoal> goals}) =
+      _GameSummaryPeriod;
+
+  factory GameSummaryPeriod.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryPeriodFromJson(json);
+}
+
+@freezed
 class GameSummaryResponse with _$GameSummaryResponse {
   const factory GameSummaryResponse(
-          {@JsonKey(name: "details") required GameSummaryDetails details}) =
+          {@JsonKey(name: "details") required GameSummaryDetails details,
+          @JsonKey(name: "hasShootout") required bool hasShootout,
+          @JsonKey(name: "homeTeam") required GameSummaryTeam homeTeam,
+          @JsonKey(name: "visitingTeam") required GameSummaryTeam visitingTeam,
+          @JsonKey(name: "periods") required List<GameSummaryPeriod> periods}) =
       _GameSummaryResponse;
 
   factory GameSummaryResponse.fromJson(Map<String, dynamic> json) =>
