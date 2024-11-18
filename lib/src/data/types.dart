@@ -38,6 +38,7 @@ class GameClock {
 
 class TeamStats {
   const TeamStats({required this.score, required this.sog});
+
   final int score;
   final int sog;
 }
@@ -59,21 +60,94 @@ class GamePeriod {
   final int homeShotsOnGoal;
 }
 
-typedef GameStats = (
-  TeamStats homeTeam,
-  TeamStats visitingTeam,
-  List<GamePeriod> periods,
-  // ScoringPlays scoringPlays
-);
+class GoalScorer {
+  const GoalScorer(
+      {required this.id,
+      required this.firstName,
+      required this.lastName,
+      required this.headshotUrl,
+      required this.seasonGoals});
+
+  final int id;
+  final String firstName;
+  final String lastName;
+  final String headshotUrl;
+  final int seasonGoals;
+}
+
+class ScoringTeam {
+  const ScoringTeam(
+      {required this.id, required this.logoUrl, required this.name});
+
+  final int id;
+  final String logoUrl;
+  final String name;
+}
+
+enum GoalType { even, shorthanded, powerplay, emptynet }
+
+class ScoringPlayAssister {
+  const ScoringPlayAssister(
+      {required this.id,
+      required this.firstName,
+      required this.lastName,
+      required this.seasonAssists});
+
+  final int id;
+  final String firstName;
+  final String lastName;
+  final int seasonAssists;
+}
+
+class ScoringPlay {
+  const ScoringPlay(
+      {required this.period,
+      required this.timeInPeriod,
+      required this.goalScorer,
+      required this.scoringTeam,
+      required this.goalType,
+      this.primaryAssist,
+      this.secondaryAssist});
+
+  final int period;
+  final String timeInPeriod;
+  final GoalScorer goalScorer;
+  final ScoringTeam scoringTeam;
+  final GoalType goalType;
+  final ScoringPlayAssister? primaryAssist;
+  final ScoringPlayAssister? secondaryAssist;
+}
+
+class ScoringPlays {
+  const ScoringPlays(
+      {required this.firstPeriod,
+      required this.secondPeriod,
+      required this.thirdPeriod});
+  final Iterable<ScoringPlay> firstPeriod;
+  final Iterable<ScoringPlay> secondPeriod;
+  final Iterable<ScoringPlay> thirdPeriod;
+  // final Iterable<ScoringPlay> firstPeriod;
+  // final Iterable<ScoringPlay> firstPeriod;
+}
+
+class GameStats {
+  const GameStats(
+      {required this.homeTeam,
+      required this.visitingTeam,
+      required this.periods,
+      required this.scoringPlays});
+
+  final TeamStats homeTeam;
+  final TeamStats visitingTeam;
+  final List<GamePeriod> periods;
+  final ScoringPlays scoringPlays;
+}
 
 class GameDetails {
   const GameDetails({required this.game, required this.gameStats});
 
   final Game game;
   final GameStats gameStats;
-
-  // Game get game => game;
-  // GameStats get gameStats => gameStats;
 }
 
 enum EndState { regulation, overtime, shootout }

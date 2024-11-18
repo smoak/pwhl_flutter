@@ -95,8 +95,14 @@ GameStats normalizeGameStats(GameSummaryResponse apiGameSummary) {
   final visitingTeam = normalizeTeamStats(apiGameSummary.visitingTeam);
   final periods =
       apiGameSummary.periods.map(normalizeGameSummaryPeriod).toList();
+  const scoringPlays =
+      ScoringPlays(firstPeriod: [], secondPeriod: [], thirdPeriod: []);
 
-  return (homeTeam, visitingTeam, periods);
+  return GameStats(
+      homeTeam: homeTeam,
+      visitingTeam: visitingTeam,
+      periods: periods,
+      scoringPlays: scoringPlays);
 }
 
 Game normalizeScheduledGame(

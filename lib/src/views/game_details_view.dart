@@ -32,13 +32,15 @@ class GameDetailsView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<GameDetails> gameDetails =
-        ref.watch(gameDetailsProvider((gameId: gameId)));
+        ref.watch(debugGameDetailsProvider((gameState: GameState.finished)));
+    // ref.watch(gameDetailsProvider((gameId: gameId)));
 
     return Scaffold(
         appBar: AppBar(
             title: Text('Game Details',
                 style: Theme.of(context).textTheme.titleLarge!)),
-        body: Main(
+        body: SingleChildScrollView(
+            child: Main(
           child: Center(
             child: switch (gameDetails) {
               AsyncData(:final value) => _buildContents(value),
@@ -48,6 +50,6 @@ class GameDetailsView extends ConsumerWidget {
               _ => const CircularProgressIndicator(),
             },
           ),
-        ));
+        )));
   }
 }
