@@ -1,5 +1,6 @@
 import 'package:pwhl_flutter/src/data/normalization/end_state.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
+import 'package:collection/collection.dart';
 
 GameType normalizeGameType(String seasonId) {
   return GameType.regularSeason;
@@ -90,13 +91,141 @@ GamePeriod normalizeGameSummaryPeriod(GameSummaryPeriod apiGameSummaryPeriod) {
       homeShotsOnGoal: int.parse(stats.homeShots));
 }
 
+ScoringPlayAssister? normalizeAssist(
+    GameSummaryPeriodGoalPlayerInfo? playerInfo, String? seasonAssists) {
+  if (playerInfo == null || seasonAssists == null) {
+    return null;
+  }
+
+  return ScoringPlayAssister(
+      id: playerInfo.id,
+      firstName: playerInfo.firstName,
+      lastName: playerInfo.lastName,
+      seasonAssists: int.parse(seasonAssists));
+}
+
+GoalType normalizeGoalType(GameSummaryPeriodGoalProperties properties) {
+  if (properties.isEmptyNet == "1") {
+    return GoalType.emptynet;
+  }
+
+  if (properties.isPowerPlay == "1") {
+    return GoalType.powerplay;
+  }
+
+  if (properties.isShortHanded == "1") {
+    return GoalType.shorthanded;
+  }
+
+  return GoalType.even;
+}
+
+Iterable<ScoringPlay> normalizeScoringPlay(GameSummaryPeriod period) {
+  final info = period.info;
+  final goals = period.goals;
+  final periodNum = int.parse(info.id);
+
+  return goals.map<ScoringPlay>((goal) {
+    final goalScorer = GoalScorer(
+        id: goal.scoredBy.id,
+        firstName: goal.scoredBy.firstName,
+        lastName: goal.scoredBy.lastName,
+        headshotUrl: goal.scoredBy.playerImageURL,
+        seasonGoals: int.parse(goal.scorerGoalNumber));
+    final primaryAssist = normalizeAssist(
+        goal.assists.elementAtOrNull(0), goal.assistNumbers.elementAtOrNull(0));
+    final secondaryAssist = normalizeAssist(
+        goal.assists.elementAtOrNull(1), goal.assistNumbers.elementAtOrNull(1));
+
+    final scoringTeam = ScoringTeam(
+        id: goal.team.id, logoUrl: goal.team.logo, name: goal.team.name);
+
+    return ScoringPlay(
+        period: periodNum,
+        timeInPeriod: goal.time,
+        goalScorer: goalScorer,
+        scoringTeam: scoringTeam,
+        goalType: normalizeGoalType(goal.properties),
+        primaryAssist: primaryAssist,
+        secondaryAssist: secondaryAssist);
+  });
+}
+
+OvertimeScoringPlay? normalizeOvertimeScoringPlay(GameSummaryPeriod? period) {
+  if (period == null) {
+    return null;
+  }
+
+  final overtime = normalizeScoringPlay(period);
+
+  return OvertimeScoringPlay(
+      otPeriod: int.parse(period.info.id) - 3,
+      scoringPlay: overtime.elementAt(0));
+}
+
+ScoringPlay? normalizeShootoutScoringPlay(ShootoutDetails? shootoutDetails) {
+  if (shootoutDetails == null) {
+    return null;
+  }
+
+  final homeTeamShots = shootoutDetails.homeTeamShots;
+  final visitingTeamShots = shootoutDetails.visitingTeamShots;
+
+  final winningShot = [...homeTeamShots, ...visitingTeamShots]
+      .firstWhereOrNull((s) => s.isGameWinningGoal);
+
+  if (winningShot != null) {
+    final goalScorer = GoalScorer(
+        id: winningShot.shooter.id,
+        firstName: winningShot.shooter.firstName,
+        lastName: winningShot.shooter.lastName,
+        headshotUrl: winningShot.shooter.playerImageURL,
+        seasonGoals: 0);
+    final scoringTeam = ScoringTeam(
+        id: winningShot.shooterTeam.id,
+        logoUrl: winningShot.shooterTeam.logo,
+        name: winningShot.shooterTeam.name);
+
+    return ScoringPlay(
+        period: 4,
+        timeInPeriod: "",
+        goalScorer: goalScorer,
+        scoringTeam: scoringTeam,
+        goalType: GoalType.even);
+  }
+
+  return null;
+}
+
+ScoringPlays normalizeScoringDetails(
+    List<GameSummaryPeriod> periods, ShootoutDetails? shootoutDetails) {
+  final firstPeriod = periods
+      .where((p) => int.parse(p.info.id) == 1)
+      .expand(normalizeScoringPlay);
+  final secondPeriod = periods
+      .where((p) => int.parse(p.info.id) == 2)
+      .expand(normalizeScoringPlay);
+  final thirdPeriod = periods
+      .where((p) => int.parse(p.info.id) == 3)
+      .expand(normalizeScoringPlay);
+  final otScoring = periods.firstWhereOrNull(
+      (p) => p.goals.isNotEmpty && p.info.shortName.startsWith("OT"));
+
+  return ScoringPlays(
+      firstPeriod: firstPeriod,
+      secondPeriod: secondPeriod,
+      thirdPeriod: thirdPeriod,
+      overtime: normalizeOvertimeScoringPlay(otScoring),
+      shootout: normalizeShootoutScoringPlay(shootoutDetails));
+}
+
 GameStats normalizeGameStats(GameSummaryResponse apiGameSummary) {
   final homeTeam = normalizeTeamStats(apiGameSummary.homeTeam);
   final visitingTeam = normalizeTeamStats(apiGameSummary.visitingTeam);
   final periods =
       apiGameSummary.periods.map(normalizeGameSummaryPeriod).toList();
-  const scoringPlays =
-      ScoringPlays(firstPeriod: [], secondPeriod: [], thirdPeriod: []);
+  final scoringPlays = normalizeScoringDetails(
+      apiGameSummary.periods, apiGameSummary.shootoutDetails);
 
   return GameStats(
       homeTeam: homeTeam,

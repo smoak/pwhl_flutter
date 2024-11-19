@@ -128,7 +128,27 @@ final debugGameDetailsProvider = FutureProvider.autoDispose
               id: finalGame.homeTeam.id,
               logoUrl: finalGame.homeTeam.logoUrl,
               name: finalGame.homeTeam.name),
-          goalType: GoalType.powerplay)
+          goalType: GoalType.powerplay,
+          primaryAssist: const ScoringPlayAssister(
+              id: 1, firstName: "", lastName: "Keller", seasonAssists: 1)),
+      ScoringPlay(
+          period: 1,
+          timeInPeriod: "17:37",
+          goalScorer: const GoalScorer(
+              id: 16,
+              firstName: "Jamie Lee",
+              lastName: "Rattray",
+              headshotUrl: "https://assets.leaguestat.com/pwhl/120x160/16.jpg",
+              seasonGoals: 1),
+          scoringTeam: ScoringTeam(
+              id: finalGame.homeTeam.id,
+              logoUrl: finalGame.homeTeam.logoUrl,
+              name: finalGame.homeTeam.name),
+          goalType: GoalType.even,
+          primaryAssist: const ScoringPlayAssister(
+              id: 1, firstName: "", lastName: "Shirley", seasonAssists: 2),
+          secondaryAssist: const ScoringPlayAssister(
+              id: 2, firstName: "", lastName: "Morin", seasonAssists: 2))
     ], secondPeriod: [], thirdPeriod: []);
     final gameStats = GameStats(
         homeTeam: homeTeam,

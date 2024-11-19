@@ -6,29 +6,26 @@ import 'package:pwhl_flutter/src/data/types.dart';
 
 class FinalGameStatus extends StatelessWidget {
   const FinalGameStatus(
-      {super.key, required this.gameType, required this.endedInPeriod});
+      {super.key, required this.endedInPeriod, required this.endState});
 
-  final GameType gameType;
   final int endedInPeriod;
+  final EndState endState;
 
   @override
   Widget build(BuildContext context) {
-    final endedInShootout =
-        gameType == GameType.regularSeason && endedInPeriod == 4;
-    final endedInOvertime = endedInPeriod > 3 && !endedInShootout;
     final otPeriods = endedInPeriod - 3;
 
-    if (endedInShootout) {
+    if (endState == EndState.shootout) {
       return const Text("FINAL/SO",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold));
     }
 
-    if (endedInOvertime && otPeriods == 1) {
+    if (endState == EndState.overtime && otPeriods == 1) {
       return const Text("FINAL/OT",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold));
     }
 
-    if (endedInOvertime) {
+    if (endState == EndState.overtime) {
       return Text("FINAL/${otPeriods}OT",
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold));
     }
@@ -52,7 +49,10 @@ class FinalGameCard extends StatelessWidget {
         logoUrl: game.homeTeam.logoUrl,
       ),
       ScoreText(score: game.homeScore.toString()),
-      FinalGameStatus(gameType: game.type, endedInPeriod: game.endedInPeriod),
+      FinalGameStatus(
+        endedInPeriod: game.endedInPeriod,
+        endState: game.endState,
+      ),
       ScoreText(score: game.visitingScore.toString()),
       TeamWidget(
         name: game.visitingTeam.name,

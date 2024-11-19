@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pwhl_flutter/src/components/team_logo.dart';
+import 'package:pwhl_flutter/src/components/overtime_period_scoring_summary.dart';
+import 'package:pwhl_flutter/src/components/scoring_play_list.dart';
+import 'package:pwhl_flutter/src/components/shootout_scoring_summary.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
+import 'package:pwhl_flutter/src/extensions/int.dart';
 
 class GameSummaryTable extends StatelessWidget {
   const GameSummaryTable({super.key, required this.gameDetails});
@@ -55,96 +58,6 @@ class GameSummaryTable extends StatelessWidget {
   }
 }
 
-extension Ordinals on int {
-  String get ordinal {
-    switch (this % 10) {
-      case 1:
-        return '${this}st';
-      case 2:
-        return '${this}nd';
-      case 3:
-        return '${this}rd';
-      default:
-        return '${this}th';
-    }
-  }
-}
-
-class ScoringPlayList extends StatelessWidget {
-  const ScoringPlayList({super.key, required this.scoringPlays});
-
-  final Iterable<ScoringPlay> scoringPlays;
-
-  Widget _playerAvatar(GoalScorer scorer, BuildContext context) {
-    // return Flex(
-    //   direction: Axis.horizontal,
-    //   children: [
-    return CircleAvatar(
-        radius: 21,
-        backgroundColor: Theme.of(context).primaryColor,
-        child: CircleAvatar(
-          backgroundImage: NetworkImage(scorer.headshotUrl),
-        ));
-    // return Container(
-    //     width: 56,
-    //     height: 56,
-    //     decoration: BoxDecoration(
-    //         image: DecorationImage(image: NetworkImage(scorer.headshotUrl))));
-    //     const SizedBox(width: 8),
-    //     Column(children: [Text('$goalScorerName (${scorer.seasonGoals})'),
-    //     TeamLogo(logoUrl: scorer., size: size)
-    //     ])
-    //   ],
-    // );
-  }
-
-  Widget _scoringDetail(ScoringPlay play, BuildContext context) {
-    final goalScorer = play.goalScorer;
-    final goalScorerName =
-        [goalScorer.firstName, goalScorer.lastName].join(" ");
-
-    return Card(
-        child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(children: [
-              Row(children: [
-                _playerAvatar(play.goalScorer, context),
-                const SizedBox(width: 8),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('$goalScorerName (${goalScorer.seasonGoals})'),
-                  TeamLogo(
-                      logoUrl: play.scoringTeam.logoUrl,
-                      size: TeamLogoSize.small)
-                ])
-              ]),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      const Text('Time'),
-                      Text(
-                        play.timeInPeriod,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  )
-                ],
-              )
-            ])));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (scoringPlays.isEmpty) {
-      return const Text('No Scoring');
-    }
-
-    return Column(
-        children:
-            scoringPlays.map((sp) => _scoringDetail(sp, context)).toList());
-  }
-}
-
 class PeriodScoringSummary extends StatelessWidget {
   const PeriodScoringSummary(
       {super.key, required this.period, required this.scoringPlays});
@@ -163,7 +76,9 @@ class PeriodScoringSummary extends StatelessWidget {
           title: ColoredBox(
               color: Theme.of(context).primaryColor,
               child: Text('$ord period'))),
-      ScoringPlayList(scoringPlays: scoringPlays)
+      const SizedBox(height: 12),
+      ScoringPlayList(scoringPlays: scoringPlays),
+      const SizedBox(height: 16)
     ]);
   }
 }
@@ -184,20 +99,11 @@ class ScoringList extends StatelessWidget {
             period: 2, scoringPlays: gameStats.scoringPlays.secondPeriod),
         PeriodScoringSummary(
             period: 3, scoringPlays: gameStats.scoringPlays.thirdPeriod),
+        OvertimePeriodScoringSummary(
+            scoringPlay: gameStats.scoringPlays.overtime),
+        ShootoutScoringSummary(scoringPlay: gameStats.scoringPlays.shootout)
       ],
     );
-    // // return _header(context);
-    // return ListView.builder(
-    //     itemCount: gameStats.scoringPlays.firstPeriod.length,
-    //     itemBuilder: (BuildContext context, int index) {
-    //       if (index == 0) {
-    //         return _header(context);
-    //       }
-
-    //       return Card(
-    //         child: Center(child: Text('$index')),
-    //       );
-    //     });
   }
 }
 
@@ -213,7 +119,13 @@ class GameSummaryWidget extends StatelessWidget {
         style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
       ),
       const SizedBox(height: 8),
-      GameSummaryTable(gameDetails: gameDetails)
+      Row(// a dirty trick to make the DataTable fit width
+          children: <Widget>[
+        Expanded(
+            child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: GameSummaryTable(gameDetails: gameDetails)))
+      ])
     ]);
   }
 
@@ -223,7 +135,7 @@ class GameSummaryWidget extends StatelessWidget {
         'Scoring',
         style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
       ),
-      const SizedBox(height: 8),
+      const SizedBox(height: 12),
       ScoringList(gameDetails: gameDetails)
     ]);
   }

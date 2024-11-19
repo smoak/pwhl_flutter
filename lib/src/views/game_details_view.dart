@@ -15,8 +15,11 @@ class GameDetailsView extends ConsumerWidget {
 
   Widget _buildContents(GameDetails gameDetails) {
     final game = gameDetails.game;
-    // final gameStats = gameDetails.gameStats;
-    return Column(children: [
+
+    return SingleChildScrollView(
+        child: Center(
+            child: Main(
+                child: Column(children: [
       switch (game) {
         FinalGame() => FinalGameCard(game: game),
         LiveGame() => LiveGameCard(game: game),
@@ -26,30 +29,26 @@ class GameDetailsView extends ConsumerWidget {
         height: 20,
       ),
       GameSummaryWidget(gameDetails: gameDetails)
-    ]);
+    ]))));
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<GameDetails> gameDetails =
-        ref.watch(debugGameDetailsProvider((gameState: GameState.finished)));
-    // ref.watch(gameDetailsProvider((gameId: gameId)));
+        // ref.watch(debugGameDetailsProvider((gameState: GameState.finished)));
+        ref.watch(gameDetailsProvider((gameId: gameId)));
 
     return Scaffold(
-        appBar: AppBar(
-            title: Text('Game Details',
-                style: Theme.of(context).textTheme.titleLarge!)),
-        body: SingleChildScrollView(
-            child: Main(
-          child: Center(
-            child: switch (gameDetails) {
-              AsyncData(:final value) => _buildContents(value),
-              AsyncError() => const Text(
-                  'Oops, something unexpected happened',
-                ),
-              _ => const CircularProgressIndicator(),
-            },
+      appBar: AppBar(
+          title: Text('Game Details',
+              style: Theme.of(context).textTheme.titleLarge!)),
+      body: switch (gameDetails) {
+        AsyncData(:final value) => _buildContents(value),
+        AsyncError() => const Text(
+            'Oops, something unexpected happened',
           ),
-        )));
+        _ => const Center(child: CircularProgressIndicator()),
+      },
+    );
   }
 }
