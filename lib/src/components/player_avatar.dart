@@ -11,7 +11,7 @@ class PlayerAvatar extends StatelessWidget {
         radius: 21,
         backgroundColor: Theme.of(context).primaryColor,
         child: CircleAvatar(
-          backgroundImage: NetworkImage(headshotUrl),
-        ));
+            foregroundImage: NetworkImage(headshotUrl),
+            child: const Icon(Icons.person_3_sharp, size: 32)));
   }
 }
