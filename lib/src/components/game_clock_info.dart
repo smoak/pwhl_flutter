@@ -23,10 +23,13 @@ class GameClockInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const textStyle = TextStyle(fontSize: 16);
     if (gameClock.isInIntermission) {
-      return Text("${gameClock.period.ordinal} - END");
+      return Text("${gameClock.period.ordinal} - END", style: textStyle);
     }
 
-    return Text("${gameClock.period.ordinal} - ${gameClock.clockTime}");
+    return Text(
+        "${gameClock.period.ordinal.toUpperCase()} - ${gameClock.clockTime}",
+        style: textStyle);
   }
 }

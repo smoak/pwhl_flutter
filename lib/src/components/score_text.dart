@@ -8,6 +8,6 @@ class ScoreText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(score,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold));
+        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold));
   }
 }
