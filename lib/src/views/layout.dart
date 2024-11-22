@@ -14,11 +14,7 @@ class Layout extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-            leading: canPop
-                ? IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.arrow_back))
-                : null,
+            automaticallyImplyLeading: true,
             title: Text(title, style: Theme.of(context).textTheme.titleLarge!)),
         drawer: Drawer(
             child: ListView(
