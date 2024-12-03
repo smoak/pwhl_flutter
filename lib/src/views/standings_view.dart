@@ -5,71 +5,70 @@ import 'package:pwhl_flutter/src/data/types.dart';
 import 'package:pwhl_flutter/src/provider.dart';
 
 class StandingsWidget extends ConsumerWidget {
-  const StandingsWidget({super.key});
+  StandingsWidget({super.key});
+
+  final ScrollController scrollController = ScrollController();
+
+  List<DataColumn> _buildColumns() {
+    return [
+      const DataColumn(label: Center(child: Text('Rank'))),
+      const DataColumn(
+          label: Text('Team'), headingRowAlignment: MainAxisAlignment.center),
+      const DataColumn(label: Center(child: Text('GP'))),
+      const DataColumn(label: Center(child: Text('W'))),
+      const DataColumn(label: Center(child: Text('L'))),
+      const DataColumn(label: Center(child: Text('OT'))),
+      const DataColumn(label: Center(child: Text('PTS'))),
+    ];
+  }
+
+  List<DataCell> _buildCells(int rank, StandingsResponseSectionData data) {
+    return [
+      DataCell(Center(child: Text(rank.toString()))),
+      DataCell(Expanded(
+          child: Row(children: [
+        SizedBox(
+            width: 32,
+            height: 32,
+            child: TeamLogoWidget(
+                logoUrl:
+                    "https://assets.leaguestat.com/pwhl/logos/50x50/${data.prop.teamCode.teamLink}.png")),
+        const SizedBox(width: 8),
+        Expanded(
+            child: Text(
+          data.row.name,
+          overflow: TextOverflow.ellipsis,
+        ))
+      ]))),
+      DataCell(Center(child: Text(data.row.gamesPlayed))),
+      DataCell(Center(child: Text(data.row.regulationWins))),
+      DataCell(Center(child: Text(data.row.losses))),
+      DataCell(Center(child: Text(data.row.nonRegWins))),
+      DataCell(Center(child: Text(data.row.points)))
+    ];
+  }
+
+  List<DataRow> _buildRows(List<StandingsResponseSectionData> standings) {
+    final List<int> indexes = Iterable<int>.generate(standings.length).toList();
+
+    return indexes
+        .map(
+            (index) => DataRow(cells: _buildCells(index + 1, standings[index])))
+        .toList();
+  }
+
+  Widget _buildStandingsTable(List<StandingsResponseSectionData> standings) {
+    return DataTable(columns: _buildColumns(), rows: _buildRows(standings));
+  }
 
   Widget _buildStandings(List<StandingsResponseSectionData> standings) {
-    return ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
-            return ListTile(
-                tileColor: Theme.of(context).primaryColor,
-                textColor: Colors.white,
-                title: ColoredBox(
-                    color: Theme.of(context).primaryColor,
-                    child: const Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(child: Center(child: Text('Rank'))),
-                        Expanded(child: Center(child: Text('Team'))),
-                        Expanded(child: Center(child: Text('GP'))),
-                        Expanded(child: Center(child: Text('W'))),
-                        Expanded(child: Center(child: Text('L'))),
-                        Expanded(child: Center(child: Text('OT'))),
-                        Expanded(child: Center(child: Text('PTS'))),
-                      ],
-                    )));
-          }
-
-          final s = standings[index - 1];
-
-          return ListTile(
-            title: Row(
-              children: [
-                Expanded(
-                    child: Center(
-                  child: Text(
-                    s.row.rank.toString(),
-                  ),
-                )),
-                Expanded(
-                    child: Row(children: [
-                  SizedBox(
-                      width: 32,
-                      height: 32,
-                      child: TeamLogoWidget(
-                          logoUrl:
-                              "https://assets.leaguestat.com/pwhl/logos/50x50/${s.prop.teamCode.teamLink}.png")),
-                  const SizedBox(width: 8),
-                  Expanded(
-                      child: Text(
-                    s.row.name,
-                    overflow: TextOverflow.ellipsis,
-                  )),
-                  const SizedBox(width: 8)
-                ])),
-                Expanded(child: Center(child: Text(s.row.gamesPlayed))),
-                Expanded(child: Center(child: Text(s.row.regulationWins))),
-                Expanded(child: Center(child: Text(s.row.nonRegLosses))),
-                Expanded(child: Center(child: Text(s.row.nonRegWins))),
-                Expanded(child: Center(child: Text(s.row.points))),
-              ],
-            ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) =>
-            const Divider(height: 1.0),
-        itemCount: standings.length + 1);
+    return Scrollbar(
+        controller: scrollController,
+        thumbVisibility: true,
+        child: SingleChildScrollView(
+            controller: scrollController,
+            scrollDirection: Axis.horizontal,
+            child: _buildStandingsTable(standings)));
   }
 
   @override
@@ -89,8 +88,10 @@ class StandingsView extends StatelessWidget {
   const StandingsView({super.key});
 
   Widget _buildBody() {
-    return Container(
-        margin: const EdgeInsets.only(top: 16), child: const StandingsWidget());
+    return SingleChildScrollView(
+        child: Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: Center(child: Column(children: [StandingsWidget()]))));
   }
 
   @override
