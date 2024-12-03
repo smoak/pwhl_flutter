@@ -33,9 +33,9 @@ class LiveGameCard extends StatelessWidget {
       game: game,
       cardContents: [
         TeamWidget(
-          name: game.homeTeam.name,
-          record: game.homeTeam.record,
-          logoUrl: game.homeTeam.logoUrl,
+          name: game.visitingTeam.name,
+          record: game.visitingTeam.record,
+          logoUrl: game.visitingTeam.logoUrl,
         ),
         ScoreText(score: game.homeScore.toString()),
         Column(
@@ -46,9 +46,9 @@ class LiveGameCard extends StatelessWidget {
         ),
         ScoreText(score: game.visitingScore.toString()),
         TeamWidget(
-          name: game.visitingTeam.name,
-          record: game.visitingTeam.record,
-          logoUrl: game.visitingTeam.logoUrl,
+          name: game.homeTeam.name,
+          record: game.homeTeam.record,
+          logoUrl: game.homeTeam.logoUrl,
         ),
       ],
     );

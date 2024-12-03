@@ -13,15 +13,15 @@ class FutureGameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GameCard(game: game, cardContents: [
       TeamWidget(
-        name: game.homeTeam.name,
-        record: game.homeTeam.record,
-        logoUrl: game.homeTeam.logoUrl,
-      ),
-      Text(DateFormat.jm().format(DateTime.parse(game.gameDate).toLocal())),
-      TeamWidget(
         name: game.visitingTeam.name,
         record: game.visitingTeam.record,
         logoUrl: game.visitingTeam.logoUrl,
+      ),
+      Text(DateFormat.jm().format(DateTime.parse(game.gameDate).toLocal())),
+      TeamWidget(
+        name: game.homeTeam.name,
+        record: game.homeTeam.record,
+        logoUrl: game.homeTeam.logoUrl,
       ),
     ]);
   }
