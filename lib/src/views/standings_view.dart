@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pwhl_flutter/src/components/standings_legend_widget.dart';
 import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 import 'package:pwhl_flutter/src/provider.dart';
@@ -16,8 +17,9 @@ class StandingsWidget extends ConsumerWidget {
           label: Text('Team'), headingRowAlignment: MainAxisAlignment.center),
       const DataColumn(label: Center(child: Text('GP'))),
       const DataColumn(label: Center(child: Text('W'))),
+      const DataColumn(label: Center(child: Text('OTW'))),
+      const DataColumn(label: Center(child: Text('OTL'))),
       const DataColumn(label: Center(child: Text('L'))),
-      const DataColumn(label: Center(child: Text('OT'))),
       const DataColumn(label: Center(child: Text('PTS'))),
     ];
   }
@@ -42,8 +44,9 @@ class StandingsWidget extends ConsumerWidget {
       ]))),
       DataCell(Center(child: Text(data.row.gamesPlayed))),
       DataCell(Center(child: Text(data.row.regulationWins))),
-      DataCell(Center(child: Text(data.row.losses))),
       DataCell(Center(child: Text(data.row.nonRegWins))),
+      DataCell(Center(child: Text(data.row.nonRegLosses))),
+      DataCell(Center(child: Text(data.row.losses))),
       DataCell(Center(child: Text(data.row.points)))
     ];
   }
@@ -62,13 +65,20 @@ class StandingsWidget extends ConsumerWidget {
   }
 
   Widget _buildStandings(List<StandingsResponseSectionData> standings) {
-    return Scrollbar(
-        controller: scrollController,
-        thumbVisibility: true,
-        child: SingleChildScrollView(
-            controller: scrollController,
-            scrollDirection: Axis.horizontal,
-            child: _buildStandingsTable(standings)));
+    return SingleChildScrollView(
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      Center(
+          child: Scrollbar(
+              controller: scrollController,
+              thumbVisibility: true,
+              child: SingleChildScrollView(
+                  controller: scrollController,
+                  scrollDirection: Axis.horizontal,
+                  child: _buildStandingsTable(standings)))),
+      const SizedBox(height: 12),
+      const StandingsLegendWidget()
+    ]));
   }
 
   @override
@@ -79,7 +89,7 @@ class StandingsWidget extends ConsumerWidget {
     return switch (standings) {
       AsyncData(:final value) => _buildStandings(value),
       AsyncError() => const Text('Oops, something unexpected happened'),
-      _ => const Center(child: CircularProgressIndicator()),
+      _ => const Center(child: CircularProgressIndicator())
     };
   }
 }
@@ -90,8 +100,7 @@ class StandingsView extends StatelessWidget {
   Widget _buildBody() {
     return SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: Center(child: Column(children: [StandingsWidget()]))));
+            padding: const EdgeInsets.all(16), child: StandingsWidget()));
   }
 
   @override

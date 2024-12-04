@@ -17,6 +17,7 @@ class GameDetailsView extends ConsumerWidget {
     final game = gameDetails.game;
 
     return SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
             padding: const EdgeInsets.only(top: 16),
             child: Center(
@@ -44,7 +45,10 @@ class GameDetailsView extends ConsumerWidget {
           title: Text('Game Details',
               style: Theme.of(context).textTheme.titleLarge!)),
       body: switch (gameDetails) {
-        AsyncData(:final value) => _buildContents(value),
+        AsyncData(:final value) => RefreshIndicator(
+            onRefresh: () =>
+                ref.refresh(gameDetailsProvider((gameId: gameId)).future),
+            child: _buildContents(value)),
         AsyncError() => const Text(
             'Oops, something unexpected happened',
           ),

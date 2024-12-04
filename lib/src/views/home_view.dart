@@ -53,21 +53,23 @@ class HomeViewState extends ConsumerState<HomeView> {
 
     return Layout(
         title: "Schedule",
-        child: RefreshIndicator(
-            onRefresh: () => ref.refresh(scheduleProvider((date: date)).future),
-            child: Center(
-                child: Column(children: [
-              Container(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: const DateSelectorWidget()),
-              switch (games) {
-                AsyncData(:final value) =>
-                  Expanded(child: GameList(items: value)),
-                AsyncError() => const Text(
-                    'Oops, something unexpected happened',
-                  ),
-                _ => const CircularProgressIndicator(),
-              }
-            ]))));
+        child: Center(
+            child: Column(children: [
+          Container(
+              padding: const EdgeInsets.only(top: 8),
+              child: const DateSelectorWidget()),
+          switch (games) {
+            AsyncData(:final value) => Expanded(
+                  child: RefreshIndicator(
+                child: GameList(items: value),
+                onRefresh: () =>
+                    ref.refresh(scheduleProvider((date: date)).future),
+              )),
+            AsyncError() => const Text(
+                'Oops, something unexpected happened',
+              ),
+            _ => const CircularProgressIndicator(),
+          }
+        ])));
   }
 }
