@@ -37,14 +37,14 @@ class LiveGameCard extends StatelessWidget {
           record: game.visitingTeam.record,
           logoUrl: game.visitingTeam.logoUrl,
         ),
-        ScoreText(score: game.homeScore.toString()),
+        ScoreText(score: game.visitingScore.toString()),
         Column(
           children: [
             GameClockInfo(gameClock: game.gameClock),
             const LiveGameIndicator(),
           ],
         ),
-        ScoreText(score: game.visitingScore.toString()),
+        ScoreText(score: game.homeScore.toString()),
         TeamWidget(
           name: game.homeTeam.name,
           record: game.homeTeam.record,

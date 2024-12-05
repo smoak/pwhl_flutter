@@ -48,12 +48,12 @@ class FinalGameCard extends StatelessWidget {
         record: game.visitingTeam.record,
         logoUrl: game.visitingTeam.logoUrl,
       ),
-      ScoreText(score: game.homeScore.toString()),
+      ScoreText(score: game.visitingScore.toString()),
       FinalGameStatus(
         endedInPeriod: game.endedInPeriod,
         endState: game.endState,
       ),
-      ScoreText(score: game.visitingScore.toString()),
+      ScoreText(score: game.homeScore.toString()),
       TeamWidget(
         name: game.homeTeam.name,
         record: game.homeTeam.record,

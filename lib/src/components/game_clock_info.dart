@@ -25,7 +25,8 @@ class GameClockInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     const textStyle = TextStyle(fontSize: 16);
     if (gameClock.isInIntermission) {
-      return Text("${gameClock.period.ordinal} - END", style: textStyle);
+      return Text("${gameClock.period.ordinal.toUpperCase()} - END",
+          style: textStyle);
     }
 
     return Text(
