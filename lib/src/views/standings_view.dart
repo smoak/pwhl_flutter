@@ -5,10 +5,13 @@ import 'package:pwhl_flutter/src/components/team_widget.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 import 'package:pwhl_flutter/src/provider.dart';
 
+enum WindowClass { compact, medium, expanded }
+
 class StandingsWidget extends ConsumerWidget {
-  StandingsWidget({super.key});
+  StandingsWidget({super.key, required this.windowClass});
 
   final ScrollController scrollController = ScrollController();
+  final WindowClass windowClass;
 
   List<DataColumn> _buildColumns() {
     return [
@@ -24,11 +27,18 @@ class StandingsWidget extends ConsumerWidget {
     ];
   }
 
+  Widget _teamName(StandingsResponseSectionData data) {
+    if (windowClass == WindowClass.compact) {
+      return Text(data.row.teamCode);
+    }
+
+    return Text(data.row.name);
+  }
+
   List<DataCell> _buildCells(int rank, StandingsResponseSectionData data) {
     return [
       DataCell(Center(child: Text(rank.toString()))),
-      DataCell(Expanded(
-          child: Row(children: [
+      DataCell(Row(children: [
         SizedBox(
             width: 32,
             height: 32,
@@ -36,12 +46,8 @@ class StandingsWidget extends ConsumerWidget {
                 logoUrl:
                     "https://assets.leaguestat.com/pwhl/logos/50x50/${data.prop.teamCode.teamLink}.png")),
         const SizedBox(width: 8),
-        Expanded(
-            child: Text(
-          data.row.name,
-          overflow: TextOverflow.ellipsis,
-        ))
-      ]))),
+        _teamName(data),
+      ])),
       DataCell(Center(child: Text(data.row.gamesPlayed))),
       DataCell(Center(child: Text(data.row.regulationWins))),
       DataCell(Center(child: Text(data.row.nonRegWins))),
@@ -97,10 +103,27 @@ class StandingsWidget extends ConsumerWidget {
 class StandingsView extends StatelessWidget {
   const StandingsView({super.key});
 
-  Widget _buildBody() {
-    return SingleChildScrollView(
-        child: Padding(
-            padding: const EdgeInsets.all(16), child: StandingsWidget()));
+  WindowClass _getWindowClass(BoxConstraints constraints) {
+    if (constraints.maxWidth < 600) {
+      return WindowClass.compact;
+    }
+
+    if (constraints.maxWidth <= 600 && constraints.maxWidth < 840) {
+      return WindowClass.medium;
+    }
+
+    return WindowClass.expanded;
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return LayoutBuilder(builder: (BuildContext c, BoxConstraints constraints) {
+      return SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: StandingsWidget(
+                windowClass: _getWindowClass(constraints),
+              )));
+    });
   }
 
   @override
@@ -109,6 +132,6 @@ class StandingsView extends StatelessWidget {
         appBar: AppBar(
             title: Text('Standings',
                 style: Theme.of(context).textTheme.titleLarge!)),
-        body: _buildBody());
+        body: _buildBody(context));
   }
 }
