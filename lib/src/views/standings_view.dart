@@ -19,11 +19,11 @@ class StandingsWidget extends ConsumerWidget {
       const DataColumn(
           label: Text('Team'), headingRowAlignment: MainAxisAlignment.center),
       const DataColumn(label: Center(child: Text('GP'))),
+      const DataColumn(label: Center(child: Text('PTS'))),
       const DataColumn(label: Center(child: Text('W'))),
       const DataColumn(label: Center(child: Text('OTW'))),
       const DataColumn(label: Center(child: Text('OTL'))),
       const DataColumn(label: Center(child: Text('L'))),
-      const DataColumn(label: Center(child: Text('PTS'))),
     ];
   }
 
@@ -49,11 +49,11 @@ class StandingsWidget extends ConsumerWidget {
         _teamName(data),
       ])),
       DataCell(Center(child: Text(data.row.gamesPlayed))),
+      DataCell(Center(child: Text(data.row.points))),
       DataCell(Center(child: Text(data.row.regulationWins))),
       DataCell(Center(child: Text(data.row.nonRegWins))),
       DataCell(Center(child: Text(data.row.nonRegLosses))),
-      DataCell(Center(child: Text(data.row.losses))),
-      DataCell(Center(child: Text(data.row.points)))
+      DataCell(Center(child: Text(data.row.losses)))
     ];
   }
 

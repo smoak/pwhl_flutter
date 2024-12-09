@@ -7,8 +7,6 @@ import 'views/home_view.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // final SettingsController settingsController;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,6 +58,8 @@ class MyApp extends StatelessWidget {
             backgroundColor: Theme.of(context).primaryColor,
             iconTheme: const IconThemeData(color: Colors.white),
           ),
+          primaryTextTheme: const TextTheme(
+              labelLarge: TextStyle(color: Colors.black, fontSize: 14.0)),
           dataTableTheme: DataTableThemeData(
               headingTextStyle: const TextStyle(
                   fontWeight: FontWeight.bold, color: Colors.white),
@@ -67,7 +67,21 @@ class MyApp extends StatelessWidget {
                   (states) => Theme.of(context).primaryColor)),
           textTheme:
               const TextTheme(titleLarge: TextStyle(color: Colors.white))),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData(
+          applyElevationOverlayColor: true,
+          brightness: Brightness.dark,
+          useMaterial3: true,
+          cardTheme: const CardTheme(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0))),
+          ),
+          colorScheme: ColorScheme.fromSeed(
+              brightness: Brightness.dark,
+              seedColor: const Color.fromRGBO(51, 5, 141, 1))),
       themeMode: ThemeMode.system,
       home: const HomeView(),
     );

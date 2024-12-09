@@ -1,38 +1,9 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:http/http.dart' as http;
+import 'package:pwhl_flutter/src/data/api.dart';
 import 'package:pwhl_flutter/src/data/normalization/games.dart';
-import 'package:pwhl_flutter/src/date_fns.dart';
 import 'data/types.dart';
 import 'dart:developer' as developer;
-
-const baseUrl = "lscluster.hockeytech.com";
-const clientKey = "694cfeed58c932ee";
-const clientCode = "pwhl";
-const queryParamKeys = {"key": clientKey, "client_code": clientCode};
-
-class DaysByDate {
-  final String daysAhead;
-  final String daysBack;
-
-  const DaysByDate({required this.daysAhead, required this.daysBack});
-}
-
-DaysByDate calculateDaysByDate(DateTime? date) {
-  if (date == null || isToday(date)) {
-    return const DaysByDate(daysAhead: "2", daysBack: "0");
-  }
-
-  final today = getToday();
-  final diff = differenceInCalendarDays(today, date).abs() + 2;
-
-  if (date.isBefore(today)) {
-    return DaysByDate(daysAhead: "1", daysBack: diff.toString());
-  }
-
-  return DaysByDate(daysAhead: diff.toString(), daysBack: "0");
-}
 
 typedef ScheduleParameters = ({DateTime date});
 
@@ -210,81 +181,23 @@ final debugScheduleProvider = FutureProvider.autoDispose
   return [finalGame, futureGame, liveGame];
 });
 
+// for league leaders
+// https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=leadersExtended&key=446521baf8c38984&league_id=undefined&season_id=5&division=&team_id=0&site_id=0&client_code=pwhl&playerTypes=skaters&skaterStatTypes=points,goals&goalieStatTypes=save_percentage,wins,goals_against_average,shutouts&activeOnly=0
+
 final scheduleProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, arguments) async {
   final date = arguments.date;
   developer.log('using date $date', name: 'pwhl.app');
-  final daysByDate = calculateDaysByDate(date);
-  final queryParams = {
-    "feed": "modulekit",
-    "view": "scorebar",
-    "fmt": "json",
-    "numberofdaysahead": daysByDate.daysAhead,
-    "numberofdaysback": daysByDate.daysBack
-  }..addAll(queryParamKeys);
-  final uri = Uri.https(baseUrl, "/feed/index.php", queryParams);
-  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
-  final response = await http.get(uri);
+  final scheduleResponse = await getSchedule(date);
+  final apiGames = scheduleResponse.siteKit.scorebar;
+  final bootstrapResponse = await getBootstrap();
+  final teamRecords = await getTeamRecords(bootstrapResponse.currentSeasonId);
 
-  try {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-
-    final apiGames = ModulekitResponse.fromJson(json).siteKit.scorebar;
-    return normalizeGames(apiGames)
-        .where((game) =>
-            DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), date))
-        .toList();
-  } catch (e) {
-    developer.log('received error trying to decode json ${e.toString()}');
-    return [];
-  }
+  return normalizeGames(apiGames, teamRecords)
+      .where((game) =>
+          DateUtils.isSameDay(DateTime.parse(game.gameDate).toLocal(), date))
+      .toList();
 });
-
-Future<GameSummaryResponse> getGameSummary(String gameId) async {
-  final queryParams = {
-    "feed": "statviewfeed",
-    "view": "gameSummary",
-    "game_id": gameId,
-    "fmt": "json"
-  }..addAll(queryParamKeys);
-  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
-  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
-  final response = await http.get(uri);
-  final json = jsonDecode(response.body.substring(1, response.body.length - 1))
-      as Map<String, dynamic>;
-
-  return GameSummaryResponse.fromJson(json);
-}
-
-Future<BootstrapResponse> getBootstrap() async {
-  final queryParams = {"feed": "statviewfeed", "view": "bootstrap"}
-    ..addAll(queryParamKeys);
-  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
-  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
-  final response = await http.get(uri);
-  final json = jsonDecode(response.body.substring(1, response.body.length - 1))
-      as Map<String, dynamic>;
-  return BootstrapResponse.fromJson(json);
-}
-
-Future<StandingsResponseObject> getStandings(String seasonId) async {
-  final queryParams = {
-    "feed": "statviewfeed",
-    "view": "teams",
-    "groupTeamsBy": "division",
-    "context": "overall",
-    "site_id": "2",
-    "season": seasonId,
-    "special": "false"
-  }..addAll(queryParamKeys);
-  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
-  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
-  final response = await http.get(uri);
-  final jsonBody = response.body.substring(1, response.body.length - 1);
-  final data = json.decode(jsonBody)[0] as Map<String, dynamic>;
-
-  return StandingsResponseObject.fromJson(data);
-}
 
 final standingsProvider =
     FutureProvider.autoDispose<List<StandingsResponseSectionData>>((ref) async {
@@ -303,6 +216,7 @@ final gameDetailsProvider = FutureProvider.autoDispose
 
   final apiGameSummary = await getGameSummary(gameId.toString());
   final bootstrapResponse = await getBootstrap();
+  final teamRecords = await getTeamRecords(bootstrapResponse.currentSeasonId);
 
-  return normalizeGameDetails(apiGameSummary, bootstrapResponse);
+  return normalizeGameDetails(apiGameSummary, bootstrapResponse, teamRecords);
 });

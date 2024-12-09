@@ -6,11 +6,10 @@ GameType normalizeGameType(String seasonId) {
   return GameType.regularSeason;
 }
 
-Team normalizeHomeTeam(ScheduledGame apiGame) {
+Team normalizeHomeTeam(ScheduledGame apiGame, String record) {
   final wins = int.parse(apiGame.homeWins);
   final losses = int.parse(apiGame.homeRegulationLosses);
   final otLosses = int.parse(apiGame.homeOtLosses);
-  final record = [wins, losses, otLosses].join("-");
 
   return Team(
       id: int.parse(apiGame.homeId),
@@ -22,11 +21,10 @@ Team normalizeHomeTeam(ScheduledGame apiGame) {
       record: record);
 }
 
-Team normalizeVisitingTeam(ScheduledGame apiGame) {
+Team normalizeVisitingTeam(ScheduledGame apiGame, String record) {
   final wins = int.parse(apiGame.visitorWins);
   final losses = int.parse(apiGame.visitorRegulationLosses);
   final otLosses = int.parse(apiGame.visitorOtLosses);
-  final record = [wins, losses, otLosses].join("-");
 
   return Team(
       id: int.parse(apiGame.visitorId),
@@ -38,27 +36,32 @@ Team normalizeVisitingTeam(ScheduledGame apiGame) {
       record: record);
 }
 
-Team normalizeTeam(GameSummaryTeam team) {
+Team normalizeTeam(GameSummaryTeam team, String record) {
   return Team(
       id: team.info.id,
       name: team.info.nickname,
       logoUrl: team.info.logo,
       losses: team.seasonStats.teamRecord.losses,
       otLosses: team.seasonStats.teamRecord.otLosses,
-      record: team.seasonStats.teamRecord.formattedRecord,
+      record: record,
       wins: team.seasonStats.teamRecord.wins);
 }
 
-Game normalizeFinalGame(
-    GameSummaryResponse apiGameSummary, BootstrapResponse bootstrapResponse) {
+Game normalizeFinalGame(GameSummaryResponse apiGameSummary,
+    BootstrapResponse bootstrapResponse, Map<String, String> teamRecords) {
   final periods = apiGameSummary.periods;
   final details = apiGameSummary.details;
 
   final endedInPeriod = int.parse(periods[periods.length - 1].info.id);
   final id = details.id;
   final type = normalizeGameType(details.seasonId);
-  final homeTeam = normalizeTeam(apiGameSummary.homeTeam);
-  final visitingTeam = normalizeTeam(apiGameSummary.visitingTeam);
+  final homeTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.homeTeam, teamRecords);
+  final visitingTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.visitingTeam, teamRecords);
+  final homeTeam = normalizeTeam(apiGameSummary.homeTeam, homeTeamRecord);
+  final visitingTeam =
+      normalizeTeam(apiGameSummary.visitingTeam, visitingTeamRecord);
   final endState = normalizeEndState(details.status, endedInPeriod);
 
   return Game.finalGame(
@@ -234,12 +237,18 @@ GameStats normalizeGameStats(GameSummaryResponse apiGameSummary) {
       scoringPlays: scoringPlays);
 }
 
-Game normalizeScheduledGame(
-    GameSummaryResponse apiGameSummary, BootstrapResponse bootstrapResponse) {
+Game normalizeScheduledGame(GameSummaryResponse apiGameSummary,
+    BootstrapResponse bootstrapResponse, Map<String, String> teamRecords) {
   final details = apiGameSummary.details;
   final type = normalizeGameType(details.seasonId);
-  final homeTeam = normalizeTeam(apiGameSummary.homeTeam);
-  final visitingTeam = normalizeTeam(apiGameSummary.visitingTeam);
+
+  final homeTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.homeTeam, teamRecords);
+  final visitingTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.visitingTeam, teamRecords);
+  final homeTeam = normalizeTeam(apiGameSummary.homeTeam, homeTeamRecord);
+  final visitingTeam =
+      normalizeTeam(apiGameSummary.visitingTeam, visitingTeamRecord);
 
   return Game.futureGame(details.id, type, homeTeam, visitingTeam,
       GameState.scheduled, details.gameDateISO8601);
@@ -253,13 +262,23 @@ String normalizeClockTime(String status) {
   return status.substring(13, 18).trim();
 }
 
-Game normalizeLiveGame(
-    GameSummaryResponse apiGameSummary, BootstrapResponse bootstrapResponse) {
+String recordForGameSummaryTeam(
+    GameSummaryTeam team, Map<String, String> teamRecords) {
+  return teamRecords[team.info.abbreviation] ?? "0-0-0-0";
+}
+
+Game normalizeLiveGame(GameSummaryResponse apiGameSummary,
+    BootstrapResponse bootstrapResponse, Map<String, String> teamRecords) {
   final details = apiGameSummary.details;
   final periods = apiGameSummary.periods;
   final type = normalizeGameType(details.seasonId);
-  final homeTeam = normalizeTeam(apiGameSummary.homeTeam);
-  final visitingTeam = normalizeTeam(apiGameSummary.visitingTeam);
+  final homeTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.homeTeam, teamRecords);
+  final visitingTeamRecord =
+      recordForGameSummaryTeam(apiGameSummary.visitingTeam, teamRecords);
+  final homeTeam = normalizeTeam(apiGameSummary.homeTeam, homeTeamRecord);
+  final visitingTeam =
+      normalizeTeam(apiGameSummary.visitingTeam, visitingTeamRecord);
   final period = int.parse(periods[periods.length - 1].info.id);
   final clockTime = normalizeClockTime(details.status);
   final isIntermission =
@@ -278,32 +297,37 @@ Game normalizeLiveGame(
       gameClock);
 }
 
-GameDetails normalizeGameDetails(
-    GameSummaryResponse apiGameSummary, BootstrapResponse bootstrapResponse) {
+GameDetails normalizeGameDetails(GameSummaryResponse apiGameSummary,
+    BootstrapResponse bootstrapResponse, Map<String, String> teamRecords) {
   if (apiGameSummary.details.isFinal == "1" ||
       apiGameSummary.details.status == "Unofficial Final") {
     return GameDetails(
-        game: normalizeFinalGame(apiGameSummary, bootstrapResponse),
+        game:
+            normalizeFinalGame(apiGameSummary, bootstrapResponse, teamRecords),
         gameStats: normalizeGameStats(apiGameSummary));
   }
 
   if (apiGameSummary.details.started == "0" &&
       apiGameSummary.details.isFinal == "0") {
     return GameDetails(
-        game: normalizeScheduledGame(apiGameSummary, bootstrapResponse),
+        game: normalizeScheduledGame(
+            apiGameSummary, bootstrapResponse, teamRecords),
         gameStats: normalizeGameStats(apiGameSummary));
   }
 
   return GameDetails(
-      game: normalizeLiveGame(apiGameSummary, bootstrapResponse),
+      game: normalizeLiveGame(apiGameSummary, bootstrapResponse, teamRecords),
       gameStats: normalizeGameStats(apiGameSummary));
 }
 
-Game normalizeGame(ScheduledGame apiGame) {
+Game normalizeGame(ScheduledGame apiGame, Map<String, String> teamRecords) {
   final id = int.parse(apiGame.id);
   final type = normalizeGameType(apiGame.seasonId);
-  final homeTeam = normalizeHomeTeam(apiGame);
-  final visitingTeam = normalizeVisitingTeam(apiGame);
+  final homeTeamRecord = teamRecords[apiGame.homeCode];
+  final visitingTeamRecord = teamRecords[apiGame.visitorCode];
+  final homeTeam = normalizeHomeTeam(apiGame, homeTeamRecord ?? "0-0-0-0");
+  final visitingTeam =
+      normalizeVisitingTeam(apiGame, visitingTeamRecord ?? "0-0-0-0");
   final gameDate = apiGame.gameDateISO8601;
 
   switch (apiGame.gameStatus) {
@@ -344,6 +368,7 @@ Game normalizeGame(ScheduledGame apiGame) {
   }
 }
 
-Iterable<Game> normalizeGames(List<ScheduledGame> apiGames) {
-  return apiGames.map((game) => normalizeGame(game));
+Iterable<Game> normalizeGames(
+    List<ScheduledGame> apiGames, Map<String, String> teamRecords) {
+  return apiGames.map((game) => normalizeGame(game, teamRecords));
 }
