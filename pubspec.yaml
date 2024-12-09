@@ -4,7 +4,7 @@ description: "A mobile application to show PWHL scores, schedules, stats, and mo
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.0.0+6
+version: 1.1.0
 
 environment:
   sdk: '>=3.2.1 <4.0.0'
