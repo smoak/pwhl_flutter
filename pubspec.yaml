@@ -7,7 +7,7 @@ publish_to: 'none'
 # See https://stackoverflow.com/questions/53570575/flutter-upgrade-the-version-code-for-play-store
 # for more info. the +<int> is the versionCode and is basically a number that gets
 # incremented for every release...
-version: 1.1.0+7
+version: 1.2.0+8
 
 environment:
   sdk: '>=3.2.1 <4.0.0'
