@@ -181,9 +181,6 @@ final debugScheduleProvider = FutureProvider.autoDispose
   return [finalGame, futureGame, liveGame];
 });
 
-// for league leaders
-// https://lscluster.hockeytech.com/feed/index.php?feed=statviewfeed&view=leadersExtended&key=446521baf8c38984&league_id=undefined&season_id=5&division=&team_id=0&site_id=0&client_code=pwhl&playerTypes=skaters&skaterStatTypes=points,goals&goalieStatTypes=save_percentage,wins,goals_against_average,shutouts&activeOnly=0
-
 final scheduleProvider = FutureProvider.autoDispose
     .family<List<Game>, ScheduleParameters>((ref, arguments) async {
   final date = arguments.date;
@@ -219,4 +216,11 @@ final gameDetailsProvider = FutureProvider.autoDispose
   final teamRecords = await getTeamRecords(bootstrapResponse.currentSeasonId);
 
   return normalizeGameDetails(apiGameSummary, bootstrapResponse, teamRecords);
+});
+
+final leagueLeadersProvider =
+    FutureProvider.autoDispose<LeadersResponseObject>((ref) async {
+  final bootstrapResponse = await getBootstrap();
+
+  return getLeagueLeaders(bootstrapResponse.currentSeasonId);
 });

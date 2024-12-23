@@ -110,3 +110,39 @@ Future<Map<String, String>> getTeamRecords(String seasonId) async {
     return prev;
   });
 }
+
+// for league leaders
+// feed=statviewfeed&
+// view=leadersExtended&
+// key=446521baf8c38984&
+// league_id=undefined&
+// season_id=5&
+// division=&
+// conference=&
+// team_id=0&
+// site_id=0&
+// client_code=pwhl&
+// playerTypes=skaters,goalies&
+// skaterStatTypes=points,goals,assists&
+// goalieStatTypes=wins,save_percentage,goals_against_average&
+// activeOnly=0&
+// lang=en
+Future<LeadersResponseObject> getLeagueLeaders(String seasonId) async {
+  final queryParams = {
+    "feed": "statviewfeed",
+    "view": "leadersExtended",
+    "site_id": "0",
+    "season": seasonId,
+    "playerTypes": "skaters,goalies",
+    "skaterStatTypes": "points,goals,assists",
+    "goalieStatTypes": "wins,save_percentage,goals_against_average",
+    "activeOnly": "0"
+  }..addAll(queryParamKeys);
+  final uri = Uri.https(baseUrl, '/feed/index.php', queryParams);
+  developer.log('hitting uri ${uri.toString()}', name: 'pwhl.app');
+  final response = await http.get(uri);
+  final jsonBody = response.body.substring(1, response.body.length - 1);
+  final data = json.decode(jsonBody) as Map<String, dynamic>;
+
+  return LeadersResponseObject.fromJson(data);
+}

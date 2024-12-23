@@ -615,6 +615,20 @@ Map<String, dynamic> _$$StandingsResponseSectionImplToJson(
       'data': instance.data,
     };
 
+_$LeadersResponseStatImpl _$$LeadersResponseStatImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LeadersResponseStatImpl(
+      results: (json['results'] as List<dynamic>)
+          .map((e) => LeadersResponseResult.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$LeadersResponseStatImplToJson(
+        _$LeadersResponseStatImpl instance) =>
+    <String, dynamic>{
+      'results': instance.results,
+    };
+
 _$StandingsResponseObjectImpl _$$StandingsResponseObjectImplFromJson(
         Map<String, dynamic> json) =>
     _$StandingsResponseObjectImpl(
@@ -628,4 +642,97 @@ Map<String, dynamic> _$$StandingsResponseObjectImplToJson(
         _$StandingsResponseObjectImpl instance) =>
     <String, dynamic>{
       'sections': instance.sections,
+    };
+
+_$LeadersResponseSkatersImpl _$$LeadersResponseSkatersImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LeadersResponseSkatersImpl(
+      assists:
+          LeadersResponseStat.fromJson(json['Assists'] as Map<String, dynamic>),
+      goals:
+          LeadersResponseStat.fromJson(json['Goals'] as Map<String, dynamic>),
+      points:
+          LeadersResponseStat.fromJson(json['Points'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$LeadersResponseSkatersImplToJson(
+        _$LeadersResponseSkatersImpl instance) =>
+    <String, dynamic>{
+      'Assists': instance.assists,
+      'Goals': instance.goals,
+      'Points': instance.points,
+    };
+
+_$LeadersResponseResultImpl _$$LeadersResponseResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LeadersResponseResultImpl(
+      rank: (json['rank'] as num).toInt(),
+      playerId: json['player_id'] as String,
+      jerseyNumber: json['jersey_number'] as String,
+      name: json['name'] as String,
+      teamId: json['team_id'] as String,
+      teamName: json['team_name'] as String,
+      teamCode: json['team_code'] as String,
+      teamLogo: json['team_logo'] as String,
+      teamLogoSmall: json['team_logo_small'] as String,
+      statFormatted: json['stat_formatted'] as String,
+      typeFormatted: json['type_formatted'] as String,
+      photo: json['photo'] as String,
+      photoSmall: json['photo_small'] as String,
+      position: json['position'] as String,
+      division: json['division'] as String,
+    );
+
+Map<String, dynamic> _$$LeadersResponseResultImplToJson(
+        _$LeadersResponseResultImpl instance) =>
+    <String, dynamic>{
+      'rank': instance.rank,
+      'player_id': instance.playerId,
+      'jersey_number': instance.jerseyNumber,
+      'name': instance.name,
+      'team_id': instance.teamId,
+      'team_name': instance.teamName,
+      'team_code': instance.teamCode,
+      'team_logo': instance.teamLogo,
+      'team_logo_small': instance.teamLogoSmall,
+      'stat_formatted': instance.statFormatted,
+      'type_formatted': instance.typeFormatted,
+      'photo': instance.photo,
+      'photo_small': instance.photoSmall,
+      'position': instance.position,
+      'division': instance.division,
+    };
+
+_$LeadersResponseGoaliesImpl _$$LeadersResponseGoaliesImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LeadersResponseGoaliesImpl(
+      wins: LeadersResponseStat.fromJson(json['Wins'] as Map<String, dynamic>),
+      savePercentage: LeadersResponseStat.fromJson(
+          json['Save Percentage'] as Map<String, dynamic>),
+      goalsAgainstAverage: LeadersResponseStat.fromJson(
+          json['Goals Against Average'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$LeadersResponseGoaliesImplToJson(
+        _$LeadersResponseGoaliesImpl instance) =>
+    <String, dynamic>{
+      'Wins': instance.wins,
+      'Save Percentage': instance.savePercentage,
+      'Goals Against Average': instance.goalsAgainstAverage,
+    };
+
+_$LeadersResponseObjectImpl _$$LeadersResponseObjectImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LeadersResponseObjectImpl(
+      skaters: LeadersResponseSkaters.fromJson(
+          json['skaters'] as Map<String, dynamic>),
+      goalies: LeadersResponseGoalies.fromJson(
+          json['goalies'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$LeadersResponseObjectImplToJson(
+        _$LeadersResponseObjectImpl instance) =>
+    <String, dynamic>{
+      'skaters': instance.skaters,
+      'goalies': instance.goalies,
     };

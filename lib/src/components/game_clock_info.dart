@@ -17,13 +17,16 @@ extension Ordinals on int {
 }
 
 class GameClockInfo extends StatelessWidget {
-  const GameClockInfo({super.key, required this.gameClock});
+  const GameClockInfo(
+      {super.key, required this.gameClock, required this.gameType});
 
   final GameClock gameClock;
+  final GameType gameType;
 
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(fontSize: 16);
+
     if (gameClock.isInIntermission) {
       return Text("${gameClock.period.ordinal.toUpperCase()} - END",
           style: textStyle);

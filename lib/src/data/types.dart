@@ -604,6 +604,16 @@ class StandingsResponseSection with _$StandingsResponseSection {
 }
 
 @freezed
+class LeadersResponseStat with _$LeadersResponseStat {
+  const factory LeadersResponseStat(
+      {@JsonKey(name: "results")
+      required List<LeadersResponseResult> results}) = _LeadersResponseStat;
+
+  factory LeadersResponseStat.fromJson(Map<String, dynamic> json) =>
+      _$LeadersResponseStatFromJson(json);
+}
+
+@freezed
 class StandingsResponseObject with _$StandingsResponseObject {
   const factory StandingsResponseObject(
           {@JsonKey(name: "sections")
@@ -612,4 +622,65 @@ class StandingsResponseObject with _$StandingsResponseObject {
 
   factory StandingsResponseObject.fromJson(Map<String, dynamic> json) =>
       _$StandingsResponseObjectFromJson(json);
+}
+
+@freezed
+class LeadersResponseSkaters with _$LeadersResponseSkaters {
+  const factory LeadersResponseSkaters(
+          {@JsonKey(name: "Assists") required LeadersResponseStat assists,
+          @JsonKey(name: "Goals") required LeadersResponseStat goals,
+          @JsonKey(name: "Points") required LeadersResponseStat points}) =
+      _LeadersResponseSkaters;
+
+  factory LeadersResponseSkaters.fromJson(Map<String, dynamic> json) =>
+      _$LeadersResponseSkatersFromJson(json);
+}
+
+@freezed
+class LeadersResponseResult with _$LeadersResponseResult {
+  const factory LeadersResponseResult(
+          {@JsonKey(name: "rank") required int rank,
+          @JsonKey(name: "player_id") required String playerId,
+          @JsonKey(name: "jersey_number") required String jerseyNumber,
+          @JsonKey(name: "name") required String name,
+          @JsonKey(name: "team_id") required String teamId,
+          @JsonKey(name: "team_name") required String teamName,
+          @JsonKey(name: "team_code") required String teamCode,
+          @JsonKey(name: "team_logo") required String teamLogo,
+          @JsonKey(name: "team_logo_small") required String teamLogoSmall,
+          @JsonKey(name: "stat_formatted") required String statFormatted,
+          @JsonKey(name: "type_formatted") required String typeFormatted,
+          @JsonKey(name: "photo") required String photo,
+          @JsonKey(name: "photo_small") required String photoSmall,
+          @JsonKey(name: "position") required String position,
+          @JsonKey(name: "division") required String division}) =
+      _LeadersResponseResult;
+
+  factory LeadersResponseResult.fromJson(Map<String, dynamic> json) =>
+      _$LeadersResponseResultFromJson(json);
+}
+
+@freezed
+class LeadersResponseGoalies with _$LeadersResponseGoalies {
+  const factory LeadersResponseGoalies(
+          {@JsonKey(name: "Wins") required LeadersResponseStat wins,
+          @JsonKey(name: "Save Percentage")
+          required LeadersResponseStat savePercentage,
+          @JsonKey(name: "Goals Against Average")
+          required LeadersResponseStat goalsAgainstAverage}) =
+      _LeadersResponseGoalies;
+
+  factory LeadersResponseGoalies.fromJson(Map<String, dynamic> json) =>
+      _$LeadersResponseGoaliesFromJson(json);
+}
+
+@freezed
+class LeadersResponseObject with _$LeadersResponseObject {
+  const factory LeadersResponseObject(
+          {@JsonKey(name: "skaters") required LeadersResponseSkaters skaters,
+          @JsonKey(name: "goalies") required LeadersResponseGoalies goalies}) =
+      _LeadersResponseObject;
+
+  factory LeadersResponseObject.fromJson(Map<String, dynamic> json) =>
+      _$LeadersResponseObjectFromJson(json);
 }

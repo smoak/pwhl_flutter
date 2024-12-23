@@ -58,6 +58,10 @@ class MyApp extends StatelessWidget {
             backgroundColor: Theme.of(context).primaryColor,
             iconTheme: const IconThemeData(color: Colors.white),
           ),
+          tabBarTheme: const TabBarTheme(
+              labelStyle: TextStyle(fontWeight: FontWeight.bold),
+              dividerColor: Color.fromRGBO(233, 221, 255, 1),
+              unselectedLabelColor: Colors.black),
           primaryTextTheme: const TextTheme(
               labelLarge: TextStyle(color: Colors.black, fontSize: 14.0)),
           dataTableTheme: DataTableThemeData(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pwhl_flutter/src/components/main_container.dart';
 import 'package:pwhl_flutter/src/views/standings_view.dart';
+import 'package:pwhl_flutter/src/views/stats_view.dart';
 
 class Layout extends StatelessWidget {
   const Layout({super.key, required this.child, required this.title});
@@ -23,8 +24,8 @@ class Layout extends StatelessWidget {
           children: [
             DrawerHeader(child: Image.asset("assets/icon/icon.png")),
             ListTile(
-                title: const Text('Schedule'),
-                leading: const Icon(Icons.calendar_today),
+                title: const Text('Games'),
+                leading: const Icon(Icons.sports_hockey),
                 selected: !canPop,
                 selectedTileColor: Theme.of(context).highlightColor,
                 onTap: () {
@@ -32,12 +33,19 @@ class Layout extends StatelessWidget {
                 }),
             ListTile(
               title: const Text('Standings'),
-              leading: const Icon(Icons.sports_hockey),
+              leading: const Icon(Icons.emoji_events),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const StandingsView()));
               },
             ),
+            ListTile(
+                title: const Text("Stats"),
+                leading: const Icon(Icons.leaderboard),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const StatsView()));
+                })
           ],
         )),
         body: Main(child: child));

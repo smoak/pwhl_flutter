@@ -9538,6 +9538,181 @@ abstract class _StandingsResponseSection implements StandingsResponseSection {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+LeadersResponseStat _$LeadersResponseStatFromJson(Map<String, dynamic> json) {
+  return _LeadersResponseStat.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LeadersResponseStat {
+  @JsonKey(name: "results")
+  List<LeadersResponseResult> get results => throw _privateConstructorUsedError;
+
+  /// Serializes this LeadersResponseStat to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LeadersResponseStat
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LeadersResponseStatCopyWith<LeadersResponseStat> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeadersResponseStatCopyWith<$Res> {
+  factory $LeadersResponseStatCopyWith(
+          LeadersResponseStat value, $Res Function(LeadersResponseStat) then) =
+      _$LeadersResponseStatCopyWithImpl<$Res, LeadersResponseStat>;
+  @useResult
+  $Res call({@JsonKey(name: "results") List<LeadersResponseResult> results});
+}
+
+/// @nodoc
+class _$LeadersResponseStatCopyWithImpl<$Res, $Val extends LeadersResponseStat>
+    implements $LeadersResponseStatCopyWith<$Res> {
+  _$LeadersResponseStatCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LeadersResponseStat
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? results = null,
+  }) {
+    return _then(_value.copyWith(
+      results: null == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<LeadersResponseResult>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LeadersResponseStatImplCopyWith<$Res>
+    implements $LeadersResponseStatCopyWith<$Res> {
+  factory _$$LeadersResponseStatImplCopyWith(_$LeadersResponseStatImpl value,
+          $Res Function(_$LeadersResponseStatImpl) then) =
+      __$$LeadersResponseStatImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "results") List<LeadersResponseResult> results});
+}
+
+/// @nodoc
+class __$$LeadersResponseStatImplCopyWithImpl<$Res>
+    extends _$LeadersResponseStatCopyWithImpl<$Res, _$LeadersResponseStatImpl>
+    implements _$$LeadersResponseStatImplCopyWith<$Res> {
+  __$$LeadersResponseStatImplCopyWithImpl(_$LeadersResponseStatImpl _value,
+      $Res Function(_$LeadersResponseStatImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LeadersResponseStat
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? results = null,
+  }) {
+    return _then(_$LeadersResponseStatImpl(
+      results: null == results
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<LeadersResponseResult>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LeadersResponseStatImpl
+    with DiagnosticableTreeMixin
+    implements _LeadersResponseStat {
+  const _$LeadersResponseStatImpl(
+      {@JsonKey(name: "results")
+      required final List<LeadersResponseResult> results})
+      : _results = results;
+
+  factory _$LeadersResponseStatImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeadersResponseStatImplFromJson(json);
+
+  final List<LeadersResponseResult> _results;
+  @override
+  @JsonKey(name: "results")
+  List<LeadersResponseResult> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_results);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LeadersResponseStat(results: $results)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LeadersResponseStat'))
+      ..add(DiagnosticsProperty('results', results));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeadersResponseStatImpl &&
+            const DeepCollectionEquality().equals(other._results, _results));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_results));
+
+  /// Create a copy of LeadersResponseStat
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeadersResponseStatImplCopyWith<_$LeadersResponseStatImpl> get copyWith =>
+      __$$LeadersResponseStatImplCopyWithImpl<_$LeadersResponseStatImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LeadersResponseStatImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LeadersResponseStat implements LeadersResponseStat {
+  const factory _LeadersResponseStat(
+          {@JsonKey(name: "results")
+          required final List<LeadersResponseResult> results}) =
+      _$LeadersResponseStatImpl;
+
+  factory _LeadersResponseStat.fromJson(Map<String, dynamic> json) =
+      _$LeadersResponseStatImpl.fromJson;
+
+  @override
+  @JsonKey(name: "results")
+  List<LeadersResponseResult> get results;
+
+  /// Create a copy of LeadersResponseStat
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LeadersResponseStatImplCopyWith<_$LeadersResponseStatImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 StandingsResponseObject _$StandingsResponseObjectFromJson(
     Map<String, dynamic> json) {
   return _StandingsResponseObject.fromJson(json);
@@ -9718,5 +9893,1299 @@ abstract class _StandingsResponseObject implements StandingsResponseObject {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StandingsResponseObjectImplCopyWith<_$StandingsResponseObjectImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+LeadersResponseSkaters _$LeadersResponseSkatersFromJson(
+    Map<String, dynamic> json) {
+  return _LeadersResponseSkaters.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LeadersResponseSkaters {
+  @JsonKey(name: "Assists")
+  LeadersResponseStat get assists => throw _privateConstructorUsedError;
+  @JsonKey(name: "Goals")
+  LeadersResponseStat get goals => throw _privateConstructorUsedError;
+  @JsonKey(name: "Points")
+  LeadersResponseStat get points => throw _privateConstructorUsedError;
+
+  /// Serializes this LeadersResponseSkaters to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LeadersResponseSkatersCopyWith<LeadersResponseSkaters> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeadersResponseSkatersCopyWith<$Res> {
+  factory $LeadersResponseSkatersCopyWith(LeadersResponseSkaters value,
+          $Res Function(LeadersResponseSkaters) then) =
+      _$LeadersResponseSkatersCopyWithImpl<$Res, LeadersResponseSkaters>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "Assists") LeadersResponseStat assists,
+      @JsonKey(name: "Goals") LeadersResponseStat goals,
+      @JsonKey(name: "Points") LeadersResponseStat points});
+
+  $LeadersResponseStatCopyWith<$Res> get assists;
+  $LeadersResponseStatCopyWith<$Res> get goals;
+  $LeadersResponseStatCopyWith<$Res> get points;
+}
+
+/// @nodoc
+class _$LeadersResponseSkatersCopyWithImpl<$Res,
+        $Val extends LeadersResponseSkaters>
+    implements $LeadersResponseSkatersCopyWith<$Res> {
+  _$LeadersResponseSkatersCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assists = null,
+    Object? goals = null,
+    Object? points = null,
+  }) {
+    return _then(_value.copyWith(
+      assists: null == assists
+          ? _value.assists
+          : assists // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      goals: null == goals
+          ? _value.goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      points: null == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+    ) as $Val);
+  }
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get assists {
+    return $LeadersResponseStatCopyWith<$Res>(_value.assists, (value) {
+      return _then(_value.copyWith(assists: value) as $Val);
+    });
+  }
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get goals {
+    return $LeadersResponseStatCopyWith<$Res>(_value.goals, (value) {
+      return _then(_value.copyWith(goals: value) as $Val);
+    });
+  }
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get points {
+    return $LeadersResponseStatCopyWith<$Res>(_value.points, (value) {
+      return _then(_value.copyWith(points: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LeadersResponseSkatersImplCopyWith<$Res>
+    implements $LeadersResponseSkatersCopyWith<$Res> {
+  factory _$$LeadersResponseSkatersImplCopyWith(
+          _$LeadersResponseSkatersImpl value,
+          $Res Function(_$LeadersResponseSkatersImpl) then) =
+      __$$LeadersResponseSkatersImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "Assists") LeadersResponseStat assists,
+      @JsonKey(name: "Goals") LeadersResponseStat goals,
+      @JsonKey(name: "Points") LeadersResponseStat points});
+
+  @override
+  $LeadersResponseStatCopyWith<$Res> get assists;
+  @override
+  $LeadersResponseStatCopyWith<$Res> get goals;
+  @override
+  $LeadersResponseStatCopyWith<$Res> get points;
+}
+
+/// @nodoc
+class __$$LeadersResponseSkatersImplCopyWithImpl<$Res>
+    extends _$LeadersResponseSkatersCopyWithImpl<$Res,
+        _$LeadersResponseSkatersImpl>
+    implements _$$LeadersResponseSkatersImplCopyWith<$Res> {
+  __$$LeadersResponseSkatersImplCopyWithImpl(
+      _$LeadersResponseSkatersImpl _value,
+      $Res Function(_$LeadersResponseSkatersImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assists = null,
+    Object? goals = null,
+    Object? points = null,
+  }) {
+    return _then(_$LeadersResponseSkatersImpl(
+      assists: null == assists
+          ? _value.assists
+          : assists // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      goals: null == goals
+          ? _value.goals
+          : goals // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      points: null == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LeadersResponseSkatersImpl
+    with DiagnosticableTreeMixin
+    implements _LeadersResponseSkaters {
+  const _$LeadersResponseSkatersImpl(
+      {@JsonKey(name: "Assists") required this.assists,
+      @JsonKey(name: "Goals") required this.goals,
+      @JsonKey(name: "Points") required this.points});
+
+  factory _$LeadersResponseSkatersImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeadersResponseSkatersImplFromJson(json);
+
+  @override
+  @JsonKey(name: "Assists")
+  final LeadersResponseStat assists;
+  @override
+  @JsonKey(name: "Goals")
+  final LeadersResponseStat goals;
+  @override
+  @JsonKey(name: "Points")
+  final LeadersResponseStat points;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LeadersResponseSkaters(assists: $assists, goals: $goals, points: $points)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LeadersResponseSkaters'))
+      ..add(DiagnosticsProperty('assists', assists))
+      ..add(DiagnosticsProperty('goals', goals))
+      ..add(DiagnosticsProperty('points', points));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeadersResponseSkatersImpl &&
+            (identical(other.assists, assists) || other.assists == assists) &&
+            (identical(other.goals, goals) || other.goals == goals) &&
+            (identical(other.points, points) || other.points == points));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, assists, goals, points);
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeadersResponseSkatersImplCopyWith<_$LeadersResponseSkatersImpl>
+      get copyWith => __$$LeadersResponseSkatersImplCopyWithImpl<
+          _$LeadersResponseSkatersImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LeadersResponseSkatersImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LeadersResponseSkaters implements LeadersResponseSkaters {
+  const factory _LeadersResponseSkaters(
+          {@JsonKey(name: "Assists") required final LeadersResponseStat assists,
+          @JsonKey(name: "Goals") required final LeadersResponseStat goals,
+          @JsonKey(name: "Points") required final LeadersResponseStat points}) =
+      _$LeadersResponseSkatersImpl;
+
+  factory _LeadersResponseSkaters.fromJson(Map<String, dynamic> json) =
+      _$LeadersResponseSkatersImpl.fromJson;
+
+  @override
+  @JsonKey(name: "Assists")
+  LeadersResponseStat get assists;
+  @override
+  @JsonKey(name: "Goals")
+  LeadersResponseStat get goals;
+  @override
+  @JsonKey(name: "Points")
+  LeadersResponseStat get points;
+
+  /// Create a copy of LeadersResponseSkaters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LeadersResponseSkatersImplCopyWith<_$LeadersResponseSkatersImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+LeadersResponseResult _$LeadersResponseResultFromJson(
+    Map<String, dynamic> json) {
+  return _LeadersResponseResult.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LeadersResponseResult {
+  @JsonKey(name: "rank")
+  int get rank => throw _privateConstructorUsedError;
+  @JsonKey(name: "player_id")
+  String get playerId => throw _privateConstructorUsedError;
+  @JsonKey(name: "jersey_number")
+  String get jerseyNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "team_id")
+  String get teamId => throw _privateConstructorUsedError;
+  @JsonKey(name: "team_name")
+  String get teamName => throw _privateConstructorUsedError;
+  @JsonKey(name: "team_code")
+  String get teamCode => throw _privateConstructorUsedError;
+  @JsonKey(name: "team_logo")
+  String get teamLogo => throw _privateConstructorUsedError;
+  @JsonKey(name: "team_logo_small")
+  String get teamLogoSmall => throw _privateConstructorUsedError;
+  @JsonKey(name: "stat_formatted")
+  String get statFormatted => throw _privateConstructorUsedError;
+  @JsonKey(name: "type_formatted")
+  String get typeFormatted => throw _privateConstructorUsedError;
+  @JsonKey(name: "photo")
+  String get photo => throw _privateConstructorUsedError;
+  @JsonKey(name: "photo_small")
+  String get photoSmall => throw _privateConstructorUsedError;
+  @JsonKey(name: "position")
+  String get position => throw _privateConstructorUsedError;
+  @JsonKey(name: "division")
+  String get division => throw _privateConstructorUsedError;
+
+  /// Serializes this LeadersResponseResult to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LeadersResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LeadersResponseResultCopyWith<LeadersResponseResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeadersResponseResultCopyWith<$Res> {
+  factory $LeadersResponseResultCopyWith(LeadersResponseResult value,
+          $Res Function(LeadersResponseResult) then) =
+      _$LeadersResponseResultCopyWithImpl<$Res, LeadersResponseResult>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "rank") int rank,
+      @JsonKey(name: "player_id") String playerId,
+      @JsonKey(name: "jersey_number") String jerseyNumber,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "team_id") String teamId,
+      @JsonKey(name: "team_name") String teamName,
+      @JsonKey(name: "team_code") String teamCode,
+      @JsonKey(name: "team_logo") String teamLogo,
+      @JsonKey(name: "team_logo_small") String teamLogoSmall,
+      @JsonKey(name: "stat_formatted") String statFormatted,
+      @JsonKey(name: "type_formatted") String typeFormatted,
+      @JsonKey(name: "photo") String photo,
+      @JsonKey(name: "photo_small") String photoSmall,
+      @JsonKey(name: "position") String position,
+      @JsonKey(name: "division") String division});
+}
+
+/// @nodoc
+class _$LeadersResponseResultCopyWithImpl<$Res,
+        $Val extends LeadersResponseResult>
+    implements $LeadersResponseResultCopyWith<$Res> {
+  _$LeadersResponseResultCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LeadersResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rank = null,
+    Object? playerId = null,
+    Object? jerseyNumber = null,
+    Object? name = null,
+    Object? teamId = null,
+    Object? teamName = null,
+    Object? teamCode = null,
+    Object? teamLogo = null,
+    Object? teamLogoSmall = null,
+    Object? statFormatted = null,
+    Object? typeFormatted = null,
+    Object? photo = null,
+    Object? photoSmall = null,
+    Object? position = null,
+    Object? division = null,
+  }) {
+    return _then(_value.copyWith(
+      rank: null == rank
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as int,
+      playerId: null == playerId
+          ? _value.playerId
+          : playerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      jerseyNumber: null == jerseyNumber
+          ? _value.jerseyNumber
+          : jerseyNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamId: null == teamId
+          ? _value.teamId
+          : teamId // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamName: null == teamName
+          ? _value.teamName
+          : teamName // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamLogo: null == teamLogo
+          ? _value.teamLogo
+          : teamLogo // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamLogoSmall: null == teamLogoSmall
+          ? _value.teamLogoSmall
+          : teamLogoSmall // ignore: cast_nullable_to_non_nullable
+              as String,
+      statFormatted: null == statFormatted
+          ? _value.statFormatted
+          : statFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+      typeFormatted: null == typeFormatted
+          ? _value.typeFormatted
+          : typeFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+      photo: null == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoSmall: null == photoSmall
+          ? _value.photoSmall
+          : photoSmall // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as String,
+      division: null == division
+          ? _value.division
+          : division // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LeadersResponseResultImplCopyWith<$Res>
+    implements $LeadersResponseResultCopyWith<$Res> {
+  factory _$$LeadersResponseResultImplCopyWith(
+          _$LeadersResponseResultImpl value,
+          $Res Function(_$LeadersResponseResultImpl) then) =
+      __$$LeadersResponseResultImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "rank") int rank,
+      @JsonKey(name: "player_id") String playerId,
+      @JsonKey(name: "jersey_number") String jerseyNumber,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "team_id") String teamId,
+      @JsonKey(name: "team_name") String teamName,
+      @JsonKey(name: "team_code") String teamCode,
+      @JsonKey(name: "team_logo") String teamLogo,
+      @JsonKey(name: "team_logo_small") String teamLogoSmall,
+      @JsonKey(name: "stat_formatted") String statFormatted,
+      @JsonKey(name: "type_formatted") String typeFormatted,
+      @JsonKey(name: "photo") String photo,
+      @JsonKey(name: "photo_small") String photoSmall,
+      @JsonKey(name: "position") String position,
+      @JsonKey(name: "division") String division});
+}
+
+/// @nodoc
+class __$$LeadersResponseResultImplCopyWithImpl<$Res>
+    extends _$LeadersResponseResultCopyWithImpl<$Res,
+        _$LeadersResponseResultImpl>
+    implements _$$LeadersResponseResultImplCopyWith<$Res> {
+  __$$LeadersResponseResultImplCopyWithImpl(_$LeadersResponseResultImpl _value,
+      $Res Function(_$LeadersResponseResultImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LeadersResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rank = null,
+    Object? playerId = null,
+    Object? jerseyNumber = null,
+    Object? name = null,
+    Object? teamId = null,
+    Object? teamName = null,
+    Object? teamCode = null,
+    Object? teamLogo = null,
+    Object? teamLogoSmall = null,
+    Object? statFormatted = null,
+    Object? typeFormatted = null,
+    Object? photo = null,
+    Object? photoSmall = null,
+    Object? position = null,
+    Object? division = null,
+  }) {
+    return _then(_$LeadersResponseResultImpl(
+      rank: null == rank
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as int,
+      playerId: null == playerId
+          ? _value.playerId
+          : playerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      jerseyNumber: null == jerseyNumber
+          ? _value.jerseyNumber
+          : jerseyNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamId: null == teamId
+          ? _value.teamId
+          : teamId // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamName: null == teamName
+          ? _value.teamName
+          : teamName // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamCode: null == teamCode
+          ? _value.teamCode
+          : teamCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamLogo: null == teamLogo
+          ? _value.teamLogo
+          : teamLogo // ignore: cast_nullable_to_non_nullable
+              as String,
+      teamLogoSmall: null == teamLogoSmall
+          ? _value.teamLogoSmall
+          : teamLogoSmall // ignore: cast_nullable_to_non_nullable
+              as String,
+      statFormatted: null == statFormatted
+          ? _value.statFormatted
+          : statFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+      typeFormatted: null == typeFormatted
+          ? _value.typeFormatted
+          : typeFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+      photo: null == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoSmall: null == photoSmall
+          ? _value.photoSmall
+          : photoSmall // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as String,
+      division: null == division
+          ? _value.division
+          : division // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LeadersResponseResultImpl
+    with DiagnosticableTreeMixin
+    implements _LeadersResponseResult {
+  const _$LeadersResponseResultImpl(
+      {@JsonKey(name: "rank") required this.rank,
+      @JsonKey(name: "player_id") required this.playerId,
+      @JsonKey(name: "jersey_number") required this.jerseyNumber,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "team_id") required this.teamId,
+      @JsonKey(name: "team_name") required this.teamName,
+      @JsonKey(name: "team_code") required this.teamCode,
+      @JsonKey(name: "team_logo") required this.teamLogo,
+      @JsonKey(name: "team_logo_small") required this.teamLogoSmall,
+      @JsonKey(name: "stat_formatted") required this.statFormatted,
+      @JsonKey(name: "type_formatted") required this.typeFormatted,
+      @JsonKey(name: "photo") required this.photo,
+      @JsonKey(name: "photo_small") required this.photoSmall,
+      @JsonKey(name: "position") required this.position,
+      @JsonKey(name: "division") required this.division});
+
+  factory _$LeadersResponseResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeadersResponseResultImplFromJson(json);
+
+  @override
+  @JsonKey(name: "rank")
+  final int rank;
+  @override
+  @JsonKey(name: "player_id")
+  final String playerId;
+  @override
+  @JsonKey(name: "jersey_number")
+  final String jerseyNumber;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "team_id")
+  final String teamId;
+  @override
+  @JsonKey(name: "team_name")
+  final String teamName;
+  @override
+  @JsonKey(name: "team_code")
+  final String teamCode;
+  @override
+  @JsonKey(name: "team_logo")
+  final String teamLogo;
+  @override
+  @JsonKey(name: "team_logo_small")
+  final String teamLogoSmall;
+  @override
+  @JsonKey(name: "stat_formatted")
+  final String statFormatted;
+  @override
+  @JsonKey(name: "type_formatted")
+  final String typeFormatted;
+  @override
+  @JsonKey(name: "photo")
+  final String photo;
+  @override
+  @JsonKey(name: "photo_small")
+  final String photoSmall;
+  @override
+  @JsonKey(name: "position")
+  final String position;
+  @override
+  @JsonKey(name: "division")
+  final String division;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LeadersResponseResult(rank: $rank, playerId: $playerId, jerseyNumber: $jerseyNumber, name: $name, teamId: $teamId, teamName: $teamName, teamCode: $teamCode, teamLogo: $teamLogo, teamLogoSmall: $teamLogoSmall, statFormatted: $statFormatted, typeFormatted: $typeFormatted, photo: $photo, photoSmall: $photoSmall, position: $position, division: $division)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LeadersResponseResult'))
+      ..add(DiagnosticsProperty('rank', rank))
+      ..add(DiagnosticsProperty('playerId', playerId))
+      ..add(DiagnosticsProperty('jerseyNumber', jerseyNumber))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('teamId', teamId))
+      ..add(DiagnosticsProperty('teamName', teamName))
+      ..add(DiagnosticsProperty('teamCode', teamCode))
+      ..add(DiagnosticsProperty('teamLogo', teamLogo))
+      ..add(DiagnosticsProperty('teamLogoSmall', teamLogoSmall))
+      ..add(DiagnosticsProperty('statFormatted', statFormatted))
+      ..add(DiagnosticsProperty('typeFormatted', typeFormatted))
+      ..add(DiagnosticsProperty('photo', photo))
+      ..add(DiagnosticsProperty('photoSmall', photoSmall))
+      ..add(DiagnosticsProperty('position', position))
+      ..add(DiagnosticsProperty('division', division));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeadersResponseResultImpl &&
+            (identical(other.rank, rank) || other.rank == rank) &&
+            (identical(other.playerId, playerId) ||
+                other.playerId == playerId) &&
+            (identical(other.jerseyNumber, jerseyNumber) ||
+                other.jerseyNumber == jerseyNumber) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.teamId, teamId) || other.teamId == teamId) &&
+            (identical(other.teamName, teamName) ||
+                other.teamName == teamName) &&
+            (identical(other.teamCode, teamCode) ||
+                other.teamCode == teamCode) &&
+            (identical(other.teamLogo, teamLogo) ||
+                other.teamLogo == teamLogo) &&
+            (identical(other.teamLogoSmall, teamLogoSmall) ||
+                other.teamLogoSmall == teamLogoSmall) &&
+            (identical(other.statFormatted, statFormatted) ||
+                other.statFormatted == statFormatted) &&
+            (identical(other.typeFormatted, typeFormatted) ||
+                other.typeFormatted == typeFormatted) &&
+            (identical(other.photo, photo) || other.photo == photo) &&
+            (identical(other.photoSmall, photoSmall) ||
+                other.photoSmall == photoSmall) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            (identical(other.division, division) ||
+                other.division == division));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      rank,
+      playerId,
+      jerseyNumber,
+      name,
+      teamId,
+      teamName,
+      teamCode,
+      teamLogo,
+      teamLogoSmall,
+      statFormatted,
+      typeFormatted,
+      photo,
+      photoSmall,
+      position,
+      division);
+
+  /// Create a copy of LeadersResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeadersResponseResultImplCopyWith<_$LeadersResponseResultImpl>
+      get copyWith => __$$LeadersResponseResultImplCopyWithImpl<
+          _$LeadersResponseResultImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LeadersResponseResultImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LeadersResponseResult implements LeadersResponseResult {
+  const factory _LeadersResponseResult(
+          {@JsonKey(name: "rank") required final int rank,
+          @JsonKey(name: "player_id") required final String playerId,
+          @JsonKey(name: "jersey_number") required final String jerseyNumber,
+          @JsonKey(name: "name") required final String name,
+          @JsonKey(name: "team_id") required final String teamId,
+          @JsonKey(name: "team_name") required final String teamName,
+          @JsonKey(name: "team_code") required final String teamCode,
+          @JsonKey(name: "team_logo") required final String teamLogo,
+          @JsonKey(name: "team_logo_small") required final String teamLogoSmall,
+          @JsonKey(name: "stat_formatted") required final String statFormatted,
+          @JsonKey(name: "type_formatted") required final String typeFormatted,
+          @JsonKey(name: "photo") required final String photo,
+          @JsonKey(name: "photo_small") required final String photoSmall,
+          @JsonKey(name: "position") required final String position,
+          @JsonKey(name: "division") required final String division}) =
+      _$LeadersResponseResultImpl;
+
+  factory _LeadersResponseResult.fromJson(Map<String, dynamic> json) =
+      _$LeadersResponseResultImpl.fromJson;
+
+  @override
+  @JsonKey(name: "rank")
+  int get rank;
+  @override
+  @JsonKey(name: "player_id")
+  String get playerId;
+  @override
+  @JsonKey(name: "jersey_number")
+  String get jerseyNumber;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "team_id")
+  String get teamId;
+  @override
+  @JsonKey(name: "team_name")
+  String get teamName;
+  @override
+  @JsonKey(name: "team_code")
+  String get teamCode;
+  @override
+  @JsonKey(name: "team_logo")
+  String get teamLogo;
+  @override
+  @JsonKey(name: "team_logo_small")
+  String get teamLogoSmall;
+  @override
+  @JsonKey(name: "stat_formatted")
+  String get statFormatted;
+  @override
+  @JsonKey(name: "type_formatted")
+  String get typeFormatted;
+  @override
+  @JsonKey(name: "photo")
+  String get photo;
+  @override
+  @JsonKey(name: "photo_small")
+  String get photoSmall;
+  @override
+  @JsonKey(name: "position")
+  String get position;
+  @override
+  @JsonKey(name: "division")
+  String get division;
+
+  /// Create a copy of LeadersResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LeadersResponseResultImplCopyWith<_$LeadersResponseResultImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+LeadersResponseGoalies _$LeadersResponseGoaliesFromJson(
+    Map<String, dynamic> json) {
+  return _LeadersResponseGoalies.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LeadersResponseGoalies {
+  @JsonKey(name: "Wins")
+  LeadersResponseStat get wins => throw _privateConstructorUsedError;
+  @JsonKey(name: "Save Percentage")
+  LeadersResponseStat get savePercentage => throw _privateConstructorUsedError;
+  @JsonKey(name: "Goals Against Average")
+  LeadersResponseStat get goalsAgainstAverage =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this LeadersResponseGoalies to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LeadersResponseGoaliesCopyWith<LeadersResponseGoalies> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeadersResponseGoaliesCopyWith<$Res> {
+  factory $LeadersResponseGoaliesCopyWith(LeadersResponseGoalies value,
+          $Res Function(LeadersResponseGoalies) then) =
+      _$LeadersResponseGoaliesCopyWithImpl<$Res, LeadersResponseGoalies>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "Wins") LeadersResponseStat wins,
+      @JsonKey(name: "Save Percentage") LeadersResponseStat savePercentage,
+      @JsonKey(name: "Goals Against Average")
+      LeadersResponseStat goalsAgainstAverage});
+
+  $LeadersResponseStatCopyWith<$Res> get wins;
+  $LeadersResponseStatCopyWith<$Res> get savePercentage;
+  $LeadersResponseStatCopyWith<$Res> get goalsAgainstAverage;
+}
+
+/// @nodoc
+class _$LeadersResponseGoaliesCopyWithImpl<$Res,
+        $Val extends LeadersResponseGoalies>
+    implements $LeadersResponseGoaliesCopyWith<$Res> {
+  _$LeadersResponseGoaliesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? wins = null,
+    Object? savePercentage = null,
+    Object? goalsAgainstAverage = null,
+  }) {
+    return _then(_value.copyWith(
+      wins: null == wins
+          ? _value.wins
+          : wins // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      savePercentage: null == savePercentage
+          ? _value.savePercentage
+          : savePercentage // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      goalsAgainstAverage: null == goalsAgainstAverage
+          ? _value.goalsAgainstAverage
+          : goalsAgainstAverage // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+    ) as $Val);
+  }
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get wins {
+    return $LeadersResponseStatCopyWith<$Res>(_value.wins, (value) {
+      return _then(_value.copyWith(wins: value) as $Val);
+    });
+  }
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get savePercentage {
+    return $LeadersResponseStatCopyWith<$Res>(_value.savePercentage, (value) {
+      return _then(_value.copyWith(savePercentage: value) as $Val);
+    });
+  }
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseStatCopyWith<$Res> get goalsAgainstAverage {
+    return $LeadersResponseStatCopyWith<$Res>(_value.goalsAgainstAverage,
+        (value) {
+      return _then(_value.copyWith(goalsAgainstAverage: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LeadersResponseGoaliesImplCopyWith<$Res>
+    implements $LeadersResponseGoaliesCopyWith<$Res> {
+  factory _$$LeadersResponseGoaliesImplCopyWith(
+          _$LeadersResponseGoaliesImpl value,
+          $Res Function(_$LeadersResponseGoaliesImpl) then) =
+      __$$LeadersResponseGoaliesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "Wins") LeadersResponseStat wins,
+      @JsonKey(name: "Save Percentage") LeadersResponseStat savePercentage,
+      @JsonKey(name: "Goals Against Average")
+      LeadersResponseStat goalsAgainstAverage});
+
+  @override
+  $LeadersResponseStatCopyWith<$Res> get wins;
+  @override
+  $LeadersResponseStatCopyWith<$Res> get savePercentage;
+  @override
+  $LeadersResponseStatCopyWith<$Res> get goalsAgainstAverage;
+}
+
+/// @nodoc
+class __$$LeadersResponseGoaliesImplCopyWithImpl<$Res>
+    extends _$LeadersResponseGoaliesCopyWithImpl<$Res,
+        _$LeadersResponseGoaliesImpl>
+    implements _$$LeadersResponseGoaliesImplCopyWith<$Res> {
+  __$$LeadersResponseGoaliesImplCopyWithImpl(
+      _$LeadersResponseGoaliesImpl _value,
+      $Res Function(_$LeadersResponseGoaliesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? wins = null,
+    Object? savePercentage = null,
+    Object? goalsAgainstAverage = null,
+  }) {
+    return _then(_$LeadersResponseGoaliesImpl(
+      wins: null == wins
+          ? _value.wins
+          : wins // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      savePercentage: null == savePercentage
+          ? _value.savePercentage
+          : savePercentage // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+      goalsAgainstAverage: null == goalsAgainstAverage
+          ? _value.goalsAgainstAverage
+          : goalsAgainstAverage // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseStat,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LeadersResponseGoaliesImpl
+    with DiagnosticableTreeMixin
+    implements _LeadersResponseGoalies {
+  const _$LeadersResponseGoaliesImpl(
+      {@JsonKey(name: "Wins") required this.wins,
+      @JsonKey(name: "Save Percentage") required this.savePercentage,
+      @JsonKey(name: "Goals Against Average")
+      required this.goalsAgainstAverage});
+
+  factory _$LeadersResponseGoaliesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeadersResponseGoaliesImplFromJson(json);
+
+  @override
+  @JsonKey(name: "Wins")
+  final LeadersResponseStat wins;
+  @override
+  @JsonKey(name: "Save Percentage")
+  final LeadersResponseStat savePercentage;
+  @override
+  @JsonKey(name: "Goals Against Average")
+  final LeadersResponseStat goalsAgainstAverage;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LeadersResponseGoalies(wins: $wins, savePercentage: $savePercentage, goalsAgainstAverage: $goalsAgainstAverage)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LeadersResponseGoalies'))
+      ..add(DiagnosticsProperty('wins', wins))
+      ..add(DiagnosticsProperty('savePercentage', savePercentage))
+      ..add(DiagnosticsProperty('goalsAgainstAverage', goalsAgainstAverage));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeadersResponseGoaliesImpl &&
+            (identical(other.wins, wins) || other.wins == wins) &&
+            (identical(other.savePercentage, savePercentage) ||
+                other.savePercentage == savePercentage) &&
+            (identical(other.goalsAgainstAverage, goalsAgainstAverage) ||
+                other.goalsAgainstAverage == goalsAgainstAverage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, wins, savePercentage, goalsAgainstAverage);
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeadersResponseGoaliesImplCopyWith<_$LeadersResponseGoaliesImpl>
+      get copyWith => __$$LeadersResponseGoaliesImplCopyWithImpl<
+          _$LeadersResponseGoaliesImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LeadersResponseGoaliesImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LeadersResponseGoalies implements LeadersResponseGoalies {
+  const factory _LeadersResponseGoalies(
+          {@JsonKey(name: "Wins") required final LeadersResponseStat wins,
+          @JsonKey(name: "Save Percentage")
+          required final LeadersResponseStat savePercentage,
+          @JsonKey(name: "Goals Against Average")
+          required final LeadersResponseStat goalsAgainstAverage}) =
+      _$LeadersResponseGoaliesImpl;
+
+  factory _LeadersResponseGoalies.fromJson(Map<String, dynamic> json) =
+      _$LeadersResponseGoaliesImpl.fromJson;
+
+  @override
+  @JsonKey(name: "Wins")
+  LeadersResponseStat get wins;
+  @override
+  @JsonKey(name: "Save Percentage")
+  LeadersResponseStat get savePercentage;
+  @override
+  @JsonKey(name: "Goals Against Average")
+  LeadersResponseStat get goalsAgainstAverage;
+
+  /// Create a copy of LeadersResponseGoalies
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LeadersResponseGoaliesImplCopyWith<_$LeadersResponseGoaliesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+LeadersResponseObject _$LeadersResponseObjectFromJson(
+    Map<String, dynamic> json) {
+  return _LeadersResponseObject.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LeadersResponseObject {
+  @JsonKey(name: "skaters")
+  LeadersResponseSkaters get skaters => throw _privateConstructorUsedError;
+  @JsonKey(name: "goalies")
+  LeadersResponseGoalies get goalies => throw _privateConstructorUsedError;
+
+  /// Serializes this LeadersResponseObject to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LeadersResponseObjectCopyWith<LeadersResponseObject> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeadersResponseObjectCopyWith<$Res> {
+  factory $LeadersResponseObjectCopyWith(LeadersResponseObject value,
+          $Res Function(LeadersResponseObject) then) =
+      _$LeadersResponseObjectCopyWithImpl<$Res, LeadersResponseObject>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "skaters") LeadersResponseSkaters skaters,
+      @JsonKey(name: "goalies") LeadersResponseGoalies goalies});
+
+  $LeadersResponseSkatersCopyWith<$Res> get skaters;
+  $LeadersResponseGoaliesCopyWith<$Res> get goalies;
+}
+
+/// @nodoc
+class _$LeadersResponseObjectCopyWithImpl<$Res,
+        $Val extends LeadersResponseObject>
+    implements $LeadersResponseObjectCopyWith<$Res> {
+  _$LeadersResponseObjectCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? skaters = null,
+    Object? goalies = null,
+  }) {
+    return _then(_value.copyWith(
+      skaters: null == skaters
+          ? _value.skaters
+          : skaters // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseSkaters,
+      goalies: null == goalies
+          ? _value.goalies
+          : goalies // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseGoalies,
+    ) as $Val);
+  }
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseSkatersCopyWith<$Res> get skaters {
+    return $LeadersResponseSkatersCopyWith<$Res>(_value.skaters, (value) {
+      return _then(_value.copyWith(skaters: value) as $Val);
+    });
+  }
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LeadersResponseGoaliesCopyWith<$Res> get goalies {
+    return $LeadersResponseGoaliesCopyWith<$Res>(_value.goalies, (value) {
+      return _then(_value.copyWith(goalies: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LeadersResponseObjectImplCopyWith<$Res>
+    implements $LeadersResponseObjectCopyWith<$Res> {
+  factory _$$LeadersResponseObjectImplCopyWith(
+          _$LeadersResponseObjectImpl value,
+          $Res Function(_$LeadersResponseObjectImpl) then) =
+      __$$LeadersResponseObjectImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "skaters") LeadersResponseSkaters skaters,
+      @JsonKey(name: "goalies") LeadersResponseGoalies goalies});
+
+  @override
+  $LeadersResponseSkatersCopyWith<$Res> get skaters;
+  @override
+  $LeadersResponseGoaliesCopyWith<$Res> get goalies;
+}
+
+/// @nodoc
+class __$$LeadersResponseObjectImplCopyWithImpl<$Res>
+    extends _$LeadersResponseObjectCopyWithImpl<$Res,
+        _$LeadersResponseObjectImpl>
+    implements _$$LeadersResponseObjectImplCopyWith<$Res> {
+  __$$LeadersResponseObjectImplCopyWithImpl(_$LeadersResponseObjectImpl _value,
+      $Res Function(_$LeadersResponseObjectImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? skaters = null,
+    Object? goalies = null,
+  }) {
+    return _then(_$LeadersResponseObjectImpl(
+      skaters: null == skaters
+          ? _value.skaters
+          : skaters // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseSkaters,
+      goalies: null == goalies
+          ? _value.goalies
+          : goalies // ignore: cast_nullable_to_non_nullable
+              as LeadersResponseGoalies,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LeadersResponseObjectImpl
+    with DiagnosticableTreeMixin
+    implements _LeadersResponseObject {
+  const _$LeadersResponseObjectImpl(
+      {@JsonKey(name: "skaters") required this.skaters,
+      @JsonKey(name: "goalies") required this.goalies});
+
+  factory _$LeadersResponseObjectImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LeadersResponseObjectImplFromJson(json);
+
+  @override
+  @JsonKey(name: "skaters")
+  final LeadersResponseSkaters skaters;
+  @override
+  @JsonKey(name: "goalies")
+  final LeadersResponseGoalies goalies;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'LeadersResponseObject(skaters: $skaters, goalies: $goalies)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LeadersResponseObject'))
+      ..add(DiagnosticsProperty('skaters', skaters))
+      ..add(DiagnosticsProperty('goalies', goalies));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeadersResponseObjectImpl &&
+            (identical(other.skaters, skaters) || other.skaters == skaters) &&
+            (identical(other.goalies, goalies) || other.goalies == goalies));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, skaters, goalies);
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeadersResponseObjectImplCopyWith<_$LeadersResponseObjectImpl>
+      get copyWith => __$$LeadersResponseObjectImplCopyWithImpl<
+          _$LeadersResponseObjectImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LeadersResponseObjectImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LeadersResponseObject implements LeadersResponseObject {
+  const factory _LeadersResponseObject(
+      {@JsonKey(name: "skaters") required final LeadersResponseSkaters skaters,
+      @JsonKey(name: "goalies")
+      required final LeadersResponseGoalies
+          goalies}) = _$LeadersResponseObjectImpl;
+
+  factory _LeadersResponseObject.fromJson(Map<String, dynamic> json) =
+      _$LeadersResponseObjectImpl.fromJson;
+
+  @override
+  @JsonKey(name: "skaters")
+  LeadersResponseSkaters get skaters;
+  @override
+  @JsonKey(name: "goalies")
+  LeadersResponseGoalies get goalies;
+
+  /// Create a copy of LeadersResponseObject
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LeadersResponseObjectImplCopyWith<_$LeadersResponseObjectImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

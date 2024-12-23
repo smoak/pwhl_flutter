@@ -40,7 +40,10 @@ class LiveGameCard extends StatelessWidget {
         ScoreText(score: game.visitingScore.toString()),
         Column(
           children: [
-            GameClockInfo(gameClock: game.gameClock),
+            GameClockInfo(
+              gameClock: game.gameClock,
+              gameType: game.type,
+            ),
             const LiveGameIndicator(),
           ],
         ),
