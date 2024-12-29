@@ -119,6 +119,7 @@ Future<LeadersResponseObject> getLeagueLeaders(String seasonId) async {
     "season": seasonId,
     "playerTypes": "skaters,goalies",
     "skaterStatTypes": "points,goals,assists",
+    // skaterStatTypes=points,goals,assists,power_play_goals,power_play_assists,short_handed_goals,game_winning_goals,first_goals,insurance_goals,penalty_minutes,plus_minus
     "goalieStatTypes": "wins,save_percentage,goals_against_average",
     "activeOnly": "0"
   }..addAll(queryParamKeys);

@@ -22,15 +22,12 @@ class GameDetailsView extends ConsumerWidget {
             padding: const EdgeInsets.only(top: 16),
             child: Center(
                 child: Main(
-                    child: Column(children: [
+                    child: Column(spacing: 20, children: [
               switch (game) {
                 FinalGame() => FinalGameCard(game: game),
                 LiveGame() => LiveGameCard(game: game),
                 FutureGame() => FutureGameCard(game: game),
               },
-              const SizedBox(
-                height: 20,
-              ),
               GameSummaryWidget(gameDetails: gameDetails)
             ])))));
   }
