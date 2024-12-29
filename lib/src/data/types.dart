@@ -140,17 +140,40 @@ class ScoringPlays {
   final ScoringPlay? shootout;
 }
 
+class Penalty {
+  const Penalty(
+      {required this.period,
+      required this.time,
+      required this.length,
+      required this.description,
+      required this.team,
+      required this.isPowerPlay,
+      required this.penalizedPlayer,
+      required this.servingPlayer});
+
+  final String period;
+  final String time;
+  final int length;
+  final String description;
+  final PenaltyTeam team;
+  final bool isPowerPlay;
+  final PenaltyPlayer penalizedPlayer;
+  final PenaltyPlayer servingPlayer;
+}
+
 class GameStats {
   const GameStats(
       {required this.homeTeam,
       required this.visitingTeam,
       required this.periods,
-      required this.scoringPlays});
+      required this.scoringPlays,
+      required this.penalties});
 
   final TeamStats homeTeam;
   final TeamStats visitingTeam;
   final List<GamePeriod> periods;
   final ScoringPlays scoringPlays;
+  final Map<String, Iterable<Penalty>> penalties;
 }
 
 class GameDetails {
@@ -442,12 +465,76 @@ class GameSummaryPeriodGoal with _$GameSummaryPeriodGoal {
 }
 
 @freezed
+class PenaltyPeriod with _$PenaltyPeriod {
+  const factory PenaltyPeriod(
+      {@JsonKey(name: "id") required String id,
+      @JsonKey(name: "shortName") required String shortName,
+      @JsonKey(name: "longName") required String longName}) = _PenaltyPeriod;
+
+  factory PenaltyPeriod.fromJson(Map<String, dynamic> json) =>
+      _$PenaltyPeriodFromJson(json);
+}
+
+@freezed
+class PenaltyTeam with _$PenaltyTeam {
+  const factory PenaltyTeam(
+          {@JsonKey(name: "id") required int id,
+          @JsonKey(name: "name") required String name,
+          @JsonKey(name: "city") required String city,
+          @JsonKey(name: "nickname") required String nickname,
+          @JsonKey(name: "abbreviation") required String abbreviation,
+          @JsonKey(name: "logo") required String logo,
+          @JsonKey(name: "divisionName") required String divisionName}) =
+      _PenaltyTeam;
+
+  factory PenaltyTeam.fromJson(Map<String, dynamic> json) =>
+      _$PenaltyTeamFromJson(json);
+}
+
+@freezed
+class PenaltyPlayer with _$PenaltyPlayer {
+  const factory PenaltyPlayer(
+          {@JsonKey(name: "id") required int id,
+          @JsonKey(name: "firstName") required String firstName,
+          @JsonKey(name: "lastName") required String lastName,
+          @JsonKey(name: "jerseyNumber") required int jerseyNumber,
+          @JsonKey(name: "position") required String position,
+          @JsonKey(name: "birthDate") required String birthDate,
+          @JsonKey(name: "playerImageURL") required String playerImageUrl}) =
+      _PenaltyPlayer;
+
+  factory PenaltyPlayer.fromJson(Map<String, dynamic> json) =>
+      _$PenaltyPlayerFromJson(json);
+}
+
+@freezed
+class GameSummaryPeriodPenalty with _$GameSummaryPeriodPenalty {
+  const factory GameSummaryPeriodPenalty(
+          {@JsonKey(name: "game_penalty_id") required int gamePenaltyId,
+          @JsonKey(name: "period") required PenaltyPeriod period,
+          @JsonKey(name: "time") required String time,
+          @JsonKey(name: "againstTeam") required PenaltyTeam againstTeam,
+          @JsonKey(name: "minutes") required int minutes,
+          @JsonKey(name: "description") required String description,
+          @JsonKey(name: "ruleNumber") required String ruleNumber,
+          @JsonKey(name: "takenBy") required PenaltyPlayer takenBy,
+          @JsonKey(name: "servedBy") required PenaltyPlayer servedBy,
+          @JsonKey(name: "isPowerPlay") required bool isPowerPlay,
+          @JsonKey(name: "isBench") required bool isBench}) =
+      _GameSummaryPeriodPenalty;
+
+  factory GameSummaryPeriodPenalty.fromJson(Map<String, dynamic> json) =>
+      _$GameSummaryPeriodPenaltyFromJson(json);
+}
+
+@freezed
 class GameSummaryPeriod with _$GameSummaryPeriod {
   const factory GameSummaryPeriod(
-          {@JsonKey(name: "info") required GameSummaryPeriodInfo info,
-          @JsonKey(name: "stats") required GameSummaryPeriodStats stats,
-          @JsonKey(name: "goals") required List<GameSummaryPeriodGoal> goals}) =
-      _GameSummaryPeriod;
+      {@JsonKey(name: "info") required GameSummaryPeriodInfo info,
+      @JsonKey(name: "stats") required GameSummaryPeriodStats stats,
+      @JsonKey(name: "goals") required List<GameSummaryPeriodGoal> goals,
+      @JsonKey(name: "penalties")
+      required List<GameSummaryPeriodPenalty> penalties}) = _GameSummaryPeriod;
 
   factory GameSummaryPeriod.fromJson(Map<String, dynamic> json) =>
       _$GameSummaryPeriodFromJson(json);

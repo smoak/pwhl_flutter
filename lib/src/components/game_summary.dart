@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pwhl_flutter/src/components/overtime_period_scoring_summary.dart';
+import 'package:pwhl_flutter/src/components/period_penalty_summary.dart';
 import 'package:pwhl_flutter/src/components/scoring_play_list.dart';
 import 'package:pwhl_flutter/src/components/shootout_scoring_summary.dart';
+import 'package:pwhl_flutter/src/components/team_logo.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
 import 'package:pwhl_flutter/src/extensions/int.dart';
 
@@ -20,18 +22,22 @@ class GameSummaryTable extends StatelessWidget {
     return columns;
   }
 
-  Widget _teamNameTableCell(Team team) {
-    return Flex(
-      direction: Axis.horizontal,
+  Widget _teamNameTableCell(Team team, int sog) {
+    return Row(
+      spacing: 8,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          width: 32,
-          height: 32,
-          decoration: BoxDecoration(
-              image: DecorationImage(image: NetworkImage(team.logoUrl))),
-        ),
-        const SizedBox(width: 8),
-        Text(team.name)
+        TeamLogo(logoUrl: team.logoUrl, size: TeamLogoSize.small),
+        Flexible(
+            fit: FlexFit.tight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(team.name,
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                Text("SOG: $sog")
+              ],
+            ))
       ],
     );
   }
@@ -40,13 +46,18 @@ class GameSummaryTable extends StatelessWidget {
     final gameStats = gameDetails.gameStats;
     final List<DataCell> homeRow = List.from(
         gameStats.periods.map((p) => DataCell(Text(p.homeGoals.toString()))));
-    homeRow.insert(0, DataCell(_teamNameTableCell(gameDetails.game.homeTeam)));
+    homeRow.insert(
+        0,
+        DataCell(_teamNameTableCell(
+            gameDetails.game.homeTeam, gameDetails.gameStats.homeTeam.sog)));
     homeRow.add(DataCell(Text(gameStats.homeTeam.score.toString())));
 
     final List<DataCell> visitorRow = List.from(gameStats.periods
         .map((p) => DataCell(Text(p.visitorGoals.toString()))));
     visitorRow.insert(
-        0, DataCell(_teamNameTableCell(gameDetails.game.visitingTeam)));
+        0,
+        DataCell(_teamNameTableCell(gameDetails.game.visitingTeam,
+            gameDetails.gameStats.visitingTeam.sog)));
     visitorRow.add(DataCell(Text(gameStats.visitingTeam.score.toString())));
 
     return <DataRow>[DataRow(cells: visitorRow), DataRow(cells: homeRow)];
@@ -107,6 +118,44 @@ class ScoringList extends StatelessWidget {
   }
 }
 
+class PenaltySection extends StatelessWidget {
+  const PenaltySection({super.key, required this.gameDetails});
+
+  final GameDetails gameDetails;
+
+  List<Widget> _periodSummaries() {
+    final penalties = gameDetails.gameStats.penalties;
+
+    return gameDetails.gameStats.periods
+        .map((p) => PeriodPenaltySummary(
+            penalties: penalties[p.num.toString()] ?? [], period: p.num))
+        .toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final penalties = gameDetails.gameStats.penalties;
+
+    if (penalties.isEmpty) {
+      // "null" component
+      return const SizedBox.shrink();
+    }
+
+    return Padding(
+        padding: const EdgeInsets.only(bottom: 16),
+        child: Column(
+          spacing: 12,
+          children: [
+            const Text(
+              'Penalties',
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
+            Column(spacing: 16, children: _periodSummaries()),
+          ],
+        ));
+  }
+}
+
 class GameSummaryWidget extends StatelessWidget {
   GameSummaryWidget({super.key, required this.gameDetails});
 
@@ -151,10 +200,11 @@ class GameSummaryWidget extends StatelessWidget {
     }
 
     return Column(
+      spacing: 16,
       children: [
         _buildSummarySection(),
-        const SizedBox(height: 16),
-        _buildScoringSection()
+        _buildScoringSection(),
+        PenaltySection(gameDetails: gameDetails)
       ],
     );
   }

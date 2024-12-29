@@ -222,6 +222,30 @@ ScoringPlays normalizeScoringDetails(
       shootout: normalizeShootoutScoringPlay(shootoutDetails));
 }
 
+Penalty normalizePenalty(GameSummaryPeriodPenalty penalty) {
+  return Penalty(
+      description: penalty.description,
+      isPowerPlay: penalty.isPowerPlay,
+      length: penalty.minutes,
+      period: penalty.period.id,
+      team: penalty.againstTeam,
+      time: penalty.time,
+      penalizedPlayer: penalty.takenBy,
+      servingPlayer: penalty.servedBy);
+}
+
+Map<String, Iterable<Penalty>> normalizePenalties(
+    List<GameSummaryPeriod> periods) {
+  final Map<String, Iterable<Penalty>> penalties =
+      periods.fold({}, (accum, period) {
+    final periodPenalties = period.penalties.map(normalizePenalty);
+    accum[period.info.id] = periodPenalties;
+    return accum;
+  });
+
+  return penalties;
+}
+
 GameStats normalizeGameStats(GameSummaryResponse apiGameSummary) {
   final homeTeam = normalizeTeamStats(apiGameSummary.homeTeam);
   final visitingTeam = normalizeTeamStats(apiGameSummary.visitingTeam);
@@ -229,12 +253,14 @@ GameStats normalizeGameStats(GameSummaryResponse apiGameSummary) {
       apiGameSummary.periods.map(normalizeGameSummaryPeriod).toList();
   final scoringPlays = normalizeScoringDetails(
       apiGameSummary.periods, apiGameSummary.shootoutDetails);
+  final penalties = normalizePenalties(apiGameSummary.periods);
 
   return GameStats(
       homeTeam: homeTeam,
       visitingTeam: visitingTeam,
       periods: periods,
-      scoringPlays: scoringPlays);
+      scoringPlays: scoringPlays,
+      penalties: penalties);
 }
 
 Game normalizeScheduledGame(GameSummaryResponse apiGameSummary,

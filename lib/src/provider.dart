@@ -7,8 +7,6 @@ import 'dart:developer' as developer;
 
 typedef ScheduleParameters = ({DateTime date});
 
-typedef DebugGameProviderParams = ({GameState gameState});
-
 final finalGame = Game.finalGame(
     1,
     GameType.regularSeason,
@@ -78,11 +76,11 @@ final liveGame = Game.liveGame(
     "2024-11-16 00:00:00.000",
     2,
     1,
-    GameClock(2, "10:09", false));
+    GameClock(4, "1:09", false));
 
 final debugGameDetailsProvider = FutureProvider.autoDispose
-    .family<GameDetails, DebugGameProviderParams>((ref, args) async {
-  if (args.gameState == GameState.finished) {
+    .family<GameDetails, GameDetailsParameters>((ref, args) async {
+  if (args.gameId == finalGame.id) {
     final homeTeam = TeamStats(score: finalGame.homeScore, sog: 30);
     final visitingTeam = TeamStats(score: finalGame.visitingScore, sog: 20);
     final scoringPlays = ScoringPlays(firstPeriod: [
@@ -147,20 +145,87 @@ final debugGameDetailsProvider = FutureProvider.autoDispose
               visitorGoals: 0,
               visitorShotsOnGoal: 10)
         ],
-        scoringPlays: scoringPlays);
+        scoringPlays: scoringPlays,
+        penalties: {});
     return GameDetails(game: finalGame, gameStats: gameStats);
   }
 
-  if (args.gameState == GameState.live) {
-    const homeTeam = TeamStats(score: 0, sog: 0);
-    const visitingTeam = TeamStats(score: 0, sog: 0);
-    const scoringPlays =
-        ScoringPlays(firstPeriod: [], secondPeriod: [], thirdPeriod: []);
+  if (args.gameId == liveGame.id) {
+    const homeTeam = TeamStats(score: 2, sog: 18);
+    const visitingTeam = TeamStats(score: 1, sog: 21);
+    const scoringPlays = ScoringPlays(firstPeriod: [
+      ScoringPlay(
+          goalScorer: GoalScorer(
+            id: 220,
+            firstName: "Mannon",
+            lastName: "McMahon",
+            headshotUrl: "https://assets.leaguestat.com/pwhl/120x160/220.jpg",
+            seasonGoals: 1,
+          ),
+          goalType: GoalType.even,
+          period: 1,
+          scoringTeam: ScoringTeam(
+              id: 5,
+              logoUrl: "https://assets.leaguestat.com/pwhl/logos/50x50/5_5.png",
+              name: "Ottawa Charge"),
+          timeInPeriod: "6:08",
+          primaryAssist: ScoringPlayAssister(
+              id: 101, firstName: "Alexa", lastName: "Vasko", seasonAssists: 1),
+          secondaryAssist: ScoringPlayAssister(
+              id: 62,
+              firstName: "Aneta",
+              lastName: "Tejralov\u00e1",
+              seasonAssists: 2))
+    ], secondPeriod: [], thirdPeriod: []);
     const gameStats = GameStats(
         homeTeam: homeTeam,
         visitingTeam: visitingTeam,
-        periods: [],
-        scoringPlays: scoringPlays);
+        periods: [
+          GamePeriod(
+              ordinalNum: "1",
+              num: 1,
+              visitorGoals: 1,
+              visitorShotsOnGoal: 8,
+              homeGoals: 1,
+              homeShotsOnGoal: 8)
+        ],
+        scoringPlays: scoringPlays,
+        penalties: {
+          "1": [
+            Penalty(
+                period: "1",
+                time: "12:27",
+                length: 2,
+                description: "Tripping",
+                team: PenaltyTeam(
+                    id: 5,
+                    name: "Ottawa Charge",
+                    city: "Ottawa",
+                    nickname: "Charge",
+                    abbreviation: "OTT",
+                    logo: "https://assets.leaguestat.com/pwhl/logos/5_5.png",
+                    divisionName: "PWHL"),
+                isPowerPlay: true,
+                penalizedPlayer: PenaltyPlayer(
+                    id: 223,
+                    firstName: "Ronja",
+                    lastName: "Savolainen",
+                    jerseyNumber: 88,
+                    position: "D",
+                    birthDate: "",
+                    playerImageUrl:
+                        "https://assets.leaguestat.com/pwhl/120x160/223.jpg"),
+                servingPlayer: PenaltyPlayer(
+                    id: 223,
+                    firstName: "Ronja",
+                    lastName: "Savolainen",
+                    jerseyNumber: 88,
+                    position: "D",
+                    birthDate: "",
+                    playerImageUrl:
+                        "https://assets.leaguestat.com/pwhl/120x160/223.jpg"))
+          ]
+        });
     return GameDetails(game: liveGame, gameStats: gameStats);
   }
 
@@ -172,7 +237,8 @@ final debugGameDetailsProvider = FutureProvider.autoDispose
       homeTeam: homeTeam,
       visitingTeam: visitingTeam,
       periods: [],
-      scoringPlays: scoringPlays);
+      scoringPlays: scoringPlays,
+      penalties: {});
   return GameDetails(game: futureGame, gameStats: gameStats);
 });
 

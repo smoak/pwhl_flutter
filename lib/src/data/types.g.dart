@@ -373,6 +373,98 @@ Map<String, dynamic> _$$GameSummaryPeriodGoalImplToJson(
       'properties': instance.properties,
     };
 
+_$PenaltyPeriodImpl _$$PenaltyPeriodImplFromJson(Map<String, dynamic> json) =>
+    _$PenaltyPeriodImpl(
+      id: json['id'] as String,
+      shortName: json['shortName'] as String,
+      longName: json['longName'] as String,
+    );
+
+Map<String, dynamic> _$$PenaltyPeriodImplToJson(_$PenaltyPeriodImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'shortName': instance.shortName,
+      'longName': instance.longName,
+    };
+
+_$PenaltyTeamImpl _$$PenaltyTeamImplFromJson(Map<String, dynamic> json) =>
+    _$PenaltyTeamImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      city: json['city'] as String,
+      nickname: json['nickname'] as String,
+      abbreviation: json['abbreviation'] as String,
+      logo: json['logo'] as String,
+      divisionName: json['divisionName'] as String,
+    );
+
+Map<String, dynamic> _$$PenaltyTeamImplToJson(_$PenaltyTeamImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'city': instance.city,
+      'nickname': instance.nickname,
+      'abbreviation': instance.abbreviation,
+      'logo': instance.logo,
+      'divisionName': instance.divisionName,
+    };
+
+_$PenaltyPlayerImpl _$$PenaltyPlayerImplFromJson(Map<String, dynamic> json) =>
+    _$PenaltyPlayerImpl(
+      id: (json['id'] as num).toInt(),
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      jerseyNumber: (json['jerseyNumber'] as num).toInt(),
+      position: json['position'] as String,
+      birthDate: json['birthDate'] as String,
+      playerImageUrl: json['playerImageURL'] as String,
+    );
+
+Map<String, dynamic> _$$PenaltyPlayerImplToJson(_$PenaltyPlayerImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'jerseyNumber': instance.jerseyNumber,
+      'position': instance.position,
+      'birthDate': instance.birthDate,
+      'playerImageURL': instance.playerImageUrl,
+    };
+
+_$GameSummaryPeriodPenaltyImpl _$$GameSummaryPeriodPenaltyImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GameSummaryPeriodPenaltyImpl(
+      gamePenaltyId: (json['game_penalty_id'] as num).toInt(),
+      period: PenaltyPeriod.fromJson(json['period'] as Map<String, dynamic>),
+      time: json['time'] as String,
+      againstTeam:
+          PenaltyTeam.fromJson(json['againstTeam'] as Map<String, dynamic>),
+      minutes: (json['minutes'] as num).toInt(),
+      description: json['description'] as String,
+      ruleNumber: json['ruleNumber'] as String,
+      takenBy: PenaltyPlayer.fromJson(json['takenBy'] as Map<String, dynamic>),
+      servedBy:
+          PenaltyPlayer.fromJson(json['servedBy'] as Map<String, dynamic>),
+      isPowerPlay: json['isPowerPlay'] as bool,
+      isBench: json['isBench'] as bool,
+    );
+
+Map<String, dynamic> _$$GameSummaryPeriodPenaltyImplToJson(
+        _$GameSummaryPeriodPenaltyImpl instance) =>
+    <String, dynamic>{
+      'game_penalty_id': instance.gamePenaltyId,
+      'period': instance.period,
+      'time': instance.time,
+      'againstTeam': instance.againstTeam,
+      'minutes': instance.minutes,
+      'description': instance.description,
+      'ruleNumber': instance.ruleNumber,
+      'takenBy': instance.takenBy,
+      'servedBy': instance.servedBy,
+      'isPowerPlay': instance.isPowerPlay,
+      'isBench': instance.isBench,
+    };
+
 _$GameSummaryPeriodImpl _$$GameSummaryPeriodImplFromJson(
         Map<String, dynamic> json) =>
     _$GameSummaryPeriodImpl(
@@ -383,6 +475,10 @@ _$GameSummaryPeriodImpl _$$GameSummaryPeriodImplFromJson(
       goals: (json['goals'] as List<dynamic>)
           .map((e) => GameSummaryPeriodGoal.fromJson(e as Map<String, dynamic>))
           .toList(),
+      penalties: (json['penalties'] as List<dynamic>)
+          .map((e) =>
+              GameSummaryPeriodPenalty.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$GameSummaryPeriodImplToJson(
@@ -391,6 +487,7 @@ Map<String, dynamic> _$$GameSummaryPeriodImplToJson(
       'info': instance.info,
       'stats': instance.stats,
       'goals': instance.goals,
+      'penalties': instance.penalties,
     };
 
 _$ShootoutPlayerImpl _$$ShootoutPlayerImplFromJson(Map<String, dynamic> json) =>

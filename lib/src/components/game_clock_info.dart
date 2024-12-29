@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pwhl_flutter/src/data/types.dart';
-
-extension Ordinals on int {
-  String get ordinal {
-    switch (this % 10) {
-      case 1:
-        return '${this}st';
-      case 2:
-        return '${this}nd';
-      case 3:
-        return '${this}rd';
-      default:
-        return '${this}th';
-    }
-  }
-}
+import 'package:pwhl_flutter/src/extensions/int.dart';
 
 class GameClockInfo extends StatelessWidget {
   const GameClockInfo(
@@ -23,17 +9,35 @@ class GameClockInfo extends StatelessWidget {
   final GameClock gameClock;
   final GameType gameType;
 
-  @override
-  Widget build(BuildContext context) {
-    const textStyle = TextStyle(fontSize: 16);
+  String _overtimePeriodText() {
+    final otPeriod = gameClock.period - 3;
 
-    if (gameClock.isInIntermission) {
-      return Text("${gameClock.period.ordinal.toUpperCase()} - END",
-          style: textStyle);
+    if (gameType == GameType.playoff) {
+      return "${otPeriod.ordinal.toUpperCase()} OT";
     }
 
-    return Text(
-        "${gameClock.period.ordinal.toUpperCase()} - ${gameClock.clockTime}",
-        style: textStyle);
+    return "OT";
+  }
+
+  String _periodText() {
+    if (gameClock.period > 3) {
+      return _overtimePeriodText();
+    }
+
+    return gameClock.period.ordinal.toUpperCase();
+  }
+
+  String _clockText() {
+    if (gameClock.isInIntermission) {
+      return "END";
+    }
+
+    return gameClock.clockTime;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text([_periodText(), _clockText()].join(" - "),
+        style: const TextStyle(fontSize: 16));
   }
 }

@@ -111,22 +111,6 @@ Future<Map<String, String>> getTeamRecords(String seasonId) async {
   });
 }
 
-// for league leaders
-// feed=statviewfeed&
-// view=leadersExtended&
-// key=446521baf8c38984&
-// league_id=undefined&
-// season_id=5&
-// division=&
-// conference=&
-// team_id=0&
-// site_id=0&
-// client_code=pwhl&
-// playerTypes=skaters,goalies&
-// skaterStatTypes=points,goals,assists&
-// goalieStatTypes=wins,save_percentage,goals_against_average&
-// activeOnly=0&
-// lang=en
 Future<LeadersResponseObject> getLeagueLeaders(String seasonId) async {
   final queryParams = {
     "feed": "statviewfeed",

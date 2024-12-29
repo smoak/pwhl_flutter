@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum TeamLogoSize { small, medium, large }
+enum TeamLogoSize { xsmall, small, medium, large }
 
 class TeamLogo extends StatelessWidget {
   const TeamLogo({super.key, required this.logoUrl, required this.size});
@@ -10,6 +10,8 @@ class TeamLogo extends StatelessWidget {
 
   double _width() {
     switch (size) {
+      case TeamLogoSize.xsmall:
+        return 24;
       case TeamLogoSize.small:
         return 32;
       case TeamLogoSize.medium:
@@ -21,6 +23,8 @@ class TeamLogo extends StatelessWidget {
 
   double _height() {
     switch (size) {
+      case TeamLogoSize.xsmall:
+        return 24;
       case TeamLogoSize.small:
         return 32;
       case TeamLogoSize.medium:
